@@ -1,0 +1,2683 @@
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<!--
+/*! Style Demo Code. v0.331. 20151020~ | by MoonYoungshin[myshin@naver.com] | MIT License
+ * 20180424. <table class="t6"> 추가
+ * 20180131. font-size 기본 16px 로 변경된 CSS 에 따라 데모 변경.
+ * 20181011. Color Emphasis 코드 보완
+ * 20190522. bgc- 코드 추가
+ * 20190604. Info2 Button 추가
+ * 20190902. search Button 추가
+ * 20200116. Button 순서 고도화 Hollow Button 결함개선.
+ * 20200121. Contextual Backgrounds and Colors 결함개선.
+ * 20200515. .button.primary1 추가
+ * 20200521. display:inline-block; 요소의 non-CJK 단어 속에서 줄바꿈
+ * 20200608. 순서 있는 목록 항목
+ * 20201020. SCROLL 내용 개선
+ * 20201120. FORMS 라디오 체크박스 코드 추가 |  이미지 크게 보기 추가
+ * 20201126. 폼 데모 추가 정리
+ * 20201130. .badge1 .label1 추가
+ * 20201201. .link1 정리
+ * 20201211. .button.gray8 추가
+ * 20210517. PHP 코드로 바꾸면서. 재정리
+ * 20211007. CSS 컴포넌트 (Sample Demo) 확인 및 고도화
+ * 20220207. 
+ * Task)
+ */ -->
+
+
+<h1 class="hb1 h1" id="DemoCSS">inc_demo.html</h1>
+
+
+<p>
+	<em class="em">id값 중복 에러(Error: Duplicate ID)와 폼에서 id값 = for값 연결은 실무에서 바로잡으세요. 여기 데모 코드에서의 결함은 일단 넘어가세요.</em>
+</p>
+
+
+<div id="cnb1" class="cnb1 bu0 mj-menu-even-width">
+	<ul class="ls0">
+	<li class="m1"><a href="#NavigationMenu">Navigation Menu</a><i class="deco1"></i><i class="deco2"></i></li>
+	<li class="m2"><a href="#SelectMenu">Select Menu</a><i class="deco1"></i><i class="deco2"></i></li>
+	<li class="m11"><a href="#TYPOGRAPHY">TYPOGRAPHY</a><i class="deco1"></i><i class="deco2"></i></li>
+	<li class="m12"><a href="#LISTS">LISTS</a><i class="deco1"></i><i class="deco2"></i></li>
+	<li class="m13"><a href="#TABLES">TABLES</a><i class="deco1"></i><i class="deco2"></i></li>
+	<li class="m14"><a href="#LINKS">LINKS</a></li>
+	<li class="m15"><a href="#BUTTONS">BUTTONS</a><i class="deco1"></i><i class="deco2"></i></li>
+	<li class="m16"><a href="#FORMS">FORMS</a><i class="deco1"></i><i class="deco2"></i></li>
+	<li class="m17"><a href="#IMAGES">IMAGES</a><i class="deco1"></i><i class="deco2"></i></li>
+	<li class="m18"><a href="#EMBED">EMBED</a><i class="deco1"></i><i class="deco2"></i></li>
+	<li class="m19"><a href="#SCROLL">SCROLL</a><i class="deco1"></i><i class="deco2"></i></li>
+	<li class="m99"><a href="#ETC">ETC</a><i class="deco1"></i><i class="deco2"></i></li>
+	</ul>
+</div>
+<script>/*<![CDATA[*/
+	//addOnNav(); // 현재활성(1~4차)
+	makeActive('#cnb1'); // 클릭활성 makeActive('#cnb1', '.m1');
+/*]]>*/</script>
+
+
+<h2 class="hb1 h2">Demo CSS Styles
+	<small>※ with
+		<a href="../../share/css/base.css" target="_blank" rel="noopener" title="새 창">base.css</a>,
+		<a href="../../share/css/lib.css" target="_blank" rel="noopener" title="새 창">lib.css</a>
+		for RWD
+	</small>
+</h2>
+
+
+<!-- panel1 -->
+<div class="panel1">
+	<strong class="h1">Table of contents</strong>
+	<span class="sep1">ㆍ</span> <a href="#NavigationMenu">내비게이션 메뉴</a><br />
+	<span class="sep1">ㆍ</span> <a href="#SelectMenu">선택 메뉴</a><br />
+	<span class="sep1">ㆍ</span> <a href="#TYPOGRAPHY">타이포그래피</a>
+		(
+		<a href="#Heading">제목</a>,
+		<a href="#Paragraph">문단</a>,
+		<a>줄간</a>,
+		<a href="#Anchor">앵커</a>,
+		<a href="#OtherStyledTextTags">강조</a>,
+		<a>글꼴</a>,
+		<a href="#ContextualBackgrounds_and_Colors">맥락 배경 색상</a>
+		)<br />
+	<span class="sep1">ㆍ</span> <a href="#LISTS">목록</a><br />
+	<span class="sep1">ㆍ</span> <a href="#TABLES">테이블</a><br />
+	<span class="sep1">ㆍ</span> <a href="#LINKS">링크</a><br />
+	<span class="sep1">ㆍ</span> <a href="#BUTTONS">버튼</a><br />
+	<span class="sep1">ㆍ</span> <a href="#FORMS">폼요소</a><br />
+	<span class="sep1">ㆍ</span> <a href="#IMAGES">이미지 배치</a><br />
+	<span class="sep1">ㆍ</span> <a href="#EMBED">임베드</a> (Video, Audio) <!-- @m) Audio.. 실무 적응하면 /_lib/demo/ 에 포함시킨다! --><br />
+	<span class="sep1">ㆍ</span> <a href="#SCROLL">스크롤</a> (가로 넘침 스크롤 샘플) <small class="em9">new</small><br />
+	<span class="sep1">ㆍ</span> <a href="#ETC">ETC</a> (Comingsoon Sample, Text Paragraph Sample)<br />
+	<br />
+	<span class="sep1">&nbsp;|&nbsp;</span> UX Sample (현재. 스타일 없다.)<br />
+	<span class="sep1">&nbsp;|&nbsp;</span> Layout / Multi-column (생략)<br />
+	<span class="sep1">&nbsp;|&nbsp;</span> Popup (현재. 스타일 없다. 모바일 팝업은 삼가하자!)<br />
+</div>
+<!-- /panel1 -->
+
+
+<hr /><!-- ◇◆◇◆◇◆◇◆◇◆ -->
+<h2 class="demo" id="NavigationMenu">Navigation Menu</h2>
+
+
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">.cnb1 .mj-menu-even-width</h3>
+
+<p>.cnb1 메뉴의 폭을 자동으로 균등하게 만듭니다.</p>
+
+<div class="cnb1 mj-menu-even-width">
+<ul>
+<li class="m1"><a href="#?">본문콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m2"><a href="#?">본문메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m3"><a href="#?">콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m4"><a href="#?">본문콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m5"><a href="#?">콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m6"><a href="#?">본문메뉴1</a></li>
+<li class="m7"><a href="#?">본문콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m8"><a href="#?">본문콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m9"><a href="#?">본문콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m10"><a href="#?">본문콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m99"><a href="#?">본문콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+</ul>
+</div>
+<script>/*<![CDATA[*/
+	//addOnNav(); // 현재활성(1~4차)
+	makeActive('.cnb1', '.m1'); // 클릭활성 makeActive('.cnb1', '.m1');
+	makeEvenWidthMenus(); // 자동균등폭
+/*]]>*/</script>
+
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">.cnb1 .mj-menu-even-width mj-menu2dropdown</h3>
+
+<p>.cnb1 메뉴의 폭을 자동으로 균등하게 만듭니다. 좁은폭 화면에서는 드롭다운 메뉴로 만들어줍니다.</p>
+
+<div class="cnb1 mj-menu-even-width mj-menu2dropdown">
+<ul>
+<li class="m1"><a href="#?">본문콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m2"><a href="#?">본문메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m3"><a href="#?">콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m4"><a href="#?">본문콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m5"><a href="#?">콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m6"><a href="#?">본문메뉴1</a></li>
+<li class="m7"><a href="#?">본문콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m8"><a href="#?">본문콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m9"><a href="#?">본문콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m10"><a href="#?">본문콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+<li class="m99"><a href="#?">본문콘텐츠메뉴1</a><i class="deco1"></i><i class="deco2"></i></li>
+</ul>
+</div>
+<script>/*<![CDATA[*/
+	//addOnNav(); // 현재활성(1~4차)
+	makeActive('.cnb1', '.m1'); // 클릭활성 makeActive('.cnb1', '.m1');
+	makeEvenWidthMenus(); // 자동균등폭
+	makeMenu2Dropdown(); // Even Width Menus ))) Dropdown Menu
+/*]]>*/</script>
+
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">.cnb2 .mj-menu-even-width</h3>
+
+<p>자동 균등 폭으로 만듭니다.</p>
+
+<!-- cnb2 -->
+<div class="cnb2 mj-menu-even-width">
+<ul>
+<li class="m1"><a href="#?">본문콘텐츠메뉴2</a></li>
+<li class="m2"><a href="#?">본문메뉴2</a></li>
+<li class="m3"><a href="#?">콘텐츠메뉴2</a></li>
+<li class="m4"><a href="#?">본문콘텐츠메뉴2</a></li>
+<li class="m5"><a href="#?">콘텐츠메뉴2</a></li>
+<li class="m6"><a href="#?">본문메뉴2</a></li>
+<li class="m7"><a href="#?">본문콘텐츠메뉴2</a></li>
+<li class="m8"><a href="#?">본문콘텐츠메뉴2</a></li>
+<li class="m9"><a href="#?">본문콘텐츠메뉴2</a></li>
+<li class="m10"><a href="#?">본문콘텐츠메뉴2</a></li>
+<li class="m11"><a href="#?">본문콘텐츠메뉴2</a></li>
+<li class="m12"><a href="#?">본문콘텐츠메뉴2</a></li>
+<li class="m13"><a href="#?">본문콘텐츠메뉴2</a></li>
+</ul>
+</div>
+<!-- /cnb2 -->
+
+<p>메뉴 전체 너비가 작아도 부모 요소만큼 꽉 찬 너비를 만듭니다.</p>
+
+<!-- cnb2 -->
+<div class="cnb2 mj-menu-even-width">
+<ul>
+<li class="m1"><a href="#?">Media Queries</a></li>
+<li class="m2"><a href="#?">Grid</a></li>
+<li class="m3"><a href="#?">Base Styles</a></li>
+</ul>
+</div>
+<!-- /cnb2 -->
+
+<p>메뉴 한개라도 부모 너비의 50% 를 넘는 경우</p>
+
+<!-- cnb2 -->
+<div class="cnb2 mj-menu-even-width">
+<ul>
+<li class="m1"><a href="#?">Media Queries</a></li>
+<li class="m2"><a href="#?">Grid</a></li>
+<li class="m3"><a href="#?">Base Styles</a></li>
+<li class="m4"><a href="#?">Typography</a></li>
+<li class="m5"><a href="#?">Links</a></li>
+<li class="m6"><a href="#?">Buttons</a></li>
+<li class="m7"><a href="#?">Forms</a></li>
+<li class="m8"><a href="#?">Lists</a></li>
+<li class="m9"><a href="#?">Code</a></li>
+<li class="m10"><a href="#?">Tables</a></li>
+<li class="m11"><a href="#?">Spacing Spacing Spacing Spacing Spacing Spacing Spacing Spacing</a></li>
+<li class="m12"><a href="#?">Utilities</a></li>
+<li class="m13"><a href="#?">Clearing</a></li>
+</ul>
+</div>
+<!-- /cnb2 -->
+
+<script>/*<![CDATA[*/
+	//addOnNav(); // 현재활성(1~4차)
+	makeActive('.cnb2', '.m1'); // 클릭활성 makeActive('.cnb2', '.m1');
+	makeEvenWidthMenus(); // 자동균등폭
+/*]]>*/</script>
+
+
+<hr /><!-- ◇◆◇◆◇◆◇◆◇◆ -->
+<h2 class="demo" id="SelectMenu">Select Menu</h2>
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<hr class="dotb" />
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">Basic</h3>
+
+
+<!-- selectmenu1 )) doSelectmenu1()  -->
+<div class="selectmenu1">
+<strong class="title"><a href="#selectmenu1option0" class="a1"><span class="t1">선택메뉴0</span><i class="ic1"></i></a></strong>
+<div class="selectmenu1option" id="selectmenu1option0">
+<ul class="options">
+<li class="option"><a href="#?1" class="a1">메뉴0옵션1</a></li>
+<li class="option"><a href="#?2" class="a1">메뉴0옵션2</a></li>
+<li class="option"><a href="?diffPage" class="a1">메뉴0옵션3다른페이지링크</a></li>
+<li class="option"><a href="?externalPage" target="_blank" rel="noopener" title="새 창" class="a1">메뉴0옵션4외부링크(새창)</a></li>
+<li class="option"><a href="#?5" class="a1">일이삼사오륙칠팔구십일이삼사오륙칠팔구십메뉴0옵션5</a></li>
+<li class="option"><a href="#?6" class="a1">메뉴0옵션6</a></li>
+<li class="option"><a href="#?7" class="a1">메뉴0옵션7</a></li>
+<li class="option"><a href="#?8" class="a1">메뉴0옵션8</a></li>
+<li class="option"><a href="#?9" class="a1">메뉴0옵션9</a></li>
+<li class="option"><a href="#?10" class="a1">메뉴0옵션10</a></li>
+<li class="option"><a href="#?11" class="a1">메뉴0옵션11</a></li>
+<li class="option"><a href="#?12" class="a1">메뉴0옵션12</a></li>
+</ul>
+</div>
+</div>
+<!-- /selectmenu1 -->
+
+<p>href="#selectmenu1option0" 와 id="selectmenu1option0" 를 유일한 같은 값으로 만든다.</p>
+
+<h4 class="hb1 h4" id="selectmenu1Sizing">Sizing</h4>
+
+
+<!-- ◇◆◇◆ -->
+<h5>class="selectmenu1 w100"</h5>
+
+<!-- selectmenu1 -->
+<div class="selectmenu1 w100">
+<strong class="title"><a href="#selectmenu1option1" class="a1"><span class="t1">선택메뉴1</span><i class="ic1"></i></a></strong>
+<div class="selectmenu1option" id="selectmenu1option1">
+<ul class="options">
+<li class="option"><a href="#?1" class="a1">메뉴1옵션1</a></li>
+<li class="option"><a href="#?2" class="a1">메뉴1옵션2</a></li>
+<li class="option"><a href="#?3" class="a1">메뉴1옵션3</a></li>
+<li class="option"><a href="#?4" class="a1">메뉴1옵션4</a></li>
+<li class="option"><a href="#?5" class="a1">메뉴1옵션5</a></li>
+<li class="option"><a href="#?6" class="a1">메뉴1옵션6</a></li>
+<li class="option"><a href="#?7" class="a1">메뉴1옵션7</a></li>
+<li class="option"><a href="#?8" class="a1">메뉴1옵션8</a></li>
+<li class="option"><a href="#?9" class="a1">메뉴1옵션9</a></li>
+<li class="option"><a href="#?10" class="a1">메뉴1옵션10</a></li>
+</ul>
+</div>
+</div>
+<!-- /selectmenu1 -->
+
+
+<!-- ◇◆◇◆ -->
+<h5>class="selectmenu1 waha"</h5>
+
+<!-- selectmenu1 -->
+<div class="selectmenu1 waha">
+<strong class="title"><a href="#selectmenu1option2" class="a1"><span class="t1">선택메뉴2</span><i class="ic1"></i></a></strong>
+<div class="selectmenu1option" id="selectmenu1option2">
+<ul class="options">
+<li class="option"><a href="#?1" class="a1">메뉴2옵션1</a></li>
+<li class="option"><a href="#?2" class="a1">메뉴2옵션2</a></li>
+<li class="option"><a href="#?3" class="a1">메뉴2옵션3</a></li>
+<li class="option"><a href="#?4" class="a1">메뉴2옵션4</a></li>
+<li class="option"><a href="#?5" class="a1">메뉴2옵션5</a></li>
+<li class="option"><a href="#?6" class="a1">메뉴2옵션6</a></li>
+<li class="option"><a href="#?7" class="a1">메뉴2옵션7</a></li>
+<li class="option"><a href="#?8" class="a1">메뉴2옵션8</a></li>
+<li class="option"><a href="#?9" class="a1">메뉴2옵션9</a></li>
+<li class="option"><a href="#?10" class="a1">메뉴2옵션10</a></li>
+</ul>
+</div>
+</div>
+<!-- /selectmenu1 -->
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<hr class="dotb" />
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">Advanced</h3>
+
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<hr class="dotb" />
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">Examples</h3>
+
+
+<!-- contentsBlock -->
+<div class="contentsBlock clearfix">
+
+<h4 class="hb1 h4" id="selectmenu1TwoORMore">선택메뉴(목록상자) 여러개</h4>
+<p>다중 옵션, 버튼.submit 과 텍스트 어울림. 세로 배치에서는 z-index 에 주의해야 한다.</p>
+
+<!-- fl -->
+<div class="fl">
+선택하세요 :
+<!-- selectmenu1 -->
+<div class="selectmenu1">
+<strong class="title"><a href="#selectmenu1option3" class="a1"><span class="t1">선택옵션1</span><i class="ic1"></i></a></strong>
+<div class="selectmenu1option" id="selectmenu1option3">
+<ul class="options">
+<li class="option"><a href="#?선택옵션1-1" class="a1">선택옵션1-1</a></li>
+<li class="option"><a href="#?선택옵션1-2" class="a1">선택옵션1-2</a></li>
+<li class="option"><a href="#?선택옵션1-3" class="a1">선택옵션1-3</a></li>
+</ul>
+</div>
+</div>
+<!-- /selectmenu1 -->
+<!-- selectmenu1 -->
+<div class="selectmenu1">
+<strong class="title"><a href="#selectmenu1option4" class="a1"><span class="t1">선택옵션2</span><i class="ic1"></i></a></strong>
+<div class="selectmenu1option" id="selectmenu1option4">
+<ul class="options">
+<li class="option"><a href="#?선택옵션2-1" class="a1">선택옵션2-1</a></li>
+<li class="option"><a href="#?선택옵션2-2" class="a1">선택옵션2-2</a></li>
+<li class="option"><a href="#?선택옵션2-3" class="a1">선택옵션2-3</a></li>
+</ul>
+</div>
+</div>
+<!-- /selectmenu1 -->
+<button type="button" class="button submit emboss"><span class="t1">Go</span></button>
+</div>
+<!-- /fl -->
+
+<!-- fr -->
+<div class="fr">
+
+<!-- selectmenu1 -->
+<div class="selectmenu1">
+<strong class="title"><a href="#selectmenu1option5" class="a1"><span class="t1">선택메뉴1</span><i class="ic1"></i></a></strong>
+<div class="selectmenu1option" id="selectmenu1option5">
+<ul class="options">
+<li class="option"><a href="#?" class="a1">메뉴1옵션1</a></li>
+<li class="option"><a href="#?" class="a1">메뉴1옵션2</a></li>
+<li class="option"><a href="#?" class="a1">메뉴1옵션3</a></li>
+</ul>
+</div>
+</div>
+<!-- /selectmenu1 -->
+
+<br />
+
+<!-- selectmenu1 -->
+<div class="selectmenu1">
+<strong class="title"><a href="#selectmenu1option6" class="a1"><span class="t1">선택메뉴1</span><i class="ic1"></i></a></strong>
+<div class="selectmenu1option" id="selectmenu1option6">
+<ul class="options">
+<li class="option"><a href="#?" class="a1">메뉴1옵션1</a></li>
+<li class="option"><a href="#?" class="a1">메뉴1옵션2</a></li>
+<li class="option"><a href="#?" class="a1">메뉴1옵션3</a></li>
+</ul>
+</div>
+</div>
+<!-- /selectmenu1 -->
+
+</div>
+<!-- /fr -->
+</div>
+<!-- /contentsBlock -->
+
+
+
+<hr /><!-- ◇◆◇◆◇◆◇◆◇◆ -->
+<h2 class="demo" id="TYPOGRAPHY">TYPOGRAPHY</h2>
+
+<h3 class="hb1 h3" id="Heading">Heading</h3>
+
+<h1 class="hb1 h1">헤드라인1 Heading1</h1>
+<h2 class="hb1 h2">헤드라인2 Heading2</h2>
+<h3 class="hb1 h3">헤드라인3 Heading3</h3>
+<h4 class="hb1 h4">헤드라인4 Heading4</h4>
+<h5 class="hb1 h5">헤드라인5 Heading5</h5>
+<h6 class="hb1 h6">헤드라인6 Heading6</h6>
+
+<h3 class="hb1 h3">헤드라인삼헤드라인삼일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십</h3>
+
+
+<h3 class="hb1 h3" id="Paragraph">Paragraph</h3>
+
+<p>
+	문단 p (paragraph) 기본 타입은 글꼴크기 16px 줄높이 1.75 이다.<br />
+	The base type is 16px over 1.75 line height.<br />
+	<em class="em">))) 웹사이트 스타일에 맞춤</em>
+</p>
+<pre class="mg0 pd125em-rv bd1px bgcf7">
+<code class="mgt-175em">
+html{
+	font-size:100%; /* <em class="em">1rem = 16px</em> */
+}
+body{
+	font-size:1em; /* 16px */
+	line-height:1.75; /* 28px */
+}
+</code>
+</pre>
+<!-- <p>위와 같이 정의되어.. body 자식 요소의 font-size: 1em; 은 16px 이다.</p> -->
+
+<p>
+	문단 샘플입니다. 일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십
+	문단 샘플입니다. 일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십
+</p>
+<p>
+	문단 샘플입니다. 일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십
+	문단 샘플입니다. 일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십
+</p>
+
+
+<p class="bu">불릿을 넣은 문단입니다. 목록과 동일한 불릿을 사용합니다. p.bu</p>
+
+
+<h3 class="hb1 h3" id="Anchor">Anchor</h3>
+
+<a>앵커 a (anchor) no href</a><br />
+<a href="?">앵커 a href="?"</a><br />
+<a href="?" target="_blank" rel="noopener" title="새 창">앵커 a href="?" target="_blank" rel="noopener" title="새 창"</a><br />
+
+<hr />
+
+<h3 class="hb1 h3" id="OtherStyledTextTags">Other styled text tags</h3>
+
+
+<h4 class="hb1 h4">Color Emphasis</h4>
+
+
+<em>강조 em (emphasis)</em> <span class="fwn">≥ Contrast 4.5:1 ≥ Contrast 3.0:1</span><br />
+<div><em class="em"><i class="fsXXXL">■</i> em.em /* 색 기본 */</em> <strong class="em">strong 강조</strong></div>
+<div><em class="em1"><i class="fsXXXL">■</i> em.em1 /* 빨 red */</em> <strong class="em1">strong 강조</strong></div>
+<div><em class="em1-2"><i class="fsXXXL">■</i> em.em1-2 /* 다홍 red */</em> <strong class="em1-2">strong 강조</strong></div>
+<div><em class="em2"><i class="fsXXXL">■</i> em.em2 /* 주 orange (dung) */</em> <strong class="em2">strong 강조</strong></div>
+<div><em class="em3"><i class="fsXXXL">■</i> em.em3 /* 노 yellow */</em> <strong class="em3">strong 강조</strong></div>
+<div><em class="em3-4"><i class="fsXXXL">■</i> em.em3-4 /* 연두 light green */</em> <strong class="em3-4">strong 강조</strong></div>
+<div><em class="em4"><i class="fsXXXL">■</i> em.em4 /* 초 green */</em> <strong class="em4">strong 강조</strong></div>
+<div><em class="em4-5"><i class="fsXXXL">■</i> em.em4-5 /* 청록 cyan (green blue) */</em> <strong class="em4-5">strong 강조</strong></div>
+<div><em class="em5"><i class="fsXXXL">■</i> em.em5 /* 파 blue */</em> <strong class="em5">strong 강조</strong></div>
+<div><em class="em5-6"><i class="fsXXXL">■</i> em.em5-6 /* 암청 cobalt blue */</em> <strong class="em5-6">strong 강조</strong></div>
+<div><em class="em6"><i class="fsXXXL">■</i> em.em6 /* 남 navy */</em> <strong class="em6">strong 강조</strong></div>
+<div><em class="em7"><i class="fsXXXL">■</i> em.em7 /* 보 violet */</em> <strong class="em7">strong 강조</strong></div>
+<div><em class="em8"><i class="fsXXXL">■</i> em.em8 /* 심홍 magenta (blue red) */</em> <strong class="em8">strong 강조</strong></div>
+<div><em class="em9"><i class="fsXXXL">■</i> em.em9 /* 분홍 pink */</em> <strong class="em9">strong 강조</strong></div>
+<div><em class="em0"><i class="fsXXXL">■</i> em.em0 /* 흑 black */</em> <strong class="em0">strong 강조</strong></div>
+
+
+<h4 class="hb1 h4">Color cv0~cvcvf</h4>
+
+
+<div><span class="cv0"><i class="fsXXXL">■</i> .cv0 ( 컬러값 #000000 ) <b>볼드</b></span></div>
+<div><span class="cv1"><i class="fsXXXL">■</i> .cv1 ( 컬러값 #111111 ) <b>볼드</b></span></div>
+<div><span class="cv2"><i class="fsXXXL">■</i> .cv2 ( 컬러값 #222222 ) <b>볼드</b></span></div>
+<div><span class="cv3"><i class="fsXXXL">■</i> .cv3 ( 컬러값 #333333 ) <b>볼드</b></span></div>
+<div><span class="cv4"><i class="fsXXXL">■</i> .cv4 ( 컬러값 #444444 ) <b>볼드</b></span></div>
+<div><span class="cv5"><i class="fsXXXL">■</i> .cv5 ( 컬러값 #555555 ) <b>볼드</b></span></div>
+<div><span class="cv6"><i class="fsXXXL">■</i> .cv6 ( 컬러값 #666666 ) <b>볼드</b></span></div>
+<div><span class="cv7"><i class="fsXXXL">■</i> .cv7 ( 컬러값 #767676 ) <b>볼드</b></span></div>
+<div><span class="cv8"><i class="fsXXXL">■</i> .cv8 ( 컬러값 #888888 ) <b>볼드</b></span></div>
+<div><span class="cv9"><i class="fsXXXL">■</i> .cv9 ( 컬러값 #959595 ) <b>볼드</b></span></div>
+<div><span class="cva"><i class="fsXXXL">■</i> .cva ( 컬러값 #aaaaaa ) <b>볼드</b></span></div>
+<div><span class="cvb"><i class="fsXXXL">■</i> .cvb ( 컬러값 #bbbbbb ) <b>볼드</b></span></div>
+<div><span class="cvc"><i class="fsXXXL">■</i> .cvc ( 컬러값 #cccccc ) <b>볼드</b></span></div>
+<div><span class="cvd"><i class="fsXXXL">■</i> .cvd ( 컬러값 #dddddd ) <b>볼드</b></span></div>
+<div><span class="cve"><i class="fsXXXL">■</i> .cve ( 컬러값 #eeeeee ) <b>볼드</b></span></div>
+<div><span class="cvf7"><i class="fsXXXL">■</i> .cvf7 ( 컬러값 #f7f7f7 ) <b>볼드</b></span></div>
+<div><span class="cvf"><i class="fsXXXL">■</i> .cvf ( 컬러값 #ffffff ) <b>볼드</b></span></div>
+
+
+
+<h4 class="hb1 h4">font-family</h4>
+
+<p>English 와 漢字 잘 보이는가?</p>
+
+
+<h5 class="hb1 h5">
+	<a href="../../share/css/base.css" target="_blank" rel="noopener" title="새 창">base.css</a> 파일에 글꼴 모음 스타일 선언
+</h5>
+
+
+<!-- <pre class="mg0">
+<code class="xmp pd20px-rv bd1a01 bgcf">
+[lang|='ko'],
+[lang|='ko']>*{
+	font-family:
+		'Apple SD Gothic Neo',
+		/* '본고딕',NotoSans,'Noto Sans CJK KR', ☆ */
+		'Open Sans',OpenSans,
+		'Microsoft JhengHei',
+		'Meiryo',
+		'나눔고딕',NanumGothic,'Nanum Gothic',
+		'맑은 고딕','Malgun Gothic',
+		'돋움',Dotum,
+		Helvetica,'Helvetica Neue',
+		Arial,
+		sans-serif;
+}
+</code>
+</pre> -->
+
+<pre class="mg0">
+<code class="xmp pd20px-rv bd1a01 bgcf">
+[lang|='ko'],
+[lang|='ko']>*{
+	font-family:
+		'Apple SD Gothic Neo', /* 맥용 */
+		'Open Sans',OpenSans, /* 영문 */
+		'Microsoft JhengHei', /* 한자 */
+		'Meiryo', /* 일문 */
+		'맑은 고딕','Malgun Gothic', /* 한글 */
+		'돋움',Dotum,
+		Helvetica,'Helvetica Neue',
+		Arial,sans-serif;
+}
+</code>
+</pre>
+
+
+<h5 class="hb1 h5 mgt0">
+	<a href="../../share/css/all.css" target="_blank" rel="noopener" title="새 창">all.css</a> 파일에 글꼴 모음 스타일 재정의
+</h5>
+
+
+<!-- <pre class="mg0">
+<code class="xmp pd20px-rv bd1a01 bgcf">
+[lang|='ko'],
+[lang|='ko']>*{
+	font-family:
+		'Apple SD Gothic Neo',
+		/* '본고딕',NotoSans,'Noto Sans CJK KR', ☆ */
+		'Open Sans',OpenSans,
+		'Microsoft JhengHei',
+		'Meiryo',
+		'나눔고딕',NanumGothic,'Nanum Gothic',
+		'맑은 고딕','Malgun Gothic',
+		'돋움',Dotum,
+		Helvetica,'Helvetica Neue',
+		Arial,
+		sans-serif;
+}
+</code>
+</pre> -->
+
+
+
+<h4 class="hb1 h4">font-size</h4>
+
+
+<p>
+<span class="vam"><b class="em">.fsS6</b> {font-size:.625em !important;} /* 10/16 */</span>
+	<span class="fsS6 vam"><span class="dpib em3">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsS5</b> {font-size:.6875em !important;} /* 11/16 */</span>
+	<span class="fsS5 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsS4</b> {font-size:.75em !important;} /* 12/16 */</span>
+	<span class="fsS4 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsS3</b> {font-size:.8125em !important;} /* 13/16 */</span>
+	<span class="fsS3 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsS2</b> {font-size:.875em !important;} /* 14/16 */</span>
+	<span class="fsS2 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+
+<span class="vam"><b class="em">.fsS1</b> {font-size:.9375em !important;} /* 15/16 */</span>
+	<span class="fsS1 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+
+<span class="vam"><b class="em5">.fsD</b>, /* default */</span><br />
+<span class="fs1em vam"><b class="em">.fs1em</b> {font-size:1em !important;} /* 16/16 <em class="em8">&lt;h6&gt;</em> */</span>
+	<span class="fsD vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+
+<span class="vam"><b class="em">.fsB1</b> {font-size:1.0625em !important;} /* 17/16 */</span>
+	<span class="fsB1 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB2</b> {font-size:1.125em !important;} /* 18/16 <em class="em8">&lt;h5&gt;</em> */</span>
+	<span class="fsB2 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB4</b> {font-size:1.25em !important;} /* 20/16 <em class="em8">&lt;h4&gt;</em> */</span>
+	<span class="fsB4 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB6</b> {font-size:1.375em !important;} /* 22/16 */</span>
+	<span class="fsB6 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB8</b> {font-size:1.5em !important;} /* 24/16 <em class="em8">&lt;h3&gt;</em> */</span>
+	<span class="fsB8 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB10</b> {font-size:1.625em !important;} /* 26/16 */</span>
+	<span class="fsB10 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB12</b> {font-size:1.75em !important;} /* 28/16 <em class="em8">&lt;h2&gt;</em> */</span>
+	<span class="fsB12 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB14</b> {font-size:1.875em !important;} /* 30/16 */</span>
+	<span class="fsB14 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b class="em3">만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB16</b> {font-size:2em !important;} /* 32/16 */</span>
+	<span class="fsB16 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB18</b> {font-size:2.125em !important;} /* 34/16 */</span>
+	<span class="fsB18 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b class="em3">만들자</b></span></span><br />
+
+<span class="vam"><b class="em4">fs34px</b> {font-size:34px !important;}</span>
+	<span class="fs34px vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b class="em0">만들자</b></span></span><br />
+<span class="vam"><b class="em4">fs35px</b> {font-size:35px !important;}</span>
+	<span class="fs35px vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b class="em0">만들자</b></span></span><br />
+<span class="vam"><b class="em4">fs36px</b> {font-size:36px !important;}</span>
+	<span class="fs36px vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b class="em0">만들자</b></span></span><br />
+
+<span class="vam"><b class="em">.fsB20</b> {font-size:2.25em !important;} /* 36/16 */</span>
+	<span class="fsB20 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b class="em4">만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB22</b> {font-size:2.375em !important;} /* 38/16 */</span>
+	<span class="fsB22 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB24</b> {font-size:2.5em !important;} /* 40/16 <em class="em8">&lt;h1&gt;</em> */</span>
+	<span class="fsB24 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB26</b> {font-size:2.625em !important;} /* 42/16 */</span>
+	<span class="fsB26 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b class="em3">만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB28</b> {font-size:2.75em !important;} /* 44/16 */</span>
+	<span class="fsB28 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB30</b> {font-size:2.875em !important;} /* 46/16 */</span>
+	<span class="fsB30 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b>만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB32</b> {font-size:3em !important;} /* 48/16 (h0) */</span>
+	<span class="fsB32 vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b class="em3">만들자</b></span></span><br />
+<span class="vam"><b class="em">.fsB34</b> {font-size:3.125em !important;} /* 50/16 */</span>
+	<span class="fsB34 vam vam"><span class="dpib">0~9 English <b>Qa</b> (國語) [한글] <b class="em3">만들자</b></span></span><br />
+</p>
+
+
+<hr />
+
+
+<h3 class="hb1 h3" id="ContextualBackgrounds_and_Colors">Contextual Backgrounds and Colors</h3>
+
+<p class="pd1em-rv bg-base"><b>class="bg-base"</b> 20190522. 추가.</p>
+<p class="pd1em-rv bg-default"><b>class="bg-default"</b> 본문 배경색과 같은 색상값으로 넣어주세요.</p>
+<p class="pd1em-rv bg-muted"><b>class="bg-muted"</b> 좋은 첫인상을 심어주기 위해 과도하게 노력하지 마십시오.</p>
+<p class="pd1em-rv bg-primary"><b>class="bg-primary"</b> 네트워킹 행사의 99%는 시간 낭비입니다.</p>
+<p class="pd15em-rv bg-secondary"><b>class="bg-secondary"</b> 최근에 이런 생각들을 해서 그런지, 많은 사람들이 이제는 사양길에 접어들고 있다는 트위터를 나는 오히려 더 좋고 도움이 많이 되는 서비스라고 느끼고 있다. 처음에 내가 트위터를 사용하기 시작했을때 왜 트윗을 140자로 제한했을까라는 불만이 많았다. 뭐 하나 쓰려고 해도 항상 140자의 제한을 받아서 내용을 다시 지우고, 줄이고, 또 쓰고 하길 몇 번이나 반복한 후에야 트윗을 날렸다. 페이스북은 내가 하고 싶은 말을 주저리 주저리 다 적을 수 있는데 트위터는 왜 이 제한을 풀지 않을까라는 불만을 트위터에서 일하는 친구들한테도 자주 표현했다.</p>
+<p class="pd1em-rv bg-success"><b>class="bg-success"</b> 저녁 행사가 시작되기 전에 체력을 비축해두세요.</p>
+<p class="pd1em-rv bg-warning"><b>class="bg-warning"</b> 형식적인 대화보다는 더욱 진솔하게 마음을 털어놓는 자세가 필요합니다.</p>
+<p class="pd1em-rv bg-danger"><b>class="bg-danger"</b> 단순하게 살아라. 현대인은 쓸데없는 절차와 일 때문에 얼마나 복잡한 삶을 살아가는가?</p>
+<p class="pd1em-rv bg-alert"><b>class="bg-alert"</b> 진정한 보호는 아이들이 자신이 처한 위험을 감당하도록 가르치는 것이지 온갖 위험을 피하도록 보호하는 게 아닙니다.</p>
+<p class="pd1em-rv bg-info"><b>class="bg-info"</b> 네트워킹의 핵심은 네트워킹하지 않는 것입니다.</p>
+
+<p class="pd1em-rv bgc-base cvf"><b>class="bgc-base cvf"</b> .button.base 과 색상을 동일하게 맞춥니다. 아래 "bgc-문맥배경값" 들도 버튼색과 맞춥니다.</p>
+<p class="pd1em-rv bgc-default cvf"><b>class="bgc-default cvf"</b> 본문 배경색과 전경색의 반전입니다.</p>
+<p class="pd1em-rv bgc-muted cvf"><b>class="bgc-muted cvf"</b> 좋은 첫인상을 심어주기 위해 과도하게 노력하지 마십시오.</p>
+<p class="pd1em-rv bgc-primary cvf"><b>class="bgc-primary cvf"</b> 네트워킹 행사의 99%는 시간 낭비입니다.</p>
+<p class="pd1em-rv bgc-secondary cvf"><b>class="bgc-secondary cvf"</b> (덕불고필유린) 덕은 외롭지 않고 반드시 이웃이 있다.</p>
+<p class="pd1em-rv bgc-success cvf"><b>class="bgc-success cvf"</b> 저녁 행사가 시작되기 전에 체력을 비축해두세요.</p>
+<p class="pd1em-rv bgc-warning cvf"><b>class="bgc-warning cvf"</b> 형식적인 대화보다는 더욱 진솔하게 마음을 털어놓는 자세가 필요합니다.</p>
+<p class="pd1em-rv bgc-danger cvf"><b>class="bgc-dange cvfr"</b> 단순하게 살아라. 현대인은 쓸데없는 절차와 일 때문에 얼마나 복잡한 삶을 살아가는가?</p>
+<p class="pd1em-rv bgc-alert cvf"><b>class="bgc-alert cvf"</b> 진정한 보호는 아이들이 자신이 처한 위험을 감당하도록 가르치는 것이지 온갖 위험을 피하도록 보호하는 게 아닙니다.</p>
+<p class="pd1em-rv bgc-alert1 cvf"><b>class="bgc-alert1 cvf"</b> 진정한 보호는 아이들이 자신이 처한 위험을 감당하도록 가르치는 것이지 온갖 위험을 피하도록 보호하는 게 아닙니다.</p>
+<p class="pd1em-rv bgc-info cvf"><b>class="bgc-info cvf"</b> 네트워킹의 핵심은 네트워킹하지 않는 것입니다.</p>
+<p class="pd1em-rv bgc-info1 text-info1"><b>class="bgc-info1 text-info1"</b> 네트워킹의 핵심은 네트워킹하지 않는 것입니다.</p>
+<p class="pd1em-rv bgc-info2 cvf"><b>class="bgc-info2 cvf"</b> 네트워킹의 핵심은 네트워킹하지 않는 것입니다.</p>
+
+<p class="text-base"><b>class="text-base"</b> 20190522. 추가.</p>
+<p class="text-default"><b>class="text-default"</b> 20150925. 추가.</p>
+<p class="text-muted"><b>class="text-muted"</b> 좋은 첫인상을 심어주기 위해 과도하게 노력하지 마십시오.</p>
+<p class="text-primary"><b>class="text-primary"</b> 네트워킹 행사의 99%는 시간 낭비입니다.</p>
+<p class="text-secondary"><b>class="text-secondary"</b>  20150925. 추가.</p>
+<p class="text-success"><b>class="text-success"</b> 저녁 행사가 시작되기 전에 체력을 비축해두세요.</p>
+<p class="text-warning"><b>class="text-warning"</b> 형식적인 대화보다는 더욱 진솔하게 마음을 털어놓는 자세가 필요합니다.</p>
+<p class="text-danger"><b>class="text-danger"</b> 140자로 간결하게 표현하지 못하는 내용들은 어쩌면 중요하거나 의미있는 내용이 아닐거 같다.</p>
+<p class="text-alert"><b>class="text-alert"</b>  20150925. 추가.</p>
+<p class="text-alert1"><b>class="text-alert1"</b>  20150925. 추가.</p>
+<p class="text-info"><b>class="text-info"</b> 네트워킹의 핵심은 네트워킹하지 않는 것입니다.</p>
+<p class="text-info1"><b>class="text-info1"</b> 네트워킹의 핵심은 네트워킹하지 않는 것입니다.</p>
+<p class="text-info2"><b>class="text-info2"</b> 네트워킹의 핵심은 네트워킹하지 않는 것입니다.</p>
+
+
+<hr /><!-- ◇◆◇◆◇◆◇◆◇◆ -->
+<h2 class="demo" id="LISTS">LISTS</h2>
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4">ul.bu</h4>
+
+<ul class="bu">
+<li>순서 없는 목록 항목 li (unordered list item) Item 1</li>
+<li>순서 없는 목록 항목 Item 2
+	<ul>
+	<li>순서 없는 목록 항목 Item 2.1
+		<ul>
+		<li>순서 없는 목록 항목 Item 2.1.1
+			<ul>
+			<li>순서 없는 목록 항목 Item 2.1.1.1 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다.</li>
+			<li>순서 없는 목록 항목 Item 2.1.1.2</li>
+			</ul>
+		</li>
+		<li>순서 없는 목록 항목 Item 2.1.2</li>
+		</ul>
+	</li>
+	<li>순서 없는 목록 항목 Item 2.2</li>
+	</ul>
+</li>
+<li>순서 없는 목록 항목 Item 3</li>
+</ul>
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4">ol.bo</h4>
+
+<ol class="bo0">
+<li>순서 있는 목록 항목 li (unordered list item) Item 1</li>
+<li>순서 있는 목록 항목 Item 2
+	<ul>
+	<li>순서 있는 목록 항목 Item 2.1
+		<ul>
+		<li>순서 있는 목록 항목 Item 2.1.1
+			<ul>
+			<li>순서 있는 목록 항목 Item 2.1.1.1 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다.</li>
+			<li>순서 있는 목록 항목 Item 2.1.1.2</li>
+			</ul>
+		</li>
+		<li>순서 있는 목록 항목 Item 2.1.2</li>
+		</ul>
+	</li>
+	<li>순서 있는 목록 항목 Item 2.2</li>
+	</ul>
+</li>
+<li>순서 있는 목록 항목 Item 3</li>
+</ol>
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4">dl.bu</h4>
+
+<dl class="bu">
+<dt>정의 목록 Definition Term</dt>
+<dd>
+<p>정의 목록 Definition Description. 웹 검색 엔진이나 사이트 관리에 유용한 정보로 메타 데이터를 지정하면 문서 헤더에 메타 태그가 삽입됩니다.</p>
+  <dl>
+  <dt>메타 태그 keyword</dt>
+  <dd>검색 엔진이 문서를 내용에 따라 분류하는 데 사용됩니다.</dd>
+  <dt>메타 태그 description</dt>
+  <dd>설명 메타 태그는 문서의 내용을 간단하게 설명하는 데 사용합니다.</dd>
+  </dl>
+</dd>
+<dt>HTML5 Quick Reference Guide</dt>
+<dd>
+	<ul class="bu bu3">
+	<li><a href="#?">section</a></li>
+	<li><a href="#?">article</a></li>
+	<li><a href="#?">nav</a></li>
+	<li><a href="#?">spot, account, aside</a></li>
+	<li><a href="#?">hgroup</a></li>
+	</ul>
+</dd>
+</dl>
+
+<hr />
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4">ol.bo1</h4>
+
+<ol class="bo1">
+<li>순서 있는 목록 항목 li (ordered list item) Item 1</li>
+<li>순서 있는 목록 항목 Item 2</li>
+<li>순서 있는 목록 항목 Item 3</li>
+<li>순서 있는 목록 항목 Item 4</li>
+<li>순서 있는 목록 항목 Item 5</li>
+<li>순서 있는 목록 항목 Item 6</li>
+<li>순서 있는 목록 항목 Item 7</li>
+<li>순서 있는 목록 항목 Item 8</li>
+<li>순서 있는 목록 항목 Item 9</li>
+<li>순서 있는 목록 항목 Item 10</li>
+<li>순서 있는 목록 항목 Item 11</li>
+<li>순서 있는 목록 항목 Item 12</li>
+<li>순서 있는 목록 항목 Item 13 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다. 다중 줄 고려한다 다중 줄 고려한다.</li>
+<li>순서 있는 목록 항목 Item 14
+	<ol>
+	<li>중첩 목록 고려 한다. 중첩 목록 고려 한다.</li>
+	<li>중첩 목록 고려 한다. 중첩 목록 고려 한다.</li>
+	</ol>
+</li>
+<li>순서 있는 목록 항목 Item 15
+	<ul>
+	<li>중첩 목록 고려 한다. 중첩 목록 고려 한다.</li>
+	<li>중첩 목록 고려 한다. 중첩 목록 고려 한다.</li>
+	</ul>
+</li>
+<li>순서 있는 목록 항목 Item 16
+	<ol class="bo1">
+	<li>중첩 목록 고려 한다. 중첩 목록 고려 한다.</li>
+	<li>중첩 목록 고려 한다. 중첩 목록 고려 한다.</li>
+	<li>순서 있는 목록 중첩 스타일 다르게 주려거든 CSS 추가하세요.</li>
+	</ol>
+</li>
+<li>순서 있는 목록 항목 Item 17
+	<ul class="bu">
+	<li>중첩 목록 고려 한다. 중첩 목록 고려 한다.</li>
+	<li>중첩 목록 고려 한다. 중첩 목록 고려 한다.
+		<ol class="bo1">
+		<li>중첩 목록 고려 한다. 중첩 목록 고려 한다.</li>
+		<li>중첩 목록 고려 한다. 중첩 목록 고려 한다.</li>
+		<li>순서 있는 목록 중첩 스타일 다르게 주려거든 CSS 추가하세요.</li>
+		</ol>
+	</li>
+	<li>중첩 목록 고려 한다. 중첩 목록 고려 한다.
+		<ul>
+		<li>중첩 목록 고려 한다. 중첩 목록 고려 한다.</li>
+		<li>중첩 목록 고려 한다. 중첩 목록 고려 한다.</li>
+		<li>순서 있는 목록 중첩 스타일 다르게 주려거든 CSS 추가하세요.</li>
+		</ul>
+	</li>
+	</ul>
+</li>
+<li>순서 있는 목록 항목 Item 18</li>
+<li>순서 있는 목록 항목 Item 19</li>
+<li>순서 있는 목록 항목 Item 20. 더 하려거든 CSS 추가하세요.</li>
+</ol>
+
+<hr />
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4">Paragraph</h4>
+
+<p class="bu">불릿을 넣은 문단입니다. 목록과 동일한 불릿을 사용합니다. p.bu
+불릿을 넣은 문단입니다. 목록과 동일한 불릿을 사용합니다. p.bu
+불릿을 넣은 문단입니다. 목록과 동일한 불릿을 사용합니다. p.bu
+불릿을 넣은 문단입니다. 목록과 동일한 불릿을 사용합니다. p.bu
+</p>
+<p class="bu">불릿을 넣은 문단입니다. 목록과 동일한 불릿을 사용합니다. p.bu</p>
+
+<hr /><!-- ◇◆◇◆◇◆◇◆◇◆ -->
+<h2 class="demo" id="TABLES">TABLES</h2>
+
+
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 id="Base">Base</h3>
+
+<table>
+<caption>table <small>: only pure html code</small></caption>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Age</th>
+<th scope="col">Sex</th>
+<th scope="col">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Dave Gamache</th>
+<td>26</td>
+<td>Male</td>
+<td>San Francisco</td>
+</tr>
+<tr>
+<th scope="row">Dwayne Johnson</th>
+<td>42</td>
+<td>Male</td>
+<td>Hayward</td>
+</tr>
+</tbody>
+</table>
+
+
+<hr /><!-- ◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆ -->
+
+
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">Basic</h3>
+
+<h4 class="hb1 h4 blind" id="table_t0">table.t0</h4>
+
+<table class="t0">
+<!-- <caption class="blind"><strong class="h1">★표제목</strong> <span class="blind">★표요약,구조,탐색방법</span></caption> -->
+<caption>
+	<strong class="h1 em">table.t0</strong>
+	<span>: 테이블. 선 없는 타입</span>
+</caption>
+<thead>
+<tr>
+<th scope="col">1열제목</th>
+<th scope="col">2열제목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1행제목</th>
+<td>1행2열</td>
+</tr>
+<tr>
+<th scope="row">2행제목</th>
+<td>2행2열</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4 class="hb1 h4 blind" id="table_t1">table.t1</h4>
+
+<table class="t1">
+<caption>
+	<strong class="h1 em">table.t1</strong>
+	<span>: 테이블. 가로선만 있는 타입</span>
+</caption>
+<thead>
+<tr>
+<th scope="col">1열제목</th>
+<th scope="col">2열제목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1행제목</th>
+<td>1행2열</td>
+</tr>
+<tr>
+<th scope="row">2행제목</th>
+<td>2행2열</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4 class="hb1 h4 blind" id="table_t01">table.t01</h4>
+
+<table class="t01">
+<caption>
+	<strong class="h1 em">table.t01</strong>
+	<span>: 테이블. 안쪽 가로선만 있는 타입</span>
+</caption>
+<thead>
+<tr>
+<th scope="col">1열제목</th>
+<th scope="col">2열제목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1행제목</th>
+<td>1행2열</td>
+</tr>
+<tr>
+<th scope="row">2행제목</th>
+<td>2행2열</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4 class="hb1 h4 blind" id="table_t2">table.t2</h4>
+
+<table class="t2">
+<caption>
+	<strong class="h1 em">table.t2</strong>
+	<span>: 테이블. 가로선과 세로선 모두 있는 타입</span>
+</caption>
+<thead>
+<tr>
+<th scope="col">1열제목</th>
+<th scope="col">2열제목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1행제목</th>
+<td>1행2열</td>
+</tr>
+<tr>
+<th scope="row">2행제목</th>
+<td>2행2열</td>
+</tr>
+</tbody>
+</table>
+
+<table class="t2">
+<caption class="blind">
+	<strong class="h1 em">table.t2</strong>
+	<span class="blind">: 테이블. 가로선과 세로선 모두 있는 타입 (caption class="blind")</span>
+</caption>
+<thead>
+<tr>
+<th scope="col">1열제목</th>
+<th scope="col">2열제목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1행제목</th>
+<td>1행2열</td>
+</tr>
+<tr>
+<th scope="row">2행제목</th>
+<td>2행2열</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4 class="hb1 h4 blind" id="table_t02">table.t02</h4>
+
+<table class="t02">
+<caption>
+	<strong class="h1 em">table.t02</strong>
+	<span>: 테이블. 안쪽 가로선과 세로선만 있는 타입</span>
+</caption>
+<thead>
+<tr>
+<th scope="col">1열제목</th>
+<th scope="col">2열제목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1행제목</th>
+<td>1행2열</td>
+</tr>
+<tr>
+<th scope="row">2행제목</th>
+<td>2행2열</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<br />
+<h4 class="hb1 h4 blind" id="table_t3">table.t3</h4>
+
+<table class="t3">
+<caption>
+	<span class="fl">
+		<strong class="h1 em">table.t3</strong>
+		<span class="em1">: 테이블. 맨위선 강조! 가로세로선 있으나 맨좌우선만 없는 타입.</span>
+	</span>
+	<span class="fr fwn tar">(단위:원)</span>
+</caption>
+<col style="width:10em;" /><col span="4" style="width:4em;" /><col />
+<thead>
+<tr>
+<th scope="col" rowspan="2">평가 대상</th>
+<th scope="col" colspan="4">평가 결과</th>
+<th scope="col" rowspan="2">비고</th>
+</tr>
+<tr>
+<th scope="col">우수</th>
+<th scope="col">향상</th>
+<th scope="col">노력</th>
+<th scope="col">부진</th>
+</tr>
+</thead>
+<tbody class="tdtac ttvat">
+<tr>
+<th scope="row">57개 사업</th>
+<td>14</td>
+<td>32</td>
+<td>8</td>
+<td>3</td>
+<td class="tal">
+	<b class="em">table.t3</b>
+	<strong class="h1">표제목</strong> caption
+	<span class="fwn"> : 글꼴 굵기 보통은 class="fwn" 하자.
+	(태그에 직접 caption span{font-weight: normal;} 금지!)</span>
+	<ul class="bu mgt0">
+	<li>열 너비 width 는 col 태그에 style 속성으로 지정하며 em 또는 % 값 사용한다.</li>
+	<li>표 자손 셀 정렬
+		<ul class="bu">
+		<li><code>&lt;table class="tttac"&gt;</code><br /> table 자손 th, td 모두 중앙정렬.</li>
+		<li><code>&lt;thead class="tttac ttvam"&gt;</code><br />  thead 자손 th, td 모두 중앙정렬.<br /> thead 자손 th, td 모두 세로중앙정렬.</li>
+		<li><code>&lt;tbody class="thtal tdtac ttvat"&gt;</code><br /> tbdoy 자손 th 모두 좌측정렬.<br />tbdoy 자손 td 모두 중앙정렬.<br /> tbdoy 자손 th, td 모두 세로상단정렬.</li>
+		<li><code>&lt;tr class="thtar"&gt;</code><br /> tr 자손 th 모두 우측정렬</li>
+		<li><ins><code>&lt;tbody class="tt3tac"&gt;</code><br /> tbody 자손 tr 의 3번째 자식만 중앙정렬.</ins></li>
+		</ul>
+	</li>
+	<li>셀(th, td)과 열(col)의 정렬은 각각의 셀(th, td)에 class="tal" "tac" "tar" 지정한다.</li>
+	</ul>
+
+	<table class="t2 w100 tttal">
+	<caption class="blind"><strong class="h1">★표제목</strong> <span class="blind">★표요약,구조,탐색방법</span></caption>
+	<thead>
+	<tr>
+	<th scope="col">Heading</th>
+	<th scope="col">Note</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<th scope="row">내부표<br />(자손표)</th>
+	<td>부모표 스타일과 독립적이어야 한다.</td>
+	</tr>
+	</tbody>
+	</table>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<div>
+※ 표 아래에 있는 텍스트 샘플입니다.
+</div>
+
+<table class="t3">
+<caption class="blind">
+	<strong class="h1 em">table.t3</strong>
+	<span class="blind">: 테이블. 가로선과 세로선 모두 있는 타입 (caption class="blind")</span>
+</caption>
+<thead>
+<tr>
+<th scope="col">1열제목</th>
+<th scope="col">2열제목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1행제목</th>
+<td>1행2열</td>
+</tr>
+<tr>
+<th scope="row">2행제목</th>
+<td>2행2열</td>
+</tr>
+</tbody>
+</table>
+
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">샘플. thead 없이 tbody 만 있는 table <small class="fwn">-- [IE8] border-top 문제 확인하자!</small></h3>
+
+<table class="t3 w100">
+<caption class="pd0">
+	<strong class="h1 blind">★표제목</strong>
+	<span class="summary1 blind">: ★표요약,구조,탐색방법</span>
+</caption>
+<tbody>
+<tr>
+<th scope="row">1행제목</th>
+<td>1행2열</td>
+</tr>
+<tr>
+<th scope="row">2행제목</th>
+<td>2행2열</td>
+</tr>
+<tr>
+<th scope="row">BugFix</th>
+<td>[IE8] thead 없이 tbody 만 있는 경우<br />
+(증상) &lt;caption class="blind"&gt;표제목&lt;/caption&gt; 하면 table{border-top:;} 적용한 선이 td 열 영역에서 사라진다.<br />
+(해법) <em>&lt;caption&gt;&lt;strong class="blind"&gt;표제목&lt;/strong&gt;&lt;/caption&gt;</em><br />
+단, caption 스타일에 따라 표와 이전 콘텐츠 사이에 간격이 발생한다.<br />
+예) caption{margin:0;padding:0 0 .666em 0;font-weight:bold;line-height:1.333;text-align:left;}
+</td>
+</tr>
+</tbody>
+</table>
+
+<br />
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<hr class="dotb" />
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">Advanced</h3>
+
+<h4 class="hb1 h4 blind" id="table_t4">table.t4</h4>
+
+<table class="t4">
+<caption>
+	<strong class="h1 em">table.t4</strong>
+	<span class="summary1">(테이블. 테두리만)</span>
+</caption>
+<thead>
+<tr>
+<th scope="col">1열제목</th>
+<th scope="col">2열제목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1행제목</th>
+<td>1행2열</td>
+</tr>
+<tr>
+<th scope="row">2행제목</th>
+<td>2행2열</td>
+</tr>
+</tbody>
+</table>
+
+<h4 class="hb1 h4 blind" id="table_t4_caption.table-h1">table.t4 caption.table-h1</h4>
+
+<table class="t4">
+<caption class="table-h1">
+	<strong class="h1 em">table.t4 caption.table-h1</strong>
+	<span class="summary1">(테이블. 테두리만 + 제목 꾸밈.)</span>
+</caption>
+<thead>
+<tr>
+<th scope="col">1열제목</th>
+<th scope="col">2열제목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1행제목</th>
+<td>1행2열</td>
+</tr>
+<tr>
+<th scope="row">2행제목</th>
+<td>2행2열</td>
+</tr>
+</tbody>
+</table>
+
+<h4 class="hb1 h4 blind" id="table_t5">table.t5</h4>
+
+<table class="t5">
+<caption>
+	<strong class="h1 em">table.t5</strong>
+	<span class="summary1">(테이블. 테두리만 + border-spacing)</span>
+</caption>
+<thead>
+<tr>
+<th scope="col">1열제목</th>
+<th scope="col">2열제목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1행제목</th>
+<td>1행2열</td>
+</tr>
+<tr>
+<th scope="row">2행제목</th>
+<td>2행2열</td>
+</tr>
+</tbody>
+</table>
+
+<h4 class="hb1 h4 blind" id="table_t6">table.t6</h4>
+
+<table class="t6">
+<caption>
+	<strong class="h1 em">table.t6</strong>
+	<span class="summary1">(border-spacing)</span>
+</caption>
+<thead>
+<tr>
+<th scope="col">1열제목</th>
+<th scope="col">2열제목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1행제목</th>
+<td>1행2열</td>
+</tr>
+<tr>
+<th scope="row">2행제목</th>
+<td>2행2열</td>
+</tr>
+</tbody>
+</table>
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<hr class="dotb" />
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">Examples</h3>
+
+
+<h4 class="hb1 h4 blind" id="table_t2_caption.table-h1">table.t2 caption.table-h1</h4>
+
+<table class="t2 w100 tttal ttvat">
+<caption class="table-h1 tac">
+	<strong class="h1">신청인 정보</strong>
+</caption>
+<colgroup><col style="width:7em;"><col>
+</colgroup><tbody>
+<tr>
+<th scope="row">이름</th>
+<td>정아무개</td>
+</tr>
+<tr>
+<th scope="row">전화번호</th>
+<td>000-0000-0000</td>
+</tr>
+<tr>
+<th scope="row">주소</th>
+<td>경남 김해시 삼정동 650-15</td>
+</tr>
+<tr>
+<th scope="row">비고</th>
+<td>일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십</td>
+</tr>
+</tbody>
+</table>
+
+
+<hr /><!-- ◇◆◇◆◇◆◇◆◇◆ -->
+<h2 class="demo" id="LINKS">LINKS</h2>
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<hr class="dotb" />
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">Basic</h3>
+
+
+<h4 class="hb1 h4" id="class-link">class="link1" ( .link1.t1ic1 .link1.ic1t1 .link1.ic1 )</h4>
+
+
+<div class="fr tar"><a href="?#★" class="link1 t1ic1"><span class="t1">우리마을 설정하기</span><i class="ic1 setup"></i></a></div>
+
+&nbsp;
+
+<a href="?#★" class="link1 ic1"><span class="blind">첨부파일 있음</span><i class="ic1 attatch"></i></a>
+
+&nbsp;
+
+<a href="?#★" class="link1 ic1t1"><i class="ic1 attatch"></i><span class="t1">filename.xls</span></a>
+
+&nbsp;
+
+<a href="?#★" class="link1 ic1t1"><i class="ic1 comment"></i><span class="t1"><span class="blind">댓글 수:</span><em class="em">3</em></span></a>
+
+&nbsp;
+
+<a href="?#★" class="link1"><i class="ic1 mapmarker"></i><span class="blind">지도 찾기</span></a>
+
+&nbsp;
+
+<a href="?#★" class="link1"><i class="ic1 password"></i><span class="blind">암호</span></a>
+
+&nbsp;
+
+<a href="?#★" class="link1"><i class="ic1 delete"></i><span class="blind">삭제</span></a>
+
+&nbsp;
+
+<span class="filename vam">가을사진01.jpg</span>
+<a href="?#★" class="link1" title="가을사진01.jpg 삭제"><i class="ic1 delete"></i><span class="blind">첨부파일 삭제</span></a>
+
+&nbsp;
+
+<a href="?#★" class="link1 ic1t1"><i class="ic1 notice"></i><span class="t1">공지</span></a>
+
+
+
+<hr /><!-- ◇◆◇◆◇◆◇◆◇◆ -->
+<h2 class="demo" id="BUTTONS">BUTTONS</h2>
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<hr class="dotb" />
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">Basic</h3>
+
+
+<h4 class="hb1 h4" id="withoutclass">without class <small class="fwn sup sub"> <strong class="h1">(base.css)</strong></small></h4>
+
+<a href="#">앵커 Anchor a element</a>
+<button>버튼요소 button element</button>
+<input type="button" value="인풋 버튼 input type=button" />
+<input type="submit" value="인풋 전송 input type=submit" />
+<input type="reset" value="인풋 리셋 input type=reset" />
+
+<hr />
+
+<h4 class="hb1 h4" id="classButton">class="button"</h4>
+
+<a href="#" class="button">앵커 Anchor a element</a>
+<button class="button">버튼요소 button element</button>
+<input type="button" value="인풋 버튼 input type=button" class="button" />
+<input type="submit" value="인풋 전송 input type=submit" class="button" />
+
+<hr />
+
+<h4 class="hb1 h4" id="ButtonSizing">Button Sizing</h4>
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5"><b class="em">a</b>.button</h5>
+<!-- Size Classes -->
+<a href="#" class="button xlarge">XLarge Button</a>
+<a href="#" class="button large">Large Button</a>
+<a href="#" class="button medium">Medium Button</a>
+<a href="#" class="button">Default Button</a>
+<a href="#" class="button semismall">Semismall Button</a>
+<a href="#" class="button small">Small Button</a>
+<a href="#" class="button tiny">Tiny Button</a>
+<a href="#" class="button block">Block Button</a>
+<a href="#" class="button expand">Expanded Button</a>
+<!-- Radius Classes -->
+<a href="#" class="button radius">Radius Button</a>
+<a href="#" class="button round">Round Button</a>
+<a href="#" class="button radius medium">Radius Medium Button</a>
+<a href="#" class="button round medium">Round Medium Button</a>
+<br /><br />
+<!-- Size Classes -->
+<a href="#" class="button xlarge">엑스라지 버튼</a>
+<a href="#" class="button large">라지 버튼</a>
+<a href="#" class="button medium">미디엄 버튼</a>
+<a href="#" class="button">디폴트 버튼</a>
+<a href="#" class="button semismall">세미스몰 버튼</a>
+<a href="#" class="button small">스몰 버튼</a>
+<a href="#" class="button tiny">티니 버튼</a>
+<a href="#" class="button block">블록 버튼</a>
+<a href="#" class="button expand">익스팬디드 버튼</a>
+<!-- Radius Classes -->
+<a href="#" class="button radius">라디우스 버튼</a>
+<a href="#" class="button round">라운드 버튼</a>
+<a href="#" class="button radius medium">라디우스 미디엄 버튼</a>
+<a href="#" class="button round medium">라운드 미디엄 버튼</a>
+<br /><br />
+
+
+<h6 class="hb1 h6">더 큰 버튼 만들기</h6>
+
+<!-- Size Classes -->
+<a href="#" class="button xlarge fsXL">xlarge fsXL 버튼</a>
+<a href="#" class="button xlarge fsXXL">xlarge fsXXL 버튼</a>
+<a href="#" class="button xlarge fsXXXL">xlarge fsXXXL 버튼</a>
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5"><b class="em">a</b>.button<em class="em">.wide</em></h5>
+<!-- Add wide -->
+<a href="#" class="button xlarge wide">XLarge Button</a>
+<a href="#" class="button large wide">Large Button</a>
+<a href="#" class="button medium wide">Medium Button</a>
+<a href="#" class="button wide">Default Button</a>
+<a href="#" class="button semismall wide">Semismall Button</a>
+<a href="#" class="button small wide">Small Button</a>
+<a href="#" class="button tiny wide">Tiny Button</a>
+<a href="#" class="button block wide">Block Button</a>
+<a href="#" class="button expand wide">Expanded Button</a>
+<a href="#" class="button radius wide">Radius Button</a>
+<a href="#" class="button round wide">Round Button</a>
+<a href="#" class="button radius medium wide">Radius Medium Button</a>
+<a href="#" class="button round medium wide">Round Medium Button</a>
+<br /><br />
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5"><b class="em">button</b>.button</h5>
+<!-- Size Classes -->
+<button class="button xlarge">XLarge Button</button>
+<button class="button large">Large Button</button>
+<button class="button medium">Medium Button</button>
+<button class="button">Default Button</button>
+<button class="button semismall">Semismall Button</button>
+<button class="button small">Small Button</button>
+<button class="button tiny">Tiny Button</button>
+<button class="button block">Block Button</button>
+<button class="button expand">Expanded Button</button>
+<!-- Radius Classes -->
+<button class="button radius">Radius Button</button>
+<button class="button round">Round Button</button>
+<button class="button radius medium">Radius Medium Button</button>
+<button class="button round medium">Round Medium Button</button>
+<button class="button bdrd0">Radius0(bdrd0) Button</button>
+
+<hr />
+
+<h4 class="hb1 h4" id="ButtonColors">Button Colors</h4>
+
+<!-- Color Classes -->
+<a href="#" class="button">버튼 Button</a>
+<a href="#" class="button base">Base Button</a>
+<a href="#" class="button default">Default Button</a>
+<a href="#" class="button muted">Muted Button</a>
+<a href="#" class="button submit">Submit Button</a>
+<a href="#" class="button search">Search Button</a>
+<a href="#" class="button primary">Primary Button</a>
+<a href="#" class="button primary1">Primary1 Button</a>
+<a href="#" class="button secondary">Secondary Button</a>
+<a href="#" class="button success">Success Button</a>
+<a href="#" class="button warning">Warning Button</a>
+<a href="#" class="button danger">Danger Button</a>
+<a href="#" class="button alert">Alert Button</a>
+<a href="#" class="button alert1">Alert1 Button</a>
+<a href="#" class="button info">Info Button</a>
+<a href="#" class="button info1">Info1 Button</a>
+<a href="#" class="button info2">Info2 Button</a>
+
+<br />
+<strong class="hb1 h5">Disabled Button</strong>
+
+<!-- <a tabindex="0" class="button disabled">버튼 Button</a> -->
+<a class="button disabled">버튼 Button</a>
+<a class="button base disabled">Base Button</a>
+<a class="button default disabled">Default Button</a>
+<a class="button muted disabled">Muted Button</a>
+<a class="button submit disabled">Submit Button</a>
+<a class="button search disabled">Search Button</a>
+<a class="button primary disabled">Primary Button</a>
+<a class="button primary1 disabled">Primary1 Button</a>
+<a class="button secondary disabled">Secondary Button</a>
+<a class="button success disabled">Success Button</a>
+<a class="button warning disabled">Warning Button</a>
+<a class="button danger disabled">Danger Button</a>
+<a class="button alert disabled">Alert Button</a>
+<a class="button alert1 disabled">Alert1 Button</a>
+<a class="button info disabled">Info Button</a>
+<a class="button info1 disabled">Info1 Button</a>
+<a class="button info2 disabled">info2 Button</a>
+
+
+<br />
+<strong class="hb1 h5">Hollow Button</strong>
+<a href="#" class="button hollow">Hollow Button</a>
+<a href="#" class="button base hollow text-base">Base Hollow Button</a>
+<a href="#" class="button default hollow text-default">Default Hollow Button</a>
+<a href="#" class="button muted hollow text-muted">Muted Hollow Button</a>
+<a href="#" class="button submit hollow text-submit">Submit Hollow Button</a>
+<a href="#" class="button search hollow text-search">Search Hollow Button</a>
+<a href="#" class="button primary hollow text-primary">Primary Hollow Button</a>
+<a href="#" class="button primary1 hollow text-primary1">Primary1 Hollow Button</a>
+<a href="#" class="button secondary hollow text-secondary">Secondary Hollow Button</a>
+<a href="#" class="button success hollow text-success">Success Hollow Button</a>
+<a href="#" class="button warning hollow text-warning">Warning Hollow Button</a>
+<a href="#" class="button danger hollow text-danger">Danger Hollow Button</a>
+<a href="#" class="button alert hollow text-alert">Alert Hollow Button</a>
+<a href="#" class="button alert1 hollow text-alert1">Alert1 Hollow Button</a>
+<a href="#" class="button info hollow text-info">Info Hollow Button</a>
+<a href="#" class="button info1 hollow text-info1">Info1 Hollow Button</a>
+<a href="#" class="button info2 hollow text-info2">Info2 Hollow Button</a>
+
+
+<br />
+<strong class="hb1 h5">Emboss Button</strong>
+<a href="#" class="button emboss">Emboss Button</a>
+<a href="#" class="button base emboss">Base Emboss Button</a>
+<a href="#" class="button default emboss">Default Emboss Button</a>
+<a href="#" class="button muted emboss">Muted Emboss Button</a>
+<a href="#" class="button submit emboss">Submit Emboss Button</a>
+<a href="#" class="button search emboss">Search Emboss Button</a>
+<a href="#" class="button primary emboss">Primary Emboss Button</a>
+<a href="#" class="button primary1 emboss">Primary1 Emboss Button</a>
+<a href="#" class="button secondary emboss">Secondary Emboss Button</a>
+<a href="#" class="button success emboss">Success Emboss Button</a>
+<a href="#" class="button warning emboss">Warning Emboss Button</a>
+<a href="#" class="button danger emboss">Danger Emboss Button</a>
+<a href="#" class="button alert emboss">Alert Emboss Button</a>
+<a href="#" class="button alert1 emboss">Alert1 Emboss Button</a>
+<a href="#" class="button info emboss">Info Emboss Button</a>
+<a href="#" class="button info1 emboss">Info1 Emboss Button</a>
+<a href="#" class="button info2 emboss">Info2 Emboss Button</a>
+
+
+<br />
+<strong class="hb1 h5">Gray Button</strong>
+
+<a href="#" class="button white">white Button</a>
+<a href="#" class="button black">black Button</a>
+<a href="#" class="button gray1">gray1 Button</a>
+<a href="#" class="button gray2">gray2 Button</a>
+<a href="#" class="button gray3">gray3 Button</a>
+<a href="#" class="button gray4">gray4 Button</a>
+<a href="#" class="button gray5">gray5 Button</a>
+<a href="#" class="button gray6">gray6 Button</a>
+<a href="#" class="button gray">gray Button (=gray7)</a>
+<a href="#" class="button gray7">gray7 Button (=gray)</a>
+<a href="#" class="button gray8">gray8 Button</a>
+<a href="#" class="button gray9">gray9 Button</a>
+<a href="#" class="button graya">graya Button</a>
+<a href="#" class="button grayb">grayb Button</a>
+<a href="#" class="button grayc">grayc Button</a>
+<a href="#" class="button grayd">grayd Button</a>
+<a href="#" class="button graye">graye Button</a>
+<a href="#" class="button grayf7">grayf7 Button</a>
+<a href="#" class="button grayfc">grayfc Button</a>
+<br />
+<a href="#" class="button slategray123">slategray123 Button</a>
+<a href="#" class="button slategray234">slategray234 Button</a>
+<a href="#" class="button slategray345">slategray345 Button</a>
+<a href="#" class="button slategray456">slategray456 Button</a>
+<a href="#" class="button slategray567">slategray567 Button</a>
+<a href="#" class="button slategray">slategray Button (=slategray579)</a>
+<a href="#" class="button slategray579">slategray579 Button  (=slategray)</a>
+<a href="#" class="button slategray678">slategray678 Button</a>
+<a href="#" class="button slategray789">slategray789 Button</a>
+<a href="#" class="button slategray89a">slategray89a Button</a>
+<a href="#" class="button slategray9ab">slategray9ab Button</a>
+<a href="#" class="button slategrayabc">slategrayabc Button</a>
+<a href="#" class="button slategraybcd">slategraybcd Button</a>
+<a href="#" class="button slategraycde">slategraycde Button</a>
+<a href="#" class="button slategraydef">slategraydef Button</a>
+<a href="#" class="button slategraye">slategraye Button</a>
+<a href="#" class="button slategrayf">slategrayf Button</a>
+
+
+
+<hr /><!-- ◇◆◇◆◇◆◇◆◇◆ -->
+<h2 class="demo" id="FORMS">FORMS</h2>
+
+<p>
+	아래 예제 코드는 간단하게 표현되어 있습니다. 실제 서비스할 코드에는 접근성을 위한 코드를 추가해야합니다.<br />
+	<code class="em">label for="아이디"</code> 와 폼콘트롤의 <code class="em">id="아이디"</code> 를 일치 시키거나, 폼콘트롤에 <code class="em">title=""</code> 속성으로 라벨링을 대체할 수 있습니다.<br />
+	보조공학으로서 향상된 방법인 aria-label, aria-labelledby 등은.. 요구사항이 있다면 적용바랍니다.
+</p>
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<hr class="dotb" />
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">Basic</h3>
+
+
+<h4 class="hb1 h4" id="FormsButtons">Forms + Buttons</h4>
+
+
+<!-- form -->
+<form name="f0" id="f0" method="post" action="?" onsubmit="return doSubmit_f0Form(this);">
+<fieldset><legend class="blind"><strong class="h1">★그룹명</strong></legend>
+
+	<label for="exampleTextInput">Your Name</label>
+	<input type="text" placeholder="Input text" id="exampleTextInput" />
+	<button type="button" class="button">Button element</button>
+	<label for="exampleSelect" class="blind">Your Select</label>
+	<select id="exampleSelect" title="Select Option1">
+		<option value="1">Questions</option>
+		<option value="2">Admiration</option>
+		<option value="3">Can I get your number?</option>
+	</select>
+	<span class="vam">~</span>
+	<select id="exampleSelect0" title="Select Option2">
+		<option value="1">Questions</option>
+		<option value="2">Admiration</option>
+		<option value="3">Can I get your number?</option>
+	</select>
+
+	<span class="dpib mgr05em">
+		<input type="radio" name="★0radio1e" id="★0radio1e0" value="" /><label for="★0radio1e0">미선택</label>
+	</span>
+	<span class="dpib mgr05em">
+		<input type="radio" name="★0radio1e" id="★0radio1e1" value="" checked="checked" /><label for="★0radio1e1">선택됨</label>
+	</span>
+	<span class="dpib mgr05em">
+		<input type="radio" name="★0radio1e1" id="★0radio1e1-0" value="" disabled="disabled" /><label for="★0radio1e1-0">미선택 (disabled)</label>
+	</span>
+	<span class="dpib mgr05em">
+		<input type="radio" name="★0radio1e1" id="★0radio1e1-1" value="" checked="checked" disabled="disabled" /><label for="★0radio1e1-1">선택됨 (disabled)</label>
+	</span>
+
+	<span class="dpib mgr05em">
+		<input type="checkbox" name="★0check1e" id="★0check1e0" value="" /><label for="★0check1e0">미선택</label>
+	</span>
+	<span class="dpib mgr05em">
+		<input type="checkbox" name="★0check1e" id="★0check1e1" value="" checked="checked" /><label for="★0check1e1">선택됨</label>
+	</span>
+	<span class="dpib mgr05em">
+		<input type="checkbox" name="★0check1e" id="★0check1e2" value="" disabled="disabled" /><label for="★0check1e2">미선택 (disabled)</label>
+	</span>
+	<span class="dpib mgr05em">
+		<input type="checkbox" name="★0check1e" id="★0check1e3" value="" checked="checked" disabled="disabled" /><label for="★0check1e3">선택됨 (disabled)</label>
+	</span>
+
+	<input type="file" id="examplePasswordInput" title="첨부파일" /><!-- Attribute placeholder is only allowed when the input type is email, number, password, search, tel, text, or url. -->
+	<input type="password" placeholder="Input password" id="examplePasswordInput0" title="암호" />
+	<input type="email" placeholder="Input email" id="exampleEmailInput0" title="이메일" />
+	<input type="number" placeholder="Input number" id="exampleNumberInput" title="숫자" />
+	<input type="search" placeholder="Input search" id="exampleSearchInput" title="검색" />
+	<input type="tel" placeholder="Input tel" id="exampleTelInput" title="전화" />
+	<input type="url" placeholder="Input url" id="exampleURIInput" title="URL" />
+
+</fieldset>
+</form>
+<!-- /form -->
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5" id="fb1control1"><code class="em8">.fb1control1</code> (좌정렬 스타일)</h5>
+
+
+<!-- fb1control1 -->
+<div class="fb1control1">
+
+	<span class="item">
+		<input type="radio" name="★0radio2e" id="★0radio2e0" value="" /><label for="★0radio2e0">미선택</label>
+	</span>
+	<span class="item">
+		<input type="radio" name="★0radio2e" id="★0radio2e1" value="" checked="checked" /><label for="★0radio2e1">선택됨</label>
+	</span>
+	<span class="item">
+		<input type="radio" name="★0radio2e1" id="★0radio2e1-0" value="" disabled="disabled" /><label for="★0radio2e1-0">미선택 (disabled)</label>
+	</span>
+	<span class="item">
+		<input type="radio" name="★0radio2e1" id="★0radio2e1-1" value="" checked="checked" disabled="disabled" /><label for="★0radio2e1-1">선택됨 (disabled)</label>
+	</span>
+
+	<span class="item">
+		<input type="checkbox" name="★0check2e" id="★0check2e0" value="" /><label for="★0check2e0">미선택</label>
+	</span>
+	<span class="item">
+		<input type="checkbox" name="★0check2e" id="★0check2e1" value="" checked="checked" /><label for="★0check2e1">선택됨</label>
+	</span>
+	<span class="item">
+		<input type="checkbox" name="★0check2e" id="★0check2e2" value="" disabled="disabled" /><label for="★0check2e2">미선택 (disabled)</label>
+	</span>
+	<span class="item">
+		<input type="checkbox" name="★0check2e" id="★0check2e3" value="" checked="checked" disabled="disabled" /><label for="★0check2e3">선택됨 (disabled)</label>
+	</span>
+
+	<span class="item">
+		<input type="radio" name="★0radio2e2" id="★0radio2e2-0" value="" />
+		<label for="★0radio2e2-0">
+			일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십
+		</label>
+	</span>
+	<span class="item">
+		<input type="radio" name="★0radio2e2" id="★0radio2e2-1" value="" checked="checked" />
+		<label for="★0radio2e2-1">
+			일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십
+		</label>
+	</span>
+
+	<span class="item">
+		<input type="radio" name="★0radio2e2" id="★0radio2e2-2" value="" />
+		<label for="★0radio2e2-2">
+			일이삼사오륙칠팔구십
+		</label>
+	</span>
+	<span class="item">
+		<input type="radio" name="★0radio2e2" id="★0radio2e2-3" value="" />
+		<label for="★0radio2e2-3">
+			일이삼사오륙칠팔구십
+		</label>
+	</span>
+	<span class="dpib vam">
+		(
+		<label for="★0text2e0" class="dpib">Your Name</label>
+		<input type="text" placeholder="Input text" id="★0text2e0" class="fn" />
+		)
+	</span>
+
+	<span class="item">
+		<input type="checkbox" name="★0check2e" id="★0check2e10" value="" />
+		<label for="★0check2e10">
+			일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십
+		</label>
+	</span>
+	<span class="item">
+		<input type="checkbox" name="★0check2e" id="★0check2e11" value="" checked="checked" />
+		<label for="★0check2e11">
+			일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십
+		</label>
+	</span>
+
+</div>
+<!-- /fb1control1 -->
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5"><code class="em8">.fb1control1.type2</code> (좌정렬 스타일 <em class="em9">디자인 유형2</em>)</h5>
+
+
+<!-- fb1control1 -->
+<div class="fb1control1 type2">
+
+	<span class="item">
+		<input type="radio" name="★0radio3e" id="★0radio3e0" value="" /><label for="★0radio3e0">미선택</label>
+	</span>
+	<span class="item">
+		<input type="radio" name="★0radio3e" id="★0radio3e1" value="" checked="checked" /><label for="★0radio3e1">선택됨</label>
+	</span>
+	<span class="item">
+		<input type="radio" name="★0radio3e1" id="★0radio3e1-0" value="" disabled="disabled" /><label for="★0radio3e1-0">미선택 (disabled)</label>
+	</span>
+	<span class="item">
+		<input type="radio" name="★0radio3e1" id="★0radio3e1-1" value="" checked="checked" disabled="disabled" /><label for="★0radio3e1-1">선택됨 (disabled)</label>
+	</span>
+
+	<span class="item">
+		<input type="checkbox" name="★0check3e" id="★0check3e0" value="" /><label for="★0check3e0">미선택</label>
+	</span>
+	<span class="item">
+		<input type="checkbox" name="★0check3e" id="★0check3e1" value="" checked="checked" /><label for="★0check3e1">선택됨</label>
+	</span>
+	<span class="item">
+		<input type="checkbox" name="★0check3e" id="★0check3e2" value="" disabled="disabled" /><label for="★0check3e2">미선택 (disabled)</label>
+	</span>
+	<span class="item">
+		<input type="checkbox" name="★0check3e" id="★0check3e3" value="" checked="checked" disabled="disabled" /><label for="★0check3e3">선택됨 (disabled)</label>
+	</span>
+
+	<span class="item">
+		<input type="radio" name="★0radio3e2" id="★0radio3e2-0" value="" />
+		<label for="★0radio3e2-0">
+			일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십
+		</label>
+	</span>
+	<span class="item">
+		<input type="radio" name="★0radio3e2" id="★0radio3e2-1" value="" checked="checked" />
+		<label for="★0radio3e2-1">
+			일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십
+		</label>
+	</span>
+
+	<span class="item">
+		<input type="radio" name="★0radio3e2" id="★0radio3e2-2" value="" />
+		<label for="★0radio3e2-2">
+			일이삼사오륙칠팔구십
+		</label>
+	</span>
+	<span class="item">
+		<input type="radio" name="★0radio3e2" id="★0radio3e2-3" value="" />
+		<label for="★0radio3e2-3">
+			일이삼사오륙칠팔구십
+		</label>
+	</span>
+	<span class="dpib vam">
+		(
+		<label for="★0text3e0" class="dpib">Your Name</label>
+		<input type="text" placeholder="Input text" id="★0text3e0" class="fn" />
+		)
+	</span>
+
+	<span class="item">
+		<input type="checkbox" name="★0check3e" id="★0check3e10" value="" />
+		<label for="★0check3e10">
+			일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십
+		</label>
+	</span>
+	<span class="item">
+		<input type="checkbox" name="★0check3e" id="★0check3e11" value="" checked="checked" />
+		<label for="★0check3e11">
+			일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십
+		</label>
+	</span>
+
+</div>
+<!-- /fb1control1 -->
+
+
+<!-- ◇◆ -->
+<h6 class="hb1 h6"><code class="em8">.fb1control1.type2.tac</code> (중앙정렬)</h6>
+
+
+<!-- fb1control1 -->
+<div class="fb1control1 type2 tac">
+
+	<span class="item">
+		<input type="radio" name="★0radio4e" id="★0radio4e0" value="" /><label for="★0radio4e0">미선택</label>
+	</span>
+	<span class="item">
+		<input type="radio" name="★0radio4e" id="★0radio4e1" value="" checked="checked" /><label for="★0radio4e1">선택됨</label>
+	</span>
+	<span class="item">
+		<input type="radio" name="★0radio4e1" id="★0radio4e1-0" value="" disabled="disabled" /><label for="★0radio4e1-0">미선택 (disabled)</label>
+	</span>
+	<span class="item">
+		<input type="radio" name="★0radio4e1" id="★0radio4e1-1" value="" checked="checked" disabled="disabled" /><label for="★0radio4e1-1">선택됨 (disabled)</label>
+	</span>
+
+	<span class="item">
+		<input type="checkbox" name="★0check4e" id="★0check4e0" value="" /><label for="★0check4e0">미선택</label>
+	</span>
+	<span class="item">
+		<input type="checkbox" name="★0check4e" id="★0check4e1" value="" checked="checked" /><label for="★0check4e1">선택됨</label>
+	</span>
+	<span class="item">
+		<input type="checkbox" name="★0check4e" id="★0check4e2" value="" disabled="disabled" /><label for="★0check4e2">미선택 (disabled)</label>
+	</span>
+	<span class="item">
+		<input type="checkbox" name="★0check4e" id="★0check4e3" value="" checked="checked" disabled="disabled" /><label for="★0check4e3">선택됨 (disabled)</label>
+	</span>
+
+</div>
+<!-- /fb1control1 -->
+
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4">Skeleton ) Forms )))) @m</h4>
+
+<!-- form -->
+<form>
+<fieldset><legend class="blind"><strong class="h1">★그룹명</strong></legend>
+
+<!-- grid column demo -->
+<div class="clearfix">
+	<div class="fl" style="width:48.5%;">
+		<label for="exampleEmailInput">Your email</label>
+		<input class="w100" type="email" placeholder="test@mailbox.com" id="exampleEmailInput" />
+	</div>
+	<div class="fr" style="width:48.5%;">
+		<label for="exampleRecipientInput">Reason for contacting</label>
+		<select class="w100" id="exampleRecipientInput">
+		<option value="Option 1">Questions</option>
+		<option value="Option 2">Admiration</option>
+		<option value="Option 3">Can I get your number?</option>
+		</select>
+	</div>
+</div>
+<!-- /grid column demo -->
+
+<label for="exampleMessage">Message</label>
+<textarea class="w100 border-box" placeholder="Hi Dave …" id="exampleMessage"></textarea>
+<div class="fr">
+	<input type="checkbox" id="exampleCheckboxInput" />
+	<label for="exampleCheckboxInput">Send a copy to yourself</label>
+</div>
+
+<input class="button primary fl" type="submit" value="Submit" />
+
+</fieldset>
+</form>
+<!-- /form -->
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4">Bootstrap ) Forms ) Basic example )))) @m</h4>
+
+<form class="writeform1">
+	<div class="form-group">
+		<label for="exampleInputEmail1">Email address</label>
+		<input type="email" id="exampleInputEmail1" placeholder="Email" class="w100" />
+	</div>
+	<div class="form-group">
+		<label for="exampleInputPassword1">Password</label>
+		<input type="password" id="exampleInputPassword1" placeholder="Password" class="w100" />
+	</div>
+	<div class="form-group">
+		<label for="exampleInputFile">File input</label>
+		<input type="file" id="exampleInputFile" class="w100" />
+		<p class="explain form-text1">Example block-level help text here.</p>
+	</div>
+	<div class="form-group">
+		<label>
+			<input type="checkbox" /> Check me out
+		</label>
+	</div>
+	<button type="submit" class="button submit">Submit</button>
+</form>
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4">Foundation ) Forms )))) @m</h4>
+
+<form class="writeform1">
+<fieldset>
+	<div class="even-grid">
+		<div class="large-12 column">
+			<label>Input Label
+				<input type="text" placeholder=".large-12.column" class="w100" />
+			</label>
+		</div>
+	</div>
+	<div class="even-grid">
+		<div class="large-4 column">
+			<label>Input Label
+				<input type="text" placeholder=".large-4.column" class="w100" />
+			</label>
+		</div>
+		<div class="large-4 column">
+			<label>Input Label
+				<input type="text" placeholder=".large-4.column" class="w100" />
+			</label>
+		</div>
+		<div class="large-4 column">
+			<label for="★0text1e0">Input Label</label>
+			<div class="even-grid collapse">
+				<div class="small-9 column">
+					<input type="text" id="★0text1e0" placeholder=".small-9.column" class="w100" />
+				</div>
+				<div class="small-3 column">
+					<span class="postfix">.com</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="even-grid">
+		<div class="large-12 column">
+			<label>Select Box
+				<select class="w100">
+					<option value="husker">Husker</option>
+					<option value="starbuck">Starbuck</option>
+					<option value="hotdog">Hot Dog</option>
+					<option value="apollo">Apollo</option>
+				</select>
+			</label>
+		</div>
+	</div>
+	<div class="even-grid">
+		<div class="large-6 column">
+			<label class="dpb">Choose Your Favorite</label>
+			<div class="mgl-1em">
+				<span class="dpib mgl1em"><input type="radio" name="pokemon" value="Red" id="pokemonRed" /><label for="pokemonRed">Red</label></span>
+				<span class="dpib mgl1em"><input type="radio" name="pokemon" value="Blue" id="pokemonBlue" /><label for="pokemonBlue">Blue</label></span>
+				<span class="dpib mgl1em"><input type="radio" name="pokemon" value="초록" id="pokemonGreen" /><label for="pokemonGreen">빨강</label></span>
+				<span class="dpib mgl1em"><input type="radio" name="pokemon" value="검정" id="pokemonBlack" /><label for="pokemonBlack">파랑</label></span>
+			</div>
+		</div>
+		<div class="large-6 column">
+			<label class="dpb">Check these out</label>
+			<div class="mgl-1em">
+				<span class="dpib mgl1em"><input type="checkbox" name="theseout" id="theseout1" /><label for="theseout1">Checkbox 1</label></span>
+				<span class="dpib mgl1em"><input type="checkbox" name="theseout" id="theseout2" /><label for="theseout2">Checkbox 2</label></span>
+				<span class="dpib mgl1em"><input type="checkbox" name="theseout" id="theseout3" /><label for="theseout3">체크박스 3</label></span>
+				<span class="dpib mgl1em"><input type="checkbox" name="theseout" id="theseout4" /><label for="theseout4">체크박스 4</label></span>
+			</div>
+		</div>
+	</div>
+	<div class="even-grid">
+		<div class="large-12 column">
+			<label>Textarea Label
+				<textarea placeholder=".small-12.column" class="w100"></textarea>
+			</label>
+		</div>
+	</div>
+</fieldset>
+</form>
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4">좌우 중앙 고정폭 가변폭</h4>
+<p>
+	<em class="em">))) .postfix .prefix .midfix 스타일 버림. 필요 시 스타일 재정의.</em>
+</p>
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5"><a href="./grid12.jsp" target="_blank" rel="noopener" title="새 창" class="a1">.even-grid</a> .form-static1 .postfix .prefix .midfix</h5>
+
+
+<div class="even-grid collapse">
+	<div class="small-10 column">
+		<input type="text" placeholder=".small-10.column" class="w100" title="★라벨" />
+	</div>
+	<div class="small-2 column">
+		<span class="form-static1">.com</span>
+	</div>
+</div>
+
+<div class="even-grid collapse">
+	<div class="small-10 column">
+		<input type="text" placeholder=".small-10.column" class="w100" title="★라벨" />
+	</div>
+	<div class="small-2 column">
+		<span class="postfix">.com</span>
+	</div>
+</div>
+
+<div class="even-grid collapse">
+	<div class="small-2 column">
+		<span class="prefix">http://</span>
+	</div>
+	<div class="small-10 column">
+		<input type="text" placeholder=".small-10.column" class="w100" title="★라벨" />
+	</div>
+</div>
+
+<div class="even-grid collapse">
+	<div class="small-2 column">
+		<span class="prefix">http://</span>
+	</div>
+	<div class="small-8 column">
+		<input type="text" placeholder=".small-8.column" class="w100" title="★라벨" />
+	</div>
+	<div class="small-2 column">
+		<span class="postfix">.com</span>
+	</div>
+</div>
+
+<div class="even-grid collapse">
+	<div class="small-5 column">
+		<input type="text" placeholder=".small-5.column" class="w100" title="★라벨" />
+	</div>
+	<div class="small-2 column">
+		<span class="midfix">//</span>
+	</div>
+	<div class="small-5 column">
+		<input type="text" placeholder=".small-5.column" class="w100" title="★라벨" />
+	</div>
+</div>
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5"><a href="#form-group">.form-group</a> .form-static1 .postfix .prefix .midfix</h5>
+
+<div class="form-group auto1fixed1" style="padding:0 3em 0 0;">
+	<div class="auto1">
+		<input type="text" placeholder="input text" class="w100" title="도메인 (최상위 도메인 .com 제외)" />
+	</div>
+	<div class="fixed1" style="width:3em;margin:0 -3em 0 0;">
+		<span class="form-static1">.com</span>
+	</div>
+</div>
+
+<div class="form-group auto1fixed1" style="padding:0 3em 0 0;">
+	<div class="auto1">
+		<input type="text" placeholder="input text" class="w100" title="도메인 (최상위 도메인 .com 제외)" />
+	</div>
+	<div class="fixed1" style="width:3em;margin:0 -3em 0 0;">
+		<span class="postfix">.com</span>
+	</div>
+</div>
+
+<div class="form-group fixed1auto1" style="padding:0 0 0 4em;">
+	<div class="fixed1" style="width:4em;margin:0 0 0 -4em;">
+		<span class="prefix">http://</span>
+	</div>
+	<div class="auto1">
+		<input type="text" placeholder="input text" class="w100" title="도메인" />
+	</div>
+</div>
+
+<div class="form-group fixed1auto1fixed1" style="padding:0 3em 0 4em;">
+	<div class="fixed1" style="width:4em;margin:0 0 0 -4em;">
+		<span class="prefix">http://</span>
+	</div>
+	<div class="auto1">
+		<input type="text" placeholder="input text" class="w100" title="도메인 (최상위 도메인 .com 제외)" />
+	</div>
+	<div class="fixed1" style="width:3em;margin:0 -3em 0 0;">
+		<span class="postfix">.com</span>
+	</div>
+</div>
+
+<div class="form-group auto1fixed1auto1">
+	<div class="auto1">
+		<input type="text" placeholder="input text" class="w100" title="★라벨" />
+	</div>
+	<div class="fixed1">
+		<span class="midfix">//</span>
+	</div>
+	<div class="auto1">
+		<input type="text" placeholder="input text" class="w100" title="★라벨" />
+	</div>
+</div>
+
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<hr class="dotb" />
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">Advanced</h3>
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4" id="LongText">Long Text with radio, checkbox</h4>
+
+<div class="item">
+	<input type="checkbox" name="lineCheck" id="lineCheck1" />
+	<label for="lineCheck1" class="form-text1">일이삼사오륙칠팔구십</label>
+</div>
+<div class="item">
+	<input type="checkbox" name="lineCheck" id="lineCheck2" />
+	<label for="lineCheck2" class="form-text1">일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십</label>
+</div>
+<div class="item">
+	<input type="checkbox" name="lineCheck" id="lineCheck3" />
+	<label for="lineCheck3" class="form-text1">일이삼사오륙칠팔구십</label>
+</div>
+
+<p>
+	<em class="em1">텍스트가 길면 폼콘트롤과 분리되어 줄바꿈이 일어난다. )) 아래 해법을 사용해야 한다.</em>
+</p>
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5">좌정렬</h5>
+
+<code class="xmp">
+"clearfix" "fl mgr0375em" "dpb ofh"
+</code>
+
+<div class="item clearfix">
+	<input type="checkbox" name="lineCheck" id="lineCheck2a1" class="fl mgr0375em" />
+	<label for="lineCheck2a1" class="form-text1 dpb ofh">일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십</label>
+</div>
+
+<p>
+	<a href="#fb1control1"><strong class="em8">))) 좌정렬 해법 적용한 라이브러리 스타일 .fb1control1</strong></a>
+</p>
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5">우정렬</h5>
+
+<code class="xmp">
+"clearfix" "fr mgl0375em" "dpb ofh tar"
+</code>
+
+<div class="item clearfix">
+	<input type="checkbox" name="lineCheck" id="lineCheck2a2" class="fr mgl0375em" />
+	<label for="lineCheck2a2" class="form-text1 dpb ofh tar">일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십</label>
+</div>
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5">좌우정렬</h5>
+
+<code class="xmp">
+"clearfix" "fr mgl0375em" "fl mgr0375em" "dpb ofh tar"
+</code>
+
+<div class="item clearfix">
+	<span class="form-text1 fr mgl0375em">@</span>
+	<input type="checkbox" name="lineCheck" id="lineCheck2a3" class="fl mgr0375em" />
+	<label for="lineCheck2a3" class="form-text1 dpb ofh taj">일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십</label>
+</div>
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4 dpib mgr075em" id="form-group">.form-group</h4>
+
+<p class="dpib">
+	<em class="em3">))) 코드가 복잡해지니.. 가급적 사용하지 않는다.</em>
+	<em class="em">))) 스타일 버림. display:flex; 이용바람</em>
+</p>
+
+<strong class="hb1 h5">fixed1auto1</strong>
+
+<div class="form-group fixed1auto1">
+	<div class="fixed1">
+		<input type="radio" name="longlabelRadio" value="Red" id="longlabelRadio1" />
+	</div>
+	<div class="auto1">
+		<label for="longlabelRadio1" class="form-text1">일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십</label>
+	</div>
+</div>
+<div class="form-group fixed1auto1">
+	<div class="fixed1">
+		<input type="radio" name="longlabelRadio" value="Red" id="longlabelRadio2" />
+	</div>
+	<div class="auto1">
+		<label for="longlabelRadio2" class="form-text1">일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십</label>
+	</div>
+</div>
+<div class="form-group fixed1auto1">
+	<div class="fixed1">
+		<input type="radio" name="longlabelRadio" value="Red" id="longlabelRadio3" />
+	</div>
+	<div class="auto1">
+		<label for="longlabelRadio3" class="form-text1">일이삼사오륙칠팔구십일이삼사오륙칠팔구십</label>
+	</div>
+</div>
+
+
+<strong class="hb1 h5">auto1fixed1</strong>
+
+<div class="form-group auto1fixed1 dott">
+	<div class="fixed1">
+		<input type="radio" name="auto1fixed1Radio" value="Red" id="auto1fixed1Radio1" />
+	</div>
+	<div class="auto1">
+		<label for="auto1fixed1Radio1" class="form-text1">일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십</label>
+	</div>
+</div>
+<div class="form-group auto1fixed1 dott">
+	<div class="fixed1">
+		<input type="radio" name="auto1fixed1Radio" value="Red" id="auto1fixed1Radio2" />
+	</div>
+	<div class="auto1">
+		<label for="auto1fixed1Radio2" class="form-text1">일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십</label>
+	</div>
+</div>
+<div class="form-group auto1fixed1 dott dotb">
+	<div class="fixed1">
+		<input type="radio" name="auto1fixed1Radio" value="Red" id="auto1fixed1Radio3" />
+	</div>
+	<div class="auto1">
+		<label for="auto1fixed1Radio3" class="form-text1">일이삼사오륙칠팔구십일이삼사오륙칠팔구십</label>
+	</div>
+</div>
+
+<strong class="hb1 h5">fixed1auto1fixed1</strong>
+
+<div class="form-group fixed1auto1fixed1">
+	<div class="fixed1">
+		<input type="radio" name="fixed1auto1fixed1Radio" value="Red" id="fixed1auto1fixed1Radio1" />
+	</div>
+	<div class="auto1">
+		<label for="fixed1auto1fixed1Radio1" class="form-text1">일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십</label>
+	</div>
+	<div class="fixed1">
+		<span class="form-text1">@</span>
+	</div>
+</div>
+<div class="form-group fixed1auto1fixed1">
+	<div class="fixed1">
+		<input type="radio" name="fixed1auto1fixed1Radio" value="Red" id="fixed1auto1fixed1Radio2" />
+	</div>
+	<div class="auto1">
+		<label for="fixed1auto1fixed1Radio2" class="form-text1">일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십</label>
+	</div>
+	<div class="fixed1">
+		<span class="form-text1">@</span>
+	</div>
+</div>
+<div class="form-group fixed1auto1fixed1">
+	<div class="fixed1">
+		<input type="radio" name="fixed1auto1fixed1Radio" value="Red" id="fixed1auto1fixed1Radio3" />
+	</div>
+	<div class="auto1">
+		<label for="fixed1auto1fixed1Radio3" class="form-text1">일이삼사오륙칠팔구십일이삼사오륙칠팔구십</label>
+	</div>
+	<div class="fixed1">
+		<span class="form-text1">@</span>
+	</div>
+</div>
+
+<strong class="hb1 h5">auto1fixed1auto1</strong>
+
+<div class="form-group auto1fixed1auto1">
+	<div class="auto1">
+		<input type="text" id="★1mail1account1" value="" placeholder="emailaccount" title="메일계정" class="w100" />
+	</div>
+	<div class="fixed1">
+		<span class="form-static1">@</span>
+	</div>
+	<div class="auto1">
+		<input type="text" id="★1mail1server1" value="" placeholder="emailserver.com" title="메일서버" class="w100" />
+	</div>
+</div>
+
+
+<hr /><!-- ◇◆◇◆◇◆◇◆◇◆ -->
+<h2 class="demo" id="IMAGES">IMAGES</h2>
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<hr class="dotb" />
+
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">Basic</h3>
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4" id="ResponsiveImages">Responsive Images</h4>
+
+<p>이미지들은 <code>.img-responsive</code> 와 같은 클래스를 추가하지 않아도 반응형으로 동작합니다.<br />
+	img 요소에 <code class="em3"><del>display: block;</del> max-width: 100%; height: auto;</code> 스타일을 적용했기에
+	img 요소 크기는 부모 요소에 알맞게 변화합니다.
+</p>
+<p>이미지를 가운데 두기 위해서 <code class="em3">.block-center</code> 를 사용하세요.
+또한, 부모 요소에 <code>.tac { text-align: center; }</code> 를 사용하여 가로 중앙 정렬할 수도 있습니다.<br />
+<code class="em3">.block-center</code> 는 아래와 같이 정의되어 있습니다.
+</p>
+
+<pre class="mg0">
+<code class="xmp mgb-175em">
+.block-center { display: block; margin-left: auto; margin-right: auto; }
+</code>
+</pre>
+
+<p class="bg-warning pd1em-rv">
+img 에 display: block; 을 적용하면 부모가 text-align: center; 일 때 가운데 정렬이 안되므로, 사용하지 않았습니다.<br />
+max-width: 100%; 속성은 지도API 등에서 문제를 일으킬 수 있습니다. 결함이 발견된 콘텐츠들은 max-width: none; 으로 해결바랍니다.
+</p>
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5">&lt;img src="" alt="" /&gt;</h5>
+<p><img src="/_res/@m/_img.ex/daffodils-684225_640.jpg" alt="★대체텍스트필수" /></p>
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5">&lt;img src="" alt="" class="block-center" /&gt;</h5>
+<p><img src="/_res/@m/_img.ex/daffodils-684225_640.jpg" alt="★대체텍스트필수" class="block-center" /></p>
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5">&lt;p class="tac"&gt;&lt;img src="" alt="" /&gt;&lt;/p&gt;</h5>
+<p class="tac"><img src="/_res/@m/_img.ex/daffodils-684225_640.jpg" alt="★대체텍스트필수" /></p>
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<hr class="dotb" />
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">Advanced</h3>
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4" id="ImageShapes">Image Shapes</h4>
+
+<!-- contentsBlock -->
+<div class="contentsBlock clearfix" style="margin:0 -1.666%;">
+	<span class="fl tac" style="width:30%;margin:1.666%;">
+		<img src="/_res/@m/_img.ex/daffodils-684225_640.jpg" alt="★대체텍스트필수" class="radius" />
+		<br />class="radius"<br /><br />
+	</span>
+	<span class="fl tac" style="width:30%;margin:1.666%;">
+		<img src="/_res/@m/_img.ex/daffodils-684225_640.jpg" alt="★대체텍스트필수" class="round" />
+		<br />class="round"<br /><br />
+	</span>
+	<span class="fl tac" style="width:30%;margin:1.666%;">
+		<img src="/_res/@m/_img.ex/daffodils-684225_640.jpg" alt="★대체텍스트필수" class="circle" />
+		<br />class="circle"<br /><br />
+	</span>
+	<span class="fl tac" style="width:30%;margin:1.666%;">
+		<img src="/_res/@m/_img.ex/daffodils-684225_640.jpg" alt="★대체텍스트필수" class="thumb" />
+		<br />class="thumb"<br /><br />
+	</span>
+	<span class="fl tac" style="width:30%;margin:1.666%;">
+		<img src="/_res/@m/_img.ex/daffodils-684225_640.jpg" alt="★대체텍스트필수" class="thumb" style="padding:4px;border-color:#ddd;" />
+		<br />class="thumb"<br /> style="padding:4px;border-color:#ddd;"<br />
+	</span>
+	<span class="fl tac" style="width:30%;margin:1.666%;">
+		<img src="/_res/@m/_img.ex/daffodils-684225_640.jpg" alt="★대체텍스트필수" class="thumb pd10px bdcd" />
+		<br />class="thumb pd10px bdcd"<br /><br />
+	</span>
+</div>
+<!-- /contentsBlock -->
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4 dpib mgr05em">View Larger Image</h4>
+<p class="dpib">
+	<em class="em8">((( 이미지 크게 보기 자동 생성 [JS]</em>
+</p>
+
+<p>
+	이미지 요소에 <code class="dpib">class="mj-view-larger"</code> 추가하면
+</p>
+<code class="xmp">&lt;img src="ex.jpg" class="mj-view-larger" /&gt;</code>
+
+아래에 이미지 새창 링크를 생성한다.
+
+<pre class="mgtbD">
+<code class="xmp">
+&lt;a href="ex.jpg" target="_blank" rel="noopener" title="새 창" class="a-view-larger"&gt;&lt;i class="ic1"&gt;&lt;/i&gt; &lt;span class="t1"&gt;이미지 크게 보기&lt;/span&gt;&lt;/a&gt;
+</code>
+</pre>
+
+
+<p>
+	<img src="/_res/@m/_img.ex/brothers-457237_1280.jpg" alt="★1대체텍스트필수" class="mj-view-larger" />
+</p>
+<p><img src="/_res/@m/_img.ex/w160/brothers-457237_160.jpg" alt="★2대체텍스트필수" class="mj-view-larger" /></p>
+<p><img src="/_res/@m/_img.ex/w320/brothers-457237_320.jpg" alt="★3대체텍스트필수" class="mj-view-larger" /></p>
+
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<hr class="dotb" />
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">Examples</h3>
+
+<p>진짜 본문에 사용하려면.. 인라인 style 속성은 권장하지 않으니.. lib.css 또는 lib1cp1.css 에 class 를 만드세요.</p>
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4" id="harmonyFlex">어울림. 유동</h4>
+
+<!-- contentsBlock -->
+<div class="contentsBlock clearfix">
+<p><img src="/_res/@m/_img.ex/daffodils-684225_640.jpg" alt="★대체텍스트필수" class="flm mgt01875em" style="width:40%;" /></p>
+<p>타인에게 공감하는 일은 어렵습니다. 익숙한 관점에서 빠져나와 다른 사람의 관점으로 상황을 바라볼 수 있어야 하기 때문입니다. 그러나 기실 공감하는 능력은 비즈니스에 필수적인 능력이기도 합니다. 당장 팀원들에게 새로운 업무 방식을 가르쳐야 하거나, 투자자를 찾거나, 상품을 구매하도록 소비자를 설득하거나, 대중에게 기부를 요청할 때, 당신의 성공은 그 사람들이 바라고 원하는 것을 정확히 파악하는 데 달려 있습니다.</p>
+<p>고객들을 위해 프레젠테이션을 제작하면서 우리는 몇 번이고 비슷한 결론에 도달했습니다. 들을 마음이 들면, 사람들은 메시지를 더 쉽게 받아들입니다. 그들의 반응에 귀기울임으로써 사람들이 진정으로 원하는 것(그들이 원할 거라고 ‘생각’하는 것 말고요)에 대해 더 잘 알 수 있습니다. 이는 장기적인 관계의 원동력이 되어줍니다.</p>
+<p>어떻게 해야 공감하는 능력을 기를 수 있을까요? 분야마다 다양한 방법이 있습니다. 제품 개발자는 기존 케이스에 대해 브레인스토밍을 할 뿐 아니라 소비자들이 어떻게 제품과 상호작용할지 알아내기 위해 인터뷰를 실시합니다. 협상가들은 테이블에 앉기 전 미리 맞은 편의 관점을 상상하여 역할놀이를 시도합니다.</p>
+</div>
+<!-- /contentsBlock -->
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4" id="harmonyFlex_Pfix">어울림. 유동. 이미지고정</h4>
+
+<!-- contentsBlock -->
+<div class="contentsBlock clearfix">
+<p><img src="/_res/@m/_img.ex/daffodils-684225_640.jpg" alt="★대체텍스트필수" class="flm mgt01875em" style="width:150px;" /></p>
+<p>타인에게 공감하는 일은 어렵습니다. 익숙한 관점에서 빠져나와 다른 사람의 관점으로 상황을 바라볼 수 있어야 하기 때문입니다. 그러나 기실 공감하는 능력은 비즈니스에 필수적인 능력이기도 합니다. 당장 팀원들에게 새로운 업무 방식을 가르쳐야 하거나, 투자자를 찾거나, 상품을 구매하도록 소비자를 설득하거나, 대중에게 기부를 요청할 때, 당신의 성공은 그 사람들이 바라고 원하는 것을 정확히 파악하는 데 달려 있습니다.</p>
+<p>고객들을 위해 프레젠테이션을 제작하면서 우리는 몇 번이고 비슷한 결론에 도달했습니다. 들을 마음이 들면, 사람들은 메시지를 더 쉽게 받아들입니다. 그들의 반응에 귀기울임으로써 사람들이 진정으로 원하는 것(그들이 원할 거라고 ‘생각’하는 것 말고요)에 대해 더 잘 알 수 있습니다. 이는 장기적인 관계의 원동력이 되어줍니다.</p>
+<p>어떻게 해야 공감하는 능력을 기를 수 있을까요? 분야마다 다양한 방법이 있습니다. 제품 개발자는 기존 케이스에 대해 브레인스토밍을 할 뿐 아니라 소비자들이 어떻게 제품과 상호작용할지 알아내기 위해 인터뷰를 실시합니다. 협상가들은 테이블에 앉기 전 미리 맞은 편의 관점을 상상하여 역할놀이를 시도합니다.</p>
+</div>
+<!-- /contentsBlock -->
+
+
+<hr /><!-- ◇◆◇◆◇◆◇◆◇◆ -->
+<h2 class="demo" id="EMBED">EMBED</h2>
+
+
+<p class="fsXL">
+	))) <a href="embed.jsp">embed.jsp</a>
+</p>
+
+
+
+<hr /><!-- ◇◆◇◆◇◆◇◆◇◆ -->
+<h2 class="demo" id="SCROLL">SCROLL</h2>
+
+
+<!-- <p>
+	))) 과거 사용 코드<br />
+	iscroll-min.js :: $my.myScroll = new IScroll();<br />
+	<a href="./lab.scrollbar2.jsp">jQscrollTouch('.scroll1wrap', {setDesktop: false});</a>
+</p> -->
+
+
+<p>
+	))) 아래처럼 <em class="em">브라우저 기본 스크롤을 활용한 코드를 권장한다!</em>
+</p>
+
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3">.scroll-x-lt-large &gt; min-width:710px;</h3>
+
+
+<p>
+	본문폭이 710px 이하면 가로스크롤 발생 (768px 미만인 화면에서만 가로스크롤)<br />
+	710px 값은 내부 콘텐츠에 따라 적당히 변경한다.<br />
+</p>
+
+
+<!-- scroll-x-lt-large -->
+<div class="scroll-x-lt-large">
+<div class="mgb025em" style="min-width:710px;">
+
+	<a tabindex="0" class="blind onshow hide-large bg-info fsd">
+		키보드 화살표 <!-- 상(↑)·하(↓)· -->좌(←)·우(→) 키로 스크롤 가능
+	</a>
+
+	<img src="/_res/@m/_img.ex/panorama-847370_1280.jpg" alt="★대체텍스트필수" />
+
+</div>
+</div>
+<!-- /scroll-x-lt-large -->
+
+
+<br />
+
+
+<!-- scroll-x-lt-large -->
+<div class="scroll-x-lt-large">
+<div class="mgb025em" style="min-width:710px;">
+
+	<a tabindex="0" class="blind onshow hide-large bg-info fsd">
+		키보드 화살표 <!-- 상(↑)·하(↓)· -->좌(←)·우(→) 키로 스크롤 가능
+	</a>
+
+	<table class="t3 w100 mg0 tttac ttvam lhD">
+	<caption>
+		<strong class="h1">★표제목</strong>
+		<span class="summary1 blind">: ★표요약,구조,탐색방법</span>
+	</caption>
+	<thead>
+	<tr>
+	<th scope="col">열제목</th><th scope="col">열제목</th><th scope="col">열제목</th><th scope="col">열제목</th><th scope="col">열제목</th>
+	<th scope="col">열제목</th><th scope="col">열제목</th><th scope="col">열제목</th><th scope="col">열제목</th><th scope="col">열제목</th>
+	<th scope="col">열제목</th><th scope="col">열제목</th><th scope="col">열제목</th><th scope="col">열제목</th><th scope="col">열제목끝</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<th scope="row">행제목</th><td>셀내용</td><td>셀내용</td><td>셀내용</td><td>셀내용</td>
+	<th scope="row">행제목</th><td>셀내용</td><td>셀내용</td><td>셀내용</td><td>셀내용</td>
+	<th scope="row">행제목</th><td>셀내용</td><td>셀내용</td><td>셀내용</td><td>셀내용끝</td>
+	</tr>
+	</tbody>
+	</table>
+
+</div>
+</div>
+<!-- /scroll-x-lt-large -->
+
+
+<br /><br />
+
+
+<hr /><!-- ◇◆◇◆◇◆◇◆◇◆ -->
+<h2 class="demo" id="ETC">ETC</h2>
+
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3" id="Comingsoon">Coming Soon Sample</h3>
+
+
+<p class="tac" style="padding:3em 0;"><img src="../../img/lib/comingsoon.png" alt="… 내용 준비 중 …" class="block-center" /></p>
+
+
+<!-- ◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h3" id="Text">Text Contents Sample</h3>
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4" id="badge1label1">.badge1 .label1</h4>
+
+
+<span class="badge1">뱃지</span>
+<span class="badge1 pdl0625em pdr0625em">뱃지</span>
+<span class="badge1">22</span>
+<span class="badge1 bgc-success">22</span>
+<span class="badge1 pd025em bgc-success">22</span>
+<span class="badge1 pd0375em bgc-success">22</span>
+<span class="badge1 pd05em bgc-success">22</span>
+<span class="badge1 pd075em bgc-success">22</span>
+<span class="badge1 pd1em bgc-success">22</span>
+
+<b class="label1">라벨</b>
+<b class="label1 pdr0625em">라벨</b>
+<b class="label1">22</b>
+<b class="label1 pd025em bgc-success">22</b>
+<b class="label1 pd0375em bgc-success">22</b>
+<b class="label1 pd05em bgc-success">22</b>
+<b class="label1 pd075em bgc-success">22</b>
+<b class="label1 pd1em bgc-success">22</b>
+
+
+<p>
+	<span class="label1 w4em mgr025em">본문 너비</span> 100%  ( 미디어쿼리 중단점 :: ~ (640px ~) 768px ~ 1000px ~ <del>1200px ~</del> <ins>1260px ~</ins> | <small class="em">(디자인에 맞춤)</small>.<br />
+	<span class="label1 w4em mgr025em">기본 글꼴</span> 16px "맑은 고딕" 줄간 1.75 사용.<br />
+	<span class="label1 w4em mgr025em">No WSG</span>  느낌대로 코딩한다!<br />
+</p>
+
+
+<h4 class="hb1 h4">Text Paragraph Sample</h4>
+
+
+<h5 class="hb1 h5">	#body_content{ word-wrap: break-word; }</h5>
+
+
+<p>
+	일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>
+</p>
+<p>
+	012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>
+</p>
+<p>
+	ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNO
+</p>
+
+
+<h5 class="hb1 h5">display:inline-block; 요소의 non-CJK 단어 속에서 줄바꿈 확인한다.</h5>
+
+
+<h6 class="hb1 h6">class="dpib"</h6>
+
+
+<p>
+	<span class="dpib">
+		일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>일이삼사오륙칠팔구<em class="em">십</em>
+	</span>
+</p>
+<p>
+	<span class="dpib">
+		012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>
+	</span>
+</p>
+<p>
+	<span class="dpib">
+		ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNO
+	</span>
+</p>
+
+
+<h6 class="hb1 h6">class="dpib mw100"</h6>
+
+
+<p>
+	<span class="dpib mw100">
+		012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>012345678<em class="em">9</em>
+	</span>
+</p>
+<p>
+	<span class="dpib mw100">
+		ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNOPQRSTUVWXY<em class="em">Z</em>abcdefghijklmnopqrstuvwxy<em class="em">z</em>ABCDEFGHIJKLMNO
+	</span>
+</p>

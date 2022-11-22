@@ -1,0 +1,178 @@
+@charset "utf-8";
+/**
+ * lib2.css
+ * Add Share Contents ..
+ * 20221026 | @m | 최초작성
+ * 20221028 | @m | 요구반영. 결함개선. 고도화.
+ * 20221104 | @m | 
+ */
+
+/** Compatible! [IE11+] 20210101~ */
+
+/** Table of contents ))
+ | Overwrite
+ | Add Share Contents
+ | Components Library
+ | RWD
+ */
+
+
+/* All Device ◆◆◆◆◆◆◆◆◆◆ */
+
+
+/* … lib.css, lib1cp1.css )) Overwrite 20221104 ◆◆◆ */
+
+
+/* 강조 */
+em,
+.em{color:#e00;}
+.em1{color:#5056ff;}
+
+
+/* 버튼 */
+button.type1{
+	display:block;
+	width:100%;
+	max-width:370px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:calc(.5625rem - 1px); /* (3.75-(1.5*1.75))/2 */
+	padding-bottom:calc(.5625rem - 1px);
+	font-weight:600;
+	font-size:1.5rem;
+}
+
+
+/* 폼블럭요소 20211006 */
+.cp1fcontrol1[class]{
+	display:inline-block;
+	line-height:1.375;
+	text-align:left;
+}
+.cp1fcontrol1[class] .item{
+	display:flex; /* ☆ */
+	margin:.5em .5em .5em 0;
+}
+.cp1fcontrol1[class] input[type='radio'],
+.cp1fcontrol1[class] input[type='checkbox']{
+	flex:none;
+	width:1em;
+	height:1em;
+	margin:.1875em .375em;
+}
+.cp1fcontrol1[class] .item .t1{}
+
+
+
+
+/* ◇◆ Added to This Project, Content Styles to Share ◇◆◇◆◇◆◇◆◇◆ */
+
+
+
+/* 탭패널콘텐츠 (엔진체험|활용사례|매뉴얼) 20221104 */
+.cp2tabs1{
+	z-index:0;
+	position:relative;
+	margin:0 auto;
+	line-height:1.375;
+	word-wrap:break-word;
+	word-break:keep-all;	
+}
+.cp2tabs1 ul{
+	display:flex; /* ☆ */
+	list-style:none;
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+.cp2tabs1 li{
+	flex:auto;
+	display:flex; /* ☆ */
+	margin:0;
+}
+.cp2tabs1 li a{
+	flex:1;
+	display:flex; /* ☆ */
+	justify-content:center;
+	align-items:center;
+	padding:.75em;
+	background:#bdc6dc;
+	color:#fff;
+	font-size:1.125em;
+	text-decoration:none !important;
+	text-align:center;
+}
+.cp2tabs1 .t1{}
+.cp2tabs1 .ic1{}
+/* ☆ */
+.cp2tabs1 li a:hover,
+.cp2tabs1 li a:focus{
+	background:#678;
+	color:#fff;
+}
+.cp2tabs1 li.on a{
+	background:#181c20;
+	color:#fff;
+}
+/*  */
+.cp2tabs1 .tooltip1c{
+	margin-top:8px;
+}
+/* 패널콘텐츠 */
+.cp2tabs1cont{}
+.cp2tabs1pane{}
+/* ◇◆ */
+@media all and (min-width:768px){
+	.cp2tabs1 li{
+		flex:0;
+	}
+	.cp2tabs1 li a{
+		min-width:17.5em;
+		font-size:1.25em;
+	}
+}
+
+
+/* 콘텐츠영역 (대부분) 20221104 */
+.cp2view1{
+	position:relative;
+	padding:calc(12px + 1.944%); /* (=.container여백값) */
+	background:#fff;
+}
+
+
+
+/* ◇◆ UI Component ◇◆◇◆◇◆◇◆◇◆ */
+
+
+/* ◇◆ .cp1~ (관련 사이트에서 가져와서 맞춤) ◇◆◇◆◇◆◇◆◇◆ */
+
+
+/* ContentBlockName YYYYMMDD @Writer ◇◆ */
+
+
+/* RWD ◇◆◇◆ */
+/* ◇◆ */
+@media all and (max-width:767px){
+}
+/* ◇◆ */
+@media all and (min-width:640px){
+}
+/* ◇◆ */
+@media all and (min-width:768px){
+}
+/* ◇◆ */
+@media all and (min-width:1000px){
+}
+/* ◇◆ */
+@media all and (min-width:1260px){
+}
+/* ◇◆ */
+@media all and (min-width:1440px){
+}
+
+
+/* @keyframes ◇◆◇◆ */
+@keyframes kfw1s1{
+	100% {background-position:100%;}
+}

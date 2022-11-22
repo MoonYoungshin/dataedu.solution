@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!-- 
+/*! Base CSS Styles Demo. v.20150526~20171026. 20180601 | by MoonYoungshin[myshin@naver.com] | MIT License
+ */ -->
+ <html lang="ko" class="indy">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Base Styles | base_css.html</title>
+<link rel="stylesheet" type="text/css" href="../../share/css/base.css" />
+<style type="text/css">/*<![CDATA[*/
+
+body{margin:3%;}
+
+/*]]>*/</style>
+</head>
+<body>
+
+<!-- container -->
+<div class="container">
+
+
+
+
+
+<h1>base_css.html</h1>
+
+<p></p>
+
+<hr />
+<h2>Base Styles <small>※ <a href="../../share/css/base.css" target="_blank" rel="noopener" title="새 창">base.css</a> for RWD</small></h2>
+<hr />
+
+<h3>TYPOGRAPHY</h3>
+
+<h4>Heading</h4>
+
+<!-- Standard Headings -->
+<h1>헤드라인1 Heading1</h1>
+<h2>헤드라인2 Heading2</h2>
+<h3>헤드라인3 Heading3</h3>
+<h4>헤드라인4 Heading4</h4>
+<h5>헤드라인5 Heading5</h5>
+<h6>헤드라인6 Heading6</h6>
+
+<h4>Paragraph</h4>
+
+<p>문단 p (paragraph)</p>
+<p>기본 타입은 폰트사이즈 14px 라인하이트 1.6 이상이다.</p>
+<p>The base type is 14px over 1.6 line height { line-height:1.666; }</p>
+<p>The base type is 16px over 1.75 line height { line-height:1.75; }</p>
+
+
+<h4>Anchor</h4>
+
+<a>앵커 a (anchor) no href</a><br />
+<a href="?">앵커 a href="?"</a><br />
+<a href="?" target="_blank" rel="noopener" title="새 창">앵커 a href="?" target="_blank" rel="noopener" title="새 창"</a><br />
+
+<hr />
+
+<h4>Other styled text tags</h4>
+
+<strong>강조 strong (strong emphasis)</strong><br />
+<em>강조 em (emphasis)</em><br />
+<b>모양 b (bold text style)</b><br />
+<i>모양 i (italic text style)</i><br />
+<small>작은 small (small text style)</small><br />
+<ins cite="" datetime="">삽입 ins cite="" datetime="" (inserted text)</ins><br />
+<del cite="" datetime="">삭제 del cite="" datetime="" (deleted text)</del><br />
+<abbr>약자 abbr (abbreviated form)</abbr><br />
+<address>주소 address (information on author)</address><br />
+<base href="" target="" />기본 경로 타겟 base href="" target=""<br />
+<bdo dir="">텍스트 디스플레이의 방향 bdo dir="" (direction of text display)</bdo><br />
+<dfn title="">인스턴스 정의 dfn title="" (instance definition)</dfn><br />
+<code>코드 code (computer code)</code><br />
+<kbd>키보드 kbd (keyboard text to be entered by the user)</kbd><br />
+<samp>샘플 samp (sample program output, scripts, etc..)</samp><br />
+<var>변수 나 프로그램 인수의 예 var (instance of a variable or program argument)</var><br />
+윗첨자 TEXT<sup>sup (superscript)</sup><br />
+아랫첨자 TEXT<sub>sub (subscript)</sub><br />
+
+<blockquote cite=""><div>
+블록인용 blockquote cite="" (long quotation)
+</div></blockquote>
+
+<q cite="">인용 q cite="" (short inline quotation)</q><br />
+<cite>인용출처 cite (citation)</cite>
+
+<hr />
+
+<h3>LISTS</h3>
+
+<ul>
+<li>순서 없는 목록 항목 li (unordered list item) 1</li>
+<li>Item 2
+	<ul>
+	<li>Item 2.1
+		<ul>
+		<li>Item 2.1.1
+			<ul>
+			<li>Item 2.1.1.1</li>
+			<li>Item 2.1.1.2</li>
+			</ul>		
+		</li>
+		<li>Item 2.1.2</li>
+		</ul>
+	</li>
+	<li>Item 2.2</li>
+	</ul>
+</li>
+<li>Item 3</li>
+</ul>
+
+<ol>
+<li>순서 있는 목록 항목 li (ordered list item) 1</li>
+<li>Item 2
+	<ol>
+	<li>Item 2.1
+		<ol>
+		<li>Item 2.1.1
+			<ol>
+			<li>Item 2.1.1.1</li>
+			<li>Item 2.1.1.2</li>
+			</ol>		
+		</li>
+		<li>Item 2.1.2</li>
+		</ol>
+	</li>
+	<li>Item 2.2</li>
+	</ol>
+</li>
+<li>Item 3</li>
+</ol>
+
+<dl>
+<dt>정의 목록 용어 definition list term</dt>
+<dd>정의 목록 설명 definition list description</dd>
+<dd>
+	<dl>
+	<dt>term</dt>
+	<dd>description</dd>
+	<dt>term</dt>
+	<dd>description</dd>
+	</dl>
+</dd>
+<dt>term</dt>
+<dd>description</dd>
+</dl>
+
+<hr />
+
+<h3>TABLES</h3>
+
+<table>
+<caption>table <small>: only pure html code</small></caption>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Age</th>
+<th scope="col">Sex</th>
+<th scope="col">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Dave Gamache</th>
+<td>26</td>
+<td>Male</td>
+<td>San Francisco</td>
+</tr>
+<tr>
+<th scope="row">Dwayne Johnson</th>
+<td>42</td>
+<td>Male</td>
+<td>Hayward</td>
+</tr>
+</tbody>
+</table>
+
+
+<hr />
+
+<h3>BUTTONS</h3>
+
+<h4>Standard buttons</h4>
+<a class="button" href="#">앵커버튼</a>
+<button>버튼요소</button>
+<input type="submit" value="인풋서브밋" />
+<input type="button" value="인풋버튼" />
+<br />
+<a class="button" href="#">Anchor button</a>
+<button>Button element</button>
+<input type="submit" value="submit input" />
+<input type="button" value="button input" />
+
+<hr />
+
+<h3>FORMS</h3>
+
+<!-- form -->
+<form name="f0" id="f0" method="post" action="?" onsubmit="return doSubmit_f0Form(this);">
+<fieldset><legend class="blind"><strong class="h1">★그룹명</strong></legend>
+
+<label for="exampleTextInput">Your Name</label>
+<input type="text" placeholder="  Input text" id="exampleTextInput" />
+<label for="exampleSelect" class="blind">Your Select</label>
+<select id="exampleSelect1" title="Select Option1">
+<option value="Option 1">Questions</option>
+<option value="Option 2">Admiration</option>
+<option value="Option 3">Can I get your number?</option>
+</select>
+<span class="vam">~</span>
+<select id="exampleSelect2" title="Select Option2">
+<option value="Option 1">질문 선택</option>
+<option value="Option 2"> 존경 감탄 칭찬 찬양</option>
+<option value="Option 3">나는 당신의 번호를받을 수 있습니까?</option>
+</select>
+<button type="button" class="button">Button element</button>
+
+<input type="radio" name="exampleRadio" id="exampleRadio0" value="" /><label for="exampleRadio0">적용</label>
+<input type="radio" name="exampleRadio" id="exampleRadio1" value="" /><label for="exampleRadio1">미적용</label>
+<input type="checkbox" name="exampleCheck" id="exampleCheck0" value="" /><label for="exampleCheck0">예</label>
+<input type="checkbox" name="exampleCheck" id="exampleCheck1" value="" /><label for="exampleCheck1">아니오</label>
+
+<input type="password" placeholder="  Input password" id="examplePasswordInput" />
+<input type="file" placeholder="  Input file" id="examplePasswordInput" />
+<input type="email" placeholder="  Input email" id="examplePasswordInput" />
+<input type="number" placeholder="  Input number" id="examplePasswordInput" />
+<input type="search" placeholder="  Input search" id="examplePasswordInput" />
+<input type="tel" placeholder="  Input tel" id="examplePasswordInput" />
+<input type="url" placeholder="  Input url" id="examplePasswordInput" />
+
+<!-- grid column demo -->
+<div class="clearfix">
+	<div class="fl" style="width:48.5%;">
+		<label for="exampleEmailInput">Your email</label>
+		<input class="w100" type="email" placeholder="  test@mailbox.com" id="exampleEmailInput" />
+	</div>
+	<div class="fr" style="width:48.5%;">
+		<label for="exampleRecipientInput">Reason for contacting</label>
+		<select class="w100" id="exampleRecipientInput">
+		<option value="Option 1">Questions</option>
+		<option value="Option 2">Admiration</option>
+		<option value="Option 3">Can I get your number?</option>
+		</select>
+	</div>
+</div>
+<!-- /grid column demo -->
+
+<label for="exampleMessage">Message</label>
+<textarea class="w100 border-box" placeholder="  Hi Dave …" id="exampleMessage"></textarea>
+<div class="fr">
+	<input type="checkbox" id="exampleCheckboxInput" />
+	<label for="exampleCheckboxInput">Send a copy to yourself</label>
+</div>
+
+<input class="button primary fl" type="submit" value="Submit" />
+
+</fieldset>
+</form>
+<!-- /form -->
+
+<hr />
+
+<h3>CODE</h3>
+
+<h4>Spacing</h4>
+<pre style="padding:1em;border:1px solid rgba(0,0,0, .1);background:#ddf4d7;">
+<code>/* 블록간격기본 .mgtbD … 맞춰준다. ☆ 20200220 */
+h1,h2,h3,h4,h5,h6,
+p,ul,ol,dl,menu,blockquote,fieldset,form,pre,hr,figure{
+	margin-top:1.25em;
+	margin-bottom:1.25em;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight:600;
+	line-height:1.375;
+	letter-spacing:-.0625em;
+}
+/* ( (40 30 24 20 18 16)/16 ) 20190911 */
+h1{font-size:2.5em;margin:.5em 0;} /* (1.25/2.5) */
+h2{font-size:1.875em;margin:.625em 0;}
+h3{font-size:1.5em;margin:.833em 0;}
+h4{font-size:1.25em;margin:1em 0;}
+h5{font-size:1.125em;margin:1.111em 0;}
+h6{font-size:1em;}
+</code>
+</pre>
+
+<h4>Form and Button</h4>
+<pre style="padding:1em;border:1px solid rgba(0,0,0, .1);background:#ddf4d7;">
+<code>form{margin:0;}
+fieldset{margin-left:0;margin-right:0;padding:0;}
+legend{} /* ☆ */
+
+a[class*=button],
+button,
+html input[type=button], /* ☆ Avoid [Android4.2.2]bug) audio and video controls  */
+input[type=submit],input[type=reset],
+input[type=text],input[type=password],input[type=file],
+input[type=email],input[type=number],input[type=search],input[type=tel],input[type=url],
+textarea,
+select,
+input[type=radio],input[type=checkbox]{
+	…
+	box-sizing: border-box;
+	…
+}
+</code>
+</pre>
+
+<hr />
+
+<h3>UTILITIES</h3>
+
+<h4>Clearing …</h4>
+
+<pre style="padding:1em;border:1px solid rgba(0,0,0, .1);background:#ddf4d7;">
+<code>.brclear{display:block;clear:both;width:0;height:0;margin:0;padding:0;font-size:0;line-height:0;}
+.clearfix{min-height:0;}
+	.clearfix:before,
+	.clearfix:after{content:'';display:table;}
+	.clearfix:after{clear:both;}
+.blind{position:absolute !important;left:-9999px;
+	width:1px;height:1px;font-size:0;line-height:0;overflow:hidden;
+	/* opacity:0;filter:alpha(opacity=0); ☆Naver */
+}
+caption.blind{position:relative;}
+.blind.onshow:focus{	display:block;
+	position:relative !important;
+	left:auto;width:auto;height:auto;
+	margin:0 0 1em;padding:.5em 1em;background:#ee0;color:#850;
+	font-size:1em;line-height:normal;overflow:hidden;
+}
+.block-center{display:block;
+	margin-left:auto;margin-right:auto;
+}
+</code>
+</pre>
+
+<h4>Property …</h4>
+<pre style="padding:1em 1.333em;border:1px solid rgba(0,0,0, .1);background:#ddf4d7;">
+<code>.dpn { display: none !important; }
+.fl { float: left !important; }
+.fr {float: right !important; }
+.w100 { width: 100% !important; }
+.border-box { box-sizing: border-box !important; }
+</code>
+</pre>
+
+
+<hr />
+<h3>MEDIA QUERIES</h3>
+
+<pre style="padding:1em;border:1px solid rgba(0,0,0, .1);background:#ddf4d7;">
+<code>/* small~xlarge */
+@media all and (min-width: 768px) { /* medium */ }
+@media all and (min-width: 1000px) { /* large */ }
+@media all and (min-width: 1260px) { /* xlarge */ }
+</code>
+</pre>
+
+<p>모바일 전용 웹사이트는 중단점<sub>breakpoint</sub>이 없다. 필요하면 base.css 에서 /* RWD ... /RWD */ 코드를 가져와서 활용한다.</p>
+
+
+<!-- <hr />
+<h3>GRID</h3>
+
+base.css 에 Grid CSS 는 없다. 필요하면 <b>_grid_*.css</b> 추가한 후 사용한다.
+<pre style="padding:1em;border:1px solid rgba(0,0,0, .1);background:#ddf4d7;">
+<code>&lt;link rel="stylesheet" type="text/css" href="/share/css/_grid_block_content-box_margin.css" /&gt; &lt;!-- 균등폭 --&gt;
+&lt;link rel="stylesheet" type="text/css" href="/share/css/_grid_row_content-box_margin.css" /&gt; &lt;!-- 자유폭 --&gt;
+&lt;link rel="stylesheet" type="text/css" href="/share/css/_grid_form_content-box_margin.css" /&gt; &lt;!-- 폼배치 --&gt;</code>
+</pre>
+모바일 전용 웹사이트는 보통 다단이 아니므로 그리드를 사용하지 않는다. -->
+
+
+<hr />
+<h3>Misc.</h3>
+
+<pre style="padding:1em;border:1px solid #ddd;background:#f4f4f4;">
+</pre>
+
+<hr />
+
+<h3>EXAMPLES</h3>
+
+<p>To do next!</p>
+
+
+
+<div class="brclear"></div>
+
+
+<br />
+<hr class="show" />
+<p><small class="fwn"><strong>History</strong>
+: 20150526~
+20210517.
+20180601.
+20180227.
+20171026. 20170623. 
+20151020. 20150619. 20150618. 20150616. 20150601.
+</small></p>
+
+
+
+
+
+</div>
+<!-- /container -->
+
+</body>
+</html>

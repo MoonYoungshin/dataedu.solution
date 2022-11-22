@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<!--
+/**
+ * 20211102 | @m | 최초작성
+ * 20211102 | @m | 최초완성
+ */
+-->
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Text Roll by@m</title>
+<style>/*<![CDATA[*/
+
+	/* @import url(../../share/css/base.css); */
+
+	/* 배치.전체 20211008 */
+	html{
+		/* height:100%; */
+	}
+	body{
+		background:linear-gradient(180deg, #fff 0, #eee 100%);
+		color:#000; /* (((#555 */
+		font-weight:400; /* ☆ */
+		font-size:.875em; /* (((16px */
+		font-family:
+			'Apple SD Gothic Neo', /* 맥용 */
+			'Open Sans',OpenSans, /* 영문 */
+			'Microsoft JhengHei', /* 한자 */
+			'Meiryo', /* 일문 */
+			'맑은 고딕','Malgun Gothic', /* 한글 */
+			'돋움',Dotum,
+			Helvetica,'Helvetica Neue',
+			Arial,sans-serif;
+		line-height:1.75; /* (((1.75 */
+		letter-spacing:-.03125em; /* (-.5px/16px) */
+		overflow-x:hidden; /* ★ Mobile 가로범람 방지 */
+	}
+	#container{
+		position:relative;
+		box-sizing:border-box; /* ☆ */
+		width:90%;
+		max-width:1000px;
+		margin:calc(.625rem + 3%) auto;
+		padding:calc(.3125rem + 3%) calc(.625rem + 3%);
+		border:1px solid #ccc;
+		border-radius:6px;
+		background:#fff;
+	}
+
+	/* 초기화 20211008 */
+	a:link,a:visited{
+		color:#06c;
+		text-decoration:none;
+	}
+	ol{
+		list-style:decimal-leading-zero;
+		margin:1.25em 0;
+	}
+
+	/* CSS 20211019 */
+
+	/* 제목 */
+	.hb1{
+		display:block;
+		margin:0 0 1em;
+		padding:0;
+		border:0;
+		background:transparent;
+		color:#000;
+		font-weight:600;
+		line-height:1.375;
+		letter-spacing:-.03125em;
+	}
+	.hb1~.hb1{
+		margin-top:1.5em;
+	}
+	/* ( (40 26 22 20 18 16)/16 ) */
+	.hb1.h1{
+		font-size:2.5em;
+	}
+	.hb1.h1:after{content:'';
+		display:block;
+		margin:.25em 0;
+		height:.125em;
+		background:linear-gradient(90deg, #047 0, #09f 100%);
+	}
+	.hb1.h2{font-size:1.625em;}
+	.hb1.h3{
+		display:inline-flex; /* ☆ */
+		z-index:0;
+		position:relative;
+		margin:0;
+		font-size:1.25em;
+	}
+	.hb1.h3:before{content:'';
+		display:block;
+		z-index:-1;
+		position:absolute;left:0;right:0;top:100%;
+		margin:-.5em 0 0;
+		border-bottom:.5em solid #fec;
+	}
+	.hb1.h4{font-size:1.125em;}
+	.hb1.h5{font-size:1em;}
+	.hb1.h6{font-size:.875em;}
+
+
+/* 텍스트롤 20211102 [JS] jQmPrevNext1(); */
+.text1roll1{
+	text-align:center;
+}
+.text1roll1 .thead{
+	display:flex; /* ☆ */
+	justify-content:space-around;
+	align-items:center;
+	height:35px;
+	background:#bdf;
+	border-radius:10px 10px 0 0;
+}
+.text1roll1 .thead .t1,
+.text1roll1 .thead .t2,
+.text1roll1 .thead .t3{
+	flex:none;
+	width:33.333%;
+}
+.text1roll1 .mView{
+	position:relative;
+	width:100%;
+	height:315px;
+	overflow:hidden;
+}
+.text1roll1 .mCont{
+	list-style:none;margin:0;padding:0;
+	position:absolute;left:0;top:0;
+	width:100%;
+	overflow:hidden;
+}
+.text1roll1 .mContC{
+	display:flex; /* ☆ */
+	justify-content:space-around;
+	align-items:center;
+	position:relative;
+	height:34px;
+	border-bottom:1px solid #ddd;
+	font-size:14px;
+	overflow:hidden;
+}
+.text1roll1 .mContC .t1,
+.text1roll1 .mContC .t2,
+.text1roll1 .mContC .t3{
+	flex:none;
+	width:33.333%;
+}
+
+
+	/* RWD ◇◆◇◆ */
+	/* ◇◆ */
+	@media all and (max-width:767px){
+	}
+	/* ◇◆ */
+	@media all and (min-width:640px){
+	}
+	/* ◇◆ */
+	@media all and (min-width:768px){
+	}
+	/* ◇◆ */
+	@media all and (min-width:1000px){
+	}
+	/* ◇◆ */
+	@media all and (min-width:1260px){
+	}
+
+
+/*]]>*/</style>
+
+
+<script>/*<![CDATA[*/
+
+
+
+/*]]>*/</script>
+
+</head>
+<body>
+<!-- container -->
+<div id="container">
+
+
+
+
+
+<h1 class="hb1 h1">Text Roll v0.1</h1>
+
+
+<h2 class="hb1 h2">30회 환급자 리스트</h2>
+
+
+<!-- even1grid1 -->
+<div class="even1grid1">
+	<div class="w1">
+	</div>
+	<div class="w1">
+	</div>
+	<div class="w1">
+		<!-- text1roll1 -->
+		<div class="text1roll1" id="text1roll1a1">
+			<div class="thead">
+				<span class="t1">이름</span>
+				<span class="t2">패키지명</span>
+				<span class="t3">환급액(원)</span>
+			</div>
+			<div class="mView">
+				<ul class="mCont">
+					<li class="mContC"><span class="t1">★구*회</span><span class="t2">ADsP패키지3</span><span class="t3">222,640</span></li>
+					<li class="mContC"><span class="t1">김*영</span><span class="t2">ADsP패키지2</span><span class="t2">242,000</span></li>
+					<li class="mContC"><span class="t1">김*현</span><span class="t2">ADsP패키지1</span><span class="t2">222,640</span></li>
+					<li class="mContC"><span class="t1">김*지</span><span class="t2">ADsP패키지2</span><span class="t2">161,920</span></li>
+					<li class="mContC"><span class="t1">김*익</span><span class="t2">ADsP패키지1</span><span class="t2">242,000</span></li>
+					<li class="mContC"><span class="t1">김*영</span><span class="t2">ADsP패키지2</span><span class="t2">242,000</span></li>
+					<li class="mContC"><span class="t1">김*민</span><span class="t2">ADsP패키지3</span><span class="t2">242,000</span></li>
+					<li class="mContC"><span class="t1">김*호</span><span class="t2">ADsP패키지3</span><span class="t2">222,640</span></li>
+					<li class="mContC"><span class="t1">김*나</span><span class="t2">ADsP패키지1</span><span class="t2">161,920</span></li>
+					<li class="mContC"><span class="t1">김*혁</span><span class="t2">ADsP패키지3</span><span class="t2">176,000</span></li>
+<!-- 
+					<li class="mContC"><span class="t1">김*은</span><span class="t2">ADsP패키지3</span><span class="t2">222,640</span></li>
+					<li class="mContC"><span class="t1">김*형</span><span class="t2">ADsP패키지3</span><span class="t2">161,920</span></li>
+					<li class="mContC"><span class="t1">김*영</span><span class="t2">ADsP패키지3</span><span class="t2">157,872</span></li>
+					<li class="mContC"><span class="t1">정*혁</span><span class="t2">ADsP패키지1</span><span class="t2">161,920</span></li>
+					<li class="mContC"><span class="t1">정*구</span><span class="t2">ADsP패키지2</span><span class="t2">161,920</span></li>
+					<li class="mContC"><span class="t1">조*배</span><span class="t2">ADsP패키지2</span><span class="t2">161,920</span></li>
+					<li class="mContC"><span class="t1">조*수</span><span class="t2">ADsP패키지2</span><span class="t2">176,000</span></li>
+					<li class="mContC"><span class="t1">차*솜</span><span class="t2">ADsP패키지2</span><span class="t2">157,872</span></li>
+					<li class="mContC"><span class="t1">채*수</span><span class="t2">ADsP패키지3</span><span class="t2">222,640</span></li>
+					<li class="mContC"><span class="t1">양*수</span><span class="t2">ADsP패키지3</span><span class="t2">222,640</span></li>
+					<li class="mContC"><span class="t1">김*헌</span><span class="t2">ADsP패키지2</span><span class="t2">161,920</span></li>
+					<li class="mContC"><span class="t1">노*아</span><span class="t2">ADsP패키지3</span><span class="t2">222,640</span></li>
+					<li class="mContC"><span class="t1">구*은</span><span class="t2">ADsP패키지1</span><span class="t2">157,872</span></li>
+					<li class="mContC"><span class="t1">김*연</span><span class="t2">ADsP패키지2</span><span class="t2">161,920</span></li>
+					<li class="mContC"><span class="t1">염*열</span><span class="t2">ADsP패키지3</span><span class="t2">222,640</span></li>
+					<li class="mContC"><span class="t1">박*준</span><span class="t2">ADsP패키지3</span><span class="t2">242,000</span></li>
+					<li class="mContC"><span class="t1">박*윤</span><span class="t2">ADsP패키지2</span><span class="t2">161,920</span></li>
+					<li class="mContC"><span class="t1">김*웅</span><span class="t2">ADsP패키지2</span><span class="t2">161,920</span></li>
+					<li class="mContC"><span class="t1">나*민</span><span class="t2">ADsP패키지3</span><span class="t2">222,640</span></li>
+					<li class="mContC"><span class="t1">조*재</span><span class="t2">ADsP패키지3</span><span class="t2">222,640</span></li>
+					<li class="mContC"><span class="t1">이*준</span><span class="t2">ADsP패키지1</span><span class="t2">171,600</span></li>
+					<li class="mContC"><span class="t1">김*빈</span><span class="t2">ADsP패키지2</span><span class="t2">161,920</span></li>
+					<li class="mContC"><span class="t1">장*솔</span><span class="t2">ADsP패키지2</span><span class="t2">161,920</span></li>
+					<li class="mContC"><span class="t1">최*용</span><span class="t2">ADsP패키지2</span><span class="t2">161,920</span></li>
+					<li class="mContC"><span class="t1">김*연</span><span class="t2">ADsP패키지3</span><span class="t2">222,640</span></li>
+					<li class="mContC"><span class="t1">강*호</span><span class="t2">ADsP패키지3</span><span class="t2">157,872</span></li>
+					<li class="mContC"><span class="t1">강*수</span><span class="t2">ADsP패키지3</span><span class="t2">174,064</span></li>
+					<li class="mContC"><span class="t1">고*승</span><span class="t2">ADsP패키지1</span><span class="t2">166,980</span></li>
+					<li class="mContC"><span class="t1">곽*영</span><span class="t2">ADsP패키지3</span><span class="t2">166,980</span></li>
+ -->
+					<li class="mContC"><span class="t1">구*모★</span><span class="t2">ADsP패키지3</span><span class="t2">157,872</span></li>
+				</ul>
+			</div>
+		</div>
+		<!-- /text1roll1 -->
+	</div>
+</div>
+<!-- /even1grid1 -->
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>/*<![CDATA[*/
+
+	$(function(){ // 20211102
+		$('#text1roll1a1').jQmTextRoll1();
+	});
+
+	/** ◇◆ jQmTextRoll1. v0.1 | 20211102. by@m
+	 * 텍스트 롤
+	 * Use)
+		$('#text1roll1a1').jQmTextRoll1();
+		$('#text1roll1a1').jQmTextRoll1({interval: 1000, duration:400 });
+	 */
+		$.fn.jQmTextRoll1 = function(options){
+			if(!this) return false;
+			var config = {
+				interval: 500, // 동작 간격 밀리초
+				duration: 400, // 동작 시간
+				auto: true, // true: 정지 버튼 클릭 안한 상태, false: 클릭한 상태
+
+				// DOM Selectors
+				mView : '.mView', // 뷰
+				mCont : '.mView .mCont', // 아이템 묶음
+				mItem : '.mView .mContC', // 아이템
+			};
+			$.extend(config, options);
+			return this.each(function(){
+				var $my = $(this),
+					$v = $(config.mView, $my),
+					$c = $(config.mCont, $my),
+					$it = $(config.mItem, $my);
+
+				var onnum = 0, // 활성수
+					total = $it.length,
+					mv = $it.outerHeight(), // 이동할 거리
+					vn = Math.round( $v.outerHeight() / mv ); // 보이는 아이템수
+
+					$it.filter(':nth-child(-n+'+ vn +')').clone().appendTo($c); // 보이는 아이템수만큼 복제해서 끝에 추가
+
+					//console.log($c.children().length);
+
+				// 자동순환 //
+				$my.autoAction = function(){ // 자동 동작
+					if(config.auto){
+						onnum++;
+						console.log(config.interval, $it.length, vn, onnum);
+						if( onnum <= total ){
+							$c.animate({
+								top: -mv * onnum
+							}, config.duration, function(){
+								if( onnum == total ){
+									onnum = 0;
+									$c.css({top: 0});
+								}
+							});
+						}else{
+							onnum = 0;
+							$c.css({top: 0});
+						}
+					}
+				}
+
+				//$my.timer1 = setInterval($my.autoAction, config.interval);
+				$my.restart = function(timer){ // 자동 재가동
+					if(timer) clearInterval(timer);
+					$my.timer1 = setInterval($my.autoAction, config.interval);
+				}
+				$my.restart($my.timer1); // 자동 가동
+
+
+			});
+		} /* /$.fn.jQmTextRoll1 */
+/*]]>*/</script>
+
+
+
+
+
+강*호　　　　　ADsP패키지3　　　　　157,872
+강*수　　　　　ADsP패키지3　　　　　174,064
+고*승　　　　　ADsP패키지1　　　　　166,980
+곽*영　　　　　ADsP패키지3　　　　　166,980
+구*모　　　　　ADsP패키지3　　　　　157,872
+구*회　　　　　ADsP패키지3　　　　　222,640
+김*영　　　　　ADsP패키지2　　　　　242,000
+김*현　　　　　ADsP패키지1　　　　　222,640
+김*지　　　　　ADsP패키지2　　　　　161,920
+김*익　　　　　ADsP패키지1　　　　　 242,000
+김*영　　　　　ADsP패키지2　　　　　 242,000
+김*민　　　　　ADsP패키지3　　　　　 242,000
+김*호　　　　　ADsP패키지3　　　　　 222,640
+김*나　　　　　ADsP패키지1　　　　　 161,920
+김*혁　　　　　ADsP패키지3　　　　　 176,000
+김*은　　　　　ADsP패키지3　　　　　 222,640
+김*형　　　　　ADsP패키지3　　　　　 161,920
+김*영　　　　　ADsP패키지3　　　　　 157,872
+정*혁　　　　　ADsP패키지1　　　　　 161,920
+정*구　　　　　ADsP패키지2　　　　　 161,920
+조*배　　　　　ADsP패키지2　　　　　 161,920
+조*수　　　　　ADsP패키지2　　　　　 176,000
+차*솜　　　　　ADsP패키지2　　　　　 157,872
+채*수　　　　　ADsP패키지3　　　　　 222,640
+양*수　　　　　ADsP패키지3　　　　　 222,640
+김*헌　　　　　ADsP패키지2　　　　　 161,920
+노*아　　　　　ADsP패키지3　　　　　 222,640
+구*은　　　　　ADsP패키지1　　　　　 157,872
+김*연　　　　　ADsP패키지2　　　　　 161,920
+염*열　　　　　ADsP패키지3　　　　　 222,640
+박*준　　　　　ADsP패키지3　　　　　 242,000
+박*윤　　　　　ADsP패키지2　　　　　 161,920
+김*웅　　　　　ADsP패키지2　　　　　 161,920
+나*민　　　　　ADsP패키지3　　　　　 222,640
+조*재　　　　　ADsP패키지3　　　　　 222,640
+이*준　　　　　ADsP패키지1　　　　　 171,600
+김*빈　　　　　ADsP패키지2　　　　　 161,920
+장*솔　　　　　ADsP패키지2　　　　　 161,920
+최*용　　　　　ADsP패키지2　　　　　 161,920
+김*연　　　　　ADsP패키지3　　　　　 222,640
+<!-- <!-- <!-- <!-- <!-- <!-- <!-- <!--  --> --> --> --> --> --> --> -->
+김*수　　　　　ADsP패키지3　　　　　 161,920
+김*만　　　　　ADsP패키지1　　　　　 161,920
+김*군　　　　　ADsP패키지3　　　　　 161,920
+김*수　　　　　ADsP패키지3　　　　　 176,000
+김*유　　　　　ADsP패키지1　　　　　 222,640
+김*선　　　　　ADsP패키지2　　　　　 222,640
+나*선　　　　　ADsP패키지1　　　　　 222,640
+노*원　　　　　ADsP패키지2　　　　　181,500
+노*환　　　　　ADsP패키지3　　　　　161,920
+문*현　　　　　ADsP패키지3　　　　　 171,600
+박*주　　　　　ADsP패키지2　　　　　 242,000
+박*홍　　　　　ADsP패키지3　　　　　 161,920
+박*연　　　　　ADsP패키지2　　　　　 222,640
+박*영　　　　　ADsP패키지2　　　　　 161,920
+배*주　　　　　ADsP패키지3　　　　　 222,640
+서*필　　　　　ADsP패키지3　　　　　 222,640
+서*원　　　　　ADsP패키지2　　　　　 242,000
+선*송　　　　　ADsP패키지3　　　　　 222,640
+최*진　　　　　ADsP패키지2　　　　　 181,500
+최*석　　　　　ADsP패키지2　　　　　 176,000
+한*수　　　　　ADsP패키지2　　　　　222,640
+한*진　　　　　ADsP패키지3　　　　　 161,920
+한*민　　　　　ADsP패키지2　　　　　 161,920
+허*혁　　　　　ADsP패키지3　　　　　 222,640
+남*리　　　　　ADsP패키지1　　　　　 157,872
+표*훈　　　　　ADsP패키지2　　　　　176,000
+김*리　　　　　ADsP패키지3　　　　　 222,640
+허*혁　　　　　ADsP패키지1　　　　　 222,640
+변*영　　　　　ADsP패키지3　　　　　 222,640
+김*석　　　　　ADsP패키지1　　　　　 157,872
+김*민　　　　　ADsP패키지3　　　　　 222,000
+박*훈　　　　　ADsP패키지3　　　　　 222,000
+오*철　　　　　ADsP패키지2　　　　　161,920
+이*훈　　　　　ADsP패키지2　　　　　 176,000
+마*원　　　　　ADsP패키지2　　　　　 97,152
+편*영　　　　　ADsP패키지2　　　　　 161,920
+임*용　　　　　ADsP패키지2　　　　　 161,920
+장*연　　　　　ADsP패키지3　　　　　 222,640
+전*현　　　　　ADsP패키지3　　　　　 222,640
+김*찬　　　　　ADsP패키지1　　　　　 157,872
+윤*현　　　　　ADsP패키지2　　　　　 161,920
+<!-- <!-- <!-- <!-- <!-- <!-- <!-- <!--  --> --> --> --> --> --> --> -->
+성*제　　　　　ADsP패키지2　　　　　 222,640
+안*영　　　　　ADsP패키지2　　　　　 161,920
+왕*림　　　　　ADsP패키지2　　　　　 161,920
+유*흔　　　　　ADsP패키지3　　　　　 161,920
+윤*진　　　　　ADsP패키지3　　　　　 157,872
+윤*빈　　　　　ADsP패키지3　　　　　 161,920
+윤*림　　　　　ADsP패키지3　　　　　 97,152
+윤*진　　　　　ADsP패키지2　　　　　 157,872
+윤*수　　　　　ADsP패키지1　　　　　 161,920
+윤*희　　　　　ADsP패키지2　　　　　 222,640
+윤*규　　　　　ADsP패키지3　　　　　 181,500
+이*연　　　　　ADsP패키지3　　　　　 161,920
+이*석　　　　　ADsP패키지2　　　　　 166,980
+이*하　　　　　ADsP패키지3　　　　　 157,872
+이*식　　　　　ADsP패키지2　　　　　 161,920
+이*연　　　　　ADsP패키지3　　　　　 166,980
+임*렬　　　　　ADsP패키지3　　　　　 222,640
+정*빈　　　　　ADsP패키지2　　　　　 157,872
+허*연　　　　　ADsP패키지2　　　　　 166,980
+홍*욱　　　　　ADsP패키지3　　　　　 161,920
+황*용　　　　　ADsP패키지2　　　　　 111,725
+문*훈　　　　　ADsP패키지2　　　　　 161,920
+김*영　　　　　ADsP패키지3　　　　　 222,640
+장*아　　　　　ADsP패키지2　　　　　 176,000
+조*재　　　　　ADsP패키지3　　　　　 222,640
+김*경　　　　　ADsP패키지3　　　　　 222,640
+이*종　　　　　ADsP패키지3　　　　　 222,640
+김*익　　　　　ADsP패키지2　　　　　 176,000
+신*제　　　　　ADsP패키지3　　　　　 222,640
+안*우　　　　　ADsP패키지2　　　　　 176,000
+정*영　　　　　ADsP패키지3　　　　　 222,640
+김*헌　　　　　ADsP패키지3　　　　　 222,640
+김*현　　　　　ADsP패키지2　　　　　 161,920
+구*은　　　　　ADsP패키지3　　　　　 222,640
+구*모　　　　　ADsP패키지3　　　　　 242,000
+노*영　　　　　ADsP패키지3　　　　　 242,000
+김*원　　　　　ADsP패키지3　　　　　 242,000
+이*섭　　　　　ADsP패키지3　　　　　242,000
+선*웅　　　　　ADsP패키지1　　　　　 157,872
+이*혁　　　　　ADsP패키지2　　　　　 161,920
+
+
+
+
+
+</div>
+<!-- /container -->
+</body>
+</html>

@@ -1,0 +1,560 @@
+@charset "utf-8";
+/**
+ * lib2.css
+ * Add Share Contents ..
+ * 20220207 | @m | 최초작성
+ * 20220218 | @m | 요구반영. 결함개선. 고도화.
+ * 20220221 | @m | 
+ * 20220222 | @m | 
+ */
+
+/** Compatible! [IE11+] 20210101~ */
+
+/** Table of contents ))
+ | Overwrite
+ | Add Share Contents
+ | Components Library
+ | RWD
+ */
+
+
+/* All Device ◆◆◆◆◆◆◆◆◆◆ */
+
+
+/* … lib.css, lib1cp1.css )) Overwrite YYYYMMDD ◆◆◆ */
+
+
+/* 부트스트랩보정(우선순위↑) 20220218 */
+html *, html ::after, html ::before{
+	box-sizing:content-box; /* ☆ */
+}
+html body{
+	color:#555;
+	font-size:.875em; /* (((16px */
+}
+html .container{ 
+	max-width:none;
+	padding:0;
+}
+html a:hover{
+	text-decoration:none;
+}
+html p{
+	margin-top:1em;
+	margin-bottom:1em;
+}
+html b,
+html strong{
+	font-weight:600;
+}
+html label{
+	margin:0;
+}
+html caption{
+	padding:initial;
+	color:initial;
+	caption-side:initial;
+}
+html .pagination{
+	display:block; /* 다중줄 고려 flex 로 안함 */
+}
+html .hb1,
+html .h1, html .h2, html .h3, html .h4, html .h5, html .h6{
+	margin:0;
+	font-weight:600;
+	font-size:1em;
+	line-height:1.375;
+}
+html .hb1{
+	margin:1.5em 0 1em;
+}
+html .col, html .col-1, html .col-2, html .col-3, html .col-4, html .col-5, html .col-6, html .col-7, html .col-8, html .col-9, html .col-10, html .col-11, html .col-12{
+	flex:none;
+	width:auto;
+	max-width:none;
+}
+.even-grid.float-left{
+	float:none !important;
+}
+html .collapse[class]{
+	display:block;
+}
+html .even-grid.flex{
+	display:flex;
+}
+/* bootstrap */
+html .form-check-input{
+	margin-top:0.25rem; /* ☆ */
+	margin-left:-1.25rem;
+}
+/* summernote */
+.note-editor{
+	margin-top:.5rem;
+	margin-bottom:.5rem;
+}
+.note-editor .note-toolbar button{
+	height:auto;
+	margin:0;
+}
+
+
+
+/* ◇◆ Added to This Project, Content Styles to Share ◇◆◇◆◇◆◇◆◇◆ */
+
+
+/* 패널(작성폼..) 20220218 */
+.cm1panel1{
+	z-index:auto;
+	margin:1.25em 0;
+	padding:.5em 1.5em;
+	border:1px solid #e7e7e7;
+	border-radius:4px;
+	background:#fff;
+}
+
+
+/* 목록표(기본.일부.말줄임) 20220218 */
+.cm1bbs1table1>table{}
+/* .cm1bbs1table1>table thead th{padding:.75em;} */
+.cm1bbs1table1>table tbody th,
+.cm1bbs1table1>table tbody td{padding:.75em;}
+.cm1bbs1table1>table tr.required{background:#fffcf9;}
+.cm1bbs1table1>table tr:hover{background:#fcfcfc;}
+.cm1bbs1table1 a:not(.button){color:#333;}
+.cm1bbs1table1 .button{
+	margin:.125em 0;
+}
+.cm1bbs1table1>table .ic1.new{display:inline-block;
+	width:1em;
+	margin:-2px 0 2px;
+	padding:2px;
+	background:#e63;
+	color:#fff;
+	font-size:12px;
+	line-height:1;
+	letter-spacing:1em;
+	white-space:nowrap;
+	overflow:hidden;
+	vertical-align:middle;
+}
+.cm1bbs1table1>table a:hover .ic1.new,
+.cm1bbs1table1>table a:focus .ic1.new{background:#e00;}
+.cm1bbs1table1>table .ic1.reply>.t1{float:left;width:1px;height:1px;overflow:hidden;text-indent:-9999px;}
+/* 말줄임 */
+.cm1bbs1table1>table.ellipsis{table-layout:fixed;} /* ☆ */
+.cm1bbs1table1>table.ellipsis tbody td{text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;}
+.cm1bbs1table1>table.ellipsis tbody td *{white-space:nowrap !important;}
+/* 기능버튼(정렬..) */
+.cm1bbs1table1 .b1{
+	display:inline-flex;
+	/* flex-direction:row-reverse; */
+	align-items:center;
+}
+.cm1bbs1table1 .b1t1{
+	flex:none;
+}
+.cm1bbs1table1 .b1ic1{} /* .material-icons */
+.cm1bbs1table1 .b1.sort .b1ic1{}
+/* .type2 (세로상단정렬배치) */
+.cm1bbs1table1.type2>table tbody th,
+.cm1bbs1table1.type2>table tbody td{
+	padding:1.75em .75em;
+}
+.cm1bbs1table1.type2 .btns{ /* 버튼 래퍼 */
+	margin:-.375em 0;
+}
+.cm1bbs1table1.type2 td input[type='checkbox']{
+	margin-top:0;
+	margin-bottom:0;
+}
+
+
+/* 제목그룹(좌우배치) 20220218 */
+.cm1hg1{
+	display:flex; /* ☆ */
+	justify-content:space-between;
+	align-items:center;
+	position:relative;
+	margin:1.5em 0 1.25em;
+}
+.cm1hg1>.w1{
+	flex:auto;
+	display:flex; /* ☆ */
+	align-items:center;
+}
+.cm1hg1>.w2{
+	flex:none;
+}
+.cm1hg1 .h1{
+	margin:0 .5em 0 0;
+	color:#222;
+	font-weight:600;
+	font-size:1.25rem;
+}
+.cm1hg1 .button{
+	margin:0;
+}
+.cm1hg1 input[type='radio']{
+	margin-right:0;
+	margin-left:.5em;
+	width:1.375em;
+}
+
+
+/* 제목그룹(상하라인) 20220218 */
+.cm1hg2{
+	display:flex; /* ☆ */
+	justify-content:space-between;
+	align-items:center;
+	position:relative;
+	margin:1.5em 0 1.25em;
+	padding:1.125em 0;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+}
+.cm1hg2 .h1{
+	margin:0;
+	color:#222;
+}
+
+
+/* 레이어라이트박스. 20220218 */
+/* 공통 */
+.cm1layer1lightbox1{display:none;
+	display:flex !important; /* ☆ */
+	visibility:hidden;
+	z-index:100;
+	position:fixed;left:0;right:0;top:0;bottom:0;
+	background:rgba(0,0,0, .2);
+	letter-spacing:-.03125em;
+	overflow:hidden;
+	overflow-y:auto;
+	opacity:0;
+	transition:.2s;
+}
+.cm1layer1lightbox1.on{
+	visibility:visible;
+	opacity:1;
+}
+.cm1layer1lightbox1>.wrap1{display:block;
+	box-sizing:border-box; /* ☆ */
+	width:100%;
+	margin:auto;
+	padding:10px;
+	text-align:center;
+}
+.cm1layer1lightbox1>.wrap1:after{content:'';display:inline-block;
+	width:0;
+	height:100%;
+	vertical-align:middle;
+	overflow:hidden;
+}
+.cm1layer1lightbox1 .lightbox{display:inline-block;
+	position:relative;
+	box-sizing:border-box; /* ☆ */
+	width:98%; /* ☆ */
+	max-width:700px; /* ☆ */
+	margin:3% -.25em;
+	border-radius:1em;
+	background:#fff;
+	text-align:left;
+	vertical-align:middle;
+	overflow:hidden;
+	box-shadow:0 20px 40px 4px rgba(0,0,0, .2);
+}
+.cm1layer1lightbox1 .lightbox>.wrap2{
+	position:relative;
+	padding:calc(20px + 2%) calc(20px + 3%); /* ((35/510) */
+}
+/* ☆ */
+.cm1layer1lightbox1 .lightbox>.wrap2>.hg1{
+	display:flex; /* ☆ */
+	justify-content:space-between;
+	/* align-items:center; */
+	/* position:relative; */
+	padding:0 0 .9275em;
+	border-bottom:1px solid #e7e7e7;
+}
+.cm1layer1lightbox1 .lightbox>.wrap2>.hg1>.h1{
+	margin:0;
+	color:#222;
+	font-weight:600;
+	font-size:1.5em;
+}
+/* ☆ */
+.cm1layer1lightbox1 .b1[class*='close']{
+	flex:none;
+	display:block;
+	float:none;
+	z-index:10;
+	position:relative;
+	width:2.0625em; /* (1.375*1.5) */
+	height:2.0625em;
+	padding:0;
+	background:transparent;
+	font-size:1em;
+}
+.cm1layer1lightbox1 .b1[class*='close']>.ic1{float:left;
+	position:absolute;left:50%;top:50%;
+	width:16px;height:16px;
+	margin:-8px;
+	background:url(../../img/lib/b1x1c1.png) no-repeat center center;
+	text-indent:-9999px;overflow:hidden;
+}
+.cm1layer1lightbox1 .b1[class*='close']:hover,
+.cm1layer1lightbox1 .b1[class*='close']:focus{
+	background:#f7f7f7;
+}
+/* ☆ */
+.cm1layer1lightbox1 .lightbox>.wrap2>.cont{
+	padding:1.5em 0 0;
+}
+.cm1layer1lightbox1 .lightbox>.wrap2>.cont:before,
+.cm1layer1lightbox1 .lightbox>.wrap2>.cont:after{content:'';display:table;clear:both;}
+/* ☆ */
+.cm1layer1lightbox1 .lightbox>.wrap2>.fg1{
+	padding:.9275em 0 0;
+	border-top:1px solid #e7e7e7;
+}
+
+
+
+/* ◇◆ ((( PMS. 20220208 ◇◆◇◆◇◆◇◆◇◆ */
+
+
+/* 유틸 20211216 */
+.hide-after ~ *{
+	display:none !important;
+}
+
+
+/* 대시보드.정의목록 20211125 */
+.cm1dlist1{
+	position:relative;
+	margin:0 0 2em;
+	border:1px solid #ddd;
+	border-radius:8px;
+}
+.cm1dlist1 .dl1{
+	display:flex; /* ☆ */
+	list-style:none;
+	margin:0 -1.5em;
+	padding:1.5em;
+	text-align:center;
+}
+.cm1dlist1 .di1{
+	position:relative;
+	box-sizing:border-box; /* ☆ */
+	width:50%;
+	padding:0 1em;
+}
+.cm1dlist1 .di1~.di1:before{content:''; /*│*/
+	display:block;
+	position:absolute;left:0;top:0;bottom:0;
+	width:0;
+	margin:.375em 0;
+	border-left:1px solid #e7e7e7;
+}
+.cm1dlist1 .a1{
+	display:block;
+	color:inherit;
+}
+.cm1dlist1 .dt1{
+	display:block;
+	color:#333;
+	font-weight:400;
+	font-size:1.125em;
+}
+.cm1dlist1 .dd1{
+	display:block;
+	font-weight:600;
+	font-size:2.2em;
+	font-family:'Lato',sans-serif;
+	letter-spacing:0;
+}
+
+
+/* 대시보드.박스배치 20211125 */
+.cm1dashb1{
+	display:flex; /* ☆ */
+	flex-wrap:wrap;
+	justify-content:center;
+	position:relative;
+	margin:0 0 2em;
+	padding:2em 0;
+	border:1px solid #e4e4e4;
+	border-radius:8px;
+}
+.cm1dashb1>[class^='w']{
+	box-sizing:border-box; /* ☆ */
+	width:33.333%;
+	padding:0 2.5em;
+}
+.cm1dashb1>.w4,
+.cm1dashb1>.w5{
+	width:50%;
+}
+.cm1dashb1>.w2,
+.cm1dashb1>.w3,
+.cm1dashb1>.w5{
+	border-left:1px solid #eee;
+}
+.cm1dashb1 .line{
+	width:calc(100% - 5em);
+	margin:2em 0;
+	border-top:1px solid #eee;
+}
+
+
+/* 목록 20220222 */
+.cm1list1{}
+.cm1list1 .hg1{
+	display:flex; /* ☆ */
+	justify-content:space-between;
+	align-items:center;
+}
+.cm1list1 .h1{
+	margin:.5em 0;
+	color:#333;
+	font-weight:600;
+	font-size:1.125rem;
+}
+.cm1list1 .more{
+	display:flex; /* ☆ */
+	align-items:center;
+	color:#888;
+	font-size:.875rem;
+}
+.cm1list1 .ic1{
+	width:1em;
+	height:1em;
+	margin:0 -.25em 0 0;
+	font-size:1em;
+}
+.cm1list1 .dl1{
+	list-style:none;margin:0;padding:0;
+	color:#666;
+}
+.cm1list1 .di1{}
+.cm1list1 .di1 .a1{
+	display:flex; /* ☆ */
+	justify-content:space-between;
+	margin:.25em -.75em;
+	padding:.25em .75em;
+	color:inherit;
+}
+.cm1list1 .di1 .a1:hover,
+.cm1list1 .di1 .a1:focus{
+	background:#f7f7f7;
+}
+.cm1list1 .dt1{
+	flex:auto;
+	text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;
+}
+.cm1list1 .dd1{
+	margin:0 0 0 1em;
+}
+
+
+/* 대시보드.박스배치 20211222 */
+.cm1dashb2{
+	display:flex; /* ☆ */
+	flex-wrap:wrap;
+	justify-content:center;
+	position:relative;
+	margin:0 0 2em;
+	padding:2em 0;
+	border:1px solid #e4e4e4;
+	border-radius:8px;
+	text-align:center;
+}
+.cm1dashb2>[class^='w']{
+	box-sizing:border-box; /* ☆ */
+	width:30%;
+	padding:0 2.5em;
+}
+.cm1dashb2>.w4{
+	width:90%;
+}
+.cm1dashb2 .line{
+	width:calc(100% - 5em);
+	margin:2em 0;
+	border-top:1px solid #eee;
+}
+.cm1dashb2 .chart{
+	margin:1.5em auto;
+}
+/*  */
+.cm1dashb2 .tg1{
+	font-size:1.125rem;
+	font-family:
+		'Lato',
+		Arial,sans-serif;
+}
+.cm1dashb2 .tg1 .tt1{}
+.cm1dashb2 .tg1 .t1{
+	margin:0 0 0 .125em;
+	color:#333;
+	font-size:1.25em;
+}
+.cm1dashb2 .lst1{
+	display:inline-block;
+	list-style:none;margin:0;padding:0;
+	text-align:left;
+	font-size:.75rem;
+}
+.cm1dashb2 .li1{
+	display:flex; /* ☆ */
+	margin:0 0 8px;
+}
+.cm1dashb2 .li1 .ic1{
+	flex:none;
+	width:10px;	
+	height:10px;
+	margin:.25em .375em .25em 0;
+	border-radius:9999px;
+	background:#69c;
+}
+.cm1dashb2 .li1.m1 .ic1{background:#1f77b4;}
+.cm1dashb2 .li1.m2 .ic1{background:#ff7f0e;}
+.cm1dashb2 .li1.m3 .ic1{background:#2ca02c;}
+.cm1dashb2 .li1.m4 .ic1{background:#d62728;}
+
+
+
+/* ◇◆ UI Component ◇◆◇◆◇◆◇◆◇◆ */
+
+
+
+/* ◇◆ .cp1~ (관련 사이트에서 가져와서 맞춤) ◇◆◇◆◇◆◇◆◇◆ */
+
+
+
+
+
+/* ContentBlockName YYYYMMDD @Writer ◇◆ */
+
+
+
+/* RWD ◇◆◇◆ */
+/* ◇◆ */
+@media all and (max-width:767px){
+}
+/* ◇◆ */
+@media all and (min-width:640px){
+}
+/* ◇◆ */
+@media all and (min-width:768px){
+}
+/* ◇◆ */
+@media all and (min-width:1000px){
+}
+/* ◇◆ */
+@media all and (min-width:1100px){
+}
+
+
+/* @keyframes ◇◆◇◆ */
+@keyframes kfw1s1{
+	100% {background-position:100%;}
+}

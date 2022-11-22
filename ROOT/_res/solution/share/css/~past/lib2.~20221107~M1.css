@@ -1,0 +1,641 @@
+@charset "utf-8";
+/**
+ * lib2.css
+ * Add Share Contents ..
+ * 20221026 | @m | 최초작성
+ * 20221028 | @m | 요구반영. 결함개선. 고도화.
+ * 20221104 | @m | ..
+ * 20221111 | @m | ..
+ */
+
+/** Compatible! [IE11+] 20210101~ */
+
+/** Table of contents ))
+ | Overwrite
+ | Add Share Contents
+ | Components Library
+ | RWD
+ */
+
+
+/* All Device ◆◆◆◆◆◆◆◆◆◆ */
+
+
+/* … lib.css, lib1cp1.css )) Overwrite 20221104 ◆◆◆ */
+
+
+/* 강조 20221104 */
+em,
+.em{color:#e00;}
+.em1{color:#5056ff;}
+
+
+/* 버튼 20221104 */
+.button.type1{
+	display:block;
+	width:100%;
+	max-width:370px;
+	margin-left:auto;
+	margin-right:auto;
+	font-weight:600;
+}
+
+
+/* ◇◆ Added to This Project, Content Styles to Share ◇◆◇◆◇◆◇◆◇◆ */
+
+
+
+/* 폼컨트롤(라디오.체크박스.디자인유형) 20221104 */
+.cp1fcontrol1[class]{
+	display:inline-block;
+	line-height:1.375;
+	text-align:left;
+}
+.cp1fcontrol1[class] .item{ /* label */
+	display:inline-flex; /* ☆ */
+	margin:.5em .5em .5em 0;
+}
+.cp1fcontrol1[class] input[type='radio'],
+.cp1fcontrol1[class] input[type='checkbox']{
+	flex:none;
+	width:1em;
+	height:1em;
+	margin:.125em .375em;
+}
+.cp1fcontrol1[class] .item .t1{
+	flex:1;
+	position:relative;
+}
+/* 멀티라인 */
+.cp1fcontrol1.mline,
+.cp1fcontrol1.mline .item{
+	width:100%;
+	margin-right:0;
+}
+/* ◇◆ */
+@media all and (min-width:768px){
+}
+
+
+/* 제목그룹 20221028 */
+.cp1hg1{
+	margin:0 0 2.5rem;
+	line-height:1.375;
+	text-align:center;
+}
+.cp1hg1 .logo{
+	color:#222;
+}
+.cp1hg1 .h1{
+	margin:0;
+	color:#222;
+	font-size:2rem;
+}
+.cp1hg1 .t1{
+	margin:.75em 0;
+	/* color:#222; */
+	font-size:1.25rem;
+}
+/* ◇◆ */
+@media all and (min-width:768px){
+	.cp1hg1 .h1{
+		font-size:2.125rem;
+	}
+}
+
+
+/* 요금안내 20221028 */
+.cp1price1{
+	max-width:1100px;
+	margin:0 auto 60px;
+	line-height:1.375;
+	text-align:center;
+}
+.cp1price1 .lst1{
+	display:flex; /* ☆ */
+	flex-direction:column;
+	list-style:none;
+	margin:-10px;
+	padding:0;
+}
+.cp1price1 .li1{
+	flex:1;
+	margin:10px;
+	background:#fff;
+	color:#0084ef;
+}
+.cp1price1 .w1{
+	padding:30px 30px 0;
+}
+.cp1price1 .w2{}
+.cp1price1 .tg1{
+	margin:30px 0 0;
+	padding:3em 0;
+	border-top:1px solid #ccc;
+}
+.cp1price1 .tg2{
+	padding:2.5em 0;
+	border-top:1px solid #ccc;
+	color:#949494;
+}
+.cp1price1 .tt1{
+	margin:0;
+	font-size:1.875em;
+}
+.cp1price1 .t1{
+	font-size:1.875em;
+	font-family: 'Pretendard', sans-serif;
+}
+.cp1price1 .t2{
+	margin:1em 0 0;
+	font-size:1.125em;
+}
+.cp1price1 .tt2{
+	margin:0 0 .375em;
+	font-weight:600;
+	font-size:1.125em;
+}
+.cp1price1 .lst2{
+	list-style:none;margin:0;padding:0;
+}
+.cp1price1 .li2{
+	font-size:1.125em;
+}
+.cp1price1 .b1{
+	display:block;
+	padding:.5625em;
+	background:#0084ef;
+	color:#fff;
+	font-weight:500;
+	font-size:1.875em;
+}
+/*  */
+.cp1price1 .li1:nth-child(2){
+	color:#5056ff;
+}
+.cp1price1 .li1:nth-child(2) .b1{
+	background:#5056ff;
+}
+/* ◇◆ */
+@media all and (min-width:768px){
+	.cp1price1 .lst1{
+		flex-direction:row;
+	}
+}
+
+
+/* 탭패널콘텐츠 (이용약관..) 20221104 */
+.cp1tabs1{
+	z-index:0;
+	position:relative;
+	max-width:732px;
+	margin:0 auto calc(26px + 2.5%); /* ((26 + 34/1360) */
+	line-height:1.375;
+	word-wrap:break-word;
+	word-break:keep-all;	
+}
+.cp1tabs1 ul{
+	display:flex; /* ☆ */
+	list-style:none;
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+.cp1tabs1 li{
+	flex:auto;
+	display:flex; /* ☆ */
+	margin:0;
+}
+.cp1tabs1 li a{
+	flex:1;
+	display:flex; /* ☆ */
+	justify-content:center;
+	align-items:center;
+	padding:.375em;
+	border-bottom:.3125rem solid #c5c5c5;
+	color:#bbb;
+	font-weight:600;
+	font-size:1.75em;
+	text-decoration:none !important;
+	text-align:center;
+}
+.cp1tabs1 .t1{}
+.cp1tabs1 .ic1{}
+/* ☆ */
+.cp1tabs1 li a:hover,
+.cp1tabs1 li a:focus{
+	color:#222;
+}
+.cp1tabs1 li.on a{
+	border-color:#171717;
+	color:#222;
+}
+/*  */
+.cp1tabs1 .tooltip1c{
+	margin-top:8px;
+}
+/* 패널콘텐츠 */
+.cp1tabs1cont{}
+.cp1tabs1pane{}
+/* ◇◆ */
+@media all and (min-width:768px){
+	.cp1tabs1 li a{
+		font-size:2.5em;
+	}
+}
+
+
+/* 콘텐츠상자 (이용약관..), .. 20221028 */
+.cp1view1{
+	position:relative;
+	padding:calc(10px + 3%) calc(10px + 3.75%);
+	background:#eaeef8;
+}
+
+
+/* 작성폼 20221104 */
+/* Form and Button */
+.cp1write1{
+	max-width:480px;
+	position:relative;
+	margin:0 auto 60px;
+	font-size:1.125em;
+}
+.cp1write1 .item{
+	margin:0 0 1em;
+}
+.cp1write1 .btns{
+	margin:2em 0 0;
+}
+.cp1write1 .form-t1,
+.cp1write1 .button,
+.cp1write1 input:not([type='radio']),
+.cp1write1 input:not([type='checkbox']),
+.cp1write1 textarea:not([x]),
+.cp1write1 select:not([x]){
+	padding-top:calc(.890625rem - 1px);  /* ((3.75-1.75*1.125)/2 - 1px) */
+	padding-bottom:calc(.890625rem - 1px);
+	font-size:1.125rem;
+}
+.cp1write1 .explain{
+	margin:.25em 0;
+	color:#666;
+	font-size:.875em;
+}
+.cp1write1 .explain.yes{
+	color:#08c;
+}
+.cp1write1 .explain.no{
+	color:#e50;
+}
+
+
+/* 문의하기 20221104 */
+.cp1contact1{
+	max-width:760px;
+}
+.cp1contact1 .label{
+	font-weight:600;
+}
+.cp1contact1 .textarea1{
+	height:11.375rem; /* (182/16) */
+}
+.cp1contact1 .tg1{
+	font-weight:600;
+}
+/* ◇◆ */
+@media all and (min-width:768px){
+	.cp1contact1>.w1{
+		display:flex; /* ☆ */
+		margin:0 -2.5%;
+	}
+	.cp1contact1>.w2{
+		text-align:center;
+	}
+	.cp1contact1 .w1w1{
+		width:100%;
+		margin:2.5%;
+	}
+	.cp1contact1 .w1w2{
+		width:100%;
+		margin:2.5%;
+	}
+}
+
+
+/* 로그인 20221104 */
+.cp1login1{}
+.cp1login1 .mns1{
+	margin:1em 0;
+	text-align:center;
+}
+.cp1login1 .mns1 .a1{display:inline-block;
+	position:relative;
+	padding:.25em 1em;
+	color:inherit;
+}
+.cp1login1 .mns1 .a1~.a1:before{content:''; /*│*/
+	display:block;
+	position:absolute;left:0;top:50%;
+	width:0;
+	height:.75em;
+	margin:-.375em 0;
+	border-left:1px solid #ccc;
+}
+
+
+/* SNS계정 (로그인..) 20221104 */
+.cp1sns1{
+	margin:1.5em 0;
+	padding:1.5em 0;
+	border-top:1px solid #ddd;
+	text-align:center;
+}
+.cp1sns1 .tt1{
+	display:block;
+	margin:0 0 1.5em;
+	font-size:.9375em;
+	text-align:center;
+}
+.cp1sns1 .b2{
+	display:inline-block;
+	position:relative;
+	width:calc(4.375rem - 2px); /* (70/16 - 2px) */
+	height:calc(4.375rem - 2px);
+	margin:0 .75em;
+	border:1px solid #eee;
+	border-radius:9999px;
+	background:url() no-repeat center center / 4.375rem;
+	vertical-align:middle;
+	overflow:hidden;text-indent:-9999px;
+}
+.cp1sns1 .b2.google{background-image:url(../../img/lib2/ic140a1c2google1.png);}
+.cp1sns1 .b2.kakaotalk{background-image:url(../../img/lib2/ic140a1c2kakaotalk1.png);}
+.cp1sns1 .b2.naver{background-image:url(../../img/lib2/ic140a1c2naver1.png);}
+
+
+/* 회원가입 20221104 */
+.cp1signup1{}
+/*  */
+.cp1signup1 .cp1fcontrol1 .a1{
+	margin:.125em 0;
+	color:#949494;
+	font-size:.875em;
+}
+.cp1signup1 .cp1fcontrol1 .a1:hover,
+.cp1signup1 .cp1fcontrol1 .a1:focus{
+	color:#000;
+}
+
+
+/* 이메일인증 20221104 */
+.cp1verify1{
+	margin:0 0 1.375em;
+}
+.cp1verify1 .item{
+	margin:0;
+}
+.cp1verify1 .w1,
+.cp1verify1 .w2{
+	display:flex; /* ☆ */
+	position:relative;
+}
+.cp1verify1 .w2w1{
+	position:absolute;right:0;top:50%;
+	transform:translate(-.75em, -50%);
+}
+.cp1verify1 .time{
+	color:#f40;
+	font-weight:400;
+}
+.cp1verify1 button.verify-code{
+	width:60px;
+	height:32px;
+	margin:0 0 0 .5em;
+	padding:0;
+	font-size:.875em;
+}
+/*  */
+.cp1verify1.on{	/* 진행중 */
+}
+/* 인증완료 */
+.cp1verify1.verified .explain.no{
+	display:none;
+}
+
+
+/* 비밀번호 찾기 20221104 */
+.cp1pw1find1{}
+
+
+/* 비밀번호 재설정 20221104 */
+.cp1pw1reset1{}
+
+
+/* 내 프로필 20221111 */
+.cp1my1profile1{
+	max-width:1080px;
+	background:#fff;
+}
+.cp1my1profile1>.w1{
+	box-sizing:border-box; /* ☆ */
+	max-width:365px;
+	margin:0 auto;
+	padding:7% 7% 0;
+}
+.cp1my1profile1>.w2{
+	padding:7%;
+}
+.cp1my1profile1 .item{
+	display:flex; /* ☆ */
+}
+.cp1my1profile1 .item .label{
+	flex:none;
+	width:8em;
+}
+.cp1my1profile1 .label{}
+/* ◇◆ */
+@media all and (min-width:768px){
+	.cp1my1profile1{
+		display:flex; /* ☆ */
+	}
+	.cp1my1profile1>.w1{
+		flex:none;
+		width:33.796%; /* (365/1080) */
+		padding:7% 0 7% 7%;
+		/* background:#5056ff; */
+	}
+	.cp1my1profile1>.w2{
+		padding:7%;
+	}
+}
+
+
+/* 프로필설정 20221111 */
+.cp1profile1write1{
+	display:block;
+	width:100%;
+	max-width:360px;
+	margin:0 auto;
+	position:relative;
+}
+.cp1profile1write1 .f1{display:block;
+	position:relative;
+	max-width:180px;
+	margin:0 auto 2em;
+}
+.cp1profile1write1 .f1p1{display:block;
+	position:relative;
+	padding:0 0 100%; /* (1/1) */
+	border-radius:9999px;
+	overflow:hidden;
+}
+.cp1profile1write1 .f1 img{display:block;
+	position:absolute;
+	width:100%;
+	height:100%;
+	margin:auto;
+	object-fit:cover;
+}
+html.no-object-fit .cp1profile1write1 .f1 img{ /* [IE] */
+	height:auto;
+	min-height:100%;
+}
+.cp1profile1write1 .f1 .ic1{
+	display:inline-block;
+	position:absolute;right:6%;bottom:6%;
+	width:24px;height:24px;
+	margin:0;
+	padding:0;
+	border:0;
+	border-radius:9999px;
+	background:#fff;
+  box-shadow: 0 1px 2px 0 #0003;
+	cursor:pointer;
+}
+.cp1profile1write1 .f1 .ic1:before{content:'';
+	display:inline-block;
+	position:absolute;left:50%;top:50%;
+	width:12px;height:12px;
+	margin:-6px;
+	background:url(../../img/lib2/b1plus2c1.png) no-repeat center center;
+	opacity:.6;
+}
+.cp1profile1write1 .f1 .ic1:hover:before,
+.cp1profile1write1 .f1 .ic1:focus:before{
+	opacity:.8;
+}
+.cp1profile1write1 .b2{
+	margin:2em auto;
+}
+/*  */
+.cp1profile1write1 .cp1upload1{
+	max-width:400px;
+}
+
+
+/* 첨부업로드 20221111 */
+.cp1upload1{
+	display:flex; /* ☆ */
+	align-items:center;
+	box-sizing:border-box; /* ☆ */
+	position:relative;
+	width:100%;
+	height:3em;
+	margin:.375em auto;
+	border:1px solid #ccc;
+	overflow:hidden;
+}
+.cp1upload1 form{ /* 폼 태그 있을 때 고려 */
+	flex:1;
+	display:flex; /* ☆ */
+	align-items:center;
+	box-sizing:border-box; /* ☆ */
+}
+.cp1upload1 .label{
+	display:none;
+	height:auto;
+	margin:0;
+	padding:.5625em .75em;
+	white-space:nowrap;
+	cursor:pointer;
+}
+.cp1upload1 .w1file{
+	display:block;
+	position:relative;
+	width:100%;
+	font-size:.875em;
+}
+.cp1upload1 input[type='file']{
+	position:absolute;left:0;right:0;top:0;bottom:0;
+	width:100%;
+	margin:0;
+	padding-left:1em;
+	padding-right:calc(1em + 20px);
+	font-size:.875em;
+	border:0;
+	opacity:0;
+}
+.cp1upload1 input[type='text']{
+	width:100%;
+	margin:0;
+	padding-left:1em;
+	padding-right:calc(1em + 20px);
+	font-size:.875em;
+	border:0;
+	background:#fff;
+	text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;
+}
+.cp1upload1 .b1.del{display:inline-block;
+	position:absolute;right:0;top:50%;
+	width:20px;
+	height:20px;
+	margin:-10px .375em;
+	padding:5px;
+	border:0;
+	background:url(../../img/lib2/b1x3c1.png) no-repeat center center / 50px;
+	background-clip: content-box;
+	overflow:hidden;text-indent:-9999px;
+}
+/* (값 없으면) */
+.cp1upload1.off .label{
+	display:block;
+	width:100%;
+}
+.cp1upload1.off .w1file{
+	display:none;
+}
+
+
+
+/* ◇◆ UI Component ◇◆◇◆◇◆◇◆◇◆ */
+
+
+/* ◇◆ .cp2~ (가져와서 커스텀) ◇◆◇◆◇◆◇◆◇◆ */
+
+
+/* ContentBlockName YYYYMMDD @Writer ◇◆ */
+
+
+/* RWD ◇◆◇◆ */
+/* ◇◆ */
+@media all and (max-width:767px){
+}
+/* ◇◆ */
+@media all and (min-width:768px){
+}
+/* ◇◆ */
+@media all and (min-width:1000px){
+}
+/* ◇◆ */
+@media all and (min-width:1260px){
+}
+/* ◇◆ */
+@media all and (min-width:1440px){
+}
+
+
+/* @keyframes ◇◆◇◆ */
+@keyframes kfw1s1{
+	100% {background-position:100%;}
+}

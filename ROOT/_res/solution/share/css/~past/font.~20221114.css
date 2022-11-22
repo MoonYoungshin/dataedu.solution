@@ -1,0 +1,132 @@
+@charset "utf-8";
+ /**
+ * font.css
+ * @font-face | class font-family | Mobile
+ * 20201217 | @m | 최초 등록
+ * 20201228 | @m | 요구반영. 결함개선. 고도화.
+ * 20211228 | @m | 웹폰트 pretendard 추가
+ * 20211231 | @m | 
+ * 20220224 | @m | @import url(font_NotoSans.css);
+ * 20221028 | @m | 커스텀
+ */
+
+
+/* 20221028 */
+/* @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css); */
+@import url(font_NotoSans.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Lato:wght@300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp');
+
+
+/* Pretendard (( 20211231 */
+/* @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'); */
+/* @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css'); */
+@import url('../../font/Pretendard/pretendard-subset.css');
+
+
+/* ◇◆ @font-face ◇◆ */
+
+
+/* NanumGothic */
+@font-face {
+	font-family: 'Nanum Gothic';
+	font-weight: 400;
+	src:
+		url(../../font/NanumGothic/400.woff2) format('woff2'),url(../../font/NanumGothic/400.woff) format('woff');
+}
+@font-face {
+	font-family: 'Nanum Gothic';
+	font-weight: 700;
+	src:
+		url(../../font/NanumGothic/700.woff2) format('woff2'),url(../../font/NanumGothic/700.woff) format('woff');
+}
+@font-face {
+	font-family: 'Nanum Gothic';
+	font-weight: 800;
+	src: 
+		url(../../font/NanumGothic/800.woff2) format('woff2'),url(../../font/NanumGothic/800.woff) format('woff');
+}
+
+
+/* 넥슨 lv1 고딕 (when@who)  */
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* ◇◆ class font-family 20221028 ◇◆ */
+
+
+.ffdu{
+	font-family:
+		'돋움',Dotum,
+		sans-serif;
+}
+
+.ffmg{
+	font-family:
+		'맑은 고딕','Malgun Gothic',
+		sans-serif;
+}
+
+.ffng{
+	font-family:
+		'나눔고딕',NanumGothic,'Nanum Gothic',
+		'Microsoft JhengHei',
+		sans-serif;
+}
+
+.ffnsk,
+.ffnss{
+	font-family:
+		'본고딕','Noto Sans KR','Noto Sans CJK KR',NotoSans, /* 로컬 파일 우선 */
+		'본고딕',NotoSans,'Noto Sans KR','Noto Sans CJK KR', /* 리모트 우선 */
+		'Microsoft JhengHei',
+		sans-serif;
+}
+
+.ffptd{
+	font-family:
+		Pretendard,
+		'Microsoft JhengHei',
+		sans-serif;
+}
+
+
+
+@media only screen and (-webkit-min-device-pixel-ratio:1.3){ /* [Mobile] ◇◆◇◆◇◆◇◆◇◆ */
+
+
+/* UA 기본폰트 */
+html[lang|='ko'],
+html [lang|='ko'],
+html [lang|='ko']>*{
+	font-family:sans-serif;
+}
+
+/* [class], */ /* ☆ 이거하면 위에서 클래스로 정의한 모든 폰트를 기본으로 되돌린다. */
+.ffng,
+.ffnsk,
+.ffnss{
+	font-family:sans-serif;
+}
+
+
+}/* /[Mobile] */

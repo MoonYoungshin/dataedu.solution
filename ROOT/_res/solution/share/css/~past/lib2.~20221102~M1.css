@@ -1,0 +1,335 @@
+@charset "utf-8";
+/**
+ * lib2.css
+ * Add Share Contents ..
+ * 20221026 | @m | 최초작성
+ * 20221028 | @m | 요구반영. 결함개선. 고도화.
+ * 20221104 | @m | 
+ */
+
+/** Compatible! [IE11+] 20210101~ */
+
+/** Table of contents ))
+ | Overwrite
+ | Add Share Contents
+ | Components Library
+ | RWD
+ */
+
+
+/* All Device ◆◆◆◆◆◆◆◆◆◆ */
+
+
+/* … lib.css, lib1cp1.css )) Overwrite 20221104 ◆◆◆ */
+
+
+/* 강조 20221104 */
+em,
+.em{color:#e00;}
+.em1{color:#5056ff;}
+
+
+/* 버튼 20221104 */
+.button.type1{
+	display:block;
+	width:100%;
+	max-width:370px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:calc(.5625rem - 1px); /* (3.75-(1.5*1.75))/2 */
+	padding-bottom:calc(.5625rem - 1px);
+	font-weight:600;
+	font-size:1.5rem;
+}
+
+
+/* ◇◆ Added to This Project, Content Styles to Share ◇◆◇◆◇◆◇◆◇◆ */
+
+
+
+/* 폼블럭요소 20211006 */
+.cp1fcontrol1[class]{
+	display:inline-block;
+	line-height:1.375;
+	text-align:left;
+}
+.cp1fcontrol1[class] .item{
+	display:flex; /* ☆ */
+	margin:.5em .5em .5em 0;
+}
+.cp1fcontrol1[class] input[type='radio'],
+.cp1fcontrol1[class] input[type='checkbox']{
+	flex:none;
+	width:1em;
+	height:1em;
+	margin:.1875em .375em;
+}
+.cp1fcontrol1[class] .item .t1{}
+
+
+/* 제목그룹 20221028 */
+.cp1hg1{
+	margin:0 0 calc(20px + 2%);
+	line-height:1.375;
+	text-align:center;
+}
+.cp1hg1 .h1{
+	margin:0;
+	color:#222;
+	font-size:2em;
+}
+.cp1hg1 .t1{
+	margin:.375em 0 0;
+	color:#222;
+	font-size:1.25em;
+}
+/* ◇◆ */
+@media all and (min-width:768px){
+	.cp1hg1 .h1{
+		font-size:2.5em;
+	}
+	.cp1hg1 .t1{
+		font-size:1.875em;
+	}
+}
+
+
+/* 요금안내 20221028 */
+.cp1price1{
+	max-width:1100px;
+	margin:0 auto 60px;
+	line-height:1.375;
+	text-align:center;
+}
+.cp1price1 .lst1{
+	display:flex; /* ☆ */
+	flex-direction:column;
+	list-style:none;
+	margin:-10px;
+	padding:0;
+}
+.cp1price1 .li1{
+	flex:1;
+	margin:10px;
+	background:#fff;
+	color:#0084ef;
+}
+.cp1price1 .w1{
+	padding:30px 30px 0;
+}
+.cp1price1 .w2{}
+.cp1price1 .tg1{
+	margin:30px 0 0;
+	padding:3em 0;
+	border-top:1px solid #ccc;
+}
+.cp1price1 .tg2{
+	padding:2.5em 0;
+	border-top:1px solid #ccc;
+	color:#949494;
+}
+.cp1price1 .tt1{
+	margin:0;
+	font-size:1.875em;
+}
+.cp1price1 .t1{
+	font-size:1.875em;
+	font-family: 'Pretendard', sans-serif;
+}
+.cp1price1 .t2{
+	margin:1em 0 0;
+	font-size:1.125em;
+}
+.cp1price1 .tt2{
+	margin:0 0 .375em;
+	font-weight:600;
+	font-size:1.125em;
+}
+.cp1price1 .lst2{
+	list-style:none;margin:0;padding:0;
+}
+.cp1price1 .li2{
+	font-size:1.125em;
+}
+.cp1price1 .b1{
+	display:block;
+	padding:.5625em;
+	background:#0084ef;
+	color:#fff;
+	font-weight:500;
+	font-size:1.875em;
+}
+/*  */
+.cp1price1 .li1:nth-child(2){
+	color:#5056ff;
+}
+.cp1price1 .li1:nth-child(2) .b1{
+	background:#5056ff;
+}
+/* ◇◆ */
+@media all and (min-width:768px){
+	.cp1price1 .lst1{
+		flex-direction:row;
+	}
+}
+
+
+/* 탭패널콘텐츠 (이용약관..) 20221104 */
+.cp1tabs1{
+	z-index:0;
+	position:relative;
+	max-width:732px;
+	margin:0 auto calc(26px + 2.5%); /* ((26 + 34/1360) */
+	line-height:1.375;
+	word-wrap:break-word;
+	word-break:keep-all;	
+}
+.cp1tabs1 ul{
+	display:flex; /* ☆ */
+	list-style:none;
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+.cp1tabs1 li{
+	flex:auto;
+	display:flex; /* ☆ */
+	margin:0;
+}
+.cp1tabs1 li a{
+	flex:1;
+	display:flex; /* ☆ */
+	justify-content:center;
+	align-items:center;
+	padding:.375em;
+	border-bottom:.3125rem solid #c5c5c5;
+	color:#bbb;
+	font-weight:600;
+	font-size:1.75em;
+	text-decoration:none !important;
+	text-align:center;
+}
+.cp1tabs1 .t1{}
+.cp1tabs1 .ic1{}
+/* ☆ */
+.cp1tabs1 li a:hover,
+.cp1tabs1 li a:focus{
+	color:#222;
+}
+.cp1tabs1 li.on a{
+	border-color:#171717;
+	color:#222;
+}
+/*  */
+.cp1tabs1 .tooltip1c{
+	margin-top:8px;
+}
+/* 패널콘텐츠 */
+.cp1tabs1cont{}
+.cp1tabs1pane{}
+/* ◇◆ */
+@media all and (min-width:768px){
+	.cp1tabs1 li a{
+		font-size:2.5em;
+	}
+}
+
+
+/* 글상자 (이용약관..), .. 20221028 */
+.cp1view1{
+	position:relative;
+	padding:calc(10px + 3%) calc(10px + 3.75%);
+	background:#eaeef8;
+}
+
+
+/* 문의하기 20221104 */
+/* Form and Button */
+.cp1write1 .button,
+.cp1write1 input:not([type='radio']),
+.cp1write1 input:not([type='checkbox']),
+.cp1write1 textarea:not([x]),
+.cp1write1 select:not([x]){
+	padding-top:calc(.890625rem - 1px);
+	padding-bottom:calc(.890625rem - 1px);
+	font-size:1.125rem;
+}
+
+
+/* 문의하기 20221104 */
+.cp1contact1{
+	max-width:760px;
+	margin:0 auto 60px;
+	font-size:1.125em;
+	line-height:1.375;
+}
+.cp1contact1 .wrap1{}
+.cp1contact1 .wrap2{}
+.cp1contact1 .w1{}
+.cp1contact1 .w2{}
+.cp1contact1 .item{
+	display:block;
+	margin:0 0 .75em;
+}
+.cp1contact1 .textarea1{
+	height:10.875rem;
+}
+.cp1contact1 .tg1{
+	font-weight:600;
+}
+/* ◇◆ */
+@media all and (min-width:768px){
+	.cp1contact1 .wrap1{
+		display:flex; /* ☆ */
+		margin:0 -2.5%;
+	}
+	.cp1contact1 .w1{
+		width:100%;
+		margin:2.5%;
+	}
+	.cp1contact1 .w2{
+		width:100%;
+		margin:2.5%;
+	}
+	.cp1contact1 .wrap2{
+		text-align:center;
+	}
+}
+
+
+
+
+/* ◇◆ UI Component ◇◆◇◆◇◆◇◆◇◆ */
+
+
+/* ◇◆ .cp1~ (관련 사이트에서 가져와서 맞춤) ◇◆◇◆◇◆◇◆◇◆ */
+
+
+/* ContentBlockName YYYYMMDD @Writer ◇◆ */
+
+
+/* RWD ◇◆◇◆ */
+/* ◇◆ */
+@media all and (max-width:767px){
+}
+/* ◇◆ */
+@media all and (min-width:640px){
+}
+/* ◇◆ */
+@media all and (min-width:768px){
+}
+/* ◇◆ */
+@media all and (min-width:1000px){
+}
+/* ◇◆ */
+@media all and (min-width:1260px){
+}
+/* ◇◆ */
+@media all and (min-width:1440px){
+}
+
+
+/* @keyframes ◇◆◇◆ */
+@keyframes kfw1s1{
+	100% {background-position:100%;}
+}

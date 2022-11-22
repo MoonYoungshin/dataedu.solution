@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!--
+/**
+ * 20220210 | @m | 최초작성
+ * 20220210 | @m | 요구반영. 결함개선. 고도화.
+ */
+-->
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Layer Popup Youtube by@m</title>
+<style>/*<![CDATA[*/
+
+
+	/* 레이어라이트박스. 20220210 */
+	/* 공통 */
+	.cp1layer1lightbox1{display:none;
+		display:flex !important; /* ☆ */
+		visibility:hidden;
+		z-index:100;
+		position:fixed;left:0;right:0;top:0;bottom:0;
+		background:rgba(0,0,0, .5);
+		letter-spacing:-.03125em;
+		overflow:hidden;
+		overflow-y:auto;
+		opacity:0;
+		transition:.2s;
+	}
+	.cp1layer1lightbox1.on{
+		visibility:visible;
+		opacity:1;
+	}
+	.cp1layer1lightbox1>.wrap1{display:block;
+		box-sizing:border-box; /* ☆ */
+		width:100%;
+		margin:auto;
+		padding:32px 0; /* (10px) */
+		text-align:center;
+	}
+	.cp1layer1lightbox1>.wrap1:after{content:'';display:inline-block;
+		width:0;
+		height:100%;
+		vertical-align:middle;
+		overflow:hidden;
+	}
+	.cp1layer1lightbox1 .lightbox{display:inline-block;
+		position:relative;
+		box-sizing:border-box; /* ☆ */
+		width:100%; /* ☆ */
+		max-width:1000px; /* ☆ */
+		/* margin:3% -.25em; */
+		/* border-radius:1em; */
+		background:#333;
+		text-align:left;
+		vertical-align:middle;
+		box-shadow:0 20px 40px 4px rgba(0,0,0, .2);
+	}
+	.cp1layer1lightbox1 .lightbox>.wrap2{
+		position:relative;
+		margin:10px; /* ((35/510) */
+		background:#000;
+	}
+	/* 제목 */
+	.cp1layer1lightbox1 .lightbox>.wrap2>.hg1{
+		display:flex; /* ☆ */
+		justify-content:space-between;
+		position:relative;
+	}
+	.cp1layer1lightbox1 .lightbox>.wrap2>.hg1>.h1{
+		position:relative;
+		position:absolute;left:-9999px;
+		margin:0;
+		color:#222;
+		font-weight:600;
+		font-size:1.5em;
+	}
+	/* 닫기 */
+	.cp1layer1lightbox1 .b1.close{
+		flex:none;
+		z-index:10;
+		display:block;
+		position:absolute;right:0;bottom:100%;
+		width:32px;
+		height:32px;
+		margin:10px -10px;
+		background:#333;
+		text-indent:-9999px;overflow:hidden;
+	}
+	.cp1layer1lightbox1 .b1.close>.ic1{
+		display:block;
+		position:absolute;left:50%;top:50%;
+		width:16px;height:16px;
+		margin:-8px;
+	}
+	.cp1layer1lightbox1 .b1.close>.ic1:before{content:''; /* / */
+		display:block;
+		position:absolute;left:50%;top:50%;
+		width:0;
+		height:20px;
+		margin:-10px 0;
+		border-left:1px solid #fff;
+		transform:rotate(45deg);
+	}	
+	.cp1layer1lightbox1 .b1.close>.ic1:after{content:''; /* / */
+		display:block;
+		position:absolute;left:50%;top:50%;
+		width:0;
+		height:20px;
+		margin:-10px 0;
+		border-left:1px solid #fff;
+		transform:rotate(-45deg);
+	}	
+	/* 내용 */
+	.cp1layer1lightbox1 .lightbox>.wrap2>.cont{
+		/* padding:1.5em 0 0; */
+	}
+	.cp1layer1lightbox1 .lightbox>.wrap2>.cont:before,
+	.cp1layer1lightbox1 .lightbox>.wrap2>.cont:after{content:'';display:table;clear:both;}
+	/* 푸터그룹 */
+	.cp1layer1lightbox1 .lightbox>.wrap2>.fg1{
+		padding:.9275em 0 0;
+		border-top:1px solid #e7e7e7;
+	}
+	/* 비디오. 20220210 */
+	.cp1video1{
+		position:relative;
+		padding:0 0 56.25%; /* (9/16) */
+	}
+	.cp1video1 iframe{
+		position:absolute;left:0;right:0;top:0;bottom:0;
+		width:100%;height:100%;
+	}
+
+
+/*]]>*/</style>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>/*<![CDATA[*/
+
+	/** ◇◆ 토글. v0.8.10.0 | 20150520~ 20210826. 20210908. MoonYoungShin.
+	 */
+	MJS = window.MJS || {};
+	$(function(){
+
+		(MJS.doToggle = function(selector){
+			$('.toggle').not('.donot').each(function(){ // 20150515. 토글 동작 안하기 추가
+				var $my = $(this), // 토글 앵커
+					$that = $(); // 토글 대상
+				var myhref = $my.data('href') || $my.attr('href') || ''; // 20210826. 20210908 
+				var where = myhref.lastIndexOf('#'),
+					myhash = '';
+				if( !!myhref && where != -1 ){
+					myhash  = myhref.substring( where );
+				}
+				$that = $(myhash);
+				var $sib = $that.parent().siblings('.' + $that.parent().attr('class')); // 형제 콘텐츠. $my 말고 $that 에서 찾아야 정확하다.
+
+				// 20190129. 20210513
+				var duration = ($my.data('duration'))? $my.data('duration') : 300; // (( 200
+				var easing = ($my.data('easing'))? $my.data('easing') : 'easeInOutQuart'; // 'swing'
+
+				// 최초 비활성/활성 분기
+				if( $my.hasClass('on') ){
+					$that.addClass('on').show();
+				}else{
+					$that.removeClass('on').hide();
+				}
+				// 토글 클릭
+				$my.on('click', function(){
+
+					// 나 아닌 형제만 탐색하기 위해 .now 추가했다가 형제 조작한 뒤 제거한다.
+					$my.addClass('now');
+					$that.addClass('now');
+
+					if( !$(this).is('.on') ){ // 20161208. 토글 닫은 후에 초점 오려면 .on 이 제거되도 .opener-last 클래스를 남겨둔다.
+						$('.toggle').removeClass('opener-last'); // 오프너 제거
+						$my.addClass('opener-last'); // 오프너 설정
+					}
+					// 형제 콘텐츠 닫기
+					if( $my.is('.opt-far') ){ // 토글 앵커와 대상이 멀리 있는 경우라면..
+						var $wrap = $my.closest('.w1toggles');
+						console.log( $sib.not('.now').length );
+						$('.toggle.opt-far', $wrap).not('.now').removeClass('on');
+						$sib.not('.now').children().removeClass('on').hide();
+					}else{
+						$sib.each(function(){
+							$(this).removeClass('on');
+							var $my = $('.toggle', $(this)); // 형제 토글 앵커
+							var $that = $($my.attr('href')); // 형제 토글 대상
+							$my.removeClass('on');
+							$that.removeClass('on').hide();
+						});
+					}
+
+					$my.removeClass('now');
+					$that.removeClass('now');
+
+					// 내 토글 동작. 20180719 ☆ toggle() before toggleClass()
+					if($my.hasClass('showhide')){
+						$that.toggle();
+					}else if($my.hasClass('slide')){
+						$that.slideToggle(duration, easing, function(){});
+					}else if($my.hasClass('fade')){
+						$that.fadeToggle(duration, easing, function(){});
+					}else if($my.hasClass('animate1')){
+						$that.animate({
+							left: 'toggle',
+							top: 'toggle',
+							width: 'toggle',
+							height: 'toggle',
+							opacity: 'toggle'
+						}, duration, function(){});
+					}else if($my.hasClass('animate1height1')){
+						$that.animate({
+							height: 'toggle',
+							opacity: 'toggle'
+						}, duration, function(){});
+					}else{ // 기본 토글
+						//$that.toggle(easing); // $that.toggle(duration, easing); 과 같다.
+						$that.toggle();
+						//console.log('기본 토글');
+					}
+					$my.toggleClass('on');
+					$that.toggleClass('on');
+
+					// 초점 보내기. 20180531.
+					setTimeout(function(){ // CSS transition 사용하면 초점 사라지는 결함 해결
+						if($my.is('.on')){
+							if($my.data('sendFocus') == 'that'){ // data-send-focus="that"
+								$that.find('a, input, select, textarea, button').first().focus(); // 토글 대상이 떨어져 있어도 된다.
+							}else{
+								$my.focus();
+							}
+						}
+					}, 50);
+
+					return false;
+				});
+
+				// 닫기 클릭. 20210826. 20210908
+				// $my.filter('.opener-last') 없으면 초점 보이지 않지만, 탭키 누르면 다음 콘텐츠로 이동한다. (이건 주로 마우스 동작 시 해당되므로 문제없음)
+				$('.close', $that).on('click', function(){
+					//console.log($my.text() + $my.is('.opener-last'));
+					var closeHref = $(this).data('href') || $(this).attr('href'); // 20210808. 20210908
+					if( myhref == closeHref ){ // 20210826
+						$my.filter('.on').triggerHandler('click');
+						$my.filter('.opener-last').focus();
+					}
+					// data-href 값 존재하고 href 값과 다르면 나머진
+					if( !!$(this).data('href') && ( $(this).data('href') != $(this).attr('href')) ){
+						return; // href 주소로 페이지 이동
+					}else{
+						return false; // 페이지 이동 안함
+					}
+				});
+
+			});
+		})();
+	});
+/*]]>*/</script>
+
+</head>
+<body>
+<!-- container -->
+<div id="container">
+
+
+
+
+
+<h1 class="hb1 h1">Layer Popup Youtube v0.1</h1>
+
+
+<a href="#layer1utube1" title="유튜브 동영상 보기 [레이어팝업]" class="button primary toggle" data-send-focus="that">유튜브 동영상 보기 [레이어팝업]</a>
+
+
+<script>/*<![CDATA[*/
+		$(function(){
+			// 레이어팝업 바로 확인
+			//$('[href="#layer1utube1"]').first().triggerHandler('click');
+		});
+/*]]>*/</script>
+
+
+<!-- (레이어팝업) -->
+<!-- cp1layer1lightbox1 : 레이어박스  -->
+<div class="cp1layer1lightbox1" id="layer1utube1">
+	<div class="wrap1">
+		<!-- lightbox -->
+		<div class="lightbox">
+			<div class="wrap2">
+
+
+				<!-- ★★(유튜브 동영상) -->
+				<div class="hg1">
+					<h3 class="h1">유튜브 동영상</h3>
+					<a href="#layer1utube1" class="b1 close"><i class="ic1"></i> <span class="blind">유튜브 동영상 창 닫기</span></a>
+				</div>
+				<div class="cont">
+
+					<!-- cp1video1 -->
+					<div class="cp1video1">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/S7XLVTMHRmQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<!-- /cp1video1 -->
+
+				</div>
+				<!-- /★★(유튜브 동영상) -->
+
+
+			</div>
+		</div>
+		<!-- /lightbox -->
+	</div>
+</div>
+<!-- /cp1layer1lightbox1 -->
+
+
+
+
+
+</div>
+<!-- /container -->
+</body>
+</html>
