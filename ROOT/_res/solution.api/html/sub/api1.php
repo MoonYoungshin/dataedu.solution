@@ -2,7 +2,7 @@
 <?php
 /**
  * 20221026 | @m | 최초작성
- * 20221101 | @m | 요구반영. 결함개선. 고도화.
+ * 20221122 | @m | 요구반영. 결함개선. 고도화.
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -63,59 +63,114 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 
 
-<!-- cp2menu1 -->
-<div class="cp2menu1">
-<div class="wrap1">
-	<ul class="mns">
-		<li class="m m1">
-			<a href="?#★" class="a1">
-				<i class="ic1"></i>
-				<strong class="t1">Audio API</strong>
-				<div class="t2">
-					24시간 고객 문의 응대 및 예약, 요청업무 처리, 조사, 판매 등 인바운드/아웃바운드 전화 업무 전반을 제공할 수 있습니다.
-				</div>
-			</a>
-		</li>
-		<li class="m m2">
-			<a href="?#★" class="a1">
-				<i class="ic1"></i>
-				<strong class="t1">Vision API</strong>
-				<div class="t2">
-					24시간 고객 문의 응대 및 예약, 요청업무 처리, 조사, 판매 등 인바운드/아웃바운드 전화 업무 전반을 제공할 수 있습니다.
-				</div>
-			</a>
-		</li>
-		<li class="m m3">
-			<a href="?#★" class="a1">
-				<i class="ic1"></i>
-				<strong class="t1">Language API</strong>
-				<div class="t2">
-					24시간 고객 문의 응대 및 예약, 요청업무 처리, 조사, 판매 등 인바운드/아웃바운드 전화 업무 전반을 제공할 수 있습니다.
-				</div>
-			</a>
-		</li>
-		<li class="m m4">
-			<a href="?#★" class="a1">
-				<i class="ic1"></i>
-				<strong class="t1">Education API</strong>
-				<div class="t2">
-					24시간 고객 문의 응대 및 예약, 요청업무 처리, 조사, 판매 등 인바운드/아웃바운드 전화 업무 전반을 제공할 수 있습니다.
-				</div>
-			</a>
-		</li>
-		<li class="m m5">
-			<a href="?#★" class="a1">
-				<i class="ic1"></i>
-				<strong class="t1">Video API</strong>
-				<div class="t2">
-					24시간 고객 문의 응대 및 예약, 요청업무 처리, 조사, 판매 등 인바운드/아웃바운드 전화 업무 전반을 제공할 수 있습니다.
-				</div>
-			</a>
-		</li>
+<h3 class="blind">API 체험하기</h3>
+
+<!-- cp2tabs2 -->
+<div id="cp2tabs2" class="cp2tabs2">
+	<ul>
+		<li class="m1"><a href="#cp2tabs2pane1"><span class="t1">추천</span></a></li>
+		<li class="m2"><a href="#cp2tabs2pane2"><span class="t1">Audio</span></a></li>
+		<li class="m3"><a href="#cp2tabs2pane3"><span class="t1">Vision</span></a></li>
+		<li class="m4"><a href="#cp2tabs2pane4"><span class="t1">Language</span></a></li>
+		<li class="m5"><a href="#cp2tabs2pane5"><span class="t1">Education</span></a></li>
+		<li class="m6"><a href="#cp2tabs2pane6"><span class="t1">Video</span></a></li>
 	</ul>
 </div>
+<!-- /cp2tabs2 -->
+
+<!-- cp2tabs2cont -->
+<div id="cp2tabs2cont" class="cp2tabs2cont">
+<!-- cp2tabs2pane -->
+<div id="cp2tabs2pane1" class="cp2tabs2pane">
+<h4 class="blind">추천</h4>
+
+	<!-- cp2card1 -->
+	<div class="cp2card1">
+	<div class="wrap1">
+		<ul class="mns">
+			<li class="m tts">
+				<a href="?#★" class="a1">
+					<i class="ic1"></i>
+					<strong class="t1">음성 합성(JS-TTS)</strong>
+					<div class="t2">
+						실제 그 사람의 목소리 그대로 자연스럽게, 최고의 음질과 실시간 합성 속도를 제공 합니다.
+						최대 네줄까지가 적당한 것 같습니다.
+					</div>
+				</a>
+			</li>
+			<li class="m @@@">
+				<a href="?#★" class="a1">
+					<i class="ic1"></i>
+					<strong class="t1">@@@</strong>
+					<div class="t2">
+						@@@
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	</div>
+	<!-- /cp2card1 -->
+
 </div>
-<!-- /cp2menu1 -->
+<!-- /cp2tabs2pane -->
+<!-- cp2tabs2pane -->
+<div id="cp2tabs2pane2" class="cp2tabs2pane">
+<h4 class="blind">Audio</h4>
+
+
+Audio 내용?
+
+
+</div>
+<!-- /cp2tabs2pane -->
+<!-- cp2tabs2pane -->
+<div id="cp2tabs2pane3" class="cp2tabs2pane">
+<h4 class="blind">Vision</h4>
+
+
+Vision 내용?
+
+
+</div>
+<!-- /cp2tabs2pane -->
+<!-- cp2tabs2pane -->
+<div id="cp2tabs2pane4" class="cp2tabs2pane">
+<h4 class="blind">Language</h4>
+
+
+Language 내용?
+
+
+</div>
+<!-- /cp2tabs2pane -->
+<!-- cp2tabs2pane -->
+<div id="cp2tabs2pane5" class="cp2tabs2pane">
+<h4 class="blind">Education</h4>
+
+
+Education 내용?
+
+
+</div>
+<!-- /cp2tabs2pane -->
+<!-- cp2tabs2pane -->
+<div id="cp2tabs2pane6" class="cp2tabs2pane">
+<h4 class="blind">Video</h4>
+
+
+Video 내용?
+
+
+</div>
+<!-- /cp2tabs2pane -->
+</div>
+<!-- /cp2tabs2cont -->
+
+<script>/*<![CDATA[*/
+	makeShow('#cp2tabs2', '#cp2tabs2pane1');
+	makeActive('#cp2tabs2', '.m1');
+/*]]>*/</script>
 
 
 
