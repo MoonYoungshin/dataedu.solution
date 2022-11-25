@@ -5,6 +5,7 @@
  * 20221102 | @m | 요구반영. 결함개선. 고도화.
  * 20221108 | @m | 
  * 20221110 | @m | 
+ * 20221125 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -76,7 +77,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	<div class="cont">
 		<div class="item">
 			<label class="label">
-				<input type="radio" name="★1radio2">
+				<input type="radio" name="★1radio2" checked>
 				<span class="t1">샘플 테스트</span>
 			</label>
 			<!-- cp2sample1img1 -->

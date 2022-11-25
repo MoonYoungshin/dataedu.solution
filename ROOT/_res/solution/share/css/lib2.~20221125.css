@@ -6,7 +6,6 @@
  * 20221028 | @m | 요구반영. 결함개선. 고도화.
  * 20221104 | @m | 
  * 20221111 | @m | 
- * 20221125 | @m | 
  */
 
 /** Compatible! [IE11+] 20210101~ */
@@ -373,11 +372,8 @@ em,
 .cp1sns1 .b2.naver{background-image:url(../../img/lib2/ic140a1c2naver1.png);}
 
 
-/* 회원가입 20221125 */
+/* 회원가입 20221104 */
 .cp1signup1{}
-.cp1signup1 .button.verify-email{
-	background:#5056ff;
-}
 /*  */
 .cp1signup1 .cp1fcontrol1 .a1{
 	margin:.125em 0;

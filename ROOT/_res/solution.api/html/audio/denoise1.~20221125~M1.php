@@ -56,7 +56,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	<div class="cont">
 		<div class="item">
 			<label class="label">
-				<input type="radio" name="★1radio1" checked>
+				<input type="radio" name="★1radio1">
 				<span class="t1">샘플A</span>
 			</label>
 			<!-- cp2player1 -->
@@ -186,12 +186,12 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	})();
 
 
-	/** ◇◆ 첨부파일 파일명 보기. 20221125. @m.
+	/** ◇◆ 첨부파일 파일명 보기. 20221124. @m.
 	 */
 	(function(){
 		
 		var $file = $('input[type="file"]#upload-file'), // 첨부파일 업로드
-			$txt = $('#preview-txt'), // 첨부파일명 담을거
+			$txt = $('#preview-txt'), // 첨부파일명 가져올거
 			preview = '.preview'; // 미리보기 래퍼
 
 		// 파일 선택하면
@@ -237,9 +237,9 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <script>/*<![CDATA[*/
 	$(function(){
 
-		/** ◇◆ audio 제어. 20221125. @m.
-		 * 2개 이상 오디오 제어 가능
-		 * 오디오 재생 중 다른 거 재생 버튼 클릭하면 모든 거 일시 정지 후 나만 재생
+
+		/** ◇◆ audio 제어. 20221124. @m.
+		 * 
 		 */
 		(function(){
 
@@ -250,95 +250,68 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 				b1pause = '.b1.pause', // 일시정지 버튼
 				progress_bar = '.progress .bar', // 진행바
 				time_curr = '.time .current', // 현재 재생시각
-				time_total = '.time .total', // 재생시간(오디오 길이)
-				timer;
+				time_total = '.time .total', // 총 재생시간
+				temp;
 			
 			var $my = $(my);
 
-			doReset() // 초기화 호출
+			var audio0 =  $(audio, $my)[0];
+			var audio1 =  $(audio, $my)[1];
 
-			// 초기화 동작
-			function doReset(){
-				$(audio, $my).each(function(){
-					var au = $(this)[0];
-					//au.autoplay = true;
-					//au.pause();
-					// 재생시간 표시
-					au.onloadedmetadata = () => {
-						$(au).closest(my).find(time_total).html(doTime(au.duration) + '');
-					};
-				});
+			// 초기화
+			//audio0.autoplay = true;
+			//audio0.pause();
+			//audio1.autoplay = true;
+			//audio1.pause();
+
+			// 총 재생시간 표시
+			audio0.onloadedmetadata = () => {
+				$(audio0).closest(my).find(time_total).html(doTime(audio0.duration) + '');
+			};
+			audio1.onloadedmetadata = () => {
+				$(audio1).closest(my).find(time_total).html(doTime(audio1.duration) + '');
 			};
 
-			// 재생 버튼 클릭
+			// 재생 클릭
 			$(b1play, $my).on('click', function(){
-				var $this = $(this);
-				// 모든 오디오 일시정지
-				$(audio, $my).each(function(){
-					var $this = $(this);
-					doPause($this)
-				});
-				// 나만 재생
-				doPlay($this);
-			});
-
-			// 일시정지 버튼 클릭
-			$(b1pause, $my).on('click', function(){
-				var $this = $(this);
-				doPause($this);
-			});
-
-			// 재생 끝나면
-			$(audio, $my).on('ended', function(){
-				var $this = $(this);
-				$this.closest(my)
-					.find(progress_bar).css({width: '100%'}) // 100% 이전 멈춤 보정
-				clearInterval(timer);
-				timer = setTimeout(function(){
-					$this.closest(my)
-						.removeClass('play pause')
-						.find(progress_bar).css({width: '0'})
-						.end().find(time_curr).html( doTime(0) );
-				}, 100); // (( setInterval 값
-			});
-
-			// 재생 동작
-			function doPlay($this){
-				$this.closest(my)
+				$(this).closest(my)
 					.addClass('play')
-					.removeClass('pause');
-				var au = $this.closest(my).find(audio)[0];
-				au.play();
-				do1(au);
-			};
+					.removeClass('pause')
+					.find(audio)[0].play();
+			});
 
-			// 일시정지 동작
-			function doPause($this){
-				$this.closest(my)
-					.addClass('pause');
-				var au = $this.closest(my).find(audio)[0];
-				au.pause();
-				clearInterval(timer);
-			};
+			// 일시정지 클릭
+			$(b1pause, $my).on('click', function(){
+				$(this).closest(my)
+					.addClass('pause')
+					.find(audio)[0].pause();
+			});
 
-			// 일정간격 진행바 갱신 호출
-			function do1(au){
-				clearInterval(timer);
-				timer = setInterval(function(){
-					if(!au.paused){
-						updateProgressBar(au);
-					}
-				}, 100); // 100ms 하면 짧은 오디오에서 100% 이전 멈춤 유의
-			};
+			$(audio, $my).on('ended', function(){
+				$(this).closest(my)
+					.removeClass('play pause');
+			});
 
 			// 진행바 갱신
 			function updateProgressBar(au){
 				var pct = (au.currentTime / au.duration) * 100;
 				$(au).closest(my).find(progress_bar).css({width: pct + '%'}); // 진행바 너비
-				$(au).closest(my).find(time_curr).html( doTime(au.currentTime) ); // 진행시각 표시
+				$(au).closest(my).find(time_curr).html(doTime(au.currentTime) + ''); // 진행시간 표시
 			}
 
-			// 초를 00:00
+			// 진행바 갱신 간격
+			var interval;
+			clearInterval(interval);
+			interval = setInterval(function(){
+				if(!audio0.paused){
+					updateProgressBar(audio0);
+				}
+				if(!audio1.paused){
+					updateProgressBar(audio1);
+				}
+			}, 100); // (( 100ms 하니 짧은 오디오에서 100% 까지 안감.
+
+			// 초를 00:00:00
 			function doTime(sec){
 				var min = parseInt((sec%3600)/60);
 				var sec = parseInt(sec%60);
@@ -347,7 +320,9 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 				return min + ':' + sec;
 			}
 
+
 		})();
+
 
 	});
 /*]]>*/</script>

@@ -5,7 +5,6 @@
  * 20221026 | @m | 최초작성
  * 20221104 | @m | 요구반영. 결함개선. 고도화.
  * 20221111 | @m | 
- * 20221125 | @m | 
  */
 
 
@@ -291,7 +290,7 @@ body,
 /* #body_content */
 
 
-/* 본문제목 20221125 */
+/* 본문제목 20221111 */
 #body_title{
 	display:flex; /* ☆ */
 	position:relative;
@@ -329,12 +328,6 @@ body,
 	margin:.5em 0;
 	/* color:#666; */
 	font-size:.875em;
-}
-#body_title .t1t1{
-	display:block;
-	margin:0 0 .5em;
-	color:#666;
-	font-size:.75rem;
 }
 
 

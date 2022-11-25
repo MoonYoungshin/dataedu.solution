@@ -4,7 +4,6 @@
  * 20221026 | @m | 최초작성
  * 20221102 | @m | 요구반영. 결함개선. 고도화.
  * 20221108 | @m | 
- * 20221124 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -97,7 +96,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	(function(){
 		var $my = $('.cp2voice1select1'), // 래퍼
 			item = '.item', // 항목
-			select = '.select', // 선택 목록
+			select = '.select'; // 선택 목록
 			radio = 'input[type="radio"]'; // 라디오
 
 		// 선택 목록 클릭하면

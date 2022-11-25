@@ -1,10 +1,9 @@
 @charset "utf-8";
-/*! Base CSS v0.998.28 | (c) 
+/*! Base CSS v0.998.27 | (c) 
  * 20150303~20210108~20220620 | @m |
  * 20221028 | @m | 998.24 (( /_res/_A/
  * 20221028 | @m | letter-spacing:-.0625em; 제거
  * 20221104 | @m | label, .label
- * 20221125 | @m | .selectmenu1
  * ★ NoEdit! ★ Only CSS Creator can modify.
  */
 
@@ -1831,7 +1830,7 @@ html.object-fit .oprb{object-position:100% 100%;}
 }
 
 
-/* 선택메뉴(범용) [JS] doSelectmenu1() 20221125 */
+/* 선택메뉴(범용) [JS] doSelectmenu1() 20211006 */
 .selectmenu1{
 	display:inline-flex; /* ☆ */
 	position:relative;
@@ -1855,7 +1854,7 @@ html.object-fit .oprb{object-position:100% 100%;}
 	border:1px solid #ccc;
 	border-radius:2px;
 	background:#fff;
-	/* background:linear-gradient(to bottom, #fff 0, #eee 100%); */
+	background:linear-gradient(to bottom, #fff 0, #eee 100%);
 	color:#333;
 	font-weight:normal;
 	/* line-height:1.375; */
@@ -1868,16 +1867,16 @@ html.object-fit .oprb{object-position:100% 100%;}
 	align-items:center;
 	margin:0 2em 0 0;
 	padding:0 .5em; /* (옵션패딩) */
-	/* border-right:1px dotted #ddd; */
+	border-right:1px dotted #ddd;
 	text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;
 }
 .selectmenu1 .title a.a1 .ic1{
 	float:left;
 	position:absolute;right:0;top:50%;
 	width:0;height:0;
-	margin:-.125em .625em;
+	margin:-.2em .625em;
 	border:0 solid transparent;
-	border-width:.25em .25em 0 .25em;
+	border-width:.4em .4em 0 .4em;
 	border-top-color:rgba(0,0,0, .5);
 	transition:.2s;
 }
@@ -1889,15 +1888,13 @@ html.object-fit .oprb{object-position:100% 100%;}
 	transform:rotate(180deg);
 }
 /* 옵션 */
-.selectmenu1option{
-	display:none;
+.selectmenu1option{display:none;
 	z-index:100; /* ☆ */
 	position:absolute;left:0;right:0;top:100%;
 	overflow:hidden;
-	box-shadow:0 2px 5px 0 #0001;
+	box-shadow:0 2px 5px 0 rgba(0, 0, 0, .1);
 }
-.selectmenu1option .options{
-	list-style:none;
+.selectmenu1option .options{list-style:none;
 	max-height:21.25em; /* (1.375+0.375*2)*10 */
 	margin:-1px 0 0;
 	padding:.375em 0;
@@ -1908,8 +1905,7 @@ html.object-fit .oprb{object-position:100% 100%;}
 	overflow:auto;
 }
 .selectmenu1option .option{display:inline;margin:0;padding:0;}
-.selectmenu1option .option a.a1{
-	display:block;
+.selectmenu1option .option a.a1{display:block;
 	padding:.375em .75em;
 	background:#fff;
 	color:#000;

@@ -53,7 +53,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	<div class="cont">
 		<div class="item">
 			<label class="label">
-				<input type="radio" name="★1radio2">
+				<input type="radio" name="★1radio2" checked>
 				<span class="t1">샘플 테스트</span>
 			</label>
 			<!-- cp2sample1img1 -->
