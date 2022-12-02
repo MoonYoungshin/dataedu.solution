@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<!--
+/**
+ * 20221026 | @m | 최초작성
+ * 20221027. 20221028 | @m | 요구반영. 결함개선. 고도화.
+ * 20221031. 20221101. 20221102. 20221103. 20221104. | @m | 
+ * 20221107. 20221108. 20221109. 20221110. 20221111. | @m | 
+ * 20221114. 20221115. 20221116. 20221117. | @m | 
+ * 20221121. 20221122. 20221123. 20221124. 20221125. | @m | 
+ * 20221128. 20221129. | @m | 
+ * …중략…
+ * ))) // UX+main+login+$2p (5D-)
+ * ))) Test.Lab
+ */
+
+/** Done)
+ * icon image )) font
+ * layout )) flex
+ */
+-->
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>UI Template Code Guide</title>
+
+	<meta name="author" content="MoonYoungshin">
+	<meta name="keywords" content="Mackup(HTML), CSS, JavaScript, Web Standards, Web Accessibility, Usability, UI/UX">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" href="/favicon.ico">
+
+	<style>/*<![CDATA[*/
+
+		/* ☆@charset "utf-8"; */
+
+		/* @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css); */ /* inValid */
+		/* @import url(../share/font-awesome/css/font-awesome_@m.valid.css); *//* Valid */
+		@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css);
+		
+		@import url(https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp);
+
+		/* @import url(../share/css/font.css); */
+		@import url(../share/css/base.css);
+		@import url(../share/css/lib.css);
+
+
+		/* ◇◆ Base Customizing. 20221108 ◆◆◆ */
+
+		html{
+			height:100%;
+			scroll-behavior:smooth;
+		}
+		body{
+			margin:0;
+			font-size:.75em;
+			letter-spacing:-.03125em; /* (.5/16px) */
+			word-wrap:break-word;
+			word-break:keep-all;
+		}
+		[href]:link,
+		[href]:visited{color:#06c;}
+		[href]:hover,
+		[href]:focus{color:#09f;}
+
+
+		/* ◇◆ Layout */
+
+		#wrap{display:block;position:relative;overflow:hidden;}
+			#header{display:block;
+				clear:both;
+				position:relative;
+				margin:0;
+				padding:.375em 0 0;
+				border-bottom:0 solid #134;
+				background:#245;
+				color:#fff;
+				box-shadow:0 2px 0 0 rgba(0, 0, 0, .1);
+			}
+			#container{display:block;clear:both;position:relative;margin:0 -1px;}
+				#spot{}
+				#nav{} /* sidebar */
+					#account{}
+				#content{}
+					#path{}
+					#content .section1{}
+						.article1{}
+					#meta{}
+					#comment{}
+				#aside{display:block;clear:both;padding:1em 1.5%;}
+			#footer{
+				display:block;
+				clear:both;
+				position:relative;
+				padding:1em;
+				border-top:1px solid #e5e7eb;
+				background:#f3f4f6;
+				color:#9ca3af;
+				font-size:.875em;
+			}
+
+		.section1>*:first-child,
+		.article1>*:first-child,
+		#content>*:first-child,
+		#aside>*:first-child{margin-top:0;}
+
+
+		/* Grid 20220221 */
+		#content .even-grid{
+			display:flex; /* 20220221?? )) base.css */
+			flex-wrap:wrap; /* 20220221?? )) base.css */
+		}
+		#content .even-grid>.column{
+			flex:auto; /* 20220221?? )) base.css */
+			margin:0 -1px 0 0;
+			border-left:1px solid #f3f4f6;
+			border-right:1px solid #f3f4f6;
+		}
+		#content .even-grid .column:first-child{border-left:0}
+
+
+		/* ◇◆ Layout + */
+
+		.skip{position:absolute;}
+		.skip a{z-index:9999;position:absolute;left:-9999px;display:block;width:1px;height:1px;text-align:center;overflow:hidden;white-space:nowrap}
+		.skip a:hover,
+		.skip a:focus{left:0;width:auto;height:auto;padding:5px 10px;background:#ffd;color:#000;font-size:inherit;line-height:normal;text-decoration:none;}
+
+
+		/* #header */
+
+
+		#hgroup1{line-height:1.375;letter-spacing:0;overflow:hidden;}
+		#hgroup1 #WebsiteH1{float:left;margin:0 1.5%;color:#fff;}
+		#hgroup1 #WebsiteH1 a{color:#fff;}
+		#hgroup1 .h1{padding:.375em 0;font-weight:400;font-size:1em;}
+		#hgroup1 .h2{float:right;margin:.375em 2%;color:#93999c;font-weight:normal;font-size:10px;}
+		#hgroup1 a{color:inherit;}
+
+
+		#menu{margin:.375em 0 0;background:#123;overflow:hidden;}
+		#menu a{float:left;
+			box-sizing:border-box;
+			width:33.333%;padding:.175em 1.5%;
+			/* border-left:1px solid #678; */
+			/* border-right:1px solid #456; */
+			border-left:1px solid rgba(255,255,255, .15);
+			border-right:1px solid rgba(0,0,0, .15);
+			background:#567;
+			color:#fff;
+		}
+
+
+		/* #footer */
+
+
+		dl{margin:0;padding:0;}
+		address.copyright{padding:.375em 0;}
+
+
+		/* ◇◆ #content = Entry ◇◆ */
+
+		/* Heading */
+		.hb1[class]{
+			margin:1.75em 0;
+			padding:0 0 0 .5em;
+			line-height:1;
+			background:transparent;
+		}
+		/* 18px 16px 15px 14px 13px 12px (/12px) */
+		.hb1.h1{font-size:1.5em;}
+		.hb1.h2{
+			padding:.375em .75em;
+			border:1px solid #d1d5db;
+			border-radius:.25rem;
+			background:#f3f4f6;
+			color:#4b5563;
+			line-height:1.375;
+			font-size:1.375em;
+			letter-spacing:0;
+		}
+		.hb1.h2 i{
+			color:#6b7280;
+		}
+		.hb1.h3{border-left:.75em solid #ace;color:#039;font-size:1.250em;}
+		.hb1.h4{border-left:.4375em solid #eca;color:#c60;font-size:1.125em;}
+		.hb1.h5{border-left:.375em solid #bda;color:#090;font-size:1.0625em;}
+		.hb1.h6{border-left:.175em solid #c3c7c9;font-size:1em;}
+		.hb1 span{font-weight:normal;}
+		/*.type2 */
+		.hb1.h2.type2{border:1px solid #e96;background:#fef9f6 !important;color:#c63;}
+
+		/* Emphasis */
+		b{color:#080;}
+		strong{color:#6b7280;}
+
+		/* Other styled text tags.. Emphasis 20150930 */
+		em,
+		.em{color:#d00;} /* 강조색 기본 */
+		.em1{color:#e00;} /* 빨 red */
+		.em2{color:#a60;} /* 주 orange (dung) */
+		.em3{color:#770;} /* 노 yellow */
+		.em4{color:#080;} /* 초 green */
+		.em4-5{color:#078;} /* 청록 cyan (green blue) */
+		.em5{color:#37c;} /* 파 blue */
+		.em5-6{color:#24c;} /* 암청 cobalt blue */
+		.em6{color:#009;} /* 남 navy */
+		.em7{color:#85e;} /* 보 violet */
+		.em8{color:#c2c;} /* 심홍 magenta (blue red) */
+		.em9{color:#d06;} /* 분홍 pink */
+		.em0{color:#000;} /* 흑 black */
+
+			/* 추가삭제 */
+			ins{
+				color:#c2c;
+				text-decoration:inherit;
+			}
+			del{
+				opacity:.5;
+			}
+
+			/* 링크스타일 */
+			[class] [data-st="X"]>a{
+				color:inherit;
+				border-bottom:0;
+				cursor:auto;
+			}
+
+
+		/* ◇◆ body.skin1 */
+
+		.skin1{
+			zoom:1;
+			transform:scale(1);
+		}
+
+		.skin1 .section1{margin-left:0;}
+
+		.skin1 table{border:1px solid #dadcde;margin:.5em 0;border-spacing:0;}
+		.skin1 caption{margin:0 0 -1px;padding:.375em .75em;border:1px solid #468;border-radius:4px 4px 0 0;background:#579;font-weight:600;text-align:left;}
+		.skin1 caption .h1{color:#fff;}
+		.skin1 th,
+		.skin1 td{border:1px solid #dadcde;padding:.375em .5em;}
+		.skin1 th{background:#f1f3f5;}
+		.skin1 tbody th{background:#fafcfe;text-align:left;vertical-align:top;}
+		.skin1 tbody td{text-align:left;vertical-align:top;}
+		.skin1 table .cell1o{background:#feb;text-align:center;}
+		.skin1 table .cell1x{background:#fff;text-align:center;}
+		.skin1 table.t3>*>tr,
+		.skin1 table.t3>thead+tbody>tr:first-child,
+		.skin1 table.t3>*>tr:first-child{border-right:0;}
+
+		.skin1 ol{
+			list-style-type:decimal-leading-zero;
+			margin:0;
+			padding-left:1.8em;
+		}
+
+		.skin1 dd{margin:0 0 -1px 0;padding:.375em 0;border-top:1px dotted #ddd;border-bottom:1px dotted #ddd;}
+		.skin1 .dl1{list-style-position:inside;padding-left:0;border-top:1px dotted #ddd;border-bottom:1px dotted #ddd;background:transparent;}
+		.skin1 .dl1>li{margin:.375em 0;padding:.375em 0;border-top:1px dotted #ddd;background:transparent;}
+		.skin1 .dl1>li:first-child{border-top:0;}
+		.skin1 .dl1>li .dd1{margin-left:1.3em;padding-left:1em;border-left:1px solid #edb;}
+
+		.skin1 .box1{padding:1em 1.175em;border:1px solid #dadcde;border-radius:2px;background:#fff;}
+		.skin1 .box1>:first-child{margin-top:0;margin-bottom:0;}
+
+
+		/* YYYYMMDD.Writer. ◇◆ */
+
+
+		/* 20170524. MoonYoungshin. ◇◆ */
+
+		a[href='#moreSampleDemo']{display:inline-block;opacity:0;transition:1s;}
+		a[href='#moreSampleDemo']:hover,
+		a[href='#moreSampleDemo']:focus{opacity:1;}
+
+		/* 20170608 새 창 */
+		#content a[target='_blank']:after,
+		#content a[target='_blank']:after{ /* [IE8+] */
+			content:'';
+			display:inline-block;
+			width:11px;height:10px;
+			margin:0 0 3px 4px;
+			background:url(../img/inc/ic11newwindow.png) no-repeat;
+			vertical-align:middle;
+		}
+
+		/* ◇◆ Added ◇◆ */
+
+		html.noLocalhost .hide-noLocalhost{ /* 20180119 */
+			display:none !important;
+		}
+		.next-all-hide ~ *{ /* 20210308 */
+			display:none !important;
+		}
+
+
+		/* ◇◆ @media print{} ◇◆◇◆◇◆◇◆◇◆◇◆ */
+
+		@media print{
+			body{margin:0;background:#fff}
+			#wrap, #content{width:auto !important}
+			#header, #spot, #nav, #path, #meta, #comment, #aside, #footer{display:none !important}
+		}
+
+		/* RWD 20180119 ◇◆◇◆◇◆◇◆◇◆◇◆ */
+		/* small~xlarge */
+		@media all and (max-width:767px){/* small ◇◆◇◆◇◆◇◆◇◆ */
+
+			#nav,
+			#content,
+				#content .section1,
+			#aside{float:none;width:auto}
+
+		} /* /(max-width:767px) */
+		@media all and (min-width:640px) and (max-width:767px){/* If the issue ◇◆◇◆◇◆◇◆◇◆ */
+		} /* /(min-width:640px) and (max-width:767px) */
+		@media all and (min-width:768px){/* medium ◇◆◇◆◇◆◇◆◇◆ */
+		} /* /(min-width:768px) */
+		@media all and (min-width:1000px){/* large ◇◆◇◆◇◆◇◆◇◆ */
+		} /* /(min-width:1000px) */
+		@media all and (min-width:1260px){/* xlarge ◇◆◇◆◇◆◇◆◇◆ */
+		} /* /(min-width:1260px) */
+		@media screen and (orientation:landscape), (min-width:640px) {/* ◇◆◇◆◇◆◇◆◇◆ */
+		} /* /(orientation:landscape), (min-width:640px) */
+		/* /RWD ◇◆◇◆◇◆◇◆◇◆◇◆ */
+
+
+	/*]]>*/</style>
+	<script src="https://kit.fontawesome.com/36e0a77fea.js" crossorigin="anonymous"></script>
+
+	<script src="../share/vendor/jquery-3.6.1.min.js"></script><!-- 20221114 -->
+	<script src="../share/vendor/jquery.easing.1.3.js"></script>
+	<!-- Do not edit! -->
+	<!-- <script src="../share/js/script_base.js"></script> -->
+	<!-- /Do not edit! -->
+	<!-- <script src="../share/js/script.js"></script> --><!-- 실행호출 -->
+	<script>/*<![CDATA[*/
+
+
+		jQuery(function($){
+			$(function(){
+				(function(){
+					var timer, interval;
+					clearTimeout(timer);
+					timer = setTimeout(function(){
+						//console.log( '$(document).height() :' + $(document).height() );
+						$('a').each(function(){
+							//console.log($(this).attr('href')); // ★☆ToEdit) 링크 목록 확인
+						});
+					}, 1000);
+					clearInterval(interval);
+					interval = setInterval(function(){
+						//console.log($(document).height());
+					}, 1000);
+				}());
+			});
+		});
+
+
+		/** ◇◆ localhost 구분. 20180119. 20180124. MoonYoungshin.
+		 */
+		(function(){
+			var host1pathname1 = location.host;
+			//console.log(/localhost/i.test(host1pathname1));
+			if( /localhost/i.test(host1pathname1) || /192.168.0.115/i.test(host1pathname1) ) {
+				$('html').addClass('Localhost');
+			}else{
+				$('html').addClass('noLocalhost');
+			}
+		})();
+
+		/** ◇◆ CSS 속성 지원여부. 20180612. MoonYoungshin.
+		 */
+		(function(){
+			var el = document.createElement('div');
+			typeof el.style.zoom == 'string'; // 방법1)
+			'zoom' in el.style; // 방법2)
+			//console.log( 'zoom' in el.style ); // [IE8+][CR][OP][SF] true, [FF] false
+		})();
+
+
+	/*]]>*/</script>
+
+
+</head>
+<body class="skin1">
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<!-- v.20140627~. 20170329. 20170524. @MoonYoungshin ※ MW2.SD-0012 (CSS Naming rule 1.0 for mobile web optimization) -->
+
+
+<!-- #wrap -->
+<div id="wrap" class="clearfix">
+<noscript><p>JavaScript is off. Please enable to view full site.</p></noscript>
+<p class="skip"><a href="#content">본문 바로가기</a></p>
+
+<!-- #header -->
+<header id="header" class="clearfix">
+
+
+	<!-- hgroup1 -->
+	<div id="hgroup1">
+
+	<h1 class="h1" id="WebsiteH1"><!-- WebSiteName --><a href="/">UI Template Code Guide v.20221028~</a></h1>
+	<p class="h2">
+		<a href="https://validator.w3.org/" class="a1">HTML</a>,
+		<a href="https://jigsaw.w3.org/css-validator/" class="a1">CSS</a>,
+		<a href="https://ko.javascript.info/" class="a1">JavaScript</a>,
+		<a href="https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000440&nttId=88231#none" class="a1">Web Standards</a>,
+		<a href="http://www.yes24.com/Product/goods/18928889?scode=032&OzSrank=2" class="a1">Accessibility</a>,
+		<a href="https://caniuse.com/" class="a1" title="">Compatibility</a>,
+		Usability,
+		<a href="https://tailwindui.com/" class="a1">UI/UX</a>,
+		<a href="https://noonnu.cc/" class="a1">Font</a>,
+		<a href="https://heroicons.com/" class="a1">Icon</a>,
+		<a href="https://unsplash.com/" class="a1">Pic</a>
+		<span class="sep fw1">|</span>
+		<a href="https://www.mydevice.io/" class="mydevice" style="color:#ccc;font-weight:600;"></a>
+	</p>
+
+	<script>/*<![CDATA[*/
+		(function(){
+			$(window).on('load resize', function(){
+				var wwt = $(window).width();
+				var wht = $(window).height();
+				$('p.h2 .mydevice').html( wwt + '×' + wht + 'px' );
+			});
+		}());
+		/*]]>*/</script>
+
+		<script>/*<![CDATA[*/
+		//jQuery.noConflict();
+		jQuery(function($){
+			/** ◇◆ 만들기함수메소드. 20150731~20151211. MoonYoungshin.
+			 * Use1) makeFun('.contentsBlock');
+			 * Task) To Advance.
+			 */
+			function makeFun(selector){
+				var $this = $(selector);
+				$this.$m = $('li>a[href]', $this);
+				$this.$m.on('click', function(){
+					if($(this).attr('href')){
+						$($(this).attr('href')).show().siblings().hide();
+						return false;
+					}
+				});
+			}
+		}); // /jQuery(function($){
+	/*]]>*/</script>
+
+	</div>
+	<!-- /hgroup1 -->
+
+
+	<!-- #gnb -->
+	<nav id="gnb"></nav>
+	<!-- /#gnb -->
+
+
+	<!-- #menu -->
+	<nav id="menu">
+		<a href="#myTaskTask" style="background:#64748b;">Task</a>
+		<a href="#myTaskToDo" style="background:#6b7280;">ToDo</a>
+		<a href="#myTaskFinished" style="background:#71717a;">Finished</a>
+	</nav>
+	<!-- /#menu -->
+
+
+	<!-- #serach -->
+	<section id="serach"><h2 class="hb1 h2 blind">★</h2></section>
+	<!-- /#serach -->
+
+
+	</header>
+	<!-- /#header -->
+
+
+<!-- testRWD -->
+	<a href="https://tailwindcss.com/docs/customizing-colors" target="_blank" rel="noopener" title="새 창"
+		id="testRWD" class="clearfix" style="display:block;position:relative;height:1.375em;background:#737373;color:#fff;font-size:10px;font-family:Lato;line-height:1.375;letter-spacing:0;text-align:right;">
+
+		<!-- 7680 -->
+		<!-- 5120 -->
+		<div class="width3840" style="box-sizing:border-box;position:absolute;width:4096px;padding:0 1px 0 0;;">4096</div>
+		<!-- 3840x2400 -->
+		<div class="width3840" style="box-sizing:border-box;position:absolute;width:3840px;padding:0 1px 0 0;background:#78716c;">3840</div><!-- 3840x2160 (UHD 4k) -->
+		<!-- 3456x2160 -->
+		<div class="width3440" style="box-sizing:border-box;position:absolute;width:3440px;padding:0 1px 0 0;background:#737373;">3440</div>
+		<!-- 3300x2200 -->
+		<div class="width3200" style="box-sizing:border-box;position:absolute;width:3200px;padding:0 1px 0 0;background:#71717a;">3200</div><!-- 3200x1800(QHD+) -->
+		<div class="width2560" style="box-sizing:border-box;position:absolute;width:2560px;padding:0 1px 0 0;background:#6b7280;">2560</div><!-- 2560x1440 (QHD 2k) -->
+		<div class="width2048" style="box-sizing:border-box;position:absolute;width:2048px;padding:0 1px 0 0;background:#64748b;">2048</div>
+
+		<div class="width1920" style="box-sizing:border-box;position:absolute;width:1920px;padding:0 1px 0 0;background:#6366f1;">1920</div><!-- 1920x1080 (FHD 1k) -->
+		<div class="width1600" style="box-sizing:border-box;position:absolute;width:1600px;padding:0 1px 0 0;background:#8b5cf6;">1600</div><!-- 1600x900 -->
+		<div class="width1536" style="box-sizing:border-box;position:absolute;width:1536px;padding:0 1px 0 0;background:#a855f7;">1536</div><!-- 1536x864 -->
+		<div class="width1440" style="box-sizing:border-box;position:absolute;width:1440px;padding:0 1px 0 0;background:#d946ef;">1440</div> <!-- 1440x900 -->
+		<!-- <div class="width1400" style="box-sizing:border-box;position:absolute;width:1400px;padding:0 1px 0 0;;">1400</div> --><!-- 1400x1050 -->
+		<!-- 1368 Surface Pro 7 -->
+		<div class="width1366" style="box-sizing:border-box;position:absolute;width:1366px;padding:0 1px 0 0;background:#ec4899;">1366</div><!-- 1366x768 -->
+		<!-- 1336x768 -->
+		<div class="width1280" style="box-sizing:border-box;position:absolute;width:1280px;padding:0 1px 0 0;background:#f43f5e;">1280</div><!-- 1280x720 (HD) | 1280x1024 | Nest Hub Max -->
+		<div class="width1200" style="box-sizing:border-box;position:absolute;width:1200px;padding:0 1px 0 0;background:#ef4444;">1200</div>
+		<!-- 1180 iPad Air -->
+		<!-- 1136x640 iPhone 5 -->
+		<!-- 1152x864 -->
+		<div class="width1024" style="box-sizing:border-box;position:absolute;width:1024px;padding:0 1px 0 0;background:#ea580c;">1024</div><!-- iPad Air Mini | Nest Hub -->
+		<div class="width1000" style="box-sizing:border-box;position:absolute;width:1000px;padding:0 1px 0 0;background:#d97706;">1000</div>
+		<div class="width960" style="box-sizing:border-box;position:absolute;width:960px;padding:0 1px 0 0;background:#c98800;">960</div>
+		<div class="width920" style="box-sizing:border-box;position:absolute;width:920px;padding:0 1px 0 0;background:#65a30d;">920</div>
+		<!-- 914 Galaxy A51/71 -->
+		<!-- 912 Surface Pro 7 -->
+		<!-- 834 아이패드 -->
+		<!-- 820 iPad Air  -->
+		<!-- 810 아이패드 -->
+		<!-- 800 Nest Hub Max -->
+		<div class="width768" style="box-sizing:border-box;position:absolute;width:768px;padding:0 1px 0 0;background:#16a34a;">768</div><!-- 768x1024 | iPad Air Mini -->
+		<div class="width720" style="box-sizing:border-box;position:absolute;width:720px;padding:0 1px 0 0;background:#059669;">720</div><!-- 720x480 (SD) | Surface Duo -->
+		<!-- 653 Galaxy Fold -->
+		<div class="width640" style="box-sizing:border-box;position:absolute;width:640px;padding:0 1px 0 0;background:#0d9488;">640</div>
+		<!-- 600 Nest Hub -->
+		<!-- 540 Surface Duo -->
+		<div class="width480" style="box-sizing:border-box;position:absolute;width:480px;padding:0 1px 0 0;background:#0891b2;">480</div>
+		<!-- 414 iPhone XR -->
+		<!-- 412 Galaxy S20 Ultra | Galaxy A51/71 -->
+		<!-- 400 -->
+		<!-- 393 Pixel 5 -->
+		<!-- 390 iPhone 12 Pro -->
+		<!-- 375 iPhone SE -->
+		<div class="width360" style="box-sizing:border-box;position:absolute;width:360px;padding:0 1px 0 0;background:#0284c7;">360</div>
+		<div class="width320" style="box-sizing:border-box;position:absolute;width:320px;padding:0 1px 0 0;background:#3b82f6;">320</div>
+		<!-- 280 Galaxy Fold -->
+	</a>
+	<!-- /testRWD -->
+
+	<!-- | Slate 슬레이트 | Gray 회색 | Zinc 아연 | Neutral 중립적 | Stone 돌 | Red 빨간 | Orange 주황 | Amber 호박 | Yellow 노란 | Lime 라임 | Green 녹색 | Emerald 에메랄드 | Teal 물오리 | Cyan 시안 | Sky 하늘 | Blue 푸른 | Indigo 남빛 | Violet 제비꽃 | Purple 보라(자주) | Fuchsia 자홍 | Pink 분홍 | Rose 장미 -->
+
+	<script>/*<![CDATA[*/
+		(function(){
+			// window.resizeTo(320, 1000); // (O)[~IE11], (X)[CR,FF,OP]
+			$('.width320').next().on('click', function(){
+				window.resizeTo(336, 1000);
+			});
+			$('.width768').next().on('click', function(){
+				window.resizeTo(768, 1000);
+			});
+			$('.width1200').next().on('click', function(){
+				window.resizeTo(1256, 1000);
+			});
+		}());
+	/*]]>*/</script>
+
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<!-- #container -->
+<div id="container" class="clearfix">
+
+
+
+
+
+<!-- #spot -->
+<section id="spot"><h2 class="hb1 h2 blind">★</h2></section>
+<!-- /#spot -->
+<!-- #nav -->
+<nav id="nav">
+	<!-- #account -->
+	<section id="account"><h2 class="hb1 h2 blind">★</h2></section>
+	<!-- /#account -->
+</nav>
+<!-- /#nav -->
+<!-- #content -->
+<section id="content"><h2 class="hb1 h2 blind">★</h2>
+
+
+<!-- #path -->
+<section id="path"><h2 class="hb1 h2 blind">★</h2></section>
+<!-- /#path -->
+
+
+
+
+<!-- even-grid -->
+<div class="even-grid evenmix-1 float-left gap4pct vgap0 mg0" style="border-bottom:1px solid #e5e7eb;">
+	<div class="column">
+		<h2 class="hb1 h1 mg0 pd0">
+			<i class="fa fa-home" aria-hidden="true"></i>
+			<i class="icon-home"></i>
+			<span class="blind">Home :</span>
+			<a href="/" id="WebsiteRoot">WebSite Root URI</a>
+		</h2>
+		<p class="mgb0">
+			UI코딩 범례 ))
+			<span class="dpib">| 🟢 완료</span>
+			<span class="dpib">| <!-- <i class="ing">🟢</i> -->🔷 코딩중~</span>
+			<!-- <span class="dpib">| 💡 20220512~ (퀴즈/과제) </span>
+			<span class="dpib">| 🔴 20220819~ (공통UI개선) </span>
+			<span class="dpib">| 🟡 20220830~ (UI추가수정) </span> -->
+		</p>
+	</div>
+</div>
+<!-- /even-grid -->
+
+
+<script>/*<![CDATA[*/
+	jQuery(function($){
+		/** ◇◆ location 고도화 20141008~20171026. 20180608. MoonYoungshin.
+		 */
+		 (function(){
+			var bar1 = location.host + location.pathname;
+			//console.log(bar1);
+			bar1 = bar1.replace('index.html', '');
+			$('title').text(bar1 +' '+ $('title').text()); // 20171026
+			bar1 = bar1.replace('/_lib/', '/'); // ~20180608
+			$('#WebsiteRoot').html(bar1);
+			$('#WebsiteRoot').attr({'href': location.protocol + '//' + bar1});
+			$('a').each(function(){
+				var bar2 = $(this).attr('href');
+				if(!!bar2){
+					bar2= bar2.replace('./', '/');
+					if(/\/tp/.test(bar2) == true){
+						//console.log(location.protocol + '//' + bar1 + bar2);
+					}
+				}
+			});
+		 })();
+	});
+/*]]>*/</script>
+
+
+<!-- <h2 class="hb1 h2">Template Coding Memo</h2>
+
+<h3 class="hb1 h3">/_lib/</h3>
+
+<nav class="nav t1">
+<ol class="bo1">
+<li><a href="?" target="_blank" rel="noopener" title="새 창"></a></li>
+</ol>
+</nav>
+
+<h3 class="hb1 h3">PROGRESS</h3>
+
+<nav class="nav t1">
+<ol class="bo1">
+<li>과업범위 URI</li>
+</ol>
+</nav> -->
+
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆ even-grid -->
+<div class="even-grid evenmix-13 float-left gap4pct mg0">
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆ column -->
+<div class="column small-12 medium-6 large-4">
+
+
+<!-- ◇◆◇◆ -->
+<!-- section1 -->
+<section class="section1"><!-- <h2 class="hb1 h2 blind">★</h2> -->
+<!-- article1 -->
+<!-- <article class="article1"><h3 class="hb1 h3 blind">★</h3></article> -->
+<!-- /article1 -->
+
+
+<!-- <h2 class="hb1 h2 mgt0" id="myTaskTask">
+	<i class="material-icons fs21px vam" aria-hidden="true">schedule</i>
+	myTask (.Finished)
+</h2> -->
+
+
+<!-- <ol class="bo">
+	<li> 20220825. 코드 최신 버전으로 유지<br>
+			base.css
+			lib.css
+			javascript_base.js
+			javascript.js
+	</li>
+</ol> -->
+
+
+<h3 class="hb1 h3 mgt0">dataedu.ai 대표 <b class="em0">/_res/solution/</b></h3>
+
+
+<!-- <p>
+	<em class="fwn em2">상세명세는 @기획자 에게 문의하세요!</em><br>
+</p> -->
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4 mgt0">공통·서브+메인 템플릿</h4>
+
+
+<ol class="mgb0">
+	<li data-st="O">_템플릿.공통·서브 :  🔷 ((디자인수정중~<br>
+		| <a href="tp.sub.php">tp.sub.php</a> (로그인후)<br>
+		| <a href="tp.sub_before_login.php">tp.sub_before_login.php</a> (로그인전)<br>
+	</li>
+	<li data-st="O">_템플릿.메인 :  🔷 ((디자인수정중~<br>
+		| <a href="tp.main.php">tp.main.php</a> (로그인후)<br>
+		| <a href="tp.main_before_login.php">tp.main_before_login.php</a> (로그인전)<br>
+	</li>
+	<!-- <li data-st="X">_템플릿.홈(대시보드) :
+		<a href="tp.home.php">tp.home.php</a><br>
+	</li> -->
+	<!-- <li data-st="X">_템플릿.로그인 :
+		<a href="tp.login1.php">tp.login1.php</a><br>
+	</li> -->
+</ol>
+<!-- Test1D )) ~20221028<br> -->
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4">본문 템플릿</h4>
+<!-- <p>n/a</p> -->
+<!-- <em class="em">★☆ 아래 콘텐츠 설계 (디자인) 필요!</em><br> -->
+<p class="em"></p>
+
+
+<ol class="bo mgtb0">
+<li class="op05"><a href="./demo/">CSS Component (Sample Demo)</a><br></li>
+</ol>
+<!-- +Test1D )) ~20210524.(goal) -->
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5">
+	<!-- dataedu.ai 화면설계서_작성중_~.pptx . 20221026~  (( @박서혜. 20221026~ -->
+	dataedu.ai 화면설계서_ver1.0(22.11.04).pptx <!-- @박서혜. 20221104~ -->
+</h5>
+
+<ol class="bo mgtb0">
+	<li data-st="X"><a href="../html/sub/introduce1.php"><b class="em0">c1</b> API 소개</a> <i class="badge1 fsS4">2차</i></li>
+	<li data-st="O"><a href="../html/sub/price1.php"><b class="em0">c2</b> 요금안내</a> <i class="badge1 fsS4">2차</i></li>
+	<li data-st="X"><a href="../html/sub/?#★.php"><b class="em0">c3</b> 가이드센터</a> <i class="badge1 fsS4">2차</i></li>
+
+	<!-- ))) 레이아웃 다른거 분리 -->
+
+	<li data-st="O"><a href="../html/sub/login1.php"><b class="em0">d1</b> 로그인</a></li>
+	<li data-st="X"><a"><b class="em0">d2</b> 미니프로필</a> ))) 공통 (로그인후)</li>
+	<li data-st="O"><a href="../html/sub/member1signup1.php"><b class="em0">e2</b> 회원가입</a></li>
+	<li data-st="O"><a href="../html/sub/member1pw1find1.php"><b class="em0">e3</b> 비밀번호 찾기</a></li>
+	<li data-st="O"><a href="../html/sub/member1pw1reset1.php"><b class="em0">e3.1</b> 비밀번호 재설정</a></li>
+	<li data-st="O"><a href="../html/sub/my1profile1.php"><b class="em0">e4</b> 내 프로필</a></li>
+	<li data-st="X"><a href="../html/sub/my1api1.php"><b class="em0">e5</b> API 사용정보</a></li>
+	<li data-st="X"><a href="../html/sub/?#★.php"><b class="em0">e6</b> 결제정보</a> <i class="badge1 fsS4">2차</i></li>
+	<li data-st="O"><a href="../html/sub/error1.php"><b class="em0">e7</b> 오류페이지</a> (404에러)</li>
+	<li data-st="O"><a href="https://present.do/documents/62bc0a3fe214362cce88f3c7?page=0" target="_blank" rel="noopener" title="새 창"><b class="em0">d3</b> 회사소개</a> (외부링크)</li>
+	<li data-st="O"><a href="../html/sub/terms1.php"><b class="em0">d4</b> 이용약관</a></li>
+	<li data-st="O"><a href="../html/sub/privacy1.php"><b class="em0">d5</b> 개인정보처리방침</a></li>
+	<li data-st="O"><a href="../html/sub/contact1.php"><b class="em0">d6</b> 문의하기</a></li>
+	<li data-st="X"><a href="../html/sub/?#★.php"><b class="em0">d7</b> 카카오 채팅</a> <i class="badge1 fsS4">2차</i></li>
+</ol>
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4">웹메일</h4>
+
+
+<ol class="bo mgtb0">
+	<li data-st="X"><a href="../html/email/?#★.html">회원가입 - 이메일 인증(유효성체크)</a></li>
+	<li data-st="X"><a href="../html/email/?#★.html">회원가입 - 환영(확인)</a></li>
+	<li data-st="X"><a href="../html/email/?#★.html">비밀번호 재설정</a></li>
+</ol>
+
+
+<!-- ◇◆◇◆ -->
+<!-- <h5 class="hb1 h5">
+	 20210521 (( 화면정의서 없음<br>
+</h5>
+
+109 pages = 46 design + 53 similar<br>
+	))) (46/2) + (53/4) = 36.25 Days<br>
+	))) Pages/Day = 109/36.25 = 3<br>
+
+<div class="mgt1em mgb1em">
+	<h6 class="hb1 h6 mg0">20210502 (( 문화관광 코딩 대상 목록_20210214.xlsx (( //*.psd</h6>
+	<h6 class="hb1 h6 mg0">20210219 (( /추가 콘텐츠(20210218)/*.psd</h6>
+	<h6 class="hb1 h6 mg0">20210919 (( 템플릿목록.xlsx</h6>
+</div> -->
+
+
+<!--
+<ol class="bo mgtb0">
+<li><a href="./spc6/spc6list1.jsp">관광목록</a>	<br>
+	+ 스케줄 담기 레이어<br>
+</li>
+<li><a href="./spc6/spc6view1.jsp">관광상세</a><br>
+	+ 별점 주기 레이어<br>
+	+ 스케줄 담기 레이어<br>
+</li>
+<li><a href="./lib2/tp22★★1★★1.jsp">★★</a></li>
+<li><a href="./lib2/tp22duty1department1.jsp">부서업무안내</a></li>
+<b class="em9">((())) TODO</b> ★★(ToDo)
+<li><a href="./lib2/tp22product1list1.jsp">특산물소개_목록</a></li>
+<li><a href="./lib2/tp22product1view1.jsp">특산물소개_상세</a></li>
+<li><a href="./lib2/tp22company1list1.jsp">업체소개_목록</a></li>
+<li><a href="./lib2/tp22company1view1.jsp">업체소개_상세</a></li>
+</ol>
++Test1D )) ~20210000.(goal)
+-->
+
+
+<!--
+<ol class="bo mgtb0">
+<li>체험후기 ))) <a href="./tp/tp1bbs1list1.jsp">_BBS1 리스트1</a></li>
+<li>자유게시판 ))) <a href="./tp/tp1bbs1list1.jsp">_BBS1 리스트1</a></li>
+<li>공지사항 ))) <a href="./tp/tp1bbs1list1.jsp">_BBS1 리스트1</a></li>
+<li>포토갤러리 ))) <a href="./tp/tp1bbs1gallery1photo1.jsp">_BBS1 갤러리1사진1</a></li>
+<li>자료실 ))) <a href="./tp/tp1bbs1list1.jsp">_BBS1 리스트1</a></li>
+<li>자유게시판 ))) <a href="./tp/tp1bbs1list1.jsp">_BBS1 리스트1</a></li>
+<li>사진갤러리 ))) <a href="./tp/tp1bbs1gallery1photo1.jsp">_BBS1 갤러리1사진1</a></li>
+<li>영상갤러리 ))) <a href="./tp/tp1bbs1gallery1video1.jsp">_BBS1 갤러리1영상1</a></li>
+<li> ))) <a href="./tp/tp1bbs1view1.jsp">_BBS1 상세뷰1</a></li>
+<li> ))) <a href="./tp/tp1bbs1write1.jsp">_BBS1 글작성1</a></li>
+</ol>
+-->
+
+
+<!-- <hr>
+<p>
+	<b class="em7 fsL">(( 아래는 OOO에서 그대로 가져온 최신 템플릿 샘플 코드입니다. ))<br>
+	<em class="em">version.~ 20160620</em><br>
+	</b>
+</p> -->
+
+
+</section>
+<!-- /section1 -->
+
+
+</div>
+<!-- /column -->
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆ column -->
+<div class="column small-12 medium-6 large-4" style="background:#f9fafb;">
+
+
+<!-- ◇◆◇◆ -->
+<!-- section1 -->
+<section class="section1"><!-- <h2 class="hb1 h2 blind">★</h2> -->
+
+
+
+<h3 class="hb1 h3 mgt0">API 체험하기 <b class="em0">/_res/solution.api/</b></h3>
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4">공통·서브(+메인) 템플릿</h4>
+<!-- <p>n/a</p> -->
+<!-- <em class="em">★☆ 아래 콘텐츠 설계 (디자인) 필요!</em><br> -->
+<p class="em"></p>
+
+
+<ol class="mgb0">
+	<li>_템플릿.공통·서브 :
+		<a href="/_res/solution.api/_lib/tp.sub.php">tp.sub.php</a> 🔷<br>
+	</li>
+</ol>
+<!-- Test1D )) ~20221028<br> -->
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4">본문 템플릿</h4>
+<!-- <p>n/a</p> -->
+<!-- <em class="em">★☆ 아래 콘텐츠 설계 (디자인) 필요!</em><br> -->
+<p class="em"></p>
+
+
+<ol class="bo mgtb0">
+
+	<li data-st="O">
+		<a href="/_res/solution.api/html/sub/api1.php"><b class="em0">e1</b> 체험하기</a> 🔷
+		<del><a href="/_res/solution.api/html/sub/api1.v01.php">v01</a></del><br>
+
+	</li>
+	<li data-st="X"><a><b class="em0">e1.1</b> <strong class="em0 big">Audio API</strong></a></li>
+	<li data-st="O"><a href="/_res/solution.api/html/audio/tts1.php"><b class="em0">e1.1.1</b> 음성합성 (JS-TTS)</a><br>
+		| 엔진체험 - 진행전<br>
+		| <a href="/_res/solution.api/html/audio/tts1ing1compose1.php">엔진체험 - 진행중 - 음성합성</a><br>
+		| <a href="/_res/solution.api/html/audio/tts1ing2play1.php">엔진체험 - 진행중 - 음원재생</a><br>
+		| <a href="/_res/solution.api/html/audio/tts1ok1.php">엔진체험 - 진행완료</a><br>
+		| <a href="/_res/solution.api/html/audio/tts1use1.php">활용사례</a><br>
+		| <a href="/_res/solution.api/html/audio/tts1manual1.php">매뉴얼</a><br>
+	</li>
+	<li data-st="O"><a href="/_res/solution.api/html/audio/stt1.php"><b class="em0">e1.1.2</b> 음성인식 (JS-STT)</a><br>
+		| 엔진체험 - 진행전<br>
+		| <a href="/_res/solution.api/html/audio/stt1ing1record1.php">엔진체험 - 진행중 - 음성입력(녹음)</a><br>
+		| <a href="/_res/solution.api/html/audio/stt1ing2convert1.php">엔진체험 - 진행중 - 음성변환</a><br>
+		| <a href="/_res/solution.api/html/audio/stt1ok1.php">엔진체험 - 진행완료</a><br>
+		| <a href="/_res/solution.api/html/audio/stt1use1.php">활용사례</a><br>
+	</li>
+	<li data-st="O"><a href="/_res/solution.api/html/audio/denoise1.php"><b class="em0">e1.1.3</b> 음성정제 (JS-Denoise)</a> <i class="badge1 fsS4">2차</i><br>
+		| 엔진체험 - 진행전<br>
+		| <a href="/_res/solution.api/html/audio/denoise1ing1.php">엔진체험 - 진행중 - 음성정제</a><br>
+		| <a href="/_res/solution.api/html/audio/denoise1ok1.php">엔진체험 - 진행완료</a><br>
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/audio/denoise1use1.php">활용사례</a><br>
+		</div>
+
+	</li>
+	<li data-st="O"><a href="/_res/solution.api/html/audio/noiser1.php"><b class="em0">e1.1.4</b> 음향합성 (JS-Noiser)</a> <i class="badge1 fsS4">2차</i><br>
+		| 엔진체험 - 진행전<br>
+		| <a href="/_res/solution.api/html/audio/noiser1ing1.php">엔진체험 - 진행중 - 음향합성</a><br>
+		| <a href="/_res/solution.api/html/audio/noiser1ok1.php">엔진체험 - 진행완료</a><br>
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/audio/noiser1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="X"><a><b class="em0">e1.2</b> <strong class="em0 big">Vision API</strong></a></li>
+	<li data-st="O"><a href="/_res/solution.api/html/vision/ocr1.php"><b class="em0">e1.2.1</b> 이미지 텍스트인식 (JS-OCR)</a><br>
+		| 엔진체험 - 진행전</a><br>
+		| <a href="/_res/solution.api/html/vision/ocr1ing1.php">엔진체험 - 진행중</a><br>
+		| <a href="/_res/solution.api/html/vision/ocr1ok1.php">엔진체험 - 진행완료</a><br>
+		| <a href="/_res/solution.api/html/vision/ocr1use1.php">활용사례</a><br>
+		<!-- | <a href="/_res/solution.api/html/vision/ocr1manual1.php">매뉴얼</a><br> -->
+	</li>
+	<li data-st="O"><a href="/_res/solution.api/html/vision/face1detection1.php"><b class="em0">e1.2.2</b> 얼굴인식 (V-Face)</a><br>
+		| 엔진체험 - 진행전</a><br>
+		| <a href="/_res/solution.api/html/vision/face1detection1ing1.php">엔진체험 - 진행중 </a><br>
+		| <a href="/_res/solution.api/html/vision/face1detection1ok1.php">엔진체험 - 진행완료</a><br>
+		| <a href="/_res/solution.api/html/vision/face1detection1use1.php">활용사례</a><br>
+	</li>
+	<li data-st="O"><a href="/_res/solution.api/html/vision/face1blur1.php"><b class="em0">e1.2.3</b> 얼굴 모자이크 (V-Face Blur)</a><br>
+		| 엔진체험 - 진행전</a><br>
+		| <a href="/_res/solution.api/html/vision/face1blur1ing1.php">엔진체험 - 진행중 </a><br>
+		| <a href="/_res/solution.api/html/vision/face1blur1ok1.php">엔진체험 - 진행완료</a><br>
+		| <a href="/_res/solution.api/html/vision/face1blur1use1.php">활용사례</a><br>
+	</li>
+	<li data-st="X"><a href="/_res/solution.api/html/vision/clothes1detection1.php"><b class="em0">e1.2.4</b> 의상 정보 인식</a> <i class="badge1 fsS4">2차</i>  ((UI미확정<br>
+		| 엔진체험 - 진행전</a><br>
+		<!-- | <a href="/_res/solution.api/html/vision/clothes1detection1ing1.php">엔진체험 - 진행중</a><br>
+		| <a href="/_res/solution.api/html/vision/clothes1detection1ok1.php">엔진체험 - 진행완료</a><br> -->
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/vision/clothes1detection1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="O"><a href="/_res/solution.api/html/vision/logo1detection1.php"><b class="em0">e1.2.6</b> 로고 인식</a> <i class="badge1 fsS4">2차</i><br>
+		| 엔진체험 - 진행전</a><br>
+		| <a href="/_res/solution.api/html/vision/logo1detection1ing1.php">엔진체험 - 진행중</a><br>
+		| <a href="/_res/solution.api/html/vision/logo1detection1ok1.php">엔진체험 - 진행완료</a><br>
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/vision/logo1detection1use1.php">활용사례</a><br>
+		</div>
+		</li>
+	<li data-st="O"><a href="/_res/solution.api/html/vision/product1detection1.php"><b class="em0">e1.2.7</b> 제품 인식</a> <i class="badge1 fsS4">2차</i><br>
+		| 엔진체험 - 진행전</a><br>
+		| <a href="/_res/solution.api/html/vision/product1detection1ing1.php">엔진체험 - 진행중</a><br>
+		| <a href="/_res/solution.api/html/vision/product1detection1ok1.php">엔진체험 - 진행완료</a><br>
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/vision/product1detection1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="O"><a href="/_res/solution.api/html/vision/tti1.php"><b class="em0">e1.2.8</b> AI 화가</a> <i class="badge1 fsS4">2차</i><br>
+		| 엔진체험 - 진행전</a><br>
+		| <a href="/_res/solution.api/html/vision/tti1ing1.php">엔진체험 - 진행중</a><br>
+		| <a href="/_res/solution.api/html/vision/tti1ok1.php">엔진체험 - 진행완료</a><br>
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/vision/tti1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="X"><a><b class="em0">e1.3</b> <strong class="em0 big">Language API</strong></a></li>
+	<li data-st="O"><a href="/_res/solution.api/html/language/sentence1corrector1.php"><b class="em0">e1.3.1</b> 문장교정</a> <i class="badge1 fsS4">2차</i><br>
+		| 엔진체험 - 진행전</a><br>
+		| <a href="/_res/solution.api/html/language/sentence1corrector1ing1.php">엔진체험 - 진행중</a><br>
+		| <a href="/_res/solution.api/html/language/sentence1corrector1ok1.php">엔진체험 - 진행완료</a><br>
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/language/sentence1corrector1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="O"><a href="/_res/solution.api/html/language/transliteration1.php"><b class="em0">e1.3.2</b> <del>한글변환</del> <ins>한글발음화</ins></a><br>
+		| 엔진체험 - 진행전</a><br>
+		| <a href="/_res/solution.api/html/language/transliteration1ing1.php">엔진체험 - 진행중</a><br>
+		| <a href="/_res/solution.api/html/language/transliteration1ok1.php">엔진체험 - 진행완료</a><br>
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/language/transliteration1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="O"><a href="/_res/solution.api/html/language/nlu1.php"><b class="em0">e1.3.3</b> 자연어 이해 (JS-NLU)</a><br>
+		| 엔진체험 - 진행전</a><br>
+		| <a href="/_res/solution.api/html/language/nlu1ing1.php">엔진체험 - 진행중</a><br>
+		| <a href="/_res/solution.api/html/language/nlu1ok1.php">엔진체험 - 진행완료</a><br>
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/language/nlu1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="O"><a href="/_res/solution.api/html/language/mrc1.php"><b class="em0">e1.3.4</b> AI 질의응답 (JS-MRC)</a><br>
+		| 엔진체험 - 진행전</a><br>
+		| <a href="/_res/solution.api/html/language/mrc1ing1.php">엔진체험 - 진행중</a><br>
+		| <a href="/_res/solution.api/html/language/mrc1ok1.php">엔진체험 - 진행완료</a><br>
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/language/mrc1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="X"><a><b class="em0">e1.4</b> <strong class="em0 big">Education API</strong></a></li>
+	<li data-st="O"><a href="/_res/solution.api/html/education/speak1word1.php"><b class="em0">e1.4.1</b> 단어 말하기</a><br>
+		<!-- | 엔진체험 - 진행전 / 진행중 / 진행완료<br> -->
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/education/speak1word1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="O"><a href="/_res/solution.api/html/education/speak1phrase1.php"><b class="em0">e1.4.2</b> 구문 말하기</a><br>
+		<!-- | 엔진체험 - 진행전 / 진행중 / 진행완료<br> -->
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/education/speak1phrase1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="O"><a href="/_res/solution.api/html/education/speak1sentence1.php"><b class="em0">e1.4.3</b> 문장 말하기</a><br>
+		<!-- | 엔진체험 - 진행전 / 진행중 / 진행완료<br> -->
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/education/speak1sentence1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="O"><a href="/_res/solution.api/html/education/answer1question1.php"><b class="em0">e1.4.4</b> 질문 답하기</a><br>
+		<!-- | 엔진체험 - 진행전 / 진행중 / 진행완료<br> -->
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/education/answer1question1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="X"><a><b class="em0">e1.5</b> <strong class="em0 big">Video API</strong></a></li>
+	<li data-st="O"><a href="/_res/solution.api/html/video/human1detection1.php"><b class="em0">e1.5.1</b> 사람인식</a> <i class="badge1 fsS4">2차</i> 🔷<br>
+		| 엔진체험 - 진행전</a><br>
+		| <a href="/_res/solution.api/html/video/human1detection1ing1.php">엔진체험 - 진행중</a><br>
+		| <a href="/_res/solution.api/html/video/human1detection1ok1.php">엔진체험 - 진행완료</a><br>
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/video/human1detection1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="X"><a href="/_res/solution.api/html/video/motion1tracking1.php"><b class="em0">e1.5.2</b> 트래킹</a> <i class="badge1 fsS4">2차</i> 🔷<br>
+		| 엔진체험 - 진행전</a><br>
+		| <a href="/_res/solution.api/html/video/motion1tracking1ing1.php">엔진체험 - 진행중</a><br>
+		| <a href="/_res/solution.api/html/video/motion1tracking1ok1.php">엔진체험 - 진행완료</a><br>
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/video/motion1tracking1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="X"><a href="/_res/solution.api/html/video/playback1section1.php"><b class="em0">e1.5.3</b> 구간재생</a> <i class="badge1 fsS4">2차</i> ((UI미확정<br>
+		| 엔진체험 - 진행전</a><br>
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/video/playback1section1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="X"><a href="/_res/solution.api/html/video/content1search1.php"><b class="em0">e1.5.4</b> 영상내용검색</a> <i class="badge1 fsS4">2차</i> ((UI미확정<br>
+		| 엔진체험 - 진행전</a><br>
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/video/content1search1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="O"><a href="/_res/solution.api/html/video/web1crawling1.php"><b class="em0">e1.5.5</b> 영상정보수집</a><br>
+		| 엔진체험 - 진행전</a><br>
+		| <a href="/_res/solution.api/html/video/web1crawling1ing1.php">엔진체험 - 진행중</a><br>
+		| <a href="/_res/solution.api/html/video/web1crawling1ok1.php">엔진체험 - 진행완료</a><br>
+		<div data-st="O">
+			| <a href="/_res/solution.api/html/video/web1crawling1use1.php">활용사례</a><br>
+		</div>
+	</li>
+	<li data-st="O"><a href="/_res/solution.api/html/sub/error1.php"><b class="em0">e7?</b> 체험하기 – 오류페이지</a></li>
+</ol>
+
+
+<div class="next-all-hide blind"></div><!-- YYYYMMDD.★☆ToEdit) ☆  -->
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆ -->
+<h2 class="hb1 h2 mgt0" id="myTaskToDo">
+	<i class="material-icons fs21px vam" aria-hidden="true">pending</i>
+	myTask.ToDo
+</h2>
+<!-- <p>none</p> -->
+
+
+
+<div class="mgt1em mgb1em">
+	<h6 class="hb1 h6 mg0">20211202 (( CMS_컴포넌트 설명 자료.ppt</h6>
+</div>
+
+
+<!-- ◇◆◇◆◇◆◇◆◇◆ -->
+<h3 class="hb1 h2 type2" id="myTaskSites">
+	Task Sites and Pages
+</h3>
+
+
+<table class="t2 w100 tttal ttvam">
+	<caption class="psr mgb-1px fwn ls0">
+		<strong class="h1 pd0 fwn">Task Scope (Other IA)</strong>
+		<!-- <span class="cvf" title="요약(summary)">
+			<span class="dpib">((20160901~ 폴더구조 /_res/key/</span>
+			<span class="dpib">((20170628~ siteType</span>
+		</span> -->
+	</caption>
+	<thead>
+	<tr>
+	<th scope="col" class="w5em">SN )) <!-- Template Code Finished Number --></th>
+	<th scope="col" class="w12em">Site</th>
+	<th scope="col">siteType</th>
+	<th scope="col">key Link</th>
+	<th scope="col">Note</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<th scope="row">01 )) 01</th>
+	<th scope="row">대표</th>
+	<td></td>
+	<td>
+		<a href="../../_A/_lib/" target="_blank" rel="noopener" title="새 창">/_lib/</a>
+	</td>
+	<td>
+		~20211130. DesignRenewal<br>
+	</td>
+	</tr>
+	<tr>
+	<th scope="row">02 )) 00</th>
+	<th scope="row">컴포넌트 설명</th>
+	<td></td>
+	<td>
+		<a href="../../_A/_lib/demo/" target="_blank" rel="noopener" title="새 창">/_lib/</a>
+	</td>
+	<td>~20211130. UX+main<br></td>
+	</tr>
+	</tbody>
+	<tfoot>
+	<tr>
+	<td colspan="5">+Test1D )) ~20220000 (~20221231? Finished)</td>
+	</tr>
+	</tfoot>
+</table>
+
+
+<div class="hg1 fs14px mgt15em">
+	<strong>
+		<i class="material-icons fs18px vam" aria-hidden="true">assignment</i>
+		<span class="dpib vam">Note</span>
+	</strong>
+</div>
+
+
+<!-- ◇◆◇◆◇◆ -->
+<h4 class="hb1 h4">
+	Lab. 20211206~ <!-- (( @m -->
+</h4>
+
+<ol class="bo mgtb0">
+	<li>
+		<a href="./_lab/">/_lab/</a> 20210504
+			| png+css+animation
+			| 영상 위 버튼
+			| 교재효과
+			| 오디오
+			| 비디오
+			| 녹음
+	</li>
+	<li>
+		<a href="./demo/tick/mTick.html">데이터에듀.메인.세로스크롤무한</a> 20211103 <!-- (( @여준섭 -->
+	</li>
+	<li>
+		<a href="./demo/chart/mChart.html">Chart Demo v0.3</a> 20211206 <!-- (( @m -->
+	</li>
+	<li>
+		<a href="./demo/layerpop/layerpop1utube1.html">빅데이터마트.레이어팝업.유튜브영상</a> 20220210 <!-- (( @여준섭 -->
+	</li>
+</ol>
+
+
+
+</section>
+<!-- /section1 -->
+
+
+</div>
+<!-- /column -->
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆ column -->
+<div class="column small-12 medium-12 large-4">
+
+
+<!-- ◇◆◇◆ -->
+<!-- section1 -->
+<section class="section1"><!-- <h2 class="hb1 h2 blind">★</h2> -->
+
+
+
+
+
+<a href="https://github.com/MoonYoungshin/dataedu.solution/" target="_blank" rel="noopener" title="새 창" class="a1">
+	<i class="fa-brands fa-github fsB2" style="color:#234;"></i>
+	https://github.com/MoonYoungshin/dataedu.solution/
+</a><br>
+((( 20221122~ 이후 여기 UI 코딩 템플릿 파일들을 깃허브에도 업로드하니 참고바랍니다.
+
+
+<!-- box1 -->
+<div class="box1 mgt1em mgb1em">
+	※ 아래 폴더 하위 파일들은 History 에 없어도.. 매번 갱신하시기 바랍니다.<br>
+	/_res/solution/img/<br>
+	/_res/solution/share/css/<br>
+	/_res/solution/share/js/<br>
+	/_res/	solution.api/img/<br>
+	/_res/solution.api/share/css/<br>
+	/_res/solution.api/share/js/<br>
+</div>
+<!-- /box1 -->
+
+
+<table class="t2 w100 tttal ttvam">
+	<caption class="psr mgb-1px fwn ls0">
+		<strong class="h1 pd0 fwn">History</strong>
+	</caption>
+	<thead>
+	<tr>
+	<!-- <th scope="col" class="2em">ver</th> -->
+	<th scope="col">작성일자 <!-- (yyyymmdd) --></th>
+	<th scope="col">issue</th>
+	<th scope="col">note</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<!-- <th scope="row">0.5.0</th> -->
+	<td>20221121</td>
+	<td>최초작성. (20221117~ 이후 갱신 이력 작성)</td>
+	<td></td>
+	</tr>
+	<tr>
+	<!-- <th scope="row">0.6.0</th> -->
+	<td>20221122</td>
+	<td>
+		*** API 체험하기 /_res/solution.api/<br>
+		<div class="mgl05em">
+			== API 활용 사례 페이지 생성 및 내용 코딩<br>
+			== 2차 개발 페이지들 엔진체험 - 진행전 페이지 생성 (공통 부분 코드 포함)<br>
+			+ 임시내용 : ((( 준비중입니다 )))<br>
+			== 서비스명 "한글변환"을 "한글발음화" 로 수정
+		</div>
+	</td>
+	<td></td>
+	</tr>
+	<tr>
+	<!-- <th scope="row">0.6.1</th> -->
+	<td>20221123</td>
+	<td>
+		*** API 체험하기 /_res/solution.api/<br>
+		<div class="mgl05em">
+			== 체험하기 메인(인덱스) 페이지<br>
+		</div>
+	</td>
+	<td></td>
+	</tr>
+	<tr>
+	<!-- <th scope="row">0.6.2</th> -->
+	<td>20221125</td>
+	<td>
+		))) 추가<br>
+		<div class="mgl05em">
+			== 체험하기 - 음성정제 (JS-Denoise)<br>
+		</div>
+		))) 수정<br>
+		<div class="mgl05em">
+    	== 회원가입. 이메일 인증 버튼 컬러 수정<br>
+    	== 체험하기 - 로고인식. 설명 문구 추가<br>
+    	== 체험하기 - AI 화가. 하단 이미지 1행만 표출<br>
+		</div>
+	</td>
+	<td></td>
+	</tr>
+	</tfoot>
+</table>
+
+
+<div class="next-all-hide blind"></div><!-- YYYYMMDD.★☆ToEdit) ☆  -->
+
+
+<h2 class="hb1 h2 mgt0" id="myTaskFinished">
+	<i class="material-icons fs21px vam" aria-hidden="true">assignment</i>
+	Past Task.Finished
+</h2>
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5">
+	본문콘텐츠 템플릿. 20211117~20220222~ <!-- ((@m -->
+</h5>
+
+<ol class="bo">
+	<li><a href="./tp.login1.php">로그인</a></li>
+	<li><a href="./tp.bbs1list1table1.php">목록.테이블</a></li>
+	<li><a href="./tp.bbs1view1.php">상세.게시물</a> (제목.정보.첨부.내용.답변.이전다음)</li>
+	<li><a href="./tp.bbs1view1table1.php">상세.테이블</a></li>
+	<li><a href="./tp.bbs1write1table1.php">작성.테이블</a></li>
+</ol>
+
+
+<hr class="bdt1px mgt125em mgb125em">
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5">
+	툴로. 관리자. 20210924~ <!-- (( 툴로_화면설계서(관리자포함)_ver1.3_210915.pptx -->
+</h5>
+
+<ol class="bo mgtb0">
+	<li><a href="./toolo/tp.home.php">홈(대시보드)</a></li>
+	<li><a href="./toolo/tp.write1tool1.php">신규 툴 등록</a></li>
+	<li><a href="./toolo/tp.write1program1.php">신규 프로그램 등록</a></li>
+	<li><a href="./toolo/tp.write1quiz1.php">신규 퀴즈 등록</a></li>
+</ol>
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5">
+	크롤링 관리 화면 캡쳐. 20211020~ <!-- (( @정대석. 20211112~ -->
+</h5>
+
+<ol class="bo mgtb0">
+	<li><a href="./crawling/tp.crawling1write1.php">크롤링 설정</a></li>
+	<li><a href="./crawling/tp.crawling1list1.php">크롤링 목록</a></li>
+</ol>
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5">
+	유튜넷.웹콘텐츠 | 데이터바우처. 20211117~ <!-- (( @정대석 -->
+</h5>
+
+<ol class="bo mgtb0">
+	<li><a href="./youtunet/test.html">테스트</a></li>
+	<li><a href="./youtunet/rowList.html">목록 1줄</a></li>
+	<li><a href="./youtunet/contents.html">목록 2줄 쪽수</a></li>
+	<li><a href="./youtunet/contents_view.html">상세</a></li>
+</ol>
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5">
+	웹사이트 프로젝트 유지보수 (게시판) 관리시스템. 20211118~  <!-- (( @정대석. 20211112~ -->
+</h5>
+
+<ol class="bo mgtb0">
+	<li><a href="./pms/tp.pms1login1.php">로그인</a></li>
+	<li><a href="./pms/tp.pms1main1.php">메인 (대시보드)</a></li>
+
+	<li><a href="./pms/tp.pms1client1list1.php">고객사 - 목록</a></li>
+	<li><a href="./pms/tp.pms1client1view1.php">고객사 - 상세</a></li>
+	<li><a href="./pms/tp.pms1client1write1.php">고객사 - 등록</a></li>
+
+	<li><a href="./pms/tp.pms1pj1list1.php">프로젝트 - 목록</a></li>
+	<li><a href="./pms/tp.pms1pj1view1.php">프로젝트 - 상세</a></li>
+	<li><a href="./pms/tp.pms1pj1write1.php">프로젝트 - 등록</a></li>
+
+	<li><a href="./pms/tp.pms1issue1list1.php">고객지원 이슈 - 목록</a></li>
+	<li><a href="./pms/tp.pms1issue1view1.php">고객지원 이슈 - 상세</a></li>
+	<li><a href="./pms/tp.pms1issue1write1.php">고객지원 이슈 - 작성</a></li>
+
+	<!-- <li><a href="./pms/tp.pms1server1.php">서버 정보</a></li> -->
+
+</ol>
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5">
+	Power BI 조회 웹페이지. 20220214~ <!-- (( @정대석 -->
+</h5>
+
+<ol class="bo mgtb0">
+	<li><a href="./powerbi/index.html">진주시</a></li>
+</ol>
+
+
+<hr class="bdt1px mgt125em mgb125em">
+
+
+<!-- ◇◆◇◆ -->
+<h5 class="hb1 h5">
+	Link. 20211022~ <!-- (( @m -->
+</h5>
+
+<ol class="bo mgtb0">
+	<li>
+		<!-- <a href="http://myshin.dothome.co.kr/html/Demo/mChart.html" target="_blank" rel="noopener" title="새 창">Chart Demo v0.2</a> -->
+	</li>
+</ol>
+
+
+
+</section>
+<!-- /section1 -->
+<!-- ◇◆◇◆ -->
+
+
+</div>
+<!-- /column -->
+</div>
+<!-- /◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆ even-grid -->
+
+
+
+
+
+</section>
+<!-- /#content -->
+</div>
+<!-- /#container -->
+<!-- ◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆ -->
+<!-- #footer -->
+<footer id="footer" class="clearfix">
+	<dl>
+	<dt><strong class="h1">UA Info.</strong></dt>
+	<dd>
+		<script>/*<![CDATA[*/
+			document.writeln('navigator.appName : '+ navigator.appName);
+		/*]]>*/</script>
+	</dd>
+	<dd>
+		<script>/*<![CDATA[*/
+			document.writeln('navigator.userAgent : ' + navigator.userAgent);
+		/*]]>*/</script>
+	</dd>
+	</dl>
+	<address class="copyright">
+		Copyright &copy;
+		20220000<!-- (과업시작일) -->
+		~ 20222222 ~ <!-- (코딩시작일) -->
+		20229999<!-- (과업종료일) -->
+		<!-- MoonYoungshin[myshin@naver.com]. All Rights Reserved. -->
+	</address>
+</footer>
+<!-- /#footer -->
+</div>
+<!-- /#wrap -->
+</body>
+</html>

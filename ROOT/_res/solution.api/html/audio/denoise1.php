@@ -5,6 +5,7 @@
  * 20221102 | @m | 요구반영. 결함개선. 고도화.
  * 20221108 | @m | 
  * 20221125 | @m | 
+ * 20221129 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -158,13 +159,14 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <script>/*<![CDATA[*/
 
 
-	/** ◇◆ 샘플 테스트. 버튼 선택하면 radio 선택. 20221124. @m.
+	/** ◇◆ 샘플 테스트. 버튼 선택하면 radio 선택. 20221124. 20221129. @m.
 	 */
 	(function(){
 		var $my = $('.cp2set3'), // 샘플 테스트 래퍼
 			item = '.item', // 항목
 			b1 = '.b1', // 버튼
 			radio = 'input[type="radio"]'; // 라디오
+
 		// 버튼 클릭하면
 		$my.on('click', b1, function(){
 			$(this).closest(item).find(radio).trigger('click');
@@ -172,14 +174,14 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	})();
 
 
-	/** ◇◆ 내 파일 테스트. 인풋파일 선택하면 radio 선택. 20221124. @m.
+	/** ◇◆ 내 파일 테스트. 인풋파일 선택하면 radio 선택. 20221124. 20221129. @m.
 	 */
 	(function(){
 		var $my = $('.cp2my1file1'), // 샘플 테스트 래퍼
-			file = '.file', // 버튼
+			file = '.file', // 인풋파일
 			radio = 'input[type="radio"]'; // 라디오
 
-		// 버튼 클릭하면
+		// 인풋파일 클릭하면
 		$my.on('click', file, function(){
 			$my.find(radio).trigger('click');
 		});
@@ -231,7 +233,6 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 
 /*]]>*/</script>
-
 
 
 <script>/*<![CDATA[*/

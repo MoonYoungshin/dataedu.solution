@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+<!-- html_head --><!-- ☆★(개별값작업나중에하자!) -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+
+<meta name="author" content="펜덕스(penDUX)" />
+<meta name="keywords" content="AI 펜덕스, AI 러닝" />
+<meta name="description" content="AI 펜덕스 AI 러닝" />
+<title>AI 러닝 | AI 펜덕스</title>
+<script src="/_res/solution/share/vendor/jquery-3.6.1.min.js"></script>
+<!-- /html_head -->
+<script>
+function noEvent() {
+    if ( 116 == event.keyCode || 8 == event.keyCode ) {
+        event.keyCode = 2;
+        return false;
+    } else if ( event.ctrlKey && ( 78 == event.keyCode || 82 == event.keyCode)) {
+        return false;
+    }
+}
+document.onkeydown=noEvent;
+</script>
+</head>
+<body class="L0100Phonics Greeting_Frame1">
+<!-- #container -->
+<div id="container" tabindex="-1">
+<noscript><p class="noscript">JavaScript has been disabled. This site requires JavaScript for full functionality, please enable.</p></noscript>
+<!-- #head -->
+<div id="head" class="init">
+<!-- container -->
+<div class="container">
+
+
+<!-- logo -->
+<h1 id="logo" class="blind">
+	AI 러닝
+</h1>
+<!-- /logo -->
+
+
+</div>
+<!-- /container -->
+</div><hr class="dpn" />
+<!-- /#head --><!-- #wrap -->
+<div id="wrap">
+<!-- container -->
+<div class="container clearfix">
+<!-- #body -->
+<div id="body" tabindex="-1">
+<!-- container -->
+<div class="container clearfix">
+
+
+
+
+
+<!-- cp2greeting1 -->
+<div class="cp2greeting1">
+	<!-- 학습을 시작하기 전, 수업 시작 인사말을 전하는 영상 -->
+	<!-- video -->
+	<!-- <video controls="controls" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" poster="../../img/lib/x2/x2p1001.jpg" class="video1full1"> -->
+	<video autoplay="autoplay" playsinline="playsinline" class="video1">
+		<!-- <source src="/_res/learn/data/mp4/WaterGlass.mp4" type="video/mp4"> -->
+		<source src="/_res/solution.api/data/mp4/sample01.mp4" type="video/mp4">
+	</video>
+	<!-- /video -->
+
+	<!-- 영상제어 -->
+	<div class="btns1">
+		<button type="button" class="b1play1">Play (영상 재생)</button>
+	</div>
+
+</div>
+<!-- /cp2greeting1 -->
+
+
+
+<script>/*<![CDATA[*/
+	$(function(){
+
+		/** ◇◆ video 제어. 20210617. 20210705. @m.
+		 * 로딩 1초 뒤 영상 재생. 영상이 끝나면 자동으로 이동.
+		 */
+		(function(){
+
+			var $video1 = $('.video1'), // 영상
+				$b1play1 = $('.b1play1'), // 재생버튼 (autoplay 안될 때 대비)
+				video1 = $video1[0];
+
+				video1.autoplay = true;
+				video1.pause();
+
+			// 로딩 1초 뒤 재생
+			//$(window).on('load', function(e){ // 이거하면 재방문 시 플레이 안될 수 있다.
+				var timer;
+				clearTimeout(timer);
+				timer = setTimeout(function(){
+					//video1.play();
+					var promise = video1.play();
+					if (promise !== undefined) {
+					
+						// ES5 // [IE]bugFix) then 지원 안하나, 콘솔 에러는 없다.
+						promise.then(function(result) {
+							video1.play();
+						}, function(error) {
+							$b1play1.addClass('active').addClass('one');
+						});
+
+					}else{ // [IE]
+						video1.play();
+					}
+				}, 1000);
+			//});
+
+			// 영상이 끝나면 자동으로 이동
+			$video1.on('ended', function(){
+				location.href = 'Process_Frame1.php';
+			});
+
+			// 영상 재생
+			$b1play1.on('click', function(){
+				video1.play();
+				$(this).removeClass('active');
+			});
+
+		})();
+
+	});
+/*]]>*/</script>
+
+
+
+
+
+</div>
+<!-- /container -->
+</div>
+<!-- /#body -->
+</div>
+<!-- /container -->
+</div>
+<!-- /#wrap -->
+<!-- #foot --><hr class="dpn" />
+<div id="foot" class="init">
+<!-- container -->
+<div class="container">
+
+
+<!-- copyright1 -->
+<div id="copyright1" class="blind">
+	<address class="copyright">Copyrigth (c) 2021 penDUX. All Rights Reserved.</address>
+</div>
+<!-- /copyright1 -->
+
+
+</div>
+<!-- /container -->
+</div>
+<!-- /#foot -->
+</div>
+<!-- /#container -->
+</body>
+</html>

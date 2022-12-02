@@ -4,6 +4,7 @@
  * 20221026 | @m | 최초작성
  * 20221108 | @m | 요구반영. 결함개선. 고도화.
  * 20221125 | @m | 
+ * 20221201 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -17,7 +18,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <meta name="author" content="데이터에듀">
 <meta name="keywords" content="데이터에듀 솔루션 API">
 <meta name="description" content="데이터에듀 솔루션 API">
-<title>AI 화가 - 엔진체험 | 데이터에듀 API</title>
+<title>AI 화가 (JS-TTI) - 엔진체험 | 데이터에듀 API</title>
 
 <?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/html_head.php"; ?>
 
@@ -133,18 +134,18 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <!-- cp2gallery1 -->
 <div class="cp2gallery1">
 	<ul class="even-grid tac">
-		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1101.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1101.jpg" alt="AI 화가 생성 이미지 예시1" class="p1"></span></a></li>
-		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1102.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1102.jpg" alt="AI 화가 생성 이미지 예시2" class="p1"></span></a></li>
-		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1103.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1103.jpg" alt="AI 화가 생성 이미지 예시3" class="p1"></span></a></li>
-		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1104.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1104.jpg" alt="AI 화가 생성 이미지 예시4" class="p1"></span></a></li>
-		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1105.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1105.jpg" alt="AI 화가 생성 이미지 예시5" class="p1"></span></a></li>
-		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1106.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1106.jpg" alt="AI 화가 생성 이미지 예시6" class="p1"></span></a></li>
-		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1107.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1107.jpg" alt="AI 화가 생성 이미지 예시7" class="p1"></span></a></li>
-		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1108.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1108.jpg" alt="AI 화가 생성 이미지 예시8" class="p1"></span></a></li>
-		<!-- <li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1109.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1109.jpg" alt="AI 화가 생성 이미지 예시9" class="p1"></span></a></li>
-		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1110.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1110.jpg" alt="AI 화가 생성 이미지 예시10" class="p1"></span></a></li>
-		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1111.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1111.jpg" alt="AI 화가 생성 이미지 예시11" class="p1"></span></a></li>
-		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1112.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1112.jpg" alt="AI 화가 생성 이미지 예시12" class="p1"></span></a></li> -->
+		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1101.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1101.jpg" alt="AI 화가 (JS-TTI) 생성 이미지 예시1" class="p1"></span></a></li>
+		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1102.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1102.jpg" alt="AI 화가 (JS-TTI) 생성 이미지 예시2" class="p1"></span></a></li>
+		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1103.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1103.jpg" alt="AI 화가 (JS-TTI) 생성 이미지 예시3" class="p1"></span></a></li>
+		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1104.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1104.jpg" alt="AI 화가 (JS-TTI) 생성 이미지 예시4" class="p1"></span></a></li>
+		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1105.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1105.jpg" alt="AI 화가 (JS-TTI) 생성 이미지 예시5" class="p1"></span></a></li>
+		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1106.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1106.jpg" alt="AI 화가 (JS-TTI) 생성 이미지 예시6" class="p1"></span></a></li>
+		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1107.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1107.jpg" alt="AI 화가 (JS-TTI) 생성 이미지 예시7" class="p1"></span></a></li>
+		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1108.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1108.jpg" alt="AI 화가 (JS-TTI) 생성 이미지 예시8" class="p1"></span></a></li>
+		<!-- <li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1109.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1109.jpg" alt="AI 화가 (JS-TTI) 생성 이미지 예시9" class="p1"></span></a></li>
+		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1110.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1110.jpg" alt="AI 화가 (JS-TTI) 생성 이미지 예시10" class="p1"></span></a></li>
+		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1111.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1111.jpg" alt="AI 화가 (JS-TTI) 생성 이미지 예시11" class="p1"></span></a></li>
+		<li class="column"><a href="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1112.jpg" target="_blank" rel="noopener" title="새 창" class="a1"><span class="f1"><img src="//dolearn.ai/_res/@m/_img.ex/w320a1/w320a1112.jpg" alt="AI 화가 (JS-TTI) 생성 이미지 예시12" class="p1"></span></a></li> -->
 	</ul>
 </div>
 <!-- /cp2gallery1 -->

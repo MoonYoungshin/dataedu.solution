@@ -3,6 +3,7 @@
 /**
  * 20221026 | @m | 최초작성
  * 20221109 | @m | 요구반영. 결함개선. 고도화.
+ * 20221201 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -16,7 +17,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <meta name="author" content="데이터에듀">
 <meta name="keywords" content="데이터에듀 솔루션 API">
 <meta name="description" content="데이터에듀 솔루션 API">
-<title>영상정보수집 - 엔진체험 | 데이터에듀 API</title>
+<title>영상정보수집 (V-Ghost) - 엔진체험 | 데이터에듀 API</title>
 
 <?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/html_head.php"; ?>
 
@@ -67,7 +68,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 <!-- cp2fg1 -->
 <div class="cp2fg1">
-	<a href="?#★.php" class="button type1"><span class="t1">처음으로</span></a>
+	<a href="?#★" class="button type1"><span class="t1">처음으로</span></a>
 </div>
 <!-- /cp2fg1 -->
 

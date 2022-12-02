@@ -2,7 +2,7 @@
 <?php
 /**
  * 20221026 | @m | 최초작성
- * 20221125 | @m | 요구반영. 결함개선. 고도화.
+ * 20221129 | @m | 요구반영. 결함개선. 고도화.
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -51,6 +51,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <!-- cp2set4 -->
 <div class="cp2set4">
 	<div class="w1">
+
 		<!-- cp2sound1select1 -->
 		<div class="cp2sound1select1">
 			<!-- selectmenu1 -->
@@ -60,11 +61,102 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 					<ul class="options">
 						<li class="option">
 							<audio class="audio" preload="auto">
-								<source src="/_res/solution.api/data/wav/entrance.mp3" type="audio/wav">
+								<source src="/_res/solution.api/data/wav/mixkit-classic-car-horn-1565.wav" type="audio/wav">
 								<p>Alas, your browser doesn't support html5 audio.</p>
 							</audio>
 							<button type="button" class="b1 play"><i class="ic1"></i><span class="t1">Play</span></button>
-							<a href="?#★1" class="a1">경적소리</a>
+							<button type="button" class="b1 pause"><i class="ic1"></i><span class="t1">Pause</span></button>
+							<a href="javascript:void(0);" class="a1">경적소리</a>
+						</li>
+						<li class="option">
+							<audio class="audio" preload="auto">
+								<source src="/_res/solution.api/data/wav/mixkit-arcade-retro-game-over-213.wav" type="audio/wav">
+								<p>Alas, your browser doesn't support html5 audio.</p>
+							</audio>
+							<button type="button" class="b1 play"><i class="ic1"></i><span class="t1">Play</span></button>
+							<button type="button" class="b1 pause"><i class="ic1"></i><span class="t1">Pause</span></button>
+							<a href="javascript:void(0);" class="a1">게임 오버</a>
+						</li>
+						<li class="option">
+							<audio class="audio" preload="auto">
+								<source src="/_res/solution.api/data/wav/mixkit-retro-game-notification-212.wav" type="audio/wav">
+								<p>Alas, your browser doesn't support html5 audio.</p>
+							</audio>
+							<button type="button" class="b1 play"><i class="ic1"></i><span class="t1">Play</span></button>
+							<button type="button" class="b1 pause"><i class="ic1"></i><span class="t1">Pause</span></button>
+							<a href="javascript:void(0);" class="a1">레트로 게임 알림</a>
+						</li>
+						<li class="option">
+							<audio class="audio" preload="auto">
+								<source src="/_res/solution.api/data/wav/mixkit-fast-small-sweep-transition-166.wav" type="audio/wav">
+								<p>Alas, your browser doesn't support html5 audio.</p>
+							</audio>
+							<button type="button" class="b1 play"><i class="ic1"></i><span class="t1">Play</span></button>
+							<button type="button" class="b1 pause"><i class="ic1"></i><span class="t1">Pause</span></button>
+							<a href="javascript:void(0);" class="a1">스윕 전환</a>
+						</li>
+						<li class="option">
+							<audio class="audio" preload="auto">
+								<source src="/_res/solution.api/data/wav/mixkit-dog-barking-twice-1.wav" type="audio/wav">
+								<p>Alas, your browser doesn't support html5 audio.</p>
+							</audio>
+							<button type="button" class="b1 play"><i class="ic1"></i><span class="t1">Play</span></button>
+							<button type="button" class="b1 pause"><i class="ic1"></i><span class="t1">Pause</span></button>
+							<a href="javascript:void(0);" class="a1">개 짖는 두 번</a>
+						</li>
+						<li class="option">
+							<audio class="audio" preload="auto">
+								<source src="/_res/solution.api/data/wav/mixkit-dog-barking-twice-1.wav" type="audio/wav">
+								<p>Alas, your browser doesn't support html5 audio.</p>
+							</audio>
+							<button type="button" class="b1 play"><i class="ic1"></i><span class="t1">Play</span></button>
+							<button type="button" class="b1 pause"><i class="ic1"></i><span class="t1">Pause</span></button>
+							<a href="javascript:void(0);" class="a1">일이삼사오륙칠팔구십</a>
+						</li>
+						<li class="option">
+							<audio class="audio" preload="auto">
+								<source src="/_res/solution.api/data/wav/mixkit-dog-barking-twice-1.wav" type="audio/wav">
+								<p>Alas, your browser doesn't support html5 audio.</p>
+							</audio>
+							<button type="button" class="b1 play"><i class="ic1"></i><span class="t1">Play</span></button>
+							<button type="button" class="b1 pause"><i class="ic1"></i><span class="t1">Pause</span></button>
+							<a href="javascript:void(0);" class="a1">일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십</a>
+						</li>
+						<li class="option">
+							<audio class="audio" preload="auto">
+								<source src="/_res/solution.api/data/wav/mixkit-dog-barking-twice-1.wav" type="audio/wav">
+								<p>Alas, your browser doesn't support html5 audio.</p>
+							</audio>
+							<button type="button" class="b1 play"><i class="ic1"></i><span class="t1">Play</span></button>
+							<button type="button" class="b1 pause"><i class="ic1"></i><span class="t1">Pause</span></button>
+							<a href="javascript:void(0);" class="a1">일이삼사오륙칠팔구십</a>
+						</li>
+						<li class="option">
+							<audio class="audio" preload="auto">
+								<source src="/_res/solution.api/data/wav/mixkit-dog-barking-twice-1.wav" type="audio/wav">
+								<p>Alas, your browser doesn't support html5 audio.</p>
+							</audio>
+							<button type="button" class="b1 play"><i class="ic1"></i><span class="t1">Play</span></button>
+							<button type="button" class="b1 pause"><i class="ic1"></i><span class="t1">Pause</span></button>
+							<a href="javascript:void(0);" class="a1">일이삼사오륙칠팔구십</a>
+						</li>
+						<li class="option">
+							<audio class="audio" preload="auto">
+								<source src="/_res/solution.api/data/wav/mixkit-dog-barking-twice-1.wav" type="audio/wav">
+								<p>Alas, your browser doesn't support html5 audio.</p>
+							</audio>
+							<button type="button" class="b1 play"><i class="ic1"></i><span class="t1">Play</span></button>
+							<button type="button" class="b1 pause"><i class="ic1"></i><span class="t1">Pause</span></button>
+							<a href="javascript:void(0);" class="a1">일이삼사오륙칠팔구십</a>
+						</li>
+						<li class="option">
+							<audio class="audio" preload="auto">
+								<source src="/_res/solution.api/data/wav/mixkit-dog-barking-twice-1.wav" type="audio/wav">
+								<p>Alas, your browser doesn't support html5 audio.</p>
+							</audio>
+							<button type="button" class="b1 play"><i class="ic1"></i><span class="t1">Play</span></button>
+							<button type="button" class="b1 pause"><i class="ic1"></i><span class="t1">Pause</span></button>
+							<a href="javascript:void(0);" class="a1">일이삼사오륙칠팔구십</a>
 						</li>
 					</ul>
 				</div>
@@ -72,9 +164,10 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 			<!-- /selectmenu1 -->
 		</div>
 		<!-- /cp2sound1select1 -->
+
 	</div>
 	<div class="w2">
-		<i class="ic1 plus"><i class="ic1"></i><span class="t1">+</span></i>
+		<i class="b1 plus"><i class="ic1"></i><span class="t1">+</span></i>
 	</div>
 	<div class="w3">
 
@@ -110,12 +203,12 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 					<!-- /cp2player1 -->
 				</div>
 				<div class="item">
-					<!-- cp2my1file1 -->
-					<div class="cp2my1file1">
-						<label class="label">
-							<input type="radio" name="★1radio1">
-							<span class="t1">내 파일 테스트</span>
-						</label>
+					<label class="label">
+						<input type="radio" name="★1radio1">
+						<span class="t1">내 파일 테스트</span>
+					</label>
+					<!-- cp2my1file1 type2 -->
+					<div class="cp2my1file1 type2">
 						<div class="w1">
 							<div class="w1w1">
 								<div class="w1file">
@@ -147,10 +240,6 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <!-- /cp2set4 -->
 
 
-
-
-
-
 <!-- cp2fg1 -->
 <div class="cp2fg1">
 	<button type="submit" class="button submit type1"><span class="t1">결과보기</span></button>
@@ -165,13 +254,14 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <script>/*<![CDATA[*/
 
 
-	/** ◇◆ 샘플 테스트. 버튼 선택하면 radio 선택. 20221124. @m.
+	/** ◇◆ 샘플 테스트. 버튼 선택하면 radio 선택. 20221129. @m.
 	 */
 	(function(){
 		var $my = $('.cp2set5'), // 샘플 테스트 래퍼
 			item = '.item', // 항목
 			b1 = '.b1', // 버튼
 			radio = 'input[type="radio"]'; // 라디오
+
 		// 버튼 클릭하면
 		$my.on('click', b1, function(){
 			$(this).closest(item).find(radio).trigger('click');
@@ -179,16 +269,18 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	})();
 
 
-	/** ◇◆ 내 파일 테스트. 인풋파일 선택하면 radio 선택. 20221124. @m.
+	/** ◇◆ 내 파일 테스트. 인풋파일 선택하면 radio 선택. 20221129. @m.
 	 */
 	(function(){
 		var $my = $('.cp2my1file1'), // 샘플 테스트 래퍼
-			file = '.file', // 버튼
+			item = '.item', // 항목
+			file = '.file', // 인풋파일
 			radio = 'input[type="radio"]'; // 라디오
 
-		// 버튼 클릭하면
+		// 인풋파일 클릭하면
 		$my.on('click', file, function(){
-			$my.find(radio).trigger('click');
+			//$my.find(radio).trigger('click');
+			$my.closest(item).find(radio).trigger('click');
 		});
 	})();
 
@@ -240,11 +332,72 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 /*]]>*/</script>
 
 
-
 <script>/*<![CDATA[*/
 	$(function(){
 
-		/** ◇◆ audio 제어. 20221125. @m.
+
+		/** ◇◆ audio 제어 (음향효과선택). 20221129. @m.
+		 * 2개 이상 오디오 제어 가능
+		 * 오디오 재생 중 다른 거 재생 버튼 클릭하면 모든 거 일시 정지 후 나만 재생
+		 */
+		(function(){
+
+			var
+				my = '.cp2sound1select1 .option', // 래퍼
+				audio = '.audio', // 오디오
+				b1play = '.b1.play', // 재생 버튼
+				b1pause = '.b1.pause', // 일시정지 버튼
+				timer;
+			
+			var $my = $(my);
+
+			// 재생 버튼 클릭
+			$(b1play, $my).on('click', function(){
+				var $this = $(this);
+				// 모든 오디오 일시정지
+				$(audio, $my).each(function(){
+					var $this = $(this);
+					doPause($this)
+				});
+				// 나만 재생
+				doPlay($this);
+			});
+
+			// 일시정지 버튼 클릭
+			$(b1pause, $my).on('click', function(){
+				var $this = $(this);
+				doPause($this);
+			});
+
+			// 재생 끝나면
+			$(audio, $my).on('ended', function(){
+				var $this = $(this);
+				$this.closest(my)
+					.removeClass('play pause');
+			});
+
+			// 재생 동작
+			function doPlay($this){
+				$this.closest(my)
+					.addClass('play')
+					.removeClass('pause');
+				var au = $this.closest(my).find(audio)[0];
+				au.play();
+			};
+
+			// 일시정지 동작
+			function doPause($this){
+				$this.closest(my)
+					.addClass('pause');
+				var au = $this.closest(my).find(audio)[0];
+				au.pause();
+				clearInterval(timer);
+			};
+
+		})();
+
+
+		/** ◇◆ audio 제어 (샘플테스트). 20221125. @m.
 		 * 2개 이상 오디오 제어 가능
 		 * 오디오 재생 중 다른 거 재생 버튼 클릭하면 모든 거 일시 정지 후 나만 재생
 		 */
@@ -355,6 +508,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 			}
 
 		})();
+
 
 	});
 /*]]>*/</script>

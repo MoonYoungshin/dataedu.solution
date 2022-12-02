@@ -2,6 +2,7 @@
 /**
  * 20221026 | @m | 최초작성
  * 20221116 | @m | 요구반영. 결함개선. 고도화.
+ * 20221201 | @m | 
  */
 ?>
 <!-- #body_head -->
@@ -17,7 +18,7 @@
 		<span class="cont">
 			<a class="a1"><i class="t1">Education API</i></a>
 			<i class="sep">&gt;</i>
-			<a class="a1"><i class="t1">구문 말하기</i></a>
+			<a class="a1"><i class="t1">구문 말하기 (JS-Strspk)</i></a>
 		</span>
 	</div>
 </div>

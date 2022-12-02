@@ -3,6 +3,7 @@
 /**
  * 20221026 | @m | 최초작성
  * 20221108 | @m | 요구반영. 결함개선. 고도화.
+ * 20221201 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -16,7 +17,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <meta name="author" content="데이터에듀">
 <meta name="keywords" content="데이터에듀 솔루션 API">
 <meta name="description" content="데이터에듀 솔루션 API">
-<title>문장교정 - 엔진체험 | 데이터에듀 API</title>
+<title>문장교정 (JS-Corrector) - 엔진체험 | 데이터에듀 API</title>
 
 <?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/html_head.php"; ?>
 
@@ -59,7 +60,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	<div class="w1 after">
 		<strong class="tt1">교정 후</strong>
 		<div class="cont">
-			한꾹인뜰만 알아뽈 쑤 있께 짝썽하껬씁니따.
+			한국인들만 알아볼 수 있게 작성하겠습니다.
 		</div>
 	</div>
 </div>

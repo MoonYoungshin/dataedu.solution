@@ -1,10 +1,11 @@
 @charset "utf-8";
-/*! Base CSS v0.998.28 | (c) 
+/*! Base CSS v0.998.30 | (c) 
  * 20150303~20210108~20220620 | @m |
  * 20221028 | @m | 998.24 (( /_res/_A/
  * 20221028 | @m | letter-spacing:-.0625em; 제거
  * 20221104 | @m | label, .label
- * 20221125 | @m | .selectmenu1
+ * 20221128 | @m | .selectmenu1
+ * 20221201 | @m | .selectmenu1
  * ★ NoEdit! ★ Only CSS Creator can modify.
  */
 
@@ -1831,24 +1832,25 @@ html.object-fit .oprb{object-position:100% 100%;}
 }
 
 
-/* 선택메뉴(범용) [JS] doSelectmenu1() 20221125 */
+/* 선택메뉴(범용) [JS] doSelectmenu1() 20221201 */
 .selectmenu1{
-	display:inline-flex; /* ☆ */
+	display:inline-block; /* ☆ */
 	position:relative;
 	width:15em;
-	min-height:3em; /* (.button높이) */
 	margin:.375em 0;
 	font-size:1em;
 	text-align:left;
 	vertical-align:middle;
 }
 .selectmenu1 .title{
-	flex:auto;
+	flex:none;
 	display:flex; /* ☆ */
+	min-height:3em; /* (.button높이) */
 }
-.selectmenu1 .title a.a1{
-	flex:auto;
+.selectmenu1 .title .a1{
+	flex:1;
 	display:flex; /* ☆ */
+	align-items:center;
 	position:relative;
 	box-sizing:border-box; /* ☆ */
 	height:100%;
@@ -1862,16 +1864,16 @@ html.object-fit .oprb{object-position:100% 100%;}
 	text-decoration:none;
 	overflow:hidden;
 }
-.selectmenu1 .title a.a1 .t1{
-	flex:auto;
-	display:flex; /* ☆ */
-	align-items:center;
-	margin:0 2em 0 0;
-	padding:0 .5em; /* (옵션패딩) */
+.selectmenu1 .title .a1 .t1{
+	flex:1;
+	display:block; /* flex 하면 말줄임 안됨 */
+	min-width:0;
+	margin:0 2em 0 0; /* (select패딩 + 우아이콘) */
+	padding:0 .5em;
 	/* border-right:1px dotted #ddd; */
 	text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;
 }
-.selectmenu1 .title a.a1 .ic1{
+.selectmenu1 .title .a1 .ic1{
 	float:left;
 	position:absolute;right:0;top:50%;
 	width:0;height:0;
@@ -1882,10 +1884,10 @@ html.object-fit .oprb{object-position:100% 100%;}
 	transition:.2s;
 }
 /* 활성 */
-.selectmenu1 .title.on a.a1{
+.selectmenu1 .title.on .a1{
 	border-radius:2px 2px 0 0; /* ☆ */
 }
-.selectmenu1 .title.on a.a1 .ic1{
+.selectmenu1 .title.on .a1 .ic1{
 	transform:rotate(180deg);
 }
 /* 옵션 */
@@ -1907,18 +1909,18 @@ html.object-fit .oprb{object-position:100% 100%;}
 	background:#fff;
 	overflow:auto;
 }
-.selectmenu1option .option{display:inline;margin:0;padding:0;}
-.selectmenu1option .option a.a1{
+.selectmenu1option .option{margin:0;padding:0;}
+.selectmenu1option .option .a1{
 	display:block;
-	padding:.375em .75em;
+	padding:.375em .5em;
 	background:#fff;
 	color:#000;
 	line-height:1.375;
 	text-decoration:none;
 }
-.selectmenu1option .option a.a1:hover,
-.selectmenu1option .option a.a1:focus{background:#666;color:#fff;}
-.selectmenu1option .option.on a.a1{background:#eee;color:#000;}
+.selectmenu1option .option .a1:hover,
+.selectmenu1option .option .a1:focus{background:#666;color:#fff;}
+.selectmenu1option .option.on .a1{background:#eee;color:#000;}
 /* 쌓임맥락 */
 .selectmenu1>.selectmenu1option{z-index:90;}
 .selectmenu1~.selectmenu1>.selectmenu1option{z-index:80;}

@@ -15,7 +15,7 @@
  * 20221104 | @m | 폼 스타일 커스텀....
  * 20221111 | @m | .fscroll1-xy 추가
  * 20221118 | @m | select:not([x])
- * 20221125 | @m | .selectmenu1
+ * 20221202 | @m | .selectmenu1
  */
 
 /*! CSS Library | (c) 20150522~20220211. ~20221028 | by @m
@@ -64,7 +64,7 @@
 /* ◇◆ Base Adjust ◇◆◇◆◇◆◇◆◇◆ */
 
 
-/* base.css )) Overwrite 20221125 ◆◆◆ */
+/* base.css )) Overwrite 20221202 ◆◆◆ */
 
 
 /* Form and Button */
@@ -171,13 +171,27 @@ input[type="number"]::-webkit-inner-spin-button{
 	margin: 0;
 }
 
-/* 선택메뉴 */
+
+/* 선택메뉴 20221202 */
 .selectmenu1{
-	height:3.75rem; /* (60/16) */
 	margin-top:.375rem;
 	margin-bottom:.375rem;
 }
-
+.selectmenu1 .title{
+	height:3.75rem; /* (60/16) */
+}
+.selectmenu1 .title .a1 .t1{
+	padding:0 .5em 0 20px;
+}
+.selectmenu1 .title .a1 .ic1{
+	width:13px;height:13px;
+	margin:-6.5px 20px;
+	border:0;
+	background:url(../../img/lib2/ic26a1c2a1down1.png) no-repeat center center / 13px;
+}
+.selectmenu1option .option .a1{
+	padding:.375em 20px;
+}
 
 
 /* Contents Styles Library 20211122~ ◇◆◇◆◇◆◇◆◇◆ */
