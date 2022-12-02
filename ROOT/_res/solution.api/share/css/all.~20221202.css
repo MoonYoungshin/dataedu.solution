@@ -172,7 +172,7 @@ body,
 /* #head */
 
 
-/* 로고 20221202 */
+/* 로고 20221104 */
 #logo{
 	z-index:10;
 	margin:0 20px 0 0;
@@ -182,13 +182,7 @@ body,
 	font-size:24px;
 	letter-spacing:-.03125em;
 }
-#logo a{
-	display:inline-flex; /* ☆ */
-	justify-content:center;
-	align-items:center;
-	color:inherit;
-}
-#logo img{width:auto;height:15px;}
+#logo a{color:inherit;}
 
 
 /* 글로벌내비(Demo) 20221104 */
@@ -205,8 +199,8 @@ body,
 	align-items:center;
 	position:relative;
 	padding:.0625rem .3125rem;
-	border:1px solid #0065dd;
-	color:#0065dd;
+	border:1px solid #5056ff;
+	color:#5056ff;
 	text-decoration:none
 }
 #gn1 .t1{
@@ -298,7 +292,7 @@ body,
 /* #body_content */
 
 
-/* 본문제목 20221202 */
+/* 본문제목 20221125 */
 #body_title{
 	display:flex; /* ☆ */
 	position:relative;
@@ -316,11 +310,11 @@ body,
 	margin:0 1em 0 0;
 	background:url() no-repeat center center / contain;
 }
-#body_title .ic1.audio{background-image:url(../../img/inc/ic100a2c2audio1.png);}
-#body_title .ic1.vision{background-image:url(../../img/inc/ic100a2c2vision1.png);}
-#body_title .ic1.language{background-image:url(../../img/inc/ic100a2c2language1.png);}
-#body_title .ic1.education{background-image:url(../../img/inc/ic100a2c2education1.png);}
-#body_title .ic1.video{background-image:url(../../img/inc/ic100a2c2video1.png);}
+#body_title .ic1.audio{background-image:url(../../img/inc/ic140a2c2audio1.png);}
+#body_title .ic1.vision{background-image:url(../../img/inc/ic140a2c2vision1.png);}
+#body_title .ic1.language{background-image:url(../../img/inc/ic140a2c2language1.png);}
+#body_title .ic1.education{background-image:url(../../img/inc/ic140a2c2education1.png);}
+#body_title .ic1.video{background-image:url(../../img/inc/ic140a2c2video1.png);}
 #body_title .h1{
 	margin:0;
 	font-weight:600;
@@ -390,30 +384,11 @@ body,
 @media all and (max-width:1259px){ /* small medium large ◇◆◇◆◇◆◇◆◇◆ */
 
 
-/* 주메뉴 20221104. 20221202. makeActive2ClickHover('#tnb1'); */
+/* 주메뉴 20221104. makeActive2ClickHover('#tnb1'); */
 #tnb1{
 	position:absolute;left:0;right:0;top:0;
 	width:100%;
 	margin:auto;
-	font-family:
-		'Disket Mono',
-		'Apple SD Gothic Neo',
-		-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
-		/* Pretendard, */
-		Roboto,
-		Lato,
-		'Open Sans',OpenSans,
-		'Segoe UI',
-		'Microsoft JhengHei',
-		'Meiryo',
-		'본고딕','Noto Sans KR','Noto Sans CJK KR',NotoSans, /* 로컬 파일 우선 */
-		'본고딕',NotoSans,'Noto Sans KR','Noto Sans CJK KR', /* 리모트 우선 */
-		'나눔고딕',NanumGothic,'Nanum Gothic',
-		'맑은 고딕','Malgun Gothic',
-		'돋움',Dotum,
-		Helvetica,'Helvetica Neue',
-		Arial,
-		sans-serif;
 	line-height:1.375;
 	word-wrap:break-word;
 	word-break:keep-all;
@@ -650,21 +625,22 @@ html{
 
 #body_title{
 	align-items:center;
-	padding:36px 0;
+	padding:48px 0 36px;
 }
 #body_title .w2{
 	display:flex; /* ☆ */
 	align-items:center;
 }
 #body_title .ic1{
+	width:70px;
+	height:70px;
 	margin:0;
 }
 #body_title .h1{
-	margin:0 27px 0 24px;
+	margin:0 30px;
 }
 #body_title .t1{
-	font-size:1.125em;
-	line-height:1.5;
+	font-size:1.1875em;
 }
 
 
@@ -742,25 +718,6 @@ html{
 #tnb1{
 	height:calc(100vh - 80px - 42px - 2px); /* (뷰높이 - 상단 - 하단 - 보더) */
 	border-top:1px solid #fff1;
-	font-family:
-		'Disket Mono',
-		'Apple SD Gothic Neo',
-		-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
-		/* Pretendard, */
-		Roboto,
-		Lato,
-		'Open Sans',OpenSans,
-		'Segoe UI',
-		'Microsoft JhengHei',
-		'Meiryo',
-		'본고딕','Noto Sans KR','Noto Sans CJK KR',NotoSans, /* 로컬 파일 우선 */
-		'본고딕',NotoSans,'Noto Sans KR','Noto Sans CJK KR', /* 리모트 우선 */
-		'나눔고딕',NanumGothic,'Nanum Gothic',
-		'맑은 고딕','Malgun Gothic',
-		'돋움',Dotum,
-		Helvetica,'Helvetica Neue',
-		Arial,
-		sans-serif;
 }
 /* 데스크탑 감춤 */
 #tnb1 .b1.toggle,
@@ -797,7 +754,7 @@ html{
 	/* background:url(../../img/inc/tnb1d1bg1.png) no-repeat 92% 50%; */
 	color:#7a90a9;
 	font-weight:400;
-	font-size:16px;
+	font-size:18px;
 	word-break:keep-all;
 	word-wrap:break-word;
 	transition:.2s;
@@ -892,7 +849,7 @@ html{
 	/* background:url(../../img/inc/tnb1d2bg1.png) no-repeat;
 	background-position:calc(100% - 16px) .9375em; */
 	color:#7a90a9;
-	font-size:14px;
+	font-size:16px;
 	transition:.2s;
 }
 #tnb1 div.d2>ul>li.hasSub>a{

@@ -4,12 +4,11 @@
  * @font-face | class font-family | Mobile
  * 20201217 | @m | 최초 등록
  * 20201228 | @m | 요구반영. 결함개선. 고도화.
- * 20211228 | @m | pretendard 추가
+ * 20211228 | @m | 웹폰트 pretendard 추가
  * 20211231 | @m | 
  * 20220224 | @m | @import url(font_NotoSans.css);
  * 20221028 | @m | 커스텀
  * 20221115 | @m | pretendard-subset.css )) CDN 이용
- * 20221202 | @m | 'Disket Mono' 추가
  */
 
 
@@ -70,21 +69,6 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-
-
-/* NanumGothic */
-@font-face {
-	font-family: 'Disket Mono';
-	font-weight: 400;
-	src:
-		url(../../font/DisketMono/Disket-Mono-Regular.woff) format('woff');
-}
-@font-face {
-	font-family: 'Disket Mono';
-	font-weight: 700;
-	src:
-		url(../../font/DisketMono/Disket-Mono-Bold.woff) format('woff');
 }
 
 

@@ -30,7 +30,7 @@
 /* 강조 20221111 */
 em,
 .em{color:#e00;}
-.em1{color:#0065dd;}
+.em1{color:#5056ff;}
 .em2{color:#b76e00;}
 
 
@@ -75,7 +75,7 @@ em,
 }
 
 
-/* 탭패널콘텐츠 (엔진체험|활용사례|매뉴얼) 20221202 */
+/* 탭패널콘텐츠 (엔진체험|활용사례|매뉴얼) 20221104 */
 .cp2tabs1{
 	z-index:0;
 	position:relative;
@@ -102,7 +102,7 @@ em,
 	justify-content:center;
 	align-items:center;
 	padding:.625em;
-	background:#7a90a9;
+	background:#bdc6dc;
 	color:#fff;
 	font-size:1.125em;
 	text-decoration:none !important;
@@ -129,6 +129,10 @@ em,
 .cp2tabs1pane{}
 /* ◇◆ */
 @media all and (min-width:768px){
+	.cp2tabs1 li{
+		flex:0;
+		min-width:18%;
+	}
 	.cp2tabs1 li a{
 		font-size:1.25em;
 	}
@@ -174,11 +178,11 @@ em,
 /* ☆ */
 .cp2tabs2 li a:hover,
 .cp2tabs2 li a:focus{
-	color:#0065dd;
+	color:#5056ff;
 }
 .cp2tabs2 li.on a{
 	font-weight:900;
-	color:#0065dd;
+	color:#5056ff;
 }
 /*  */
 .cp2tabs2 .tooltip1c{
@@ -441,7 +445,7 @@ em,
 /*  */
 .cp2voice1select1 input[type='radio']:checked ~ .w1{
 	border-color:transparent;
-	background:#0065dd;
+	background:#07f;
 	color:#fff;
 }
 /* ◇◆ */
@@ -489,7 +493,7 @@ em,
 }
 
 
-/* 대형전광판 (Bigbox for Special Info) 20221202 */
+/* 대형전광판 (Bigbox for Special Info) 20221125 */
 .cp2jumbotron1{
 	position:relative;
 	max-width:1346px;
@@ -519,26 +523,30 @@ em,
 	line-height:1.375;
 }
 .cp2jumbotron1 .ic1.indy{
-	width:50px;
-	height:50px;
+	width:90px;
+	height:90px;
 	margin:.375em;
 	background:url() no-repeat center center / contain;
 }
-.cp2jumbotron1 .ic1.indy.ing,
+.cp2jumbotron1 .ic1.indy.ing{
+	background-image:url(../../img/lib2/ic180a1c2clock1arrow1.png);
+	animation:kf1blink1 linear .5s infinite alternate;
+}
 .cp2jumbotron1 .ic1.indy.play{
+	background-image:url(../../img/lib2/ic180a1c2wave1.png);
 	animation:kf1blink1 linear .5s infinite alternate;	
 }
-.cp2jumbotron1 .ic1.indy.ok{}
+.cp2jumbotron1 .ic1.indy.ok{background-image:url(../../img/lib2/ic180a1c2check1circle1.png);}
 /*  */
-.cp2jumbotron1 .ic1.indy.error{width:50px;height:50px;background-image:url(../../img/lib2/ic100a1c2error1.png);}
+.cp2jumbotron1 .ic1.indy.error{width:110px;height:75px;background-image:url(../../img/lib2/icw220a1c2error1.png);}
 .cp2jumbotron1 .ic1.indy.audio1ing1,
 .cp2jumbotron1 .ic1.indy.tts1ing1compose1,
-.cp2jumbotron1 .ic1.indy.sst1ing2convert1{width:50px;height:50px;background-image:url(../../img/lib2/ic100a1c2audio1wave1.png);}
-.cp2jumbotron1 .ic1.indy.tts1ing2play1{width:50px;height:50px;background-image:url(../../img/lib2/ic100a1c2audio1wave2.png);}
-.cp2jumbotron1 .ic1.indy.tts1ok1{width:50px;height:50px;background-image:url(../../img/lib2/ic100a1c2audio1check1.png);}
-.cp2jumbotron1 .ic1.indy.vision1ing1{width:50px;height:50px;background-image:url(../../img/lib2/ic100a1c2vision1.png);}
-.cp2jumbotron1 .ic1.indy.language1ing1{width:50px;height:50px;background-image:url(../../img/lib2/ic100a1c2language1.png);}
-.cp2jumbotron1 .ic1.indy.video1ing1{width:50px;height:50px;background-image:url(../../img/lib2/ic100a1c2video1.png);}
+.cp2jumbotron1 .ic1.indy.sst1ing2convert1{width:110px;height:75px;background-image:url(../../img/lib2/icw220a1c2audio1wave1.png);}
+.cp2jumbotron1 .ic1.indy.tts1ing2play1{width:110px;height:75px;background-image:url(../../img/lib2/icw220a1c2audio1wave2.png);}
+.cp2jumbotron1 .ic1.indy.tts1ok1{width:110px;height:75px;background-image:url(../../img/lib2/icw220a1c2audio1check1.png);}
+.cp2jumbotron1 .ic1.indy.vision1ing1{width:110px;height:75px;background-image:url(../../img/lib2/icw220a1c2vision1.png);}
+.cp2jumbotron1 .ic1.indy.language1ing1{width:110px;height:75px;background-image:url(../../img/lib2/icw220a1c2language1.png);}
+.cp2jumbotron1 .ic1.indy.video1ing1{width:110px;height:75px;background-image:url(../../img/lib2/icw220a1c2video1.png);}
 
 
 /* 활용사례 20221125 */
@@ -564,8 +572,8 @@ em,
 .cp2use1 .li1 .t1{
 	display:inline-block;
 	padding:.0625em .375em;
-	border:1px solid #0065dd;
-	color:#0065dd;
+	border:1px solid #5056ff;
+	color:#5056ff;
 	font-size:.9375em;
 }
 .cp2use1 .li1 .t2{
@@ -610,7 +618,7 @@ em,
 	font-size:1.5rem;
 }
 .cp2manual1 .tt2{
-	color:#0065dd;
+	color:#5056ff;
 	font-weight:400;
 	font-size:1em;
 }
@@ -675,7 +683,7 @@ em,
 /*  */
 .cp2set1 input[type='radio']:checked ~ .t1{
 	border-color:transparent;
-	background:#0065dd;
+	background:#07f;
 	color:#fff;
 }
 
@@ -927,7 +935,7 @@ em,
 	text-align:center;
 }
 .cp2before1after1 .before .tt1{background:#7a90a9;}
-.cp2before1after1 .after .tt1{background:#0065dd;}
+.cp2before1after1 .after .tt1{background:#5056ff;}
 /* ◇◆ */
 @media all and (min-width:768px){
 	.cp2before1after1 .tt1{
@@ -1061,7 +1069,7 @@ em,
 }
 .cp2write1 .dt2{
 	margin:0 0 .5em;
-	color:#0065dd;
+	color:#5056ff;
 	font-weight:400;
 }
 .cp2write1 .dd2{}
@@ -1132,8 +1140,8 @@ em,
 }
 .cp2cnb1 li.on a{
 	position:relative;
-	border-color:#0065dd;
-	color:#0065dd;
+	border-color:#5056ff;
+	color:#5056ff;
 	font-weight:500;
 }
 /* ◇◆ */
@@ -1381,7 +1389,7 @@ em,
 	position:absolute;left:0;right:0;
 	top:0;
 	border-top:80px solid #181c20;
-	border-bottom:80px solid #0065dd;
+	border-bottom:80px solid #5056ff;
 	transition:0s;
 }
 .cp2record1 .b1 .ic1{
@@ -1426,7 +1434,7 @@ em,
 	position:absolute;left:0;right:0;
 	top:0;
 	border-top:80px solid #181c20;
-	border-bottom:80px solid #0065dd;
+	border-bottom:80px solid #5056ff;
 	transition:0s;
 }
 .cp2record2 .b1record1 .ic1{
@@ -1486,7 +1494,7 @@ em,
 	font-weight:600;
 }
 .cp2speak1 .step .a1.on{
-	background:#0065dd;
+	background:#5056ff;
 }
 /*  */
 .cp2speak1 .score{
@@ -1497,13 +1505,13 @@ em,
 }
 .cp2speak1 .score .t1{
 	display:block;
-	color:#0065dd;
+	color:#5056ff;
 	font-weight:600;
 	font-size:1.875em;
 }
 .cp2speak1 .score .t2{
 	display:block;
-	color:#0065dd;
+	color:#5056ff;
 	font-weight:700;
 	font-size:5em;
 	font-family:Pretendard,Lato,Roboto,sans-serif;
@@ -1580,7 +1588,7 @@ em,
 	padding:.5em 1.375em;
 	border:0;
 	border-radius:9999px;
-	background:#0065dd;
+	background:#5056ff;
 	color:#fff;
 	font-size:1rem;
 	transform:translate(-50%, 0);
@@ -1676,11 +1684,11 @@ em,
 	border-right-color:#181c20;
 }
 .cp2question2 .w2 .tbox{
-	background:#0065dd;	
+	background:#5056ff;	
 }
 .cp2question2 .w2 .tbox:before{content:''; /* ◁ */
 	left:auto;right:0;
-	border-right-color:#0065dd;
+	border-right-color:#5056ff;
 	transform:rotate(180deg);
 }
 /*  */
@@ -1810,7 +1818,7 @@ em,
 	width:0;
 	height:100%;
 	border-radius:9999px;
-	background:#0065dd;
+	background:#5056ff;
 }
 .cp2player1	.time{
 	display:flex; /* ☆ */
@@ -1846,7 +1854,7 @@ em,
 	border-left-color:#fff;
 }
 .cp2player1	.b1.pause{
-	background:#0065dd;
+	background:#5056ff;
 }
 .cp2player1	.b1.pause .ic1{
 	display:inline-block;
@@ -1872,7 +1880,7 @@ em,
 }
 .cp2player1	.b1:hover,
 .cp2player1	.b1:focus{
-	background-color:#0065dd;
+	background-color:#5056ff;
 }
 /* 버튼 */
 .cp2player1 .btns{
@@ -2164,7 +2172,7 @@ em,
 	background:#f3f6fd;
 }
 .cp2sound1select1 .selectmenu1option .option.on .a1{
-	color:#0065dd;
+	color:#5056ff;
 }
 /* 제어 */
 .cp2sound1select1 .b1{
@@ -2194,7 +2202,7 @@ em,
 	border-left-color:#fff;
 }
 .cp2sound1select1	.b1.pause{
-	background-color:#0065dd;
+	background-color:#5056ff;
 }
 .cp2sound1select1	.b1.pause .ic1{
 	display:inline-block;
@@ -2220,7 +2228,7 @@ em,
 }
 .cp2sound1select1	.b1:hover,
 .cp2sound1select1	.b1:focus{
-	background-color:#0065dd;
+	background-color:#5056ff;
 }
 /* ◇◆ */
 @media all and (min-width:768px){
@@ -2327,7 +2335,7 @@ em,
 }
 .cp2player1video1	.b1:hover,
 .cp2player1video1	.b1:focus{
-	background-color:#0065dd;
+	background-color:#5056ff;
 }
 /* ◇◆ */
 @media all and (min-width:768px){

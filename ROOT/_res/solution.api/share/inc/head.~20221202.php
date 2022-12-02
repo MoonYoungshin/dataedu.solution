@@ -7,7 +7,6 @@
  * 20221111 | @m | 
  * 20221114 | @m | 
  * 20221122 | @m | 
- * 20221202 | @m | 
  */
 ?>
 <!-- #head -->
@@ -22,11 +21,16 @@
 	<div class="container clearfix">
 
 
-
-
 		<h1 id="logo">
-			<a href="/" title="시작페이지 바로가기"><img src="<?=$sitePath?>/img/inc/logo1@2x.png" alt="DATAEDU.AI"></a>
+			<a href="/" title="시작페이지 바로가기">LOGO</a>
 		</h1>
+
+
+		<!-- gn1 -->
+		<nav id="gn1">
+			<a class="a1"><span class="t1">DEMO</span></a>
+		</nav>
+		<!-- /gn1 -->
 
 
 		<!-- gn2 -->

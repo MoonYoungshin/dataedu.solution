@@ -7,7 +7,6 @@
  * 20221104 | @m | 
  * 20221111 | @m | 
  * 20221125 | @m | 
- * 20221202 | @m | 
  */
 
 /** Compatible! [IE11+] 20210101~ */
@@ -184,7 +183,7 @@ em,
 }
 
 
-/* 탭패널콘텐츠 (이용약관..) 20221202 */
+/* 탭패널콘텐츠 (이용약관..) 20221104 */
 .cp1tabs1{
 	z-index:0;
 	position:relative;
@@ -215,7 +214,7 @@ em,
 	border-bottom:.3125rem solid #c5c5c5;
 	color:#bbb;
 	font-weight:600;
-	font-size:1.5em;
+	font-size:1.75em;
 	text-decoration:none !important;
 	text-align:center;
 }
@@ -603,7 +602,7 @@ em,
 }
 
 
-/* 첨부업로드 20221202 */
+/* 첨부업로드 20221111 */
 .cp1error1{
 	display:flex; /* ☆ */
 	justify-content:center;
@@ -613,31 +612,17 @@ em,
 	width:100vw;
 	height:100vh;
 	padding:1em;
-	color:#333;
+	color:#000;
+	font-size:1.5em;
 	line-height:1.375;
 	text-align:center;
-	word-wrap:break-word;
-	word-break:keep-all;
 }
 .cp1error1 .wrap1{}
-.cp1error1 .ic1{
-	display:block;
-	width:110px;
-	height:75px;
-	margin:0 auto;
-	background:url(../../img/lib2/icw220a1c2error1.png) no-repeat center center / contain;
-}
-.cp1error1 .t1{
-	display:block;
-	margin:1.5rem 0;
-	font-weight:700;
-	font-size:5em;
-	line-height:1;
-}
-.cp1error1 .t2{
-	display:block;
-	margin:1.5rem 0;
-	font-size:1.25em;
+/* ◇◆ */
+@media all and (min-width:768px){
+	.cp1error1{
+		font-size:4em;
+	}
 }
 
 

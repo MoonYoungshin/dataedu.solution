@@ -3,7 +3,6 @@
 /**
  * 20221026 | @m | 최초작성
  * 20221104 | @m | 요구반영. 결함개선. 고도화..
- * 20221202 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -31,12 +30,9 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <!-- cp1error1 -->
 <div class="cp1error1">
 	<div class="wrap1">
-		<i class="ic1"></i>
-		<strong class="t1">404 ERROR</strong>
-		<div class="t2">
-			404. 해당 페이지를 찾지 못했습니다.<br>
-			주소가 잘못되었거나 더 이상 제공하지 않는 페이지입니다.<br>
-		</div>
+		404 에러 페이지는<br>
+		<span class="dpib">메인 디자인이 정해지면</span><br>
+		스타일을 맞춰서 진행
 	</div>
 </div>
 <!-- /cp1error1 -->
