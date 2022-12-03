@@ -7,7 +7,6 @@
  * 20221104 | @m | 
  * 20221111 | @m | 
  * 20221114 | @m | 
- * 20221204 | @m | 
  */
 
 
@@ -171,23 +170,17 @@ body,
 /* #head */
 
 
-/* 로고 20221204 */
+/* 로고 20221028 */
 #logo{
 	z-index:10;
-	margin:0 20px 0 0;
+	margin:0 20px 0 .25em;
 	border:0;
 	background:none;
 	color:rgba(0,0,0, .9375);
 	font-size:24px;
 	letter-spacing:-.03125em;
 }
-#logo a{
-	display:inline-flex; /* ☆ */
-	justify-content:center;
-	align-items:center;
-	color:inherit;
-}
-#logo img{width:auto;height:18px;}
+#logo a{color:inherit;}
 
 
 /* 글로벌네비게이션 20221104 */
