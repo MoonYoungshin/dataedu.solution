@@ -9,7 +9,6 @@
  * 20221118 | @m | 
  * 20221125 | @m | 
  * 20221202 | @m | 
- * 20221205 | @m | 
  */
 
 /** Compatible! [IE11+] 20210101~ */
@@ -289,7 +288,7 @@ em,
 }
 
 
-/* 체험하기(API 서비스소개) 20221205 */
+/* 체험하기(API 서비스소개) 20221125 */
 .cp2card1{
 	display:block;
 	position:relative;
@@ -306,6 +305,7 @@ em,
 	align-items:center;
 	align-content:center;
 	list-style:none;
+	min-height:720px; /* (340+10*2)*2 */
 	margin:-10px;
 	padding:0;
 }
@@ -371,10 +371,7 @@ em,
 }
 .cp2card1 .ic1{}
 /* ◇◆ */
-@media all and (min-width:1260px){
-	.cp2card1 .mns{
-		min-height:720px; /* (340+10*2)*2 */
-	}
+@media all and (min-width:768px){
 }
 
 

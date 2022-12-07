@@ -4,7 +4,6 @@
  * Layout[main] + Contents[main]
  * 20221026 | @m | 최초작성
  * 20221204 | @m | 요구반영. 결함개선. 고도화 
- * 20221209 | @m | 
  */
 
 
@@ -55,11 +54,9 @@
 						margin:0;
 						padding:0;
 					}
-					#mainbody3[id]>.container{
-						padding-bottom:0;
-					}
+					#mainbody3[id]>.container{}
 					#mainbody4[id]>.container{
-						padding:calc(30px + 5.147%) 0; /* (30 + 70/1360) */
+						padding:7.353% 0; /* (100/1360) */
 					}
 						/* #body [class*='mainwrap']{} */
 
@@ -127,7 +124,7 @@
 }
 
 
-/* 비주얼홍보1. 20221209 */
+/* 비주얼홍보1. 20221204 */
 #vpr1{
 	position:relative;
 	color:#fff;
@@ -146,26 +143,10 @@
 #vpr1 .bg1 .p{
 	position:absolute;left:0;right:0;top:0;bottom:0;
 	background:url() center center / cover;
-	animation:kf1scale1 6s 0s ease-in-out infinite;
-	transition:2s;
 }
 #vpr1 .bg1 .p1{background-image:url(../../img/main/vpr1p01.png);}
 #vpr1 .bg1 .p2{background-image:url(../../img/main/vpr1p02.png);}
 #vpr1 .bg1 .p3{background-image:url(../../img/main/vpr1p03.png);}
-
-#vpr1 .bg1 .p.off{
-	z-index:auto;
-	opacity:0;
-}
-#vpr1 .bg1 .p.on{
-	z-index:11;
-	opacity:1;
-}
-#vpr1 .bg1 .p.old{
-	z-index:10;
-	opacity:0;
-}
-/*  */
 #vpr1 .w1{
 	position:relative;
 }
@@ -206,7 +187,7 @@
 	color:inherit;
 	font-weight:700;
 	vertical-align:middle;
-	transform:translateY(-60%);
+	transform:translateY(-50%);
 }
 #vpr1 .b1t1{
 	margin:.625em 0 0;
@@ -276,11 +257,9 @@
 }
 
 
-/* 텍스트그룹1. 20221209 */
+/* 텍스트그룹1. 20221204 */
 #tgroup1{
 	position:relative;
-	/* position:sticky; top:0; // 이걸로 안됨 ))) script.js */
-	margin:0 0 3.125rem;
 	font-size:.625em;
 	text-align:center;
 }
@@ -313,19 +292,11 @@
 }
 #tgroup1 .b1{
 	display:inline-block;
-	margin:2.5rem 0 0;
+	margin:2.5rem 0 3.125rem;
 	padding:.75em 2.5em;
 	background:#0065dd;
 	color:#fff;
 	font-size:1.25rem;
-}
-/* ◇◆ */
-@media all and (max-width:767px){
-	/* 모바일에서 첨에 안보이는거 해결 */
-	#tgroup1 .mj-ani{
-		transform: translateY(0);
-		opacity:1;
-	}
 }
 /* ◇◆ */
 @media all and (min-width:768px){
@@ -337,11 +308,6 @@
 @media all and (min-width:1440px){
 	#tgroup1{
 		text-align:left;
-	}
-	#tgroup1.act{
-		position:fixed;
-		top:calc(50vh - 258px); /* (뷰높이/2 - 내높이/2) */
-		/* transform:translateY(-50%); [JS]와충돌해서위방법사용 */
 	}
 }
 
@@ -381,7 +347,7 @@
 	color:#fff;
 	text-align:left;
 	vertical-align:top;
-	/* transition:1s; )) .mj-ani.act */
+	transition:.2s;
 }
 #fcard1 .m1 .a1{background-image:url(../../img/main/card1c1bg1.png);}
 #fcard1 .m2 .a1{background-image:url(../../img/main/card1c2bg1.png);}
@@ -542,6 +508,9 @@
 	}
 
 
+						
+
+
 } /* /(min-width:1440px) */
 /* /RWD ◇◆◇◆◇◆◇◆◇◆◇◆ */
 
@@ -549,25 +518,21 @@
 /* ◇◆ animation ◇◆◇◆◇◆◇◆◇◆ */
 
 
-@keyframes kf1scale1{
-	50%{
-		transform:scale(1.2) rotate(-0deg);
-		transform-origin:50% 100%;
-	}
+#vpr1 .bg1 .p1{
+	z-index:1;
+  animation:kf1vpr1bg1 6s 0s ease-in-out infinite;
+}
+#vpr1 .bg1 .p2{
+	z-index:0;
+  animation:kf1vpr1bg1 6s 0s ease-in-out infinite;
+}
+#vpr1 .bg1 .p3{
+	z-index:0;
+  animation:kf1vpr1bg1 6s 0s ease-in-out infinite;
 }
 
-
-/* 효과 20221209 */
-.mj-ani{
-	transform: translateY(20%);
-	opacity:0;
+@keyframes kf1vpr1bg1{
+	50%{transform:scale(1.1) rotate(-0deg);}
 }
-/* .act */
-.mj-ani.act{
-	opacity:1;
-	transform:none;
-	transition:1s .0s;
-}
-
 
 /* ◇◆ /animation ◇◆◇◆◇◆◇◆◇◆ */

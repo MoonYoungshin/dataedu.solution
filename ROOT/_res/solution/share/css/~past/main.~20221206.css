@@ -55,11 +55,9 @@
 						margin:0;
 						padding:0;
 					}
-					#mainbody3[id]>.container{
-						padding-bottom:0;
-					}
+					#mainbody3[id]>.container{}
 					#mainbody4[id]>.container{
-						padding:calc(30px + 5.147%) 0; /* (30 + 70/1360) */
+						padding:7.353% 0; /* (100/1360) */
 					}
 						/* #body [class*='mainwrap']{} */
 
@@ -165,6 +163,7 @@
 	z-index:10;
 	opacity:0;
 }
+
 /*  */
 #vpr1 .w1{
 	position:relative;
@@ -206,7 +205,7 @@
 	color:inherit;
 	font-weight:700;
 	vertical-align:middle;
-	transform:translateY(-60%);
+	transform:translateY(-50%);
 }
 #vpr1 .b1t1{
 	margin:.625em 0 0;
@@ -279,10 +278,16 @@
 /* 텍스트그룹1. 20221209 */
 #tgroup1{
 	position:relative;
-	/* position:sticky; top:0; // 이걸로 안됨 ))) script.js */
-	margin:0 0 3.125rem;
+	/* position:sticky;
+	top:0; */
 	font-size:.625em;
 	text-align:center;
+	background:#ee0;
+}
+#tgroup1.mj-sticky.on{
+	position:fixed;
+	top:50vh;
+	transform:translateY(-50%);
 }
 #tgroup1 .t1{
 	color:#0065dd;
@@ -313,19 +318,11 @@
 }
 #tgroup1 .b1{
 	display:inline-block;
-	margin:2.5rem 0 0;
+	margin:2.5rem 0 3.125rem;
 	padding:.75em 2.5em;
 	background:#0065dd;
 	color:#fff;
 	font-size:1.25rem;
-}
-/* ◇◆ */
-@media all and (max-width:767px){
-	/* 모바일에서 첨에 안보이는거 해결 */
-	#tgroup1 .mj-ani{
-		transform: translateY(0);
-		opacity:1;
-	}
 }
 /* ◇◆ */
 @media all and (min-width:768px){
@@ -337,11 +334,6 @@
 @media all and (min-width:1440px){
 	#tgroup1{
 		text-align:left;
-	}
-	#tgroup1.act{
-		position:fixed;
-		top:calc(50vh - 258px); /* (뷰높이/2 - 내높이/2) */
-		/* transform:translateY(-50%); [JS]와충돌해서위방법사용 */
 	}
 }
 
@@ -381,7 +373,7 @@
 	color:#fff;
 	text-align:left;
 	vertical-align:top;
-	/* transition:1s; )) .mj-ani.act */
+	/* transition:1s; )) .mj-ani.on */
 }
 #fcard1 .m1 .a1{background-image:url(../../img/main/card1c1bg1.png);}
 #fcard1 .m2 .a1{background-image:url(../../img/main/card1c2bg1.png);}
@@ -562,8 +554,8 @@
 	transform: translateY(20%);
 	opacity:0;
 }
-/* .act */
-.mj-ani.act{
+/* .on */
+.mj-ani.on{
 	opacity:1;
 	transform:none;
 	transition:1s .0s;

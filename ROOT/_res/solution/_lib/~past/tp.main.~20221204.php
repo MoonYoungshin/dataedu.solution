@@ -3,9 +3,7 @@
 /**
  * MainPage Template
  * 20221026 | @m | 최초작성
- * 20221028 | @m | 요구반영. 결함개선. 고도화
- * 20221107 | @m | 
- * 20221206 | @m | 메인 콘텐츠 변경
+ * 20221203 | @m | 요구반영. 결함개선. 고도화
  */
 
 include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -41,7 +39,7 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 <noscript><p class="noscript">JavaScript has been disabled. This site requires JavaScript for full functionality, please enable.</p></noscript>
 
 
-<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/head_before_login.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/head.php"; ?>
 <!-- #wrap -->
 <div id="wrap">
 <?php //include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/head_visual.php"; ?>
@@ -121,26 +119,26 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 
 
 <!-- vpr2 -->
-<div id="vpr2">
+<div class="vpr2">
 <div class="wrap1">
 	<div class="w1">
 
 		<!-- tgroup1 -->
-		<div id="tgroup1" class="mj-scroll-cmid-act">
-			<div class="t1 mj-ani">
+		<div id="tgroup1">
+			<div class="t1">
 				HELLO DATA!
 			</div>
-			<h3 class="h1 mj-ani">
+			<h3 class="h1">
 				<span class="h1t1">나의 비즈니스에 딱 맞는</span>
-				<span class="h1t1">최고의 <span class="en">API,</span></span>
-				<span class="h1t1"><span class="en">DATAEDU.AI</span></span>
+				<span class="h1t2">최고의 API,</span>
+				<span class="h1t3">DATAEDU.AI</span>
 			</h3>
-			<div class="t2 mj-ani">
+			<div class="t2">
 				<span class="t2t1">다양한 API엔진을 통해 비즈니스 맞춤형</span>
 				<span class="t2t1">AI 솔루션을 제공합니다.</span>
 				<span class="t2t1">최첨단 인공지능을 이용한 API 엔진을 체험해보세요.</span>
 			</div>
-			<a href="?#★" class="b1 mj-ani"><span class="b1t1">자세히 보기</span></a>
+			<a href="?#★" target="_blank" rel="noopener" title="새 창" class="b1"></a>
 		</div>
 		<!-- /tgroup1 -->
 
@@ -152,7 +150,7 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 		<div class="wrap1">
 			<ul class="mns">
 				<li class="m m1">
-					<a class="a1 mj-ani">
+					<a class="a1">
 						<i class="ic1"></i>
 						<strong class="t1">Audio API</strong>
 						<div class="t2">
@@ -162,7 +160,7 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 					</a>
 				</li>
 				<li class="m m2">
-					<a class="a1 mj-ani">
+					<a class="a1">
 						<i class="ic1"></i>
 						<strong class="t1">Vision API</strong>
 						<div class="t2">
@@ -172,7 +170,7 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 					</a>
 				</li>
 				<li class="m m3">
-					<a class="a1 mj-ani">
+					<a class="a1">
 						<i class="ic1"></i>
 						<strong class="t1">Language API</strong>
 						<div class="t2">
@@ -182,7 +180,7 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 					</a>
 				</li>
 				<li class="m m4">
-					<a class="a1 mj-ani">
+					<a class="a1">
 						<i class="ic1"></i>
 						<strong class="t1">Education API</strong>
 						<div class="t2">
@@ -192,7 +190,7 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 					</a>
 				</li>
 				<li class="m m5">
-					<a class="a1 mj-ani">
+					<a class="a1">
 						<i class="ic1"></i>
 						<strong class="t1">Video API</strong>
 						<div class="t2">
@@ -222,9 +220,10 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 <div class="container clearfix">
 
 
-<!-- tgroup2 -->
-<div id="tgroup2">
+<!-- vpr3 -->
+<div id="vpr3">
 <div class="wrap1">
+	<div class="bg1"></div>
 	<div class="w1">
 		<div class="t1">
 			<span class="t1t1">We create</span>
@@ -243,7 +242,7 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 	</div>
 </div>
 </div>
-<!-- /tgroup2 -->
+<!-- /vpr3 -->
 
 
 </div>

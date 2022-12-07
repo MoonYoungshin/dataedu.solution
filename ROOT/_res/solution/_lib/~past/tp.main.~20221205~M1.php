@@ -3,9 +3,7 @@
 /**
  * MainPage Template
  * 20221026 | @m | 최초작성
- * 20221028 | @m | 요구반영. 결함개선. 고도화
- * 20221107 | @m | 
- * 20221206 | @m | 메인 콘텐츠 변경
+ * 20221205 | @m | 요구반영. 결함개선. 고도화
  */
 
 include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -41,7 +39,7 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 <noscript><p class="noscript">JavaScript has been disabled. This site requires JavaScript for full functionality, please enable.</p></noscript>
 
 
-<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/head_before_login.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/head.php"; ?>
 <!-- #wrap -->
 <div id="wrap">
 <?php //include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/head_visual.php"; ?>
@@ -110,6 +108,72 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 <!-- /vpr1 -->
 
 
+<script>/*<![CDATA[*/
+	$(function(){
+		/** ◇◆ 비주얼효과. 20221205. @m.
+		 */
+		(function(){
+			var $my = '#vpr1', // 래퍼
+				$m = $('.bg1 .p', $my), // 동작할 항목
+				config = {}; // 설정값
+
+			$my.total = $m.length; // 항목 수
+
+			console.log($m.length, $my.total);
+
+			config = {
+				onnum: 1, // 활성값
+				oldonnum: 0, // 이전 활성값 (최초값은 없음)
+				interval: 2000, //동작간격 밀리초
+				duration: 400, // 동작시간 밀리초
+				delay: 0, // 지연시간
+				easing: 'swing', // 동작 완화
+			};
+
+			// 순번 액션
+			var action = function(){
+				$m.removeClass('on oldon').addClass('off');
+				setTimeout(function(){
+					$m.eq(config.onnum-1).removeClass('off').addClass('on');
+					$m.eq(config.oldonnum-1).removeClass('off').addClass('oldon');
+				}, 0);
+				console.log(config.interval);
+			};
+			action(); // ★최초 실행
+
+			// 다음 동작
+			var nextAct = function(){
+				config.oldonnum = config.onnum;
+				config.onnum += 1;
+				if(config.onnum > $my.total){
+					config.onnum = 1;
+				}
+				console.log($m.length, config.oldonnum, ')))', config.onnum);
+				action();
+				restartInterval(timer1);
+			};
+
+			// 자동 순환 //
+			// 자동 동작
+			var autoAct = function(){
+				nextAct();
+			};
+
+			// 자동 가동
+			timer1 = setInterval(autoAct, config.interval);
+
+			// 자동 재가동
+			var restartInterval = function(timer){
+				if(timer) clearInterval(timer);
+				timer1 = setInterval(autoAct, config.interval);
+			};
+
+
+		})();
+	});
+/*]]>*/</script>
+
+
 </div>
 <!-- /container -->
 </div>
@@ -126,21 +190,21 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 	<div class="w1">
 
 		<!-- tgroup1 -->
-		<div id="tgroup1" class="mj-scroll-cmid-act">
-			<div class="t1 mj-ani">
+		<div id="tgroup1">
+			<div class="t1">
 				HELLO DATA!
 			</div>
-			<h3 class="h1 mj-ani">
+			<h3 class="h1">
 				<span class="h1t1">나의 비즈니스에 딱 맞는</span>
 				<span class="h1t1">최고의 <span class="en">API,</span></span>
 				<span class="h1t1"><span class="en">DATAEDU.AI</span></span>
 			</h3>
-			<div class="t2 mj-ani">
+			<div class="t2">
 				<span class="t2t1">다양한 API엔진을 통해 비즈니스 맞춤형</span>
 				<span class="t2t1">AI 솔루션을 제공합니다.</span>
 				<span class="t2t1">최첨단 인공지능을 이용한 API 엔진을 체험해보세요.</span>
 			</div>
-			<a href="?#★" class="b1 mj-ani"><span class="b1t1">자세히 보기</span></a>
+			<a href="?#★" class="b1"><span class="b1t1">자세히 보기</span></a>
 		</div>
 		<!-- /tgroup1 -->
 
@@ -152,7 +216,7 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 		<div class="wrap1">
 			<ul class="mns">
 				<li class="m m1">
-					<a class="a1 mj-ani">
+					<a class="a1">
 						<i class="ic1"></i>
 						<strong class="t1">Audio API</strong>
 						<div class="t2">
@@ -162,7 +226,7 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 					</a>
 				</li>
 				<li class="m m2">
-					<a class="a1 mj-ani">
+					<a class="a1">
 						<i class="ic1"></i>
 						<strong class="t1">Vision API</strong>
 						<div class="t2">
@@ -172,7 +236,7 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 					</a>
 				</li>
 				<li class="m m3">
-					<a class="a1 mj-ani">
+					<a class="a1">
 						<i class="ic1"></i>
 						<strong class="t1">Language API</strong>
 						<div class="t2">
@@ -182,7 +246,7 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 					</a>
 				</li>
 				<li class="m m4">
-					<a class="a1 mj-ani">
+					<a class="a1">
 						<i class="ic1"></i>
 						<strong class="t1">Education API</strong>
 						<div class="t2">
@@ -192,7 +256,7 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 					</a>
 				</li>
 				<li class="m m5">
-					<a class="a1 mj-ani">
+					<a class="a1">
 						<i class="ic1"></i>
 						<strong class="t1">Video API</strong>
 						<div class="t2">
