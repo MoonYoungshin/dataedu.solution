@@ -17,7 +17,6 @@
  * 20221118 | @m | select:not([x])
  * 20221202 | @m | .selectmenu1
  * 20221209 | @m | 
- * 20221211 | @m | 
  */
 
 /*! CSS Library | (c) 20150522~20220211. ~20221028 | by @m
@@ -1487,14 +1486,13 @@ input.button,
 }
 
 
-/* pagination 20221211 */
+/* pagination 20220210 */
 .pagination{clear:both;width:100%;margin:.75em auto 0;text-align:center;}
 .pagination .m{display:inline;}
 .pagination .m a{display:inline-block;
 	position:relative;
-	width:2.25rem; /* (36/16) */
-	height:2.25rem;
-	margin:0 .0625rem .375rem .0625rem;
+	width:2.125em;height:2.125em;
+	margin:0 .0625em .375em .0625em;
 	border:1px solid transparent;
 	border-radius:4px;
 	background:#fff;
@@ -1511,10 +1509,10 @@ input.button,
 }
 .pagination .pages .m a{
 	width:auto;
-	min-width:1rem;
-	padding:0 .625rem; /* ((2.25-1)/2) */
-	font-size:1rem;
-	line-height:2.25;
+	min-width:1em;
+	padding:0 .5625em; /* ((2.125-1)/2) */
+	font-size:1em;
+	line-height:2.125;
 }
 .pagination .pages .on a{
 	border-color:transparent;

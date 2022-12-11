@@ -10,7 +10,6 @@
  * 20221028 | @m | 커스텀
  * 20221115 | @m | pretendard-subset.css )) CDN 이용
  * 20221202 | @m | 'Disket Mono' 추가
- * 20221209 | @m | 
  */
 
 
@@ -74,7 +73,7 @@
 }
 
 
-/* Disket Mono */
+/* NanumGothic */
 @font-face {
 	font-family: 'Disket Mono';
 	font-weight: 400;

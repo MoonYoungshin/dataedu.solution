@@ -5,7 +5,6 @@
  * 20221102 | @m | 요구반영. 결함개선. 고도화.
  * 20221108 | @m | 
  * 20221124 | @m | 
- * 20221208 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -61,14 +60,14 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 				<i class="ic1 female"></i>
 				<span class="t1">성인 여성</span>
 			</div>
-			<!-- <select title="보이스 선택" class="select">
+			<select title="보이스 선택" class="select">
 				<option value="">보이스 선택</option>
 				<option value="">★옵션명</option>
 				<option value="">★옵션명</option>
 				<option value="">★옵션명</option>
 				<option value="">★옵션명</option>
 				<option value="">★옵션명</option>
-			</select> -->
+			</select>
 		</div>
 	</div>
 	<div class="item">
@@ -79,14 +78,14 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 				<i class="ic1 male"></i>
 				<span class="t1">성인 남성</span>
 			</div>
-			<!-- <select title="보이스 선택" class="select">
+			<select title="보이스 선택" class="select">
 				<option value="">보이스 선택</option>
 				<option value="">★옵션명</option>
 				<option value="">★옵션명</option>
 				<option value="">★옵션명</option>
 				<option value="">★옵션명</option>
 				<option value="">★옵션명</option>
-			</select> -->
+			</select>
 		</div>
 	</div>
 </div>

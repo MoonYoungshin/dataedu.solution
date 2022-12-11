@@ -192,8 +192,7 @@
 	margin:3em 0 0;
 }
 #vpr1 .tg2 .t2{
-	font-weight:500;
-	letter-spacing:0;
+	font-weight:700;
 }
 #vpr1 .b1{
 	display:flex; /* ☆ */
@@ -232,9 +231,6 @@
 	}
 	#vpr1 .tg1 .t1{
 		display:block;
-	}
-	#vpr1 .tg2 .t2{
-		font-size:1.25em;
 	}
 	#vpr1 .b1{
 		width:190px;
@@ -571,17 +567,6 @@
 	opacity:1;
 	transform:none;
 	transition:1s .0s;
-}
-/*  */
-#vpr1 .tg1 .t1{
-	transform: translateX(20%);
-}
-#vpr1 .tg1 .t1.act{
-	transform:none;
-	transition:.6s .0s;
-}
-#vpr1 .tg1 .t1+.t1.act{
-	transition:.6s .2s;
 }
 
 

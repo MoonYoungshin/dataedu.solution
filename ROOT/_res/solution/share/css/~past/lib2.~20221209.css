@@ -8,8 +8,6 @@
  * 20221111 | @m | 
  * 20221125 | @m | 
  * 20221202 | @m | 
- * 20221209 | @m | 
- * 20221211 | @m | 
  */
 
 /** Compatible! [IE11+] 20210101~ */
@@ -44,53 +42,9 @@ em,
 	font-weight:600;
 }
 
-/* 테이블 20221211 */
-table.t1{
-	border:0;
-	word-wrap:break-word;
-	word-break:keep-all;
-}
-table.t1>*>tr>th,
-table.t1>*>tr>td{
-	padding-top:.75em;
-	padding-bottom:.75em;
-	border-bottom:1px solid #f3f6fd;
-	color:#222;
-	font-weight:500;
-}
-table.t1>*>tr>th{
-	background:#f3f6fd;
-	font-weight:700;
-}
-table.t1>tbody>tr>th{background:#f9fafb;}
-
-
-/* 페이징 20221211 */
-.pagination{
-	margin-top:0;
-}		
-.pagination .pages .m a{
-	color:#7a90a9;
-	font-weight:500;
-	font-size:1.125em;
-	line-height:36px;
-}
-.pagination .pages .on a{
-	background:none;
-	color:#181c20;
-	font-weight:700;
-}
-.pagination .control .m[class] a .ic{
-	width:36px;height:36px;
-	margin:-18px;
-	background:url() no-repeat center center / 36px;
-}
-.pagination .control .m.prev a .ic{background-image:url(../../img/lib2/ic72a1c2a1left1.png);}
-.pagination .control .m.next a .ic{background-image:url(../../img/lib2/ic72a1c2a1right1.png);}
-
 
 /* ◇◆ Added to This Project, Content Styles to Share ◇◆◇◆◇◆◇◆◇◆ */
-/* ◇◆ UI Component ◇◆◇◆◇◆◇◆◇◆ */
+
 
 
 /* 폼컨트롤(라디오.체크박스.디자인유형) 20221111 */
@@ -291,12 +245,11 @@ table.t1>tbody>tr>th{background:#f9fafb;}
 }
 
 
-/* 콘텐츠상자 (이용약관..), .. 20221209 */
+/* 콘텐츠상자 (이용약관..), .. 20221028 */
 .cp1view1{
 	position:relative;
 	padding:calc(10px + 3%) calc(10px + 3.75%);
-	/* background:#eaeef8; */
-	background:#fff;
+	background:#eaeef8;
 }
 
 
@@ -689,225 +642,8 @@ table.t1>tbody>tr>th{background:#f9fafb;}
 
 
 
-/* API 사용정보 20221211 */
-.cp1api1use1{
-	position:relative;
-	margin:0 0 2em;
-	line-height:1.375;
-	letter-spacing:0;
-}
-.cp1api1use1 .di1{}
-.cp1api1use1 .dt1{}
-.cp1api1use1 .dd1{
-	box-sizing:border-box; /* ☆ */
-	/* min-width:264px; */
-	margin:0 0 .75em;
-	padding:.625em .8125em;
-	background:#f3f6fd;
-	font-size:14px;
-}
-.cp1api1use1 .t1{
-	color:#888;
-}
-.cp1api1use1 .t2{
-	display:block;
-	color:#222;
-	font-weight:500;
-}
-/* .type2 */
-.cp1api1use1.type2{
-	margin:0 0 .5em;
-}
-.cp1api1use1.type2 .dd1{
-	padding-left:0;
-	padding-right:0;
-	background:none;
-}
-.cp1api1use1.type2 .t2{
-	display:inline-block;
-}
-/* ◇◆ */
-@media all and (min-width:768px){
-	.cp1api1use1 .di1{
-		display:flex; /* ☆ */
-		align-items:center;
-	}
-	.cp1api1use1 .dt1{
-		flex:none;
-		width:195px;
-	}
-	.cp1api1use1 .dd1{
-		margin:0 .75em 0 0;
-	}
-}
 
-
-/* 테이블 20221211 */
-.cp1use1table1{
-	margin:0 calc(-10px - 3.75%); /* (.cp1view1 가로패딩) */
-	font-size:.875em;
-}
-.cp1use1table1 .a1{
-	color:#0065dd;
-	/* text-decoration:underline; */
-	border-bottom:1px solid currentColor;
-}
-.cp1use1table1 .a1:hover,
-.cp1use1table1 .a1:focus{
-	color:#09f;
-}
-.cp1use1table1 .a1:active{
-	color:#036;
-}
-/* ◇◆ */
-@media all and (min-width:768px){
-	.cp1use1table1{
-		margin:0;
-		font-size:1.125em;
-	}
-}
-
-
-/* 레이어라이트박스. 20221211 */
-/* 공통 (set_popup) */
-.cp1layer1lightbox1{
-	display:flex !important; /* ☆ */
-	visibility:hidden;
-	z-index:100;
-	position:fixed;left:0;right:0;top:0;bottom:0;
-	/* background:rgba(0,0,0, .8); */
-	overflow:hidden;
-	overflow-y:auto;
-	opacity:0;
-	transition:.2s;
-}
-.cp1layer1lightbox1.on{
-	visibility:visible;
-	opacity:1;
-}
-.cp1layer1lightbox1>.wrap1{
-	display:block;
-	box-sizing:border-box; /* ☆ */
-	width:100%;
-	margin:auto;
-	padding:20px;
-	text-align:center;
-}
-.cp1layer1lightbox1 .lightbox{
-	display:inline-block;
-	z-index:100;
-	position:relative;
-	box-sizing:border-box; /* ☆ */
-	width:100%; /* ☆ */
-	max-width:1300px; /* ☆ */
-	max-height:none; /* ☆ */
-	margin:0 auto;                     
-	border-radius:0;
-	background:#fff;
-	text-align:left;
-	vertical-align:middle;
-	overflow:hidden;
-	box-shadow: 0 4px 50px rgba(0, 0, 0, 0.25);
-	transition:.4s;
-}
-.cp1layer1lightbox1.on[class] .lightbox{
-	transform:none;
-	max-height:100vh;
-}
-.cp1layer1lightbox1 .lightbox>.wrap2{
-	position:relative;
-	margin:2.308%; /* (30/1300) */
-}
-/* hg1 */
-.cp1layer1lightbox1 .lightbox>.wrap2>.hg1{
-	display:flex; /* ☆ */
-	justify-content:space-between;
-	align-items:center;
-	position:relative;
-}
-.cp1layer1lightbox1 .lightbox>.wrap2>.hg1>.h1{
-	position:relative;
-	margin:0;
-	color:#000;
-	font-weight:700;
-	font-size:1em;
-}
-/* close */
-.cp1layer1lightbox1 .b1.close{
-	z-index:10;
-	display:block;
-	position:relative;
-	width:40px; /* (40/1300) */
-	height:40px;
-	margin:0;
-}
-.cp1layer1lightbox1 .b1.close>.ic1{
-	float:left;
-	position:absolute;left:50%;top:50%;
-	width:20px;
-	height:20px;
-	margin:-10px;
-	background:url(../../img/lib2/ic80a1c2x1.png) no-repeat center center / contain;
-	text-indent:-9999px;overflow:hidden;
-}
-/* cont */
-.cp1layer1lightbox1 .lightbox>.wrap2>.cont{
-	display:block;
-	box-sizing:border-box; /* ☆ */
-	padding:0 3.077%; /* (40/1300) */
-}
-.cp1layer1lightbox1 .lightbox>.wrap2>.cont>*:first-child{
-	margin-top:0;
-}
-/* ◇◆ */
-@media all and (min-width:768px){
-	.cp1layer1lightbox1>.wrap1{
-		padding:40px;
-	}
-	.cp1layer1lightbox1 .b1.close>.ic1{
-		width:40px;
-		height:40px;
-		margin:-20px;
-	}
-}
-
-
-/* 차트 :: 도넛. 20221211 */
-.cp1use1chart1{
-	z-index:0;
-	position:relative;
-	margin:0 0 2em;
-}
-.cp1use1chart1 .w1myChart1{
-	position:relative;
-	max-width:400px;
-	margin:auto;
-	letter-spacing:0;
-}
-.cp1use1chart1 .tg1{
-	margin:0 0 .5em;
-	padding:.625em .8125em;
-	background:#f3f6fd;
-	color:#222;
-	font-weight:700;
-	font-size:1.125em;
-	line-height:1.375;
-	text-align:center;
-}
-.cp1use1chart1 .tg1 .t1,
-.cp1use1chart1 .tg1 .t2{
-	display:block;
-}
-/* ◇◆ */
-@media all and (min-width:768px){
-	.cp1use1chart1 .tg1{
-		z-index:10;
-		position:absolute;left:50%;bottom:0;
-		margin:0 0 43%;
-		background:none;
-		transform:translate(-50%, 50%);
-	}
-}
+/* ◇◆ UI Component ◇◆◇◆◇◆◇◆◇◆ */
 
 
 /* ◇◆ .cp2~ (가져와서 커스텀) ◇◆◇◆◇◆◇◆◇◆ */

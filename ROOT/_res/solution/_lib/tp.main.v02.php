@@ -5,7 +5,6 @@
  * 20221026 | @m | 최초작성
  * 20221206 | @m | 요구반영. 결함개선. 고도화
  * 20221207 | @m | 
- * 20221208 | @m | 
  */
 
 include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -23,7 +22,7 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 
 <?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/html_head.php"; ?>
 
-<link rel="stylesheet" href="<?=$sitePath?>/share/css/main.css?<?=time()?>">
+<link rel="stylesheet" href="<?=$sitePath?>/share/css/main.v02.css?<?=time()?>">
 
 </head>
 <body data-layout="main">
@@ -91,8 +90,8 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 	<div class="container">
 		<div class="w1">
 			<div class="tg1">
-				<span class="t1 mj-ani"><strong class="em">더 나은 미래을 위한 AI 서비스</strong></span>
-				<span class="t1 mj-ani"><strong class="em">차별화된 API 서비스로 당신이 꿈꾸는 비즈니스를 현실화</strong>시켜드립니다.</span>
+				<span class="t1"><strong class="em">더 나은 미래를 위한 차별화된 API</strong></span>
+				<span class="t1"><strong class="em">당신이 꿈꾸는 비즈니스를 현실화</strong>시켜드립니다.</span>
 			</div>
 		</div>
 		<div class="w2">
