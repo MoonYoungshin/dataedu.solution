@@ -11,6 +11,7 @@
  * 20221202 | @m | 
  * 20221205 | @m | 
  * 20221209 | @m | 
+ * 20221212 | @m | 
  */
 
 /** Compatible! [IE11+] 20210101~ */
@@ -356,6 +357,7 @@ em,
 	display:block;
 	font-weight:500;
 	font-size:20px;
+	text-transform:uppercase;
 }
 .cp2card1 .t2{
 	display:block;
@@ -492,7 +494,7 @@ em,
 }
 
 
-/* 대형전광판 (Bigbox for Special Info) 20221202 */
+/* 대형전광판 (Bigbox for Special Info) 20221212 */
 .cp2jumbotron1{
 	position:relative;
 	max-width:1346px;
@@ -507,7 +509,7 @@ em,
 }
 .cp2jumbotron1 .tg1{}
 .cp2jumbotron1 .f1{
-	margin:1.5rem 0;
+	margin:1.25rem 0;
 }
 .cp2jumbotron1 .btns{
 	display:flex; /* ☆ */
@@ -516,10 +518,10 @@ em,
 }
 .cp2jumbotron1 .tg1 .t1{
 	display:block;
-	margin:1.5rem 0;
+	margin:1.25rem 0;
 	color:#181c20;
-	font-size:1.5em;
-	line-height:1.375;
+	font-size:1.25em;
+	line-height:1.5;
 }
 .cp2jumbotron1 .ic1.indy{
 	width:50px;
@@ -542,6 +544,7 @@ em,
 .cp2jumbotron1 .ic1.indy.vision1ing1{width:50px;height:50px;background-image:url(../../img/lib2/ic100a1c2vision1.png);}
 .cp2jumbotron1 .ic1.indy.language1ing1{width:50px;height:50px;background-image:url(../../img/lib2/ic100a1c2language1.png);}
 .cp2jumbotron1 .ic1.indy.video1ing1{width:50px;height:50px;background-image:url(../../img/lib2/ic100a1c2video1.png);}
+.cp2jumbotron1 .ic1.indy.comingsoon1{width:50px;height:50px;background-image:url(../../img/lib2/ic100a1c2comingsoon1.png);}
 
 
 /* 활용사례 20221125 */

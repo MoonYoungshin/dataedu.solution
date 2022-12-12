@@ -6,6 +6,7 @@
  * 20221028 | @m | 요구반영. 결함개선. 고도화
  * 20221107 | @m | 
  * 20221206 | @m | 메인 콘텐츠 변경
+ * 20221212 | @m | 
  */
 
 include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -83,24 +84,17 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 
 <!-- vpr1 -->
 <div id="vpr1">
-	<div class="bg1">
-		<div class="p p1"></div>
-		<div class="p p2"></div>
-		<div class="p p3"></div>
-	</div>
+	<video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" poster="" class="video1full1" id="myVideo">
+		<source src="<?=$sitePath?>/data/mp4/Wormhole-124593.mp4" type="video/mp4">
+	</video>
 	<div class="container">
 		<div class="w1">
 			<div class="tg1">
-				<span class="t1"><strong class="em">다양한 API엔진을 통해 비즈니스 맞춤형</strong></span>
-				<span class="t1"><strong class="em">AI 솔루션</strong>을 제공합니다.</span>
+				<span class="t1 mj-ani"><strong class="em">더 나은 미래을 위한 AI 서비스</strong></span>
+				<span class="t1 mj-ani"><strong class="em">차별화된 API 서비스로 당신이 꿈꾸는 비즈니스를 현실화</strong>시켜드립니다.</span>
 			</div>
 		</div>
 		<div class="w2">
-			<div class="tg2">
-				<span class="t2">API</span>
-				<span class="t2">TECHNOLOGY</span>
-				<span class="t2">EXPERIENCE</span>
-			</div>
 		</div>
 		<div class="w3">
 			<a href="?#★" class="b1"><i class="b1ic1"></i><span class="b1t1">체험하기</span></a>
@@ -108,6 +102,14 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 	</div>
 </div>
 <!-- /vpr1 -->
+
+<script>/*<![CDATA[*/
+	(function(){
+		// 비디오제어. 20221212. @m.
+		var vdo = document.getElementById('myVideo');
+		vdo.playbackRate = 0.6;
+	})();
+/*]]>*/</script>
 
 
 </div>

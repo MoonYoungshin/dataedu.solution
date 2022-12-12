@@ -10,6 +10,7 @@
  * 20221202 | @m | 
  * 20221209 | @m | 
  * 20221211 | @m | 
+ * 20221212 | @m | 
  */
 
 /** Compatible! [IE11+] 20210101~ */
@@ -123,14 +124,11 @@ table.t1>tbody>tr>th{background:#f9fafb;}
 }
 
 
-/* 제목그룹 20221028 */
+/* 제목그룹 20221212 */
 .cp1hg1{
 	margin:0 0 2.5rem;
 	line-height:1.375;
 	text-align:center;
-}
-.cp1hg1 .logo{
-	color:#222;
 }
 .cp1hg1 .h1{
 	margin:0;
@@ -141,6 +139,11 @@ table.t1>tbody>tr>th{background:#f9fafb;}
 	margin:.75em 0;
 	/* color:#222; */
 	font-size:1.25rem;
+}
+.cp1hg1 .logo{
+	margin:0 0 1.25rem;
+	color:#222;
+	font-size:0;
 }
 /* ◇◆ */
 @media all and (min-width:768px){

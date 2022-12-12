@@ -6,6 +6,7 @@
  * 20221206 | @m | 요구반영. 결함개선. 고도화
  * 20221207 | @m | 
  * 20221208 | @m | 
+ * 20221212 | @m | 
  */
 
 include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -83,11 +84,9 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 
 <!-- vpr1 -->
 <div id="vpr1">
-	<div class="bg1">
-		<div class="p p1"></div>
-		<div class="p p2"></div>
-		<div class="p p3"></div>
-	</div>
+	<video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" poster="" class="video1full1" id="myVideo">
+		<source src="<?=$sitePath?>/data/mp4/Wormhole-124593.mp4" type="video/mp4">
+	</video>
 	<div class="container">
 		<div class="w1">
 			<div class="tg1">
@@ -96,11 +95,6 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 			</div>
 		</div>
 		<div class="w2">
-			<div class="tg2">
-				<span class="t2">API</span>
-				<span class="t2">TECHNOLOGY</span>
-				<span class="t2">EXPERIENCE</span>
-			</div>
 		</div>
 		<div class="w3">
 			<a href="?#★" class="b1"><i class="b1ic1"></i><span class="b1t1">체험하기</span></a>
@@ -108,6 +102,14 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 	</div>
 </div>
 <!-- /vpr1 -->
+
+<script>/*<![CDATA[*/
+	(function(){
+		// 비디오제어. 20221212. @m.
+		var vdo = document.getElementById('myVideo');
+		vdo.playbackRate = 0.6;
+	})();
+/*]]>*/</script>
 
 
 </div>
