@@ -3,6 +3,7 @@
 /**
  * 20221026 | @m | 최초작성
  * 20221104 | @m | 요구반영. 결함개선. 고도화.
+ * 20221212 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -34,7 +35,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 <!-- cp1hg1 -->
 <div class="cp1hg1">
-	<h2 class="logo">LOGO</h2>
+	<h2 class="logo"><img src="<?=$sitePath?>/img/inc/logo1@2x.png" width="142" height="18" alt="DATAEDU.AI"></h2>
 	<h3 class="h1">비밀번호 재설정</h3>
 </div>
 <!-- /cp1hg1 -->

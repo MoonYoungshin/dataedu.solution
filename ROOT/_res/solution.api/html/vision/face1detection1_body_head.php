@@ -3,6 +3,7 @@
  * 20221026 | @m | 최초작성
  * 20221108 | @m | 요구반영. 결함개선. 고도화.
  * 20221201 | @m | 
+ * 20221212 | @m | 
  */
 ?>
 <!-- #body_head -->
@@ -18,7 +19,7 @@
 		<span class="cont">
 			<a class="a1"><i class="t1">Vision API</i></a>
 			<i class="sep">&gt;</i>
-			<a class="a1"><i class="t1">얼굴 인식 (V-Face)</i></a>
+			<a class="a1"><i class="t1">얼굴 인식 (JS-Face)</i></a>
 		</span>
 	</div>
 </div>

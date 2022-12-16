@@ -4,6 +4,7 @@
  * 20221026 | @m | 최초작성
  * 20221028 | @m | 요구반영. 결함개선. 고도화.
  * 20221104 | @m | 
+ * 20221112 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -70,9 +71,9 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 				<span class="label">어떻게 데이터에듀.AI를 알게 되셨나요? <em class="required" title="필수항목">*</em></span>
 				<select title="유입경로" class="placeholder w100">
 					<option value="">선택해 주세요</option>
-					<option value="1">★옵션명</option>
-					<option value="2">★옵션명</option>
-					<option value="3">★옵션명</option>
+					<option value="1">블로그</option>
+					<option value="2">지인소개 & 추천</option>
+					<option value="3">기타</option>
 				</select>
 			</div>
 
@@ -85,30 +86,8 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	</div>
 	<div class="w2">
 
-		<p class="tg1">
-			아래 링크를 눌러 내용을 주의 깊게 읽으세요.<br>
-			체크박스를 선택하면, 다음 항목을 모두 읽고 동의한 것으로 간주합니다.<br>
-		</p>
-
-		<!-- cp1fcontrol1 -->
-		<div class="cp1fcontrol1">
-			<div>
-				<label class="item">
-					<input type="checkbox" name="★s0ck1e" value="">
-					<span class="t1"><em class="em1">(필수)</em> 소개서, 뉴스레터 등 그루비 정보 수신에 동의합니다.</span>
-				</label>
-			</div>
-			<div>
-				<label class="item">
-					<input type="checkbox" name="★s0ck1e" value="">
-					<span class="t1"><em class="em1">(필수) 개인정보 수집 및 이용</em>에 동의합니다.</span>
-				</label>
-			</div>
-		</div>
-		<!-- /cp1fcontrol1 -->
-
 		<div class="btns">
-			<button type="submit" class="button submit type1">신청하기</button>
+			<button type="submit" class="button submit type1">문의하기</button>
 		</div>
 
 	</div>

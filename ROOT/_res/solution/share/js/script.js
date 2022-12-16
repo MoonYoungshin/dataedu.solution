@@ -4,6 +4,7 @@
  * 20221101 | @m | 최초작성
  * 20221101 | @m | makeActive2ClickHover2()
  * 20221206 | @m | makeScrollOn()
+ * 20221209 | @m | 
  */
 
 /* Table of contents )) ☆ 목차 갱신 20221101
@@ -191,7 +192,7 @@ makeActive2ClickHover2('#tnb1');
 })();
 
 
-/** ◇◆ 메인. 스크롤 시 대상 콘텐츠 위치. 20221206. @m.
+/** ◇◆ 메인. 스크롤 시 대상 콘텐츠 위치. 20221206. 20221209. @m.
  * 스크롤하여 콘텐츠 하단이 아래 구역 상단과 만나면.. 갭간격을 유지하며 이동한다.
  */
 (function(){
@@ -202,6 +203,8 @@ makeActive2ClickHover2('#tnb1');
 		myBtm, // 뷰 상단 기준 대상 밑단
 		uTop, // 뷰 상단 기준 아래 상단
 		gap = 0; // 추가할 간격 (대상 밑단과 아래 상단)
+	
+	if(!$my.length) return false; // 메인 #tgroup1 없으면 끝냄. 20221209
 
 	act();	// 초기화
 

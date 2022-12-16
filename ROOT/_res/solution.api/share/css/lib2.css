@@ -10,6 +10,9 @@
  * 20221125 | @m | 
  * 20221202 | @m | 
  * 20221205 | @m | 
+ * 20221209 | @m | 
+ * 20221212 | @m | 
+ * 20221216 | @m | 
  */
 
 /** Compatible! [IE11+] 20210101~ */
@@ -355,6 +358,7 @@ em,
 	display:block;
 	font-weight:500;
 	font-size:20px;
+	text-transform:uppercase;
 }
 .cp2card1 .t2{
 	display:block;
@@ -378,7 +382,7 @@ em,
 }
 
 
-/* 보이스선택 20221111 */
+/* 보이스선택 20221209 */
 .cp2voice1select1{
 	display:flex; /* ☆ */
 	justify-content:center;
@@ -413,7 +417,6 @@ em,
 	display:flex; /* ☆ */
 	justify-content:center;
 	align-items:center;
-	margin:0 0 1em;
 }
 .cp2voice1select1 .tg1 .ic1{
 	display:inline-block; 
@@ -435,7 +438,7 @@ em,
 	position:relative;
 	width:100%;
 	height:40px;
-	margin:0;
+	margin:1em 0 0;
 	padding:.625em calc(12% + 13px) .625em .625em;
 	border-radius:10px;
 	background:#f3f6fd url(../../img/lib2/ic26a1c2a1down1.png) no-repeat 94% center / 13px;
@@ -492,7 +495,7 @@ em,
 }
 
 
-/* 대형전광판 (Bigbox for Special Info) 20221202 */
+/* 대형전광판 (Bigbox for Special Info) 20221216 */
 .cp2jumbotron1{
 	position:relative;
 	max-width:1346px;
@@ -507,7 +510,7 @@ em,
 }
 .cp2jumbotron1 .tg1{}
 .cp2jumbotron1 .f1{
-	margin:1.5rem 0;
+	margin:1.25rem 0;
 }
 .cp2jumbotron1 .btns{
 	display:flex; /* ☆ */
@@ -516,10 +519,10 @@ em,
 }
 .cp2jumbotron1 .tg1 .t1{
 	display:block;
-	margin:1.5rem 0;
+	margin:1.25rem 0;
 	color:#181c20;
-	font-size:1.5em;
-	line-height:1.375;
+	font-size:1.25em;
+	line-height:1.5;
 }
 .cp2jumbotron1 .ic1.indy{
 	width:50px;
@@ -529,7 +532,7 @@ em,
 }
 .cp2jumbotron1 .ic1.indy.ing,
 .cp2jumbotron1 .ic1.indy.play{
-	animation:kf1blink1 linear .5s infinite alternate;	
+	animation:kf1blink1 linear .6s infinite alternate;	
 }
 .cp2jumbotron1 .ic1.indy.ok{}
 /*  */
@@ -542,6 +545,7 @@ em,
 .cp2jumbotron1 .ic1.indy.vision1ing1{width:50px;height:50px;background-image:url(../../img/lib2/ic100a1c2vision1.png);}
 .cp2jumbotron1 .ic1.indy.language1ing1{width:50px;height:50px;background-image:url(../../img/lib2/ic100a1c2language1.png);}
 .cp2jumbotron1 .ic1.indy.video1ing1{width:50px;height:50px;background-image:url(../../img/lib2/ic100a1c2video1.png);}
+.cp2jumbotron1 .ic1.indy.comingsoon1{width:50px;height:50px;background-image:url(../../img/lib2/ic100a1c2comingsoon1.png);}
 
 
 /* 활용사례 20221125 */
@@ -1459,7 +1463,7 @@ em,
 }
 
 
-/* 말하기(단어,구문,문장) 20221118 */
+/* 말하기(단어,구문,문장) 20221216 */
 .cp2speak1{
 	position:relative;
 	margin:calc(6px + 1.783%) auto; /* (6 + 24/1346) */
@@ -1517,7 +1521,7 @@ em,
 }
 /*  */
 .cp2speak1[data-st='analyzing'] .cp2record2 .b1record1{
-	animation:kf1blink1 linear .5s infinite alternate;
+	animation:kf1blink1 linear .6s infinite alternate;
 }
 /* ◇◆ */
 @media all and (min-width:768px){
@@ -2398,7 +2402,7 @@ em,
 /* @keyframes ◇◆◇◆ */
 @keyframes kf1blink1{
 	40%{opacity:1;}
-	100%{opacity:.4;}
+	100%{opacity:.1;}
 }
 @keyframes kf1bg1size1{
 	100%{background-size:102%;}

@@ -1,0 +1,573 @@
+@charset "utf-8";
+/**
+ * main.css
+ * Layout[main] + Contents[main]
+ * 20221026 | @m | 최초작성
+ * 20221204 | @m | 요구반영. 결함개선. 고도화 
+ * 20221209 | @m | 
+ */
+
+
+/* Base ◆◆◆ */
+
+
+/* ◇◆ Layout[main] ◇◆◇◆◇◆◇◆◇◆ */
+
+
+/* 배치.메인 20221204 */
+	#head{
+		/* background:rgba(23,23,23, 1); */
+	}
+	#wrap{
+		border-top:0;	
+	}
+		#wrap>.container{
+			max-width:none; /* ☆ */
+			margin:0;
+		}
+			#body{
+				word-wrap:break-word; /* ☆ */
+				word-break:keep-all; /* ☆ */
+				line-height:1.375;
+			}
+				#body [id*='mainbody']{position:relative;}
+				#mainbody1{
+					background:#fff;
+				}
+				#mainbody2{
+					background:#000;
+				}
+				#mainbody3{
+					background:#fff;
+				}
+				#mainbody4{
+					background:#fff url(../../img/main/bg1.png) no-repeat right bottom;
+					background-size:41.8vw 36.8vw;
+				}
+					#body [id*='mainbody']>.container{
+						padding:calc(20px + 2.941%) 0; /* ((20 + 40/1360) */
+					}
+					#mainbody1[id]>.container{
+						padding:calc(12px + 1.324%) 0; /* (12 + 18/1360) */
+					}
+					#mainbody2[id]>.container{
+						max-width:none;
+						margin:0;
+						padding:0;
+					}
+					#mainbody3[id]>.container{
+						padding-bottom:0;
+					}
+					#mainbody4[id]>.container{
+						padding:calc(30px + 5.147%) 0; /* (30 + 70/1360) */
+					}
+						/* #body [class*='mainwrap']{} */
+
+
+/* ◇◆ 공통 조정 ◇◆ */
+
+
+/* ☆감춤 20221028 */
+/* none ★☆ToEdit) 나중에 작업할거 ☆  */
+
+
+/* ☆공용 20221028 */
+/* none */
+.init img{max-width:100%;} /* ☆ */
+
+
+/* #body */
+
+
+/* 제목그룹 20221204 */
+#hgroup1{
+	position:relative;
+}
+#hgroup1 .wrap1{}
+#hgroup1 .h1{
+	margin:0;
+	color:#000;
+	font-weight:800;
+	font-size:6.25vw;
+	font-family:
+		Pretendard,
+		'Apple SD Gothic Neo',
+		-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
+		Roboto,
+		Lato,
+		'Open Sans',OpenSans,
+		'Segoe UI',
+		'Microsoft JhengHei',
+		'Meiryo',
+		'본고딕','Noto Sans KR','Noto Sans CJK KR',NotoSans, /* 로컬 파일 우선 */
+		'본고딕',NotoSans,'Noto Sans KR','Noto Sans CJK KR', /* 리모트 우선 */
+		'나눔고딕',NanumGothic,'Nanum Gothic',
+		'맑은 고딕','Malgun Gothic',
+		'돋움',Dotum,
+		Helvetica,'Helvetica Neue',
+		Arial,
+		sans-serif;
+	line-height:1.125;
+}
+#hgroup1 .h1t1{
+	display:block;
+}
+#hgroup1 .em{
+	color:#0065dd;
+}
+/* ◇◆ */
+@media all and (min-width:768px){
+}
+/* ◇◆ */
+@media all and (min-width:1260px){
+	#hgroup1 .h1{
+		font-weight:800;
+		font-size:5em;
+	}
+}
+
+
+/* 비주얼홍보1. 20221209 */
+#vpr1{
+	position:relative;
+	color:#fff;
+}
+#vpr1 .container{
+	box-sizing:border-box; /* ☆ */
+	/* margin 상속 */
+	padding:calc(30px + 2.259%) 0 2.259%; /* (30 + 30/1360) (30/1360) */
+	padding:55px 0 33px; /* (30 + 30/1360) (30/1360) */
+}
+#vpr1 .bg1{
+	z-index:0;
+	position:absolute;left:0;right:0;top:0;bottom:0;
+	overflow:hidden;
+}
+#vpr1 .bg1 .p{
+	position:absolute;left:0;right:0;top:0;bottom:0;
+	background:url() center center / cover;
+	animation:kf1scale1 6s 0s ease-in-out infinite;
+	transition:2s;
+}
+#vpr1 .bg1 .p1{background-image:url(../../img/main/vpr1p01.png);}
+#vpr1 .bg1 .p2{background-image:url(../../img/main/vpr1p02.png);}
+#vpr1 .bg1 .p3{background-image:url(../../img/main/vpr1p03.png);}
+
+#vpr1 .bg1 .p.off{
+	z-index:auto;
+	opacity:0;
+}
+#vpr1 .bg1 .p.on{
+	z-index:11;
+	opacity:1;
+}
+#vpr1 .bg1 .p.old{
+	z-index:10;
+	opacity:0;
+}
+/*  */
+#vpr1 .w1{
+	position:relative;
+}
+#vpr1 .w2{
+	position:relative;
+}
+#vpr1 .w3{
+	position:absolute;right:0;top:0;
+}
+/*  */
+#vpr1 .tg1 .t1{
+	/* display:block; */
+	font-weight:300;
+	font-size:1.5625em;
+}
+#vpr1 .tg1 .em{
+	color:inherit;
+	font-weight:700;
+}
+#vpr1 .tg2{
+	display:flex; /* ☆ */
+	justify-content:space-between;
+	align-items:center;
+	margin:3em 0 0;
+}
+#vpr1 .tg2 .t2{
+	font-weight:700;
+}
+#vpr1 .b1{
+	display:flex; /* ☆ */
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	width:80px;
+	height:80px;
+	border-radius:9999px;
+	background:#0065dd;
+	color:inherit;
+	font-weight:700;
+	vertical-align:middle;
+	transform:translateY(-60%);
+}
+#vpr1 .b1t1{
+	margin:.625em 0 0;
+	font-size:1em;
+}
+#vpr1 .b1ic1{
+	width:20px;
+	height:15px;
+	background:url(../../img/main/icw160a1c0a1right1.png) no-repeat center center / contain;
+}
+/* ◇◆ */
+@media all and (min-width:768px){
+	#vpr1 .container{
+		display:flex; /* ☆ */
+		flex-direction:column;
+		justify-content:space-between;
+		height:600px;
+	}
+	#vpr1 .container:before,
+	#vpr1 .container:after{
+		display:none;
+	}
+	#vpr1 .tg1 .t1{
+		display:block;
+	}
+	#vpr1 .b1{
+		width:190px;
+		height:190px;
+		transform:translateY(-84px);
+	}
+	#vpr1 .b1t1{
+		font-size:1.25em;
+	}
+	#vpr1 .b1ic1{
+		width:80px;
+		height:60px;
+	}
+}
+/* ◇◆ */
+@media all and (min-width:1260px){
+	#hgroup1 .h1{
+		font-weight:800;
+		font-size:5em;
+	}
+}
+
+
+/* 비주얼홍보2. 20221204 */
+#vpr2{
+	position:relative;
+	color:#fff;
+}
+#vpr2>.wrap1{}
+#vpr2>.wrap1>.w1{}
+#vpr2>.wrap1>.w2{}
+/* ◇◆ */
+@media all and (min-width:1440px){
+	#vpr2>.wrap1{
+		display:flex; /* ☆ */
+		justify-content:space-between;
+	}
+	#vpr2>.wrap1>.w1{}
+	#vpr2>.wrap1>.w2{
+		flex:none;
+		width:674px; /* (320+34+320) */
+	}
+}
+
+
+/* 텍스트그룹1. 20221209 */
+#tgroup1{
+	position:relative;
+	/* position:sticky; top:0; // 이걸로 안됨 ))) script.js */
+	margin:0 0 3.125rem;
+	font-size:.625em;
+	text-align:center;
+}
+#tgroup1 .t1{
+	color:#0065dd;
+	font-weight:700;
+	font-size:1.875em;
+}
+#tgroup1 .h1{
+	margin:.5em 0;
+	color:#181c20;
+	font-weight:700;
+	font-size:3.75em;
+	line-height:1.1875;
+	letter-spacing:-.0625em;
+}
+#tgroup1 .h1t1{
+	display:block;
+}
+#tgroup1 .en{
+	letter-spacing:-.03125em;
+}
+#tgroup1 .t2{
+	margin:1.25em 0 0;
+	color:#181c20;
+	font-size:1.5625em;
+}
+#tgroup1 .t2t1{
+	display:block;
+}
+#tgroup1 .b1{
+	display:inline-block;
+	margin:2.5rem 0 0;
+	padding:.75em 2.5em;
+	background:#0065dd;
+	color:#fff;
+	font-size:1.25rem;
+}
+/* ◇◆ */
+@media all and (max-width:767px){
+	/* 모바일에서 첨에 안보이는거 해결 */
+	#tgroup1 .mj-ani{
+		transform: translateY(0);
+		opacity:1;
+	}
+}
+/* ◇◆ */
+@media all and (min-width:768px){
+	#tgroup1{
+		font-size:1em;
+	}
+}
+/* ◇◆ */
+@media all and (min-width:1440px){
+	#tgroup1{
+		text-align:left;
+	}
+	#tgroup1.act{
+		position:fixed;
+		top:calc(50vh - 258px); /* (뷰높이/2 - 내높이/2) */
+		/* transform:translateY(-50%); [JS]와충돌해서위방법사용 */
+	}
+}
+
+
+/* 서비스소개 20221125 */
+#fcard1{
+	display:block;
+	position:relative;
+	word-wrap:break-word;
+	word-break:keep-all;
+	zoom:.8;
+}
+#fcard1 .wrap1{
+	text-align:center;
+}
+#fcard1 .mns{
+	display:flex; /* ☆ */
+	flex-wrap:wrap;
+	justify-content:center;
+	align-items:center;
+	list-style:none;
+	margin:-17px;
+	padding:0;
+}
+#fcard1 .m{
+	display:inline;
+}
+#fcard1 .a1{
+	display:inline-block;
+	box-sizing:border-box; /* ☆ */
+	width:320px;
+	height:354px;
+	margin:17px;
+	padding:240px 20px 20px;
+	background:url() no-repeat center center / contain;
+	background-size:100%;
+	color:#fff;
+	text-align:left;
+	vertical-align:top;
+	/* transition:1s; )) .mj-ani.act */
+}
+#fcard1 .m1 .a1{background-image:url(../../img/main/card1c1bg1.png);}
+#fcard1 .m2 .a1{background-image:url(../../img/main/card1c2bg1.png);}
+#fcard1 .m3 .a1{background-image:url(../../img/main/card1c3bg1.png);}
+#fcard1 .m4 .a1{background-image:url(../../img/main/card1c4bg1.png);}
+#fcard1 .m5 .a1{background-image:url(../../img/main/card1c5bg1.png);}
+#fcard1 .t1{
+	display:block;
+	font-weight:700;
+	font-size:25px;
+}
+#fcard1 .t2{
+	display:block;
+	margin:.375em 0 0;
+	font-weight:400;
+	font-size:16px;
+	line-height:1.5;
+}
+#fcard1 .ic1{}
+/* ◇◆ */
+@media all and (min-width:1000px){
+	#fcard1{
+		zoom:1;
+	}
+}
+@media all and (min-width:1440px){
+	#fcard1 .mns{
+		justify-content:flex-start;
+	}
+	#fcard1 .m:nth-child(2n){
+		transform:translate(0, 212px);
+	}
+}
+
+
+/* 텍스트그룹2. 20221204 */
+#tgroup2{
+	position:relative;
+	font-size:.625em;
+	text-align:center;
+}
+#tgroup2>.wrap1{
+	display:inline-block;
+	text-align:center;
+}
+#tgroup2 .t1{
+	color:#181c20;
+	font-weight:700;
+	font-size:3.75em;
+	line-height:1.1875;
+}
+#tgroup2 .t1t1{
+	display:block;
+	position:relative;
+}
+#tgroup2 .t1t1:first-child{
+	display:inline-block;
+}
+#tgroup2 .t1t1:first-child:after{content:'';
+	display:block;
+	position:absolute;right:-.6em;top:0;
+	width:.4em;
+	height:.4em;
+	border-radius:9999px;
+	background:#0065dd;
+}
+#tgroup2 .t2{
+	margin:1em 0 0;
+	color:#181c20;
+	font-size:2.5em;
+	letter-spacing:-.0625em;
+}
+#tgroup2 .t2t1{
+	display:block;
+}
+#tgroup2 .t3{
+	margin:1em 0 0;
+	color:#181c20;
+	font-size:1.125em;
+	line-height:1.5;
+}
+#tgroup2 .t3t1{
+	display:block;
+}
+#tgroup2 .b1{
+	display:inline-flex; /* ☆ */
+	justify-content:center;
+	align-items:center;
+	margin:1.5em 0 0;
+	color:#181c20;
+	font-weight:700;
+	font-size:1.875em;
+}
+#tgroup2 .b1t1{
+	margin:0 .375em 0 0;
+	border-bottom:1px solid #181c20;
+	line-height:1;
+}
+#tgroup2 .b1ic1{
+	width:26px;
+	height:26px;
+	background:url(../../img/main/ic52a1c1pen1.png) no-repeat center center / contain;
+}
+/* ◇◆ */
+@media all and (min-width:768px){
+	#tgroup2{
+		font-size:1em;
+	}
+}
+/* ◇◆ */
+@media all and (min-width:1440px){
+	#tgroup2>.wrap1{
+		text-align:left;
+	}
+}
+
+
+
+/* ◇◆ ((( lib.css ◇◆◇◆◇◆◇◆ */
+/* none */
+
+
+/* ◇◆ ((( lib2.css .cp1~ ◇◆◇◆◇◆◇◆ */
+/* none */
+
+
+/* ◇◆ StyleName. YYYYMMDD. @Who	 ◇◆ */
+
+
+/* RWD ◇◆◇◆◇◆◇◆◇◆◇◆ */
+/* 콘텐츠 마다 미디어쿼리 중단점을 다르게 표현할 때는 각 콘텐츠 CSS 아래 바로 선언 */
+/* 여기는 전체 콘텐츠 배치 관련 CSS 만 모아서 정의한다. */
+@media all and (min-width:768px){/* medium ◇◆◇◆◇◆◇◆◇◆ */
+
+
+	#body [id*='mainbody']>.container{}
+	#mainbody3[id]>.container{
+		padding:14.338% 0 0; /* (195/1360) */
+	}
+
+
+} /* /(min-width:768px) */
+@media all and (min-width:1000px){ /* large ◇◆◇◆◇◆◇◆◇◆ */
+} /* /(min-width:1000px) */
+@media all and (min-width:1260px){ /* xlarge (1200+20*2+16+2*2) ◇◆◇◆◇◆◇◆◇◆ */
+
+
+/* ◇◆◇◆ */
+
+
+} /* /(min-width:1260px) */
+@media all and (min-width:1440px){ /* 2xlarge (1360+40*2) ◇◆◇◆◇◆◇◆◇◆ */
+
+
+	#body [id*='mainbody']>.container{}
+	#mainbody3[id]>.container{
+		padding:195px 0 0;
+	}
+
+
+} /* /(min-width:1440px) */
+/* /RWD ◇◆◇◆◇◆◇◆◇◆◇◆ */
+
+
+/* ◇◆ animation ◇◆◇◆◇◆◇◆◇◆ */
+
+
+@keyframes kf1scale1{
+	50%{
+		transform:scale(1.2) rotate(-0deg);
+		transform-origin:50% 100%;
+	}
+}
+
+
+/* 효과 20221209 */
+.mj-ani{
+	transform: translateY(20%);
+	opacity:0;
+}
+/* .act */
+.mj-ani.act{
+	opacity:1;
+	transform:none;
+	transition:1s .0s;
+}
+
+
+/* ◇◆ /animation ◇◆◇◆◇◆◇◆◇◆ */

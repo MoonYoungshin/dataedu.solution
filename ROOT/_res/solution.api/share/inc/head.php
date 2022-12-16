@@ -8,6 +8,7 @@
  * 20221114 | @m | 
  * 20221122 | @m | 
  * 20221202 | @m | 
+ * 20221212 | @m | 
  */
 ?>
 <!-- #head -->
@@ -78,11 +79,11 @@
 								<ul>
 									<!-- <li class="m0 submain"><a href="?#★"><span class="t1">서브메인</span></a></li> -->
 									<li class="m1"><a href="?#★"><span class="t1">이미지 텍스트인식 (JS-OCR)</span></a></li>
-									<li class="m2"><a href="?#★"><span class="t1">얼굴인식 (V-Face)</span></a></li>
-									<li class="m3"><a href="?#★"><span class="t1">얼굴 모자이크 (V-Face Blur)</span></a></li>
-									<li class="m4"><a href="?#★"><span class="t1">의상 정보 인식 (V-Clothes)</span></a></li>
-									<li class="m5"><a href="?#★"><span class="t1">로고 인식 (V-Logo)</span></a></li>
-									<li class="m6"><a href="?#★"><span class="t1">제품 인식 (V-Product)</span></a></li>
+									<li class="m2"><a href="?#★"><span class="t1">얼굴인식 (JS-Face)</span></a></li>
+									<li class="m3"><a href="?#★"><span class="t1">얼굴 모자이크 (JS-Face Blur)</span></a></li>
+									<li class="m4"><a href="?#★"><span class="t1">의상 정보 인식 (JS-Clothes)</span></a></li>
+									<li class="m5"><a href="?#★"><span class="t1">로고 인식 (JS-Logo)</span></a></li>
+									<li class="m6"><a href="?#★"><span class="t1">제품 인식 (JS-Product)</span></a></li>
 									<li class="m7"><a href="?#★"><span class="t1">AI 화가 (JS-TTI)</span></a></li>
 								</ul>
 							</div>
@@ -119,11 +120,11 @@
 								<strong class="tt1">Video API</strong>
 								<ul>
 									<!-- <li class="m0 submain"><a href="?#★"><span class="t1">서브메인</span></a></li> -->
-									<li class="m1"><a href="?#★"><span class="t1">사람인식 (V-Human)</span></a></li>
-									<li class="m2"><a href="?#★"><span class="t1">트래킹 (V-Tracking)</span></a></li>
-									<li class="m4"><a href="?#★"><span class="t1">구간재생 (V-Section)</span></a></li>
-									<li class="m5"><a href="?#★"><span class="t1">영상내용검색 (V-Search)</span></a></li>
-									<li class="m6"><a href="?#★"><span class="t1">영상정보수집 (V-Ghost)</span></a></li>
+									<li class="m1"><a href="?#★"><span class="t1">사람인식 (JS-Human)</span></a></li>
+									<li class="m2"><a href="?#★"><span class="t1">트래킹 (JS-Tracking)</span></a></li>
+									<li class="m4"><a href="?#★"><span class="t1">구간재생 (JS-Section)</span></a></li>
+									<li class="m5"><a href="?#★"><span class="t1">영상내용검색 (JS-Search)</span></a></li>
+									<li class="m6"><a href="?#★"><span class="t1">영상정보수집 (JS-Ghost)</span></a></li>
 								</ul>
 							</div>
 						</li>
