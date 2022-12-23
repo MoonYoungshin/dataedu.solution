@@ -8,7 +8,6 @@
  * 20221208 | @m | 
  * 20221212 | @m | 
  * 20221213 | @m | 
- * 20221223 | @m | 
  */
 
 include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -86,14 +85,14 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 
 <!-- vpr1 -->
 <div id="vpr1">
-	<video autoplay loop muted playsinline poster="<?=$sitePath?>/data/mp4/Wormhole-124593.jpg" class="video1full1" id="myVideo">
+	<video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" poster="" class="video1full1" id="myVideo">
 		<source src="<?=$sitePath?>/data/mp4/Wormhole-124593.mp4" type="video/mp4">
 	</video>
 	<div class="container">
 		<div class="w1">
 			<div class="tg1">
 				<span class="t1 mj-ani"><strong class="em">더 나은 미래을 위한 AI 서비스</strong></span>
-				<span class="t1 mj-ani"><strong class="em">차별화된 API 서비스로 <span class="dpib">당신이 꿈꾸는 비즈니스를</span><br class="hide-large"> 현실화</strong>시켜드립니다.</span>
+				<span class="t1 mj-ani"><strong class="em">차별화된 API 서비스로 당신이 꿈꾸는 비즈니스를 현실화</strong>시켜드립니다.</span>
 			</div>
 		</div>
 		<div class="w2">

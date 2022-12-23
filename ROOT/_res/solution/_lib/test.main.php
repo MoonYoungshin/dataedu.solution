@@ -86,6 +86,7 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 
 <!-- vpr1 -->
 <div id="vpr1">
+	<!-- <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" poster="<?=$sitePath?>/data/mp4/Wormhole-124593.jpg" class="video1full1" id="myVideo"> -->
 	<video autoplay loop muted playsinline poster="<?=$sitePath?>/data/mp4/Wormhole-124593.jpg" class="video1full1" id="myVideo">
 		<source src="<?=$sitePath?>/data/mp4/Wormhole-124593.mp4" type="video/mp4">
 	</video>
@@ -107,9 +108,13 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 
 <script>/*<![CDATA[*/
 	(function(){
-		// 비디오제어. 20221212. @m.
+		// 비디오제어. 20221212. 20221223. @m.
 		var vdo = document.getElementById('myVideo');
-		vdo.playbackRate = 0.6;
+		vdo.playbackRate = .6;
+		vdo.addEventListener('ended', myHandler, false);
+    function myHandler(e) {
+      vdo.playbackRate = -1; // 오류나고 안되더라!!!!
+    }
 	})();
 /*]]>*/</script>
 

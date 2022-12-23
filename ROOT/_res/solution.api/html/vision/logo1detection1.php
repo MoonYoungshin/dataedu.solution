@@ -5,6 +5,7 @@
  * 20221121 | @m | 요구반영. 결함개선. 고도화.
  * 20221201 | @m | 
  * 20221212 | @m | 
+ * 20221223 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -62,7 +63,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 			<div class="cp2sample1img1">
 				<div class="w1">
 					<div class="w1w1">
-						<img src="//dolearn.ai/_res/@m/_img.ex/brothers-457237_1280.jpg" alt="★1대체텍스트필수" class="p1">
+						<img src="<?=$sitePath?>/img/ex/armani.jpg" alt="알마니" class="p1">
 					</div>
 				</div>
 			</div>
@@ -87,7 +88,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 						</div>
 					</div>
 					<div class="w1w1 preview">
-						<img src="/_res/solution/img/lib/b.png" alt="업로드 이미지" class="p1" id="preview-img">
+						<img src="<?=$commonPath?>/img/lib/b.png" alt="업로드 이미지" class="p1" id="preview-img">
 					</div>
 				</div>
 			</div>

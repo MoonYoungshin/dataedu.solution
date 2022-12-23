@@ -12,7 +12,6 @@
  * 20221211 | @m | 
  * 20221212 | @m | 
  * 20221216 | @m | 
- * 20221223 | @m | 
  */
 
 /** Compatible! [IE11+] 20210101~ */
@@ -396,7 +395,7 @@ table.t1>tbody>tr>th{background:#f9fafb;}
 }
 
 
-/* SNS계정 (로그인..) 20221223 */
+/* SNS계정 (로그인..) 20221104 */
 .cp1sns1{
 	margin:1.5em 0;
 	padding:1.5em 0;
@@ -415,16 +414,13 @@ table.t1>tbody>tr>th{background:#f9fafb;}
 	width:calc(4.375rem - 2px); /* (70/16 - 2px) */
 	height:calc(4.375rem - 2px);
 	margin:0 .75em;
-	border:1px solid transparent;
+	border:1px solid #eee;
 	border-radius:9999px;
 	background:url() no-repeat center center / 4.375rem;
 	vertical-align:middle;
 	overflow:hidden;text-indent:-9999px;
 }
-.cp1sns1 .b2.google{
-	border-color:#eee;
-	background-image:url(../../img/lib2/ic140a1c2google1.png);
-}
+.cp1sns1 .b2.google{background-image:url(../../img/lib2/ic140a1c2google1.png);}
 .cp1sns1 .b2.kakaotalk{background-image:url(../../img/lib2/ic140a1c2kakaotalk1.png);}
 .cp1sns1 .b2.naver{background-image:url(../../img/lib2/ic140a1c2naver1.png);}
 

@@ -6,6 +6,7 @@
  * 20221114 | @m | 
  * 20221201 | @m | 
  * 20221212 | @m | 
+ * 20221222 | @m | 진행바
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -62,6 +63,21 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	</div>
 	<div class="f1">
 		<i class="ic1 indy ing video1ing1"></i>
+		<!-- cp2progress1 -->
+		<div class="cp2progress1">
+			<div class="bg1">	</div>
+			<div class="gg1">
+				<div class="t1">
+					<!-- 영상 정보 수집 중 -->
+				</div>
+				<div class="g1">
+					<div class="t2">
+						<span class="t2t1">0</span><span class="t2t2">%</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /cp2progress1 -->
 	</div>
 </div>
 </div>
@@ -70,6 +86,60 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 </div>
 <!-- /cp2view1 -->
+
+
+<script>/*<![CDATA[*/
+	$(function(){
+	
+		/** ◇◆ 진행바. 20221222. @m.
+		 */
+		(function(){
+			var $my = $('.cp2progress1'),
+				$gg = $('.gg1', $my), // 그래프그룹
+				$g = $('.g1', $my), // 그래프
+				$t = $('.t2t1', $my); // 글
+
+			// 초기 호출
+			init();
+			$my.addClass('on'); // 활성 
+			doProgress(); // 진행
+
+			// 초기화 동작
+			function init(){
+				sessionStorage.removeItem('total_url');
+				$my.removeClass('on');
+				$g.css({
+					width: 0
+				});
+			}
+
+			// 진행 동작
+			function doProgress(msec){
+				var msec = msec || 20000; // 개당 수집 시간 || 기본 20초
+				var urlNum = 	sessionStorage.getItem('total_url') || 1; // 수집할 URL 수 || 기본 1개
+				var time = msec * urlNum; // 총시간
+				// 그래프 그리기
+				$g.animate({
+						width: '100%'
+					}, time, 'linear', function() {
+						//init();
+						//location.href = "web1crawling1ok1.php" // 수집 완료 페이지로 이동
+				});
+				// 카운팅 0~100%
+				$({rate: 0}).animate({rate: 100},{
+					duration: time,
+					easing: 'linear',
+					progress: function(){
+						var now = this.rate;
+						$t.text( Math.floor(now) ); // 값카운트
+					}
+				});
+			}
+
+		})();
+
+	});
+/*]]>*/</script>
 
 
 

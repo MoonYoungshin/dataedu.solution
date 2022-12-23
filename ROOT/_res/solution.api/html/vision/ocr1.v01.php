@@ -6,7 +6,6 @@
  * 20221108 | @m | 
  * 20221110 | @m | 
  * 20221125 | @m | 
- * 20221222 | @m | 자막 위치 선택 주석처리
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -53,7 +52,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 
 <!-- cp2set1 -->
-<!-- <div class="cp2set1">
+<div class="cp2set1">
 	<div class="tg1">
 		<p class="t1">
 			어느 위치의 자막을 인식할지 설정하세요.
@@ -69,7 +68,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 			<span class="t1">하단자막</span>
 		</label>
 	</div>
-</div> -->
+</div>
 <!-- /cp2set1 -->
 
 

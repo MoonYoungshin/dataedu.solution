@@ -16,7 +16,6 @@
  * 20221101 | @m | setClassWinWidth()
  * 20221201 | @m | doSelectmenu1()
  * 20221216 | @m | doToggle()
- * 20221220 | @m | 
  */
 
 /*! JavaScript jQuery v0.999 | (c) 20210802~. | by @m */
@@ -224,7 +223,7 @@ jQuery(function($){
 })('.toggle1s2');
 
 
-/** ◇◆ 토글. v0.9.0.1 | 20150520~ 20221216. 20221220. MoonYoungShin.
+/** ◇◆ 토글. v0.9.0.0 | 20150520~ 20210908. 20220216. MoonYoungShin.
  * Use1) <a href="#search1c" title="통합 검색 여닫기" class="b1 toggle fade"><span class="t1>통합 검색</span><i class="ic1"></i></a>
  * Use2) ☆ .toggle 이 탭처럼 동작하려면 (내가 on 이면 형제는 off), 나와 형제가 클래스 값이 각각 1개이고 같아야 한다.
    <div class="family1"><a href="#family1c1" class="toggle"><div id="family1c1"></div></div>
@@ -246,7 +245,7 @@ jQuery(function($){
  * 20210826. 여닫기 클릭 $my.data('href') 추가
  * 20210908. $my.data('href') 유무 우선 확인..
  * 20220216. 닫기 선택자 추가..
- * 20221220. 닫기 동작 수정 (여닫기 트리거 없이)
+ * 20221216. 닫기 동작 수정 (여닫기 트리거 없이)
  * Task1)
  * 탭처럼 클래스 값이 2개이상이면 고도화 필요!
  */
@@ -346,21 +345,18 @@ jQuery(function($){
 			return false;
 		});
 
-		// 닫기 클릭. 20210826~20220216. 20221220.
+		// 닫기 클릭. 20210826~20220216. 20221216.
 		$('.close, [data-role="close"]', $that).on('click', function(){
 			var closeHref = $(this).data('href') || $(this).attr('href'); // 20210808. 20210908
 			if( myhref == closeHref ){ // 20210826
 				//$my.filter('.on').triggerHandler('click');
 				//$my.filter('.opener-last').focus(); // 마우스 클릭 시 .opener-last 없으면 초점 안보이지만, 탭키 누르면 다음 콘텐츠로 이동한다.
 
-				// 20221220
+				// 20221216
 				// 토글 대상 비활성
 				$that.removeClass('on').hide();
 				// 토글 앵커 비활성하고 마지막 초첨 위치로 이동..
-				$my.filter('.on').removeClass('on')
-					.filter('.opener-last')
-					.focus()
-					.removeClass('opener-last');
+				$my.filter('.on').removeClass('on').filter('.opener-last').focus().removeClass('opener-last');
 
 			}
 			// data-href 값 존재하고 href 값과 다르면

@@ -5,7 +5,6 @@
  * 20221101 | @m | makeActive2ClickHover2()
  * 20221206 | @m | makeScrollOn()
  * 20221209 | @m | 
- * 20221223 | @m | 스크롤 액션 효과 수정
  */
 
 /* Table of contents )) ☆ 목차 갱신 20221101
@@ -72,15 +71,13 @@ makeActive2ClickHover2('#tnb1');
 })();
 
 
-/** ◇◆ 스크롤 액션 효과. 20221206. 20221223. @m.
+/** ◇◆ 스크롤 액션 효과. 20200305. 20200819. 20221206. @m.
  */
 (function(){
 
-	//$(window).on('load resize scroll', function(){ // 20221223. 모바일 새로고침하면 load 이벤트 발생않아 수정
-	$(window).on('resize scroll', function(){
+	$(window).on('load resize scroll', function(){
 		makeScrollAct();
 	});
-	makeScrollAct(); // 즉시 호출
 
 	function makeScrollAct(){
 		var where = .85; // < 1

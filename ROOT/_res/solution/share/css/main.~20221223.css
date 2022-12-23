@@ -6,7 +6,6 @@
  * 20221204 | @m | 요구반영. 결함개선. 고도화 
  * 20221209 | @m | 
  * 20221212 | @m | 
- * 20221223 | @m | 
  */
 
 
@@ -129,7 +128,7 @@
 }
 
 
-/* 비주얼홍보1. 20221209. 20221212. 20221223 */
+/* 비주얼홍보1. 20221209. 20221212 */
 #vpr1{
 	position:relative;
 	color:#fff;
@@ -138,7 +137,7 @@
 	box-sizing:border-box; /* ☆ */
 	/* margin 상속 */
 	padding:calc(30px + 2.259%) 0 2.259%; /* (30 + 30/1360) (30/1360) */
-	padding:55px 0; /* (30 + 30/1360) (30/1360) */
+	padding:55px 0 33px; /* (30 + 30/1360) (30/1360) */
 }
 #vpr1 .bg1{
 	z-index:0;
@@ -178,9 +177,9 @@
 }
 /*  */
 #vpr1 .tg1 .t1{
-	display:block;
+	/* display:block; */
 	font-weight:300;
-	font-size:1.125em;
+	font-size:1.5625em;
 }
 #vpr1 .tg1 .em{
 	color:inherit;
@@ -209,7 +208,6 @@
 	font-weight:700;
 	vertical-align:middle;
 	transform:translateY(-60%);
-	transition:.2s;
 }
 #vpr1 .b1t1{
 	margin:.625em 0 0;
@@ -220,20 +218,11 @@
 	height:15px;
 	background:url(../../img/main/icw160a1c0a1right1.png) no-repeat center center / contain;
 }
-#vpr1 .b1:hover{
-	margin:-6px 0 0;
-	box-shadow:	0 6px 6px 0 #0003;
-}
-#vpr1 .b1:active{
-	margin:-3px 0 0;
-	box-shadow:inset 0 0 999px 0 #0003;
-}
 /* 비디오 */
 #vpr1 .video1full1{
 	position:absolute;left:0;right:0;top:0;bottom:0;
 	object-fit:cover;width:100%;height:100%;
-	/* filter:grayscale(20%); */
-	filter:hue-rotate(-20deg) saturate(.8) brightness(1);
+	filter:grayscale(20%);
 }
 /* ◇◆ */
 @media all and (min-width:768px){
@@ -249,7 +238,6 @@
 	}
 	#vpr1 .tg1 .t1{
 		display:block;
-		font-size:1.5625em;
 	}
 	#vpr1 .tg2 .t2{
 		font-size:1.25em;
@@ -264,7 +252,7 @@
 	}
 	#vpr1 .b1ic1{
 		width:80px;
-		height:61px; /* ((60 */
+		height:60px;
 	}
 }
 /* ◇◆ */
@@ -303,7 +291,7 @@
 	position:relative;
 	/* position:sticky; top:0; // 이걸로 안됨 ))) script.js */
 	margin:0 0 3.125rem;
-	font-size:.5625em;
+	font-size:.625em;
 	text-align:center;
 }
 #tgroup1 .t1{

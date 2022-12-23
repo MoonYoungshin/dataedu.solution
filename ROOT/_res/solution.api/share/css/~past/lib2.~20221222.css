@@ -13,7 +13,6 @@
  * 20221209 | @m | 
  * 20221212 | @m | 
  * 20221216 | @m | 
- * 20221222 | @m | 
  */
 
 /** Compatible! [IE11+] 20210101~ */
@@ -2339,55 +2338,7 @@ em,
 }
 /* ◇◆ */
 @media all and (min-width:768px){
-}
 
-
-/* 진행바 (JS-Ghost) 20221222 */
-.cp2progress1{
-	display:block;
-	visibility:hidden;
-	position:relative;
-	width:60%;
-	margin:1.75em auto 0;
-	border-radius:4px;
-	background:rgba(255,255,255, 1);
-	overflow:hidden;
-	transition:1s 1s; /* 진행바 완료 후 다른페이지로 이동 전에 다시 안보이게 지연 */
-}
-.cp2progress1.on{
-	display:block;
-	visibility:visible;
-	transition:0s;
-}
-.cp2progress1 .bg1{}
-.cp2progress1 .gg1{
-	display:block;
-	position:relative;
-	background:#f7f7f7;
-	overflow:hidden;
-}
-.cp2progress1 .g1{
-	display:flex; /* ☆ */
-	justify-content:flex-end;
-	align-items:center;
-	position:relative;
-	width:0%;
-	height:1.75rem;
-	border-radius:4px;
-	background:#0065dd;
-}
-/*  */
-.cp2progress1 .t1{
-	display:flex; /* ☆ */
-	justify-content:center;
-	align-items:center;
-	position:absolute;left:0;right:0;top:0;bottom:0;
-	color:#888;
-	font-size:1rem;
-}
-.cp2progress1 .t2{
-	padding:0 .75em;
-	color:#fff;
 }
 
 
