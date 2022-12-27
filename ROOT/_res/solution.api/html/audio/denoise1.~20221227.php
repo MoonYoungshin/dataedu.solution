@@ -6,7 +6,6 @@
  * 20221108 | @m | 
  * 20221125 | @m | 
  * 20221129 | @m | 
- * 20221227 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -178,7 +177,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	/** ◇◆ 내 파일 테스트. 인풋파일 선택하면 radio 선택. 20221124. 20221129. @m.
 	 */
 	(function(){
-		var $my = $('.cp2my1file1'), // 내 파일 테스트 래퍼
+		var $my = $('.cp2my1file1'), // 샘플 테스트 래퍼
 			file = '.file', // 인풋파일
 			radio = 'input[type="radio"]'; // 라디오
 

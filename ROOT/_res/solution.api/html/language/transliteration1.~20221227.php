@@ -4,7 +4,6 @@
  * 20221026 | @m | 최초작성
  * 20221108 | @m | 요구반영. 결함개선. 고도화.
  * 20221201 | @m | 
- * 20221227 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -80,11 +79,11 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	</div>
 	<div class="cont cp1fcontrol1 mline">
 		<label class="item">
-			<input type="radio" name="sample" value="Hakuna Matata">
+			<input type="radio" name="★1radio2">
 			<span class="t1">Hakuna Matata</span>
 		</label>
 		<label class="item">
-			<input type="radio" name="sample" value="Abracadabra">
+			<input type="radio" name="★1radio2">
 			<span class="t1">Abracadabra</span>
 		</label>
 	</div>
@@ -109,7 +108,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <!-- /cp2text1input1 -->
 
 <script>/*<![CDATA[*/
-	/** ◇◆ 최대 몇자 이내로 입력 가능. 20221108. 20221227. @m.
+	/** ◇◆ 최대 몇자 이내로 입력 가능. 20221108. @m.
 	 * 입력 있으면 전송 활성
 	 */
 	(function(){
@@ -128,9 +127,6 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 		// 동작
 		function do1(){
-
-			$('input[name="sample"]').prop('checked', false); // 20221227. 샘플 문장 선택 취소
-
 			$cnt.html( $textarea.val().length + '/' + mxn );
 			// 최대 입력값 넘으면
 			if( $textarea.val().length > mxn ){

@@ -4,7 +4,6 @@
  * 20221026 | @m | 최초작성
  * 20221108 | @m | 요구반영. 결함개선. 고도화.
  * 20221201 | @m | 
- * 20221227 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -18,7 +17,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <meta name="author" content="데이터에듀">
 <meta name="keywords" content="데이터에듀 솔루션 API">
 <meta name="description" content="데이터에듀 솔루션 API">
-<title>한글발음화 (JS-Trans) - 엔진체험 | 데이터에듀 API</title>
+<title>자연어 이해 (JS-NLU) - 엔진체험 | 데이터에듀 API</title>
 
 <?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/html_head.php"; ?>
 
@@ -26,7 +25,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <body>
 <?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/sub_header.php"; ?>
 <!-- 현재페이지 경로 + 사용자명 -->
-<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/language/transliteration1_body_head.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/language/nlu1_body_head.php"; ?>
 <!-- #body_content -->
 <div id="body_content">
 <!-- container -->
@@ -37,7 +36,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 
 <!-- 본문제목 + 탭 -->
-<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/language/transliteration1_inc1.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/language/nlu1_inc1.php"; ?>
 <script>/*<![CDATA[*/
 	$('.cp2tabs1 .m1').addClass('on'); // 20221102. 탭활성. @m
 /*]]>*/</script>
@@ -54,52 +53,31 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <div class="cp2set1">
 	<div class="tg1">
 		<p class="t1">
-			한글로 변환하고 싶은 유형을 선택하세요.
+			변환하고 싶은 언어를 선택하세요.
 		</p>
 	</div>
 	<div class="cont">
 		<label class="item">
 			<input type="radio" name="★1radio1">
-			<span class="t1">단어</span>
+			<span class="t1">한국어</span>
 		</label>
 		<label class="item">
 			<input type="radio" name="★1radio1">
-			<span class="t1">문장</span>
+			<span class="t1">영어</span>
 		</label>
 	</div>
 </div>
 <!-- /cp2set1 -->
 
 
-<!-- cp2text1set1 -->
-<div class="cp2text1set1">
-	<div class="tg1">
-		<p class="t1">
-			샘플 단어를 선택해보세요.
-		</p>
-	</div>
-	<div class="cont cp1fcontrol1 mline">
-		<label class="item">
-			<input type="radio" name="sample" value="Hakuna Matata">
-			<span class="t1">Hakuna Matata</span>
-		</label>
-		<label class="item">
-			<input type="radio" name="sample" value="Abracadabra">
-			<span class="t1">Abracadabra</span>
-		</label>
-	</div>
-</div>
-<!-- /cp2text1set1 -->
-
-
 <!-- cp2text1input1 -->
 <div class="cp2text1input1">
 	<div class="tg1">
 		<p class="t1">
-			단어를 직접 입력해보세요.
+			아래는 예시 문장입니다. <span class="dpib">문장을 직접 입력해주세요.</span>
 		</p>
 	</div>
-	<textarea rows="5" cols="80" class="textarea" maxlength="200" placeholder="영어 단어를 직접 입력해주세요." title="단어 입력"></textarea>
+	<textarea rows="5" cols="80" class="textarea" maxlength="200" placeholder="문장을 직접 입력해주세요." title="문장 입력">The greatest glory in living lies not in never falling, but in rising every time we fall.</textarea>
 	<div class="tg2">
 		<span class="textarea-count">
 			<span class="t1"><!-- 70/200 --></span><span class="t2">자</span>
@@ -109,7 +87,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <!-- /cp2text1input1 -->
 
 <script>/*<![CDATA[*/
-	/** ◇◆ 최대 몇자 이내로 입력 가능. 20221108. 20221227. @m.
+	/** ◇◆ 최대 몇자 이내로 입력 가능. 20221108. @m.
 	 * 입력 있으면 전송 활성
 	 */
 	(function(){
@@ -128,9 +106,6 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 		// 동작
 		function do1(){
-
-			$('input[name="sample"]').prop('checked', false); // 20221227. 샘플 문장 선택 취소
-
 			$cnt.html( $textarea.val().length + '/' + mxn );
 			// 최대 입력값 넘으면
 			if( $textarea.val().length > mxn ){
@@ -157,39 +132,6 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 </div>
 <!-- /cp2view1 -->
-
-
-<script>/*<![CDATA[*/
-	/** ◇◆ 유형 선택 라디오. 20221108. @m.
-	 */
-	(function(){
-		var $my = $('.cp2view1'), // 래퍼
-			$radio = $('.cp2set1 input[type="radio"]', $my), // 라디오
-			$t1 = $('.cp2text1set1 .tg1 .t1', $my), // 
-			$t2 = $('.cp2text1input1 .tg1 .t1', $my), // 
-			$t3 = $('.cp2text1input1 .textarea', $my); //
-
-		// 단어 클릭
-		$radio.eq(0).on('click', function(){
-			$t1.text('샘플 단어를 선택해보세요.');
-			$t2.text('단어를 직접 입력해보세요.');
-			$t3.attr({
-				placeholder: '영어 단어를 직접 입력해주세요.',
-				title: '단어 입력'
-			});
-		});
-		// 문장 클릭
-		$radio.eq(1).on('click', function(){
-			$t1.text('샘플 문장을 선택해보세요.');
-			$t2.text('문장을 직접 입력해보세요.');
-			$t3.attr({
-				placeholder: '영어 문장을 직접 입력해주세요.',
-				title: '문장 입력'
-			});
-		});
-		$radio.eq(0).trigger('click');
-	})();
-/*]]>*/</script>
 
 
 

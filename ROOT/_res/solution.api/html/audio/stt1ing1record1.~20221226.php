@@ -4,7 +4,6 @@
  * 20221026 | @m | 최초작성
  * 20221102 | @m | 요구반영. 결함개선. 고도화.
  * 20221116 | @m | 
- * 20221226 | @m | 완료버튼 )) 변환버튼
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -56,7 +55,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	<div class="tg1">
 		<p class="t1">
 			음성을 듣고 있습니다.<br>
-			변환버튼을 클릭하고 변환을 시작하세요!<br>
+			완료버튼을 클릭하고 변환을 시작하세요!<br>
 		</p>
 	</div>
 	<!-- cp2record1 -->
@@ -76,7 +75,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 <!-- cp2fg1 -->
 <div class="cp2fg1">
-	<button class="button type1" id="btn-done"><span class="t1">변환</span></button>
+	<button class="button type1" id="btn-done"><span class="t1">완료</span></button>
 </div>
 <!-- /cp2fg1 -->
 

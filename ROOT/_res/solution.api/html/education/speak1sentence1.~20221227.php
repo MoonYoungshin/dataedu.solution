@@ -4,7 +4,6 @@
  * 20221026 | @m | 최초작성
  * 20221116 | @m | 요구반영. 결함개선. 고도화.
  * 20221201 | @m | 
- * 20221227 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -18,7 +17,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <meta name="author" content="데이터에듀">
 <meta name="keywords" content="데이터에듀 솔루션 API">
 <meta name="description" content="데이터에듀 솔루션 API">
-<title>구문 말하기 (JS-Strspk) - 엔진체험 | 데이터에듀 API</title>
+<title>문장 말하기 (JS-Stcspk) - 엔진체험 | 데이터에듀 API</title>
 
 <?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/html_head.php"; ?>
 
@@ -26,7 +25,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <body>
 <?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/sub_header.php"; ?>
 <!-- 현재페이지 경로 + 사용자명 -->
-<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/education/speak1phrase1_body_head.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/education/speak1sentence1_body_head.php"; ?>
 <!-- #body_content -->
 <div id="body_content">
 <!-- container -->
@@ -37,7 +36,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 
 <!-- 본문제목 + 탭 -->
-<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/education/speak1phrase1_inc1.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/education/speak1sentence1_inc1.php"; ?>
 <script>/*<![CDATA[*/
 	$('.cp2tabs1 .m1').addClass('on'); // 20221102. 탭활성. @m
 /*]]>*/</script>
@@ -55,7 +54,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 	<!-- 지시 -->
 	<div class="direction">
-		구문을 듣고 발음해보세요.
+		문장의 순서를 맞추고 발음해보세요. <small class="dpib">(단어(구)를 클릭하여 순서를 정하면 [확인] 버튼 활성화)</small>
 	</div>
 
 	<!-- box -->
@@ -69,8 +68,8 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 		</div>
 		<!-- /step -->
 
-		<!-- cp2question1 type2 -->
-		<div class="cp2question1 type2">
+		<!-- cp2question1 type2 type3 -->
+		<div class="cp2question1 type2 type3">
 			<!-- step1 -->
 			<div class="q1 step1">
 				<button type="button" class="b1q1play1">문제 듣기</button>
@@ -78,7 +77,15 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 					<source src="/_res/solution.api/data/mp3/6_Ch1.bear.mp3" type="audio/mpeg">
 				</audio>
 				<div class="text1q1">
-					<div class="t1">make my meal</div>
+					<div class="t1">
+						<span class="t1t1">six</span>
+						<span class="t1t1">five</span>
+						<span class="t1t1">four</span>
+						<span class="t1t1">three</span>
+						<span class="t1t1">one</span>
+						<span class="t1t1">two</span>
+					</div>
+					<button type="button" class="button b1">확인</button>
 				</div>
 			</div>
 			<!-- step2 -->
@@ -88,7 +95,14 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 					<source src="/_res/solution.api/data/mp3/7_Ch1.rabbit.mp3" type="audio/mpeg">
 				</audio>
 				<div class="text1q1">
-					<div class="t1">hit the books</div>
+					<div class="t1">
+						<span class="t1t1">am</span>
+						<span class="t1t1">I</span>
+						<span class="t1t1">a</span>
+						<span class="t1t1">bear</span>
+						<span class="t1t1">baby</span>
+					</div>
+					<button type="button" class="button b1">확인</button>
 				</div>
 			</div>
 			<!-- step3 -->
@@ -98,7 +112,12 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 					<source src="/_res/solution.api/data/mp3/8_Ch1.ball.mp3" type="audio/mpeg">
 				</audio>
 				<div class="text1q1">
-					<div class="t1">twist someone’s arm</div>
+					<div class="t1">
+						<span class="t1t1">putting a conch shell.</span>
+						<span class="t1t1">to her ear</span>
+						<span class="t1t1">My older sister is</span>
+					</div>
+					<button type="button" class="button b1">확인</button>
 				</div>
 			</div>
 		</div>
@@ -154,7 +173,85 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	$(function(){
 
 
-		/** ◇◆ 문제 듣고 말하기 제어. 20221115. 20221116. 20221227. @m.
+		/** ◇◆ 문장 순서 맞추기. 20221116. @m.
+		 * 클릭한 순번 매김
+		 * 다시 클릭하면 순번 제거
+		 * 순번 모두 매기면 확인 버튼 보임
+		 * 확인 버튼 누르면 순번대로 재배치하고 확인 버튼 감춤
+		 * 20221116. 내 문장 래퍼 안에서 동작하도록 고도화
+		 */
+		(function(){
+			var my = '.text1q1', // 래퍼
+				ms = '.t1', // 문장
+				m = '.t1t1', // 단어구
+				b1 = '.b1', // 버튼
+				sn = 0; // 순서 저장
+			var mn = $(my).find(m).length; // 전체 단어구 수
+
+			$(my).find(m).prepend( '<i class="sn">1</i>' ).css({});
+
+			// 단어구 클릭
+			$(my).on('click', m, function(e){
+				e.preventDefault();
+				var $so = $(this).siblings('.on'); // 이전에 클릭된 단어구
+				
+				mn = $(this).closest(my).find(m).length; // 현재 문장의 단어구 수
+
+				if( !$(this).is('.on') ){
+					// 활성
+					$(this).addClass('on');
+					$(this).attr('data-sn', ($so.length + 1));
+					$(this).find('.sn').text( ($so.length + 1) );
+				}else{
+					// 비활성
+					adjustSN( $(this).attr('data-sn') ); // 호출
+					$(this).removeClass('on')
+						.removeAttr('data-sn')
+						.find('.sn').text('');
+				}
+				showHideBtn($(this)); // 호출
+			});
+
+			// 확인 버튼 클릭
+			$(my).on('click', b1, function(e){
+				// 설정한 순서로 재배치
+				for(var i = 0; i <= mn; i++ ){
+					$(this).closest(my).find(m).filter('[data-sn="'+ i +'"]').appendTo( $(this).closest(my).find(m).parent() );
+				}
+				// 초기화
+				$(this).closest(my).find(m)
+					.removeClass('on')
+					.removeAttr('data-sn')
+					.find('.sn').text('');
+				$(this).hide();
+			});
+
+			// 순번 조정
+			function adjustSN(n){
+				//console.log( '순번조정' );
+				$(my).find(m).each(function(){
+					var nn = $(this).attr('data-sn');
+					//console.log( nn );
+					if( nn >= n ){
+						$(this).attr('data-sn', --nn);
+						$(this).find('.sn').text( nn );
+					}
+				});
+			}
+
+			// 버튼 보이기 감추기
+			function showHideBtn($this){
+				if( $this.closest(my).find(m).filter('.on').length >= mn ){ // 단어구 순번 모두 매겼으면
+					$this.closest(my).find(b1).show();
+				}else{
+					$this.closest(my).find(b1).hide();
+				}
+			}
+
+		})();
+
+
+		/** ◇◆ 문제 듣고 말하기 제어. 20221115. 20221116. @m.
 		 */
 		(function(){
 
@@ -185,15 +282,9 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 			step(); // 스텝 순번 활성
 			$t1._v0 = $t1.text(); // 도움말 기본값 저장
 
-			// 문제 듣기 클릭. 20221227. 활성 추가
+			// 문제 듣기 클릭
 			$b1q1play1.on('click', function(){
-				var $this = $(this);
-				var audio = $this.siblings('audio')[0];
-				audio.play();
-				$this.addClass('on');
-				audio.addEventListener('ended', function(){
-					$this.removeClass('on');
-				});
+				$(this).siblings('audio')[0].play();
 			});
 
 			// 녹음 버튼 클릭

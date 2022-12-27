@@ -4,7 +4,6 @@
  * 20221026 | @m | 최초작성
  * 20221116 | @m | 요구반영. 결함개선. 고도화.
  * 20221201 | @m | 
- * 20221227 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -18,7 +17,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <meta name="author" content="데이터에듀">
 <meta name="keywords" content="데이터에듀 솔루션 API">
 <meta name="description" content="데이터에듀 솔루션 API">
-<title>구문 말하기 (JS-Strspk) - 엔진체험 | 데이터에듀 API</title>
+<title>단어 말하기 (JS-Wrdspk) - 엔진체험 | 데이터에듀 API</title>
 
 <?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/html_head.php"; ?>
 
@@ -26,7 +25,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <body>
 <?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/sub_header.php"; ?>
 <!-- 현재페이지 경로 + 사용자명 -->
-<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/education/speak1phrase1_body_head.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/education/speak1word1_body_head.php"; ?>
 <!-- #body_content -->
 <div id="body_content">
 <!-- container -->
@@ -37,7 +36,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 
 <!-- 본문제목 + 탭 -->
-<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/education/speak1phrase1_inc1.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/education/speak1word1_inc1.php"; ?>
 <script>/*<![CDATA[*/
 	$('.cp2tabs1 .m1').addClass('on'); // 20221102. 탭활성. @m
 /*]]>*/</script>
@@ -55,7 +54,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 	<!-- 지시 -->
 	<div class="direction">
-		구문을 듣고 발음해보세요.
+		단어를 듣고 발음해보세요.
 	</div>
 
 	<!-- box -->
@@ -69,8 +68,8 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 		</div>
 		<!-- /step -->
 
-		<!-- cp2question1 type2 -->
-		<div class="cp2question1 type2">
+		<!-- cp2question1 -->
+		<div class="cp2question1">
 			<!-- step1 -->
 			<div class="q1 step1">
 				<button type="button" class="b1q1play1">문제 듣기</button>
@@ -78,7 +77,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 					<source src="/_res/solution.api/data/mp3/6_Ch1.bear.mp3" type="audio/mpeg">
 				</audio>
 				<div class="text1q1">
-					<div class="t1">make my meal</div>
+					<div class="t1">Bear</div>
 				</div>
 			</div>
 			<!-- step2 -->
@@ -88,7 +87,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 					<source src="/_res/solution.api/data/mp3/7_Ch1.rabbit.mp3" type="audio/mpeg">
 				</audio>
 				<div class="text1q1">
-					<div class="t1">hit the books</div>
+					<div class="t1">Rabbit</div>
 				</div>
 			</div>
 			<!-- step3 -->
@@ -98,7 +97,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 					<source src="/_res/solution.api/data/mp3/8_Ch1.ball.mp3" type="audio/mpeg">
 				</audio>
 				<div class="text1q1">
-					<div class="t1">twist someone’s arm</div>
+					<div class="t1">Ball</div>
 				</div>
 			</div>
 		</div>
@@ -154,7 +153,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	$(function(){
 
 
-		/** ◇◆ 문제 듣고 말하기 제어. 20221115. 20221116. 20221227. @m.
+		/** ◇◆ 문제 듣고 말하기 제어. 20221115. 20221116. @m.
 		 */
 		(function(){
 
@@ -185,15 +184,9 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 			step(); // 스텝 순번 활성
 			$t1._v0 = $t1.text(); // 도움말 기본값 저장
 
-			// 문제 듣기 클릭. 20221227. 활성 추가
+			// 문제 듣기 클릭
 			$b1q1play1.on('click', function(){
-				var $this = $(this);
-				var audio = $this.siblings('audio')[0];
-				audio.play();
-				$this.addClass('on');
-				audio.addEventListener('ended', function(){
-					$this.removeClass('on');
-				});
+				$(this).siblings('audio')[0].play();
 			});
 
 			// 녹음 버튼 클릭

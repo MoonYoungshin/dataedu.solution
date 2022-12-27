@@ -5,7 +5,6 @@
  * 20221102 | @m | 요구반영. 결함개선. 고도화.
  * 20221108 | @m | 
  * 20221111 | @m | 
- * 20221226 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -61,7 +60,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	</div>
 	<div class="cont">
 		<label class="item">
-			<input type="radio" name="★1radio1" checked>
+			<input type="radio" name="★1radio1">
 			<span class="t1">한국어</span>
 		</label>
 		<label class="item">

@@ -3,7 +3,6 @@
 /**
  * 20221026 | @m | 최초작성
  * 20221129 | @m | 요구반영. 결함개선. 고도화.
- * 20221227 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -273,7 +272,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	/** ◇◆ 내 파일 테스트. 인풋파일 선택하면 radio 선택. 20221129. @m.
 	 */
 	(function(){
-		var $my = $('.cp2my1file1'), // 내 파일 테스트 래퍼
+		var $my = $('.cp2my1file1'), // 샘플 테스트 래퍼
 			item = '.item', // 항목
 			file = '.file', // 인풋파일
 			radio = 'input[type="radio"]'; // 라디오

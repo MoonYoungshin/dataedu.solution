@@ -693,7 +693,7 @@ em,
 }
 
 
-/* 설정선택배치(이미지) 20221230 */
+/* 설정선택배치(이미지) 20221111 */
 .cp2set2{
 	position:relative;
 	margin:calc(16px + 2.526%) 0 0;
@@ -703,7 +703,6 @@ em,
 	margin:0 0 2.5em;
 }
 .cp2set2 .item{
-	position:relative;
 	width:100%;
 	max-width:400px;
 	text-align:left;
@@ -713,12 +712,6 @@ em,
 	display:flex; /* ☆ */
 	align-items:center;
 	font-size:1.25em;
-}
-.cp2set2 .label:before{content:'';
-	display:block;
-	z-index:10;
-	position:absolute;left:0;right:0;top:0;bottom:0;
-	background:#0ff0;
 }
 .cp2set2 input[type='radio']{
 	margin-right:.5em;
@@ -766,9 +759,9 @@ em,
 }
 
 
-/* 내이미지파일업로드 20221230 */
+/* 내이미지파일업로드 20221125 */
 .cp2my1img1{
-	z-index:10;
+	z-index:0;
 	position:relative;
 	margin:0 auto;
 	background:#f3f6fd;
@@ -1545,7 +1538,7 @@ em,
 }
 
 
-/* 단어,구문,문장 말하기 문제 20221118. 20221230 */
+/* 단어,구문,문장 말하기 문제 20221118 */
 .cp2question1{
 	position:relative;
 	line-height:1.375;
@@ -1559,24 +1552,12 @@ em,
 	justify-content:center;
 	align-items:center;
 }
-/*  */
 .cp2question1 .b1q1play1{
 	display:inline-block;
 	width:40px;height:40px;
-	background:url(../../img/lib2/ic80a1c1speaker1s1.png) no-repeat;
-	background-size:400% 100%;
-	border:2px solid #000c;
-	border-radius:9999px;
+	background:url(../../img/lib2/ic80a1c1speaker1.png) no-repeat center center / contain;
 	overflow:hidden;
 	text-indent:-9999px;
-	filter:opacity(.8);
-}
-.cp2question1 .b1q1play1:hover,
-.cp2question1 .b1q1play1:focus{
-	filter:opacity(1);
-}
-.cp2question1 .b1q1play1.on{
-  animation:kf1bp100 1s steps(3) infinite;
 }
 .cp2question1 .text1q1{
 	margin:0 0 0 .25em;
@@ -1656,7 +1637,7 @@ em,
 }
 
 
-/* 질문 답하기 문제 20221118. 20221230 */
+/* 질문 답하기 문제 20221118 */
 .cp2question2{
 	position:relative;
 	line-height:1.375;
@@ -1719,20 +1700,9 @@ em,
 .cp2question2 .b1q1play1{
 	display:inline-block;
 	width:40px;height:40px;
-	background:url(../../img/lib2/ic80a1c0speaker1s1.png) no-repeat;
-	background-size:400% 100%;
-	border:2px solid #fffc;
-	border-radius:9999px;
+	background:url(../../img/lib2/ic80a1c0speaker1.png) no-repeat center center / contain;
 	overflow:hidden;
 	text-indent:-9999px;
-	filter:opacity(.8);
-}
-.cp2question2 .b1q1play1:hover,
-.cp2question2 .b1q1play1:focus{
-	filter:opacity(1);
-}
-.cp2question2 .b1q1play1.on{
-  animation:kf1bp100 1s steps(3) infinite;
 }
 .cp2question2 .text1q1,
 .cp2question2 .text1a1{
@@ -2130,7 +2100,7 @@ em,
 .cp2set5{
 	position:relative;
 }
-.cp2set5 .cont{}
+.cp2set6 .cont{}
 .cp2set5 .item{
 	position:relative;
 }
@@ -2377,7 +2347,7 @@ em,
 }
 
 
-/* 진행바 (JS-Ghost) 20221230 */
+/* 진행바 (JS-Ghost) 20221222 */
 .cp2progress1{
 	display:block;
 	visibility:hidden;
@@ -2398,7 +2368,7 @@ em,
 .cp2progress1 .gg1{
 	display:block;
 	position:relative;
-	background:#f3f6fd;
+	background:#f7f7f7;
 	overflow:hidden;
 }
 .cp2progress1 .g1{
@@ -2424,12 +2394,7 @@ em,
 	padding:0 .75em;
 	color:#fff;
 }
-/* ◇◆ */
-@media all and (min-width:768px){
-	.cp2progress1{
-		width:40%;
-	}
-}
+
 
 
 /* ◇◆ .cp1~ (가져와서 커스텀) ◇◆◇◆◇◆◇◆◇◆ */
@@ -2496,6 +2461,4 @@ em,
 @keyframes kf1bg1size1{
 	100%{background-size:102%;}
 }
-@keyframes kf1bp100{
-	100%{background-position:100%;}
-}
+

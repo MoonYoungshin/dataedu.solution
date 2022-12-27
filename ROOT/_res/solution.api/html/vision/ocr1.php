@@ -7,6 +7,7 @@
  * 20221110 | @m | 
  * 20221125 | @m | 
  * 20221222 | @m | 자막 위치 선택 주석처리
+ * 20221227 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -85,7 +86,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 			<div class="cp2sample1img1">
 				<div class="w1">
 					<div class="w1w1">
-						<img src="//dolearn.ai/_res/@m/_img.ex/w1280a1/w1280a1101.jpg" alt="★1대체텍스트필수" class="p1">
+						<img src="<?=$sitePath?>/img/ex/ocr_sample.png" alt="영업시간 AM10 - PM09 매주 일요일 휴무" class="p1">
 					</div>
 				</div>
 			</div>
@@ -149,6 +150,22 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 			$(this).closest(item).addClass('on');
 		});
 
+	})();
+
+
+	/** ◇◆ 내 파일 테스트. 인풋파일 선택하면 radio 선택. 20221227. @m.
+	 */
+	(function(){
+		var $my = $('.cp2my1img1'), // 내 파일 테스트 래퍼
+			item = '.item', // 항목
+			file = '.file', // 인풋파일
+			radio = 'input[type="radio"]'; // 라디오
+
+		// 인풋파일 클릭하면
+		$my.on('click', file, function(){
+			//$my.find(radio).trigger('click');
+			$my.closest(item).find(radio).trigger('click');
+		});
 	})();
 
 

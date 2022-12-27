@@ -2,11 +2,9 @@
 <?php
 /**
  * 20221026 | @m | 최초작성
- * 20221108 | @m | 요구반영. 결함개선. 고도화.
- * 20221110 | @m | 
+ * 20221121 | @m | 요구반영. 결함개선. 고도화.
  * 20221201 | @m | 
  * 20221212 | @m | 
- * 20221227 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -20,7 +18,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <meta name="author" content="데이터에듀">
 <meta name="keywords" content="데이터에듀 솔루션 API">
 <meta name="description" content="데이터에듀 솔루션 API">
-<title>얼굴 모자이크 (JS-Face Blur) - 엔진체험 | 데이터에듀 API</title>
+<title>제품 인식 (JS-Product) - 엔진체험 | 데이터에듀 API</title>
 
 <?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/html_head.php"; ?>
 
@@ -28,7 +26,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <body>
 <?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/sub_header.php"; ?>
 <!-- 현재페이지 경로 + 사용자명 -->
-<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/vision/face1blur1_body_head.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/vision/product1detection1_body_head.php"; ?>
 <!-- #body_content -->
 <div id="body_content">
 <!-- container -->
@@ -39,7 +37,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 
 <!-- 본문제목 + 탭 -->
-<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/vision/face1blur1_inc1.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/vision/product1detection1_inc1.php"; ?>
 <script>/*<![CDATA[*/
 	$('.cp2tabs1 .m1').addClass('on'); // 20221102. 탭활성. @m
 /*]]>*/</script>
@@ -64,7 +62,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 			<div class="cp2sample1img1">
 				<div class="w1">
 					<div class="w1w1">
-						<img src="<?=$sitePath?>/img/ex/brothers-457237_1280.jpg" alt="아기와 아이" class="p1">
+						<img src="//dolearn.ai/_res/@m/_img.ex/brothers-457237_1280.jpg" alt="★1대체텍스트필수" class="p1">
 					</div>
 				</div>
 			</div>
@@ -127,22 +125,6 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 			$(this).closest(item).addClass('on');
 		});
 
-	})();
-
-
-	/** ◇◆ 내 파일 테스트. 인풋파일 선택하면 radio 선택. 20221227. @m.
-	 */
-	(function(){
-		var $my = $('.cp2my1img1'), // 내 파일 테스트 래퍼
-			item = '.item', // 항목
-			file = '.file', // 인풋파일
-			radio = 'input[type="radio"]'; // 라디오
-
-		// 인풋파일 클릭하면
-		$my.on('click', file, function(){
-			//$my.find(radio).trigger('click');
-			$my.closest(item).find(radio).trigger('click');
-		});
 	})();
 
 

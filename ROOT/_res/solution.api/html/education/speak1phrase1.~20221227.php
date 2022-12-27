@@ -4,7 +4,6 @@
  * 20221026 | @m | 최초작성
  * 20221116 | @m | 요구반영. 결함개선. 고도화.
  * 20221201 | @m | 
- * 20221227 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -154,7 +153,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	$(function(){
 
 
-		/** ◇◆ 문제 듣고 말하기 제어. 20221115. 20221116. 20221227. @m.
+		/** ◇◆ 문제 듣고 말하기 제어. 20221115. 20221116. @m.
 		 */
 		(function(){
 
@@ -185,15 +184,9 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 			step(); // 스텝 순번 활성
 			$t1._v0 = $t1.text(); // 도움말 기본값 저장
 
-			// 문제 듣기 클릭. 20221227. 활성 추가
+			// 문제 듣기 클릭
 			$b1q1play1.on('click', function(){
-				var $this = $(this);
-				var audio = $this.siblings('audio')[0];
-				audio.play();
-				$this.addClass('on');
-				audio.addEventListener('ended', function(){
-					$this.removeClass('on');
-				});
+				$(this).siblings('audio')[0].play();
 			});
 
 			// 녹음 버튼 클릭

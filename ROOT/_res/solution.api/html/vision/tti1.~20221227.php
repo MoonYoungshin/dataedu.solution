@@ -5,7 +5,6 @@
  * 20221108 | @m | 요구반영. 결함개선. 고도화.
  * 20221125 | @m | 
  * 20221201 | @m | 
- * 20221227 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -60,11 +59,11 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	</div>
 	<div class="cont cp1fcontrol1 mline">
 		<label class="item">
-			<input type="radio" name="sample" value="a photograph of an astronaut riding a horse">
+			<input type="radio" name="★1radio1">
 			<span class="t1">a photograph of an astronaut riding a horse</span>
 		</label>
 		<label class="item">
-			<input type="radio" name="sample" value="일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십">
+			<input type="radio" name="★1radio1">
 			<span class="t1">일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십</span>
 		</label>
 	</div>
@@ -89,7 +88,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <!-- /cp2text1input1 -->
 
 <script>/*<![CDATA[*/
-	/** ◇◆ 최대 몇자 이내로 입력 가능. 20221108. 20221227. @m.
+	/** ◇◆ 최대 몇자 이내로 입력 가능. 20221108. @m.
 	 * 입력 있으면 전송 활성
 	 */
 	(function(){
@@ -108,9 +107,6 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 		// 동작
 		function do1(){
-
-			$('input[name="sample"]').prop('checked', false); // 20221227. 샘플 문장 선택 취소
-
 			$cnt.html( $textarea.val().length + '/' + mxn );
 			// 최대 입력값 넘으면
 			if( $textarea.val().length > mxn ){

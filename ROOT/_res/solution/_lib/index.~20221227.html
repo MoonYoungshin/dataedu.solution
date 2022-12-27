@@ -11,7 +11,7 @@
  * 20221205. 20221206. 20221207. 20221208. 20221209. 20221210. 20221211. | @m | 
  * 20221212. 20221213. 20221216. | @m | 
  * 20221222. 20221223. | @m | 
- * 20221226. 20221227. | @m | 
+ * 20221226. | @m | 
  * …중략…
  * ))) // UX+main+login+$2p (5D-)
  * ))) Test.Lab
@@ -165,17 +165,6 @@
 
 		/* ◇◆ #content = Entry ◇◆ */
 
-
-		/* 변수 */
-		:root {
-			--color1: currentColor ;
-			--color2: #4b5563;
-			--color3: #039;
-			--color4: #c60;
-			--color5: #090;
-			--color6: currentColor ;
-		}
-
 		/* Heading */
 		.hb1[class]{
 			margin:1.75em 0;
@@ -184,16 +173,13 @@
 			background:transparent;
 		}
 		/* 18px 16px 15px 14px 13px 12px (/12px) */
-		.hb1.h1{
-			color:var(--color1, #000);
-			font-size:1.5em;
-		}
+		.hb1.h1{font-size:1.5em;}
 		.hb1.h2{
 			padding:.375em .75em;
 			border:1px solid #d1d5db;
 			border-radius:.25rem;
 			background:#f3f4f6;
-			color:var(--color2);
+			color:#4b5563;
 			line-height:1.375;
 			font-size:1.375em;
 			letter-spacing:0;
@@ -201,10 +187,10 @@
 		.hb1.h2 i{
 			color:#6b7280;
 		}
-		.hb1.h3{border-left:.75em solid #ace;color:var(--color3);font-size:1.250em;}
-		.hb1.h4{border-left:.4375em solid #eca;color:var(--color4);font-size:1.125em;}
-		.hb1.h5{border-left:.375em solid #bda;color:var(--color5);font-size:1.0625em;}
-		.hb1.h6{border-left:.175em solid #c3c7c9;color:var(--color6);font-size:1em;}
+		.hb1.h3{border-left:.75em solid #ace;color:#039;font-size:1.250em;}
+		.hb1.h4{border-left:.4375em solid #eca;color:#c60;font-size:1.125em;}
+		.hb1.h5{border-left:.375em solid #bda;color:#090;font-size:1.0625em;}
+		.hb1.h6{border-left:.175em solid #c3c7c9;font-size:1em;}
 		.hb1 span{font-weight:normal;}
 		/*.type2 */
 		.hb1.h2.type2{border:1px solid #e96;background:#fef9f6 !important;color:#c63;}
@@ -778,14 +764,14 @@
 	<li data-st="O"><a href="../html/sub/member1pw1find1.php"><b class="em0">e3</b> 비밀번호 찾기</a></li>
 	<li data-st="O"><a href="../html/sub/member1pw1reset1.php"><b class="em0">e3.1</b> 비밀번호 재설정</a></li>
 	<li data-st="O"><a href="../html/sub/my1profile1.php"><b class="em0">e4</b> 내 프로필</a></li>
-	<li data-st="O"><a href="../html/sub/my1api1.php"><b class="em0">e5</b> API 사용정보</a></li>
+	<li data-st="O"><a href="../html/sub/my1api1.php"><b class="em0">e5</b> API 사용정보</a> 🟢🔷</li>
 	<li data-st="X"><a href="../html/sub/?#★.php"><b class="em0">e6</b> 결제정보</a> <i class="badge1 fsS4">2차</i></li>
 	<li data-st="O"><a href="../html/sub/error1.php"><b class="em0">e7</b> 오류페이지</a> (404에러)</li>
 	<li data-st="O"><a href="https://present.do/documents/62bc0a3fe214362cce88f3c7?page=0" target="_blank" rel="noopener" title="새 창"><b class="em0">d3</b> 회사소개</a> (외부링크)</li>
 	<li data-st="O"><a href="../html/sub/terms1.php"><b class="em0">d4</b> 이용약관</a></li>
 	<li data-st="O"><a href="../html/sub/privacy1.php"><b class="em0">d5</b> 개인정보처리방침</a></li>
 	<li data-st="O">
-		<a href="../html/sub/contact1.php"><b class="em0">d6</b> 문의하기</a>
+		<a href="../html/sub/contact1.php"><b class="em0">d6</b> 문의하기</a>  🟢
 		((( <del><a href="../html/sub/contact1.v01.php">v01</a></del><br>
 	</li>
 	<li data-st="X"><a href="../html/sub/?#★.php"><b class="em0">d7</b> 카카오 채팅</a> <i class="badge1 fsS4">2차</i></li>
@@ -909,7 +895,7 @@
 <ol class="bo mgtb0">
 
 	<li data-st="O">
-		<a href="/_res/solution.api/html/sub/api1.php"><b class="em0">e1</b> 체험하기</a>
+		<a href="/_res/solution.api/html/sub/api1.php"><b class="em0">e1</b> 체험하기</a> 🟢
 		((( <del><a href="/_res/solution.api/html/sub/api1.v01.php">v01</a></del><br>
 	</li>
 	<li data-st="X"><a><b class="em0">e1.1</b> <strong class="em0 big">Audio API</strong></a></li>
@@ -949,7 +935,7 @@
 		</div>
 	</li>
 	<li data-st="X"><a><b class="em0">e1.2</b> <strong class="em0 big">Vision API</strong></a></li>
-	<li data-st="O"><a href="/_res/solution.api/html/vision/ocr1.php"><b class="em0">e1.2.1</b> 이미지 텍스트인식 (JS-OCR)</a><br>
+	<li data-st="O"><a href="/_res/solution.api/html/vision/ocr1.php"><b class="em0">e1.2.1</b> 이미지 텍스트인식 (JS-OCR)</a>
 		((( <del><a href="/_res/solution.api/html/vision/ocr1.v01.php">v01</a> <!-- (~20221222) --></del><br>
 		| 엔진체험 - 진행전</a><br>
 		| <a href="/_res/solution.api/html/vision/ocr1ing1.php">엔진체험 - 진행중</a><br>
@@ -1100,7 +1086,7 @@
 		</div>
 	</li>
 	<li data-st="O"><a href="/_res/solution.api/html/sub/error1.php"><b class="em0">??</b> 체험하기 – 오류페이지</a></li>
-	<li data-st="O"><a href="/_res/solution.api/html/sub/comingsoon1.php"><b class="em0">??</b> 체험하기 – 준비중입니다.</a></li>
+	<li data-st="O"><a href="/_res/solution.api/html/sub/comingsoon1.php"><b class="em0">??</b> 체험하기 – 준비중입니다.</a> 🟢</li>
 </ol>
 
 
@@ -1237,7 +1223,7 @@
 
 <!-- box1 -->
 <div class="box1 mgt1em mgb1em">
-	<em class="em" style="color:var(--color4);">※ 아래 폴더 하위 파일들은 History 에 없어도.. 매번 갱신해주세요!!<br></em>
+	※ 아래 폴더 하위 파일들은 History 에 없어도.. 매번 갱신하시기 바랍니다.<br>
 	/_res/solution/img/<br>
 	/_res/solution/share/css/<br>
 	/_res/solution/share/js/<br>
@@ -1248,7 +1234,7 @@
 <!-- /box1 -->
 
 
-<table class="history1 t2 w100 tttal ttvat">
+<table class="history1 t2 w100 tttal ttvam">
 	<caption class="psr mgb-1px fwn ls0">
 		<strong class="h1 pd0 fwn">History</strong>
 	</caption>
@@ -1494,34 +1480,6 @@
 	<td>
 		20221223.<br>
 		~17:58 ))) GitHub
-	</td>
-	</tr>
-	<tr>
-	<!-- <th scope="row">0.9.7</th> -->
-	<td>~20221227</td>
-	<td>
-		))) 변경/수정<br>
-		<div class="mgl05em">
-			== 음성인식(JS-STT)<br>
-			　+ 버튼명 수정 [완료] → [변환]<br>
-			　+ 언어 선택. 최초 한국어 선택(checked)<br>
-			== 자연어 이해 (JS-NLU)<br>
-			　+ 언어 선택. 최초 영어 선택(checked)<br>
-			== 영상정보수집 (JS-Ghost)<br>
-			　+ 진행바. 즉시 종료 동작 추가 및 CSS 수정<br>
-			== 직접 문장 입력하면.. 샘플 문장 선택 취소되는 기능 추가<br>
-			　+ AI 화가, 문장교정, 한글발음화<br>
-			== Education API<br>
-			　+ 재생 아이콘 클릭하면 재생중 상태 동작 추가<br>
-			== Vision API<br>
-			　+ 사용자 테스트 파일 업로드 클릭하면 라디오 선택 기능 추가<br>
-			== 샘플 테스트 이미지 경로/파일 수정<br>
-			　+ /_res/solution.api/img/ex/<br>
-		</div>
-	</td>
-	<td>
-		20221227.<br>
-		~18:12 ))) GitHub
 	</td>
 	</tr>
 	</tbody>

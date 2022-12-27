@@ -8,7 +8,6 @@
  * 20221125 | @m | 
  * 20221202 | @m | 
  * 20221205 | @m | 
- * 20221230 | @m | 
  */
 
 
@@ -737,7 +736,7 @@ html{
 }
 
 
-/* 주메뉴 20221230. makeActive2ClickHover('#tnb1');
+/* 주메뉴 20221104. makeActive2ClickHover('#tnb1');
  * 배치 1차스택.개별열림.2차스택
  * #tnb1c.over
  */
@@ -802,7 +801,6 @@ html{
 	font-size:16px;
 	word-break:keep-all;
 	word-wrap:break-word;
-	cursor:default;
 	transition:.2s;
 }
 #tnb1 div.d1>ul>li>a>.t1{
