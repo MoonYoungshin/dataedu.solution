@@ -6,7 +6,6 @@
  * 20221101 | @m | 요구반영. 결함개선. 고도화.
  * 20221104 | @m | 요구반영. 결함개선. 고도화.
  * 20221212 | @m | 
- * 20221222 | @m | 사용자
  * 20230104 | @m | 
  */
 
@@ -27,7 +26,32 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/sub_header_before_login.php"; ?>
+<div id="skipnav">
+	<ul>
+	<li><a href="#body">본문 바로가기</a></li>
+	</ul>
+</div><hr class="dpn">
+
+
+<!-- #container -->
+<div id="container" tabindex="-1">
+<noscript><p class="noscript">JavaScript has been disabled. This site requires JavaScript for full functionality, please enable.</p></noscript>
+
+
+<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/head.v01.php"; ?>
+<!-- #wrap -->
+<div id="wrap">
+<?php //include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/head_visual.php"; ?>
+<!-- container -->
+<div class="container clearfix">
+<?php //include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/sidebar.php"; ?>
+<!-- #body -->
+<div id="body" tabindex="-1">
+<!-- container -->
+<div class="container clearfix">
+<!-- #forPrint -->
+<div id="forPrint">
+<?php //include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/body_head.php"; ?>
 <!-- #body_head -->
 <div id="body_head" class="init">
 <!-- container -->
@@ -49,9 +73,9 @@ include "../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.
 
 
 <!-- user1 -->
-<!-- <div id="user1">
+<div id="user1">
 	<span class="t1">test01234@naver.com</span>
-</div> -->
+</div>
 <!-- /user1 -->
 
 

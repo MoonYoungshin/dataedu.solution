@@ -9,7 +9,6 @@
  * 20221202 | @m | 
  * 20221205 | @m | 
  * 20221230 | @m | 
- * 20230104 | @m | 
  */
 
 
@@ -246,197 +245,6 @@ body,
 	margin:0 0 0 .375em;
 	background:url(../../img/inc/ic28a1c2talk1.png) no-repeat center center / contain;
 	vertical-align:middle;
-}
-
-
-/* 글로벌내비(미니프로필)  20230104. 커스텀 ((( 대표웹페이지. 20221111 */
-#gn3{
-	display:inline-block;
-	position:relative;
-	margin:0 36px 0 auto; /* ☆ */
-	line-height:1.375;
-}
-#gn3 .mns1{}
-#gn3 .mn1{
-	float:left;
-	position:relative;
-}
-#gn3 .a1{
-	display:flex; /* ☆ */
-	align-items:center;
-	z-index:10;
-	position:relative;
-	height:40px;
-}
-#gn3 .a1t1{}
-#gn3 .a1ic1{
-	display:inline-block;
-	width:32px;height:32px;
-	margin:4px;
-	background:#ee0 url() no-repeat center center / 21px;
-	vertical-align:middle;
-}
-#gn3 .a1ic1 img{
-	width:100%;
-	height:100%;
-	object-fit:cover;
-}
-#gn3 .a1ic2{ /* ▽ */
-	display:inline-block;
-	position:relative;
-	width:0;height:0;
-	margin:0 0 1px 5px;
-	border:0 solid transparent;
-	border-width:5px 4px 0 4px;
-	border-top-color:#888;
-	vertical-align:middle;
-}
-#gn3 .my .a1ic1{
-	width:24px;height:24px;
-	margin:9px 0 9px 9px;
-	border-radius:9999px;
-	/* background:url(../../img/lib2/noimg1face1.png) no-repeat center center / contain; */
-	overflow:hidden;
-}
-/* 미니프로필 */
-#gn3c1{
-	display:none;
-	z-index:100;
-	position:absolute;
-	right:-18px; /* ☆ */
-	top:auto;
-	width:278px; /* ☆ */
-	background:#fff;
-	text-align:left;
-	box-shadow:0 .25em 1em 0 #8881;
-}
-#gn3c1 .cont{}
-#gn3c1 .w1{
-	display:flex; /* ☆ */
-	align-items:center;
-	position:relative;
-	/* min-height:1.375em; */
-	padding:1em 1.25em;
-}
-#gn3c1 .w2{
-	display:flex; /* ☆ */
-	position:relative;
-	padding:0 1.25em 1em;
-}
-#gn3c1 .w3{
-	margin:0 1.25em;
-	padding:1em 0;
-	border-top:1px solid #0001;
-}
-/*  */
-#gn3 .tt1{
-	font-size:0;
-	overflow:hidden;
-	text-indent:-9999px;
-}
-#gn3 .b1{
-	float:left;
-	z-index:10;
-	position:absolute;right:0;top:0;
-	width:40px;height:40px;
-	overflow:hidden;
-	text-indent:-9999px;
-}
-#gn3 .b1ic1{
-	display:inline-block;
-	position:absolute;left:50%;top:50%;
-	width:12px;height:12px;
-	margin:-6px;
-	background:url(../../img/lib2/b1x1c1.png) no-repeat center center;
-	vertical-align:middle;
-}
-/*  */
-#gn3c1 .p1{
-	flex:none;
-	float:left;
-	width:3em;height:3em;
-	margin:0 1em 0 0;
-	/* background:url(../../img/lib2/noimg1face1.png) no-repeat center center / contain; */
-	border-radius:9999px;
-	overflow:hidden;
-}
-#gn3c1 .p1 img{
-	width:100%;
-	height:100%;
-	object-fit:cover;
-}
-#gn3c1 .tg1{
-	overflow:hidden;
-}
-#gn3c1 .tg1 .t1{
-	display:block;
-	margin:.1875em 0;
-	font-size:1em;
-	text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;
-}
-#gn3c1 .a2{
-	display:block; /* ☆ */
-	clear:both;
-	color:inherit;
-	font-size:.75em;
-	text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;
-}
-#gn3c1 .a2ic1{}
-#gn3c1 .a2t1{
-	vertical-align:middle;
-}
-#gn3c1 .mns2{}
-#gn3c1 .mn2{}
-#gn3c1 .a3{
-	display:block;
-	padding:.5em 0;
-	color:inherit;
-	font-size:.875em;
-}
-#gn3c1 .a3t1{vertical-align:middle;}
-/*  */
-#gn3c1 a[href]:hover,
-#gn3c1 a[href]:focus{
-	color:#000;
-}
-
-
-/* 글로벌내비(로그인) 20230104 */
-#gn4{
-	display:flex; /* ☆ */
-	justify-content:flex-end;
-	z-index:10;
-	position:relative;
-	margin:0 36px 0 auto; /* ☆ */
-	line-height:1.375;
-}
-#gn4 .a1{
-	display:inline-flex; /* ☆ */
-	align-items:center;
-	position:relative;
-	color:rgba(255,255,255, .75);
-	text-decoration:none
-}
-#gn4 .a1[href]:hover,
-#gn4 .a1[href]:focus{
-	color:rgba(255,255,255, 1);
-}
-#gn4 .a1:before{content:'';
-	display:inline-block;
-	width:40px;
-	height:40px;
-	background:url(../../img/inc/ic80a1c2enter1.png) no-repeat center center / contain;
-}
-#gn4 .t1{
-	position:absolute;left:-9999px;
-	font-size:1rem;
-}
-#gn4 [class*='material-icons']{
-	flex:none;
-	width:1em;
-	height:1em;
-	font-size:24px;
-	overflow:hidden;
 }
 
 
@@ -928,20 +736,6 @@ html{
 	background:#181c20;
 }
 
-#gn3{
-	margin-right:0;
-}
-
-#gn4{
-	margin-right:0;
-}
-#gn4 .a1:before{
-	display:none;
-}
-#gn4 .t1{
-	position:static;
-}
-
 
 /* 주메뉴 20221230. makeActive2ClickHover('#tnb1');
  * 배치 1차스택.개별열림.2차스택
@@ -1124,8 +918,8 @@ html{
 
 
 
-/* ◇◆◇◆ only Desktop Contents ◇◆◇◆ */
 
+/* ◇◆◇◆ only Desktop Contents ◇◆◇◆ */
 
 
 } /* /(min-width:1260px) */
