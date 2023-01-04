@@ -7,7 +7,6 @@
  * 20221201 | @m | 
  * 20221227 | @m | 
  * 20230103 | @m | 
- * 20230104 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -156,7 +155,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <script>/*<![CDATA[*/
 
 
-	/** ◇◆ 최대 몇자 이내로 입력 가능. 20221108. 20221227. 20230104. @m.
+	/** ◇◆ 최대 몇자 이내로 입력 가능. 20221108. 20221227. @m.
 	 * 입력 있으면 전송 활성
 	 */
 	(function(){
@@ -176,7 +175,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 		// 동작
 		function do1(){
 
-			$('input[name="sample"]').prop('checked', false); // 20221227. 샘플 선택 취소
+			$('input[name="sample"]').prop('checked', false); // 20221227. 샘플 문장 선택 취소
 
 			$cnt.html( $textarea.val().length + '/' + mxn );
 			// 최대 입력값 넘으면
@@ -194,7 +193,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	})();
 
 
-	/** ◇◆ 샘플 선택 시 텍스트박스 입력. 20230103. 20230104. @m.
+	/** ◇◆ 샘플 선택 시 텍스트박스 입력. 20230103. @m.
 	 */
 	(function(){
 		var $my = $('.cp2img1set1'), // 샘플 래퍼
@@ -203,12 +202,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 		// 항목 클릭
 		$m.on('click', function(){
-			// 텍스트 입력 영역에 값 넣고
 			$textarea.val( $('input[type="radio"]', this).val() );
-			// keyup 트리거하여 문자수 재계산
-			$textarea.triggerHandler('keyup');
-			// 20230104. keyup 으로 샘플 선택 취소된거 재선택
-			$('input[name="sample"]', $(this)).prop('checked', true);
 		});
 
 	})();

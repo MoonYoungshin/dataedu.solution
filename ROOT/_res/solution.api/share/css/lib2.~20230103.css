@@ -15,8 +15,6 @@
  * 20221216 | @m | 
  * 20221222 | @m | 
  * 20221230 | @m | 
- * 20230103 | @m | 
- * 20230104 | @m | 
  */
 
 /** Compatible! [IE11+] 20210101~ */
@@ -899,34 +897,8 @@ em,
 }
 
 
-/* 샘플이미지선택 20230103 */
-.cp2img1set1{
-	position:relative;
-	margin:10px 0 calc(16px + 2.526%); /* (16 + 34/1346) */
-}
-.cp2img1set1 .tg1 .t1{
-	display:block;
-	margin:0 0 .625rem;
-	font-size:1em;
-	line-height:1.375;
-	word-break:keep-all;
-}
-.cp2img1set1 .cont{
-	margin:.375em 0;
-	/* padding:calc(10px + 1.783%); */ /* (10 + 24/1346) */
-	/* border:1px solid #333; */
-}
-/* ◇◆ */
-@media all and (min-width:768px){
-	.cp2img1set1 .tg1 .t1{
-		font-size:1.25em;
-	}
-}
-
-
-/* 갤러리 20230103 */
+/* 갤러리 20221111 */
 .cp2gallery1{
-	z-index:0;
 	position:relative;
 }
 .cp2gallery1 .even-grid{
@@ -937,18 +909,11 @@ em,
 	padding:0.819%; /* (.833*(100/(100+.833*2))) */
 }
 .cp2gallery1 .a1{
-	display:block;
 	position:relative;
+	display:block;
 	padding:0 0 100%;
 }
-.cp2gallery1 .a1 input{
-	z-index:10;
-	position:absolute;left:0;right:0;top:0;bottom:0;
-	margin:.375em;
-	opacity:0;
-}
 .cp2gallery1 .f1{
-	display:block;
 	position:absolute;left:0;right:0;top:0;bottom:0;
 }
 .cp2gallery1 .p1{
@@ -956,14 +921,6 @@ em,
 	width:100%;
 	height:100%;
 	object-fit:cover;
-}
-/*  */
-.cp2gallery1 .a1:hover .f1,
-.cp2gallery1 .a1 input:focus ~ .f1{
-	border:4px solid #4a0;
-}
-.cp2gallery1 .a1 input:checked ~ .f1{
-	border:4px solid #0065dd;
 }
 
 

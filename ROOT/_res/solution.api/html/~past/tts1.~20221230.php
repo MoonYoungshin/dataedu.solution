@@ -6,7 +6,6 @@
  * 20221108 | @m | 
  * 20221124 | @m | 
  * 20221208 | @m | 
- * 20221230 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -55,7 +54,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <!-- cp2voice1select1 -->
 <div class="cp2voice1select1">
 	<div class="item">
-		<input type="radio" name="★1radio1" id="★1radio1e1" checked>
+		<input type="radio" name="★1radio1" id="★1radio1e1">
 		<label for="★1radio1e1" class="label"><span class="t1 blind">성인 여성</span></label>
 		<div class="w1">
 			<div class="tg1">

@@ -5,6 +5,7 @@
  * 20221108 | @m | 요구반영. 결함개선. 고도화.
  * 20221201 | @m | 
  * 20221226 | @m | 
+ * 20230104 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -50,6 +51,10 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <h3 class="blind">엔진체험</h3>
 
 
+<!-- form -->
+<form action="?#★" onsubmit="return doSubmit_myForm(this);">
+
+
 <!-- cp2set1 -->
 <div class="cp2set1">
 	<div class="tg1">
@@ -59,11 +64,11 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	</div>
 	<div class="cont">
 		<label class="item">
-			<input type="radio" name="★1radio1">
+			<input type="radio" name="lang" value="kor" checked data-text="내가 너희들에게 어떻게 해 주기를 원하느냐?">
 			<span class="t1">한국어</span>
 		</label>
 		<label class="item">
-			<input type="radio" name="★1radio1" checked>
+			<input type="radio" name="lang" value="eng" data-text="The greatest glory in living lies not in never falling, but in rising every time we fall.">
 			<span class="t1">영어</span>
 		</label>
 	</div>
@@ -78,7 +83,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 			아래는 예시 문장입니다. <span class="dpib">문장을 직접 입력해주세요.</span>
 		</p>
 	</div>
-	<textarea rows="5" cols="80" class="textarea" maxlength="200" placeholder="문장을 직접 입력해주세요." title="문장 입력">The greatest glory in living lies not in never falling, but in rising every time we fall.</textarea>
+	<textarea rows="5" cols="80" class="textarea" maxlength="200" placeholder="문장을 직접 입력해주세요." title="문장 입력">내가 너희들에게 어떻게 해 주기를 원하느냐?</textarea>
 	<div class="tg2">
 		<span class="textarea-count">
 			<span class="t1"><!-- 70/200 --></span><span class="t2">자</span>
@@ -87,7 +92,10 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 </div>
 <!-- /cp2text1input1 -->
 
+
 <script>/*<![CDATA[*/
+
+
 	/** ◇◆ 최대 몇자 이내로 입력 가능. 20221108. @m.
 	 * 입력 있으면 전송 활성
 	 */
@@ -121,6 +129,59 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 			}
 		}
 	})();
+
+
+	/** ◇◆ 언어 샘플 선택 시 텍스트박스 입력. 20230104. @m.
+	 */
+	(function(){
+		var $my = $('.cp2set1'), // 언어 샘플 래퍼
+			$m = $('input[type="radio"]', $my), // 선택 항목
+			$textarea = $('.cp2text1input1 .textarea'); // 텍스트 입력 영역
+
+		// 항목 선택
+		$m.on('change', function(){
+			// 텍스트 입력 영역에 값 넣고
+			$textarea.val( $(this).data('text') );
+			// keyup 트리거하여 문자수 재계산
+			$textarea.triggerHandler('keyup');
+			// 20230104. keyup 으로 샘플 선택 취소된거 재선택
+			//$('input[name="sample"]', $(this)).prop('checked', true);
+		});
+	})();
+
+
+	/** ◇◆ 폼전송체크. 20230104. @m.
+	 * 옵션에 맞지 않는 텍스트 입력시 오류메시지 표출 기능
+	 */
+	function doSubmit_myForm(my){
+		var $my = $(my),
+			$radio = $('input[name="lang"]', $my),
+			$textarea = $('.textarea', $my);
+
+		var re_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/,
+			re_eng = /[a-zA-Z]/;
+
+		var testStr = $textarea.val(), // 입력 영역 문자열
+			radioVal = $radio.filter(':checked').val(); // 라디오 선택값
+
+		//console.log( radioVal, re_kor.test(testStr), re_eng.test(testStr) );
+
+		// 입력 없으면
+		if( !$textarea.val() ){
+			alert("문장을 입력해주세요.");
+			$textarea.focus();
+			return false;
+		}
+
+		// 입력 틀리면 (한국어 선택 영문 입력  || 영어 선택 한글 입력)
+		if( ( radioVal == 'kor' && re_eng.test(testStr) ) || ( radioVal == 'eng' && re_kor.test(testStr) ) ){
+			alert("요청한 값이 올바르지 않습니다. 다시 입력해주세요.");
+			$textarea.focus();
+			return false;
+		}
+	}
+
+
 /*]]>*/</script>
 
 
@@ -129,6 +190,10 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	<button type="submit" class="button submit type1"><span class="t1">결과보기</span></button>
 </div>
 <!-- /cp2fg1 -->
+
+
+</form>
+<!-- /form -->
 
 
 </div>

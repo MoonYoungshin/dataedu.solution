@@ -2,11 +2,10 @@
 <?php
 /**
  * 20221026 | @m | 최초작성
- * 20221102 | @m | 요구반영. 결함개선. 고도화.
- * 20221108 | @m | 
- * 20221124 | @m | 
- * 20221208 | @m | 
- * 20221230 | @m | 
+ * 20221108 | @m | 요구반영. 결함개선. 고도화.
+ * 20221201 | @m | 
+ * 20221226 | @m | 
+ * 20230103 | @m | 
  */
 
 include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/connect.php"
@@ -20,7 +19,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <meta name="author" content="데이터에듀">
 <meta name="keywords" content="데이터에듀 솔루션 API">
 <meta name="description" content="데이터에듀 솔루션 API">
-<title>음성합성 (JS-TTS) - 엔진체험 | 데이터에듀 API</title>
+<title>자연어 이해 (JS-NLU) - 엔진체험 | 데이터에듀 API</title>
 
 <?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/html_head.php"; ?>
 
@@ -28,7 +27,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <body>
 <?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/share/inc/sub_header.php"; ?>
 <!-- 현재페이지 경로 + 사용자명 -->
-<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/audio/tts1_body_head.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/language/nlu1_body_head.php"; ?>
 <!-- #body_content -->
 <div id="body_content">
 <!-- container -->
@@ -39,7 +38,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 
 
 <!-- 본문제목 + 탭 -->
-<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/audio/tts1_inc1.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].$sitePath."/html/language/nlu1_inc1.php"; ?>
 <script>/*<![CDATA[*/
 	$('.cp2tabs1 .m1').addClass('on'); // 20221102. 탭활성. @m
 /*]]>*/</script>
@@ -52,63 +51,29 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 <h3 class="blind">엔진체험</h3>
 
 
-<!-- cp2voice1select1 -->
-<div class="cp2voice1select1">
-	<div class="item">
-		<input type="radio" name="★1radio1" id="★1radio1e1" checked>
-		<label for="★1radio1e1" class="label"><span class="t1 blind">성인 여성</span></label>
-		<div class="w1">
-			<div class="tg1">
-				<i class="ic1 female"></i>
-				<span class="t1">성인 여성</span>
-			</div>
-			<!-- <select title="보이스 선택" class="select">
-				<option value="">보이스 선택</option>
-				<option value="">★옵션명</option>
-				<option value="">★옵션명</option>
-				<option value="">★옵션명</option>
-				<option value="">★옵션명</option>
-				<option value="">★옵션명</option>
-			</select> -->
-		</div>
+<!-- form -->
+<form action="?#★" onsubmit="return doSubmit_myForm(this);">
+
+
+<!-- cp2set1 -->
+<div class="cp2set1">
+	<div class="tg1">
+		<p class="t1">
+			변환하고 싶은 언어를 선택하세요.
+		</p>
 	</div>
-	<div class="item">
-		<input type="radio" name="★1radio1" id="★1radio1e2">
-		<label for="★1radio1e2" class="label"><span class="t1 blind">성인 남성</span></label>
-		<div class="w1">
-			<div class="tg1">
-				<i class="ic1 male"></i>
-				<span class="t1">성인 남성</span>
-			</div>
-			<!-- <select title="보이스 선택" class="select">
-				<option value="">보이스 선택</option>
-				<option value="">★옵션명</option>
-				<option value="">★옵션명</option>
-				<option value="">★옵션명</option>
-				<option value="">★옵션명</option>
-				<option value="">★옵션명</option>
-			</select> -->
-		</div>
+	<div class="cont">
+		<label class="item">
+			<input type="radio" name="★1radio1" checked data-text="내가 너희들에게 어떻게 해 주기를 원하느냐?">
+			<span class="t1">한국어</span>
+		</label>
+		<label class="item">
+			<input type="radio" name="★1radio1" data-text="The greatest glory in living lies not in never falling, but in rising every time we fall.">
+			<span class="t1">영어</span>
+		</label>
 	</div>
 </div>
-<!-- /cp2voice1select1 -->
-
-<script>/*<![CDATA[*/
-	/** ◇◆ select 선택하면 radio 선택 . 20221102. @m.
-	 */
-	(function(){
-		var $my = $('.cp2voice1select1'), // 래퍼
-			item = '.item', // 항목
-			select = '.select', // 선택 목록
-			radio = 'input[type="radio"]'; // 라디오
-
-		// 선택 목록 클릭하면
-		$my.on('click', select, function(){
-			$(this).closest(item).find(radio).trigger('click');
-		});
-
-	})();
-/*]]>*/</script>
+<!-- /cp2set1 -->
 
 
 <!-- cp2text1input1 -->
@@ -118,7 +83,7 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 			아래는 예시 문장입니다. <span class="dpib">문장을 직접 입력해주세요.</span>
 		</p>
 	</div>
-	<textarea rows="5" cols="80" class="textarea" maxlength="200" placeholder="200자 이내로 텍스트를 입력하세요." title=" 문장 입력">옛날 옛적에 마음씨 착한 나무꾼 돌쇠가 살고 있었어요. 돌쇠는 언제나 일찍 일어나 부모님께 드릴 아침을 준비하는 효자였어요.</textarea>
+	<textarea rows="5" cols="80" class="textarea" maxlength="200" placeholder="문장을 직접 입력해주세요." title="문장 입력">내가 너희들에게 어떻게 해 주기를 원하느냐?</textarea>
 	<div class="tg2">
 		<span class="textarea-count">
 			<span class="t1"><!-- 70/200 --></span><span class="t2">자</span>
@@ -127,7 +92,10 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 </div>
 <!-- /cp2text1input1 -->
 
+
 <script>/*<![CDATA[*/
+
+
 	/** ◇◆ 최대 몇자 이내로 입력 가능. 20221108. @m.
 	 * 입력 있으면 전송 활성
 	 */
@@ -161,6 +129,60 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 			}
 		}
 	})();
+
+
+	/** ◇◆ 언어 샘플 선택 시 텍스트박스 입력. 20230103. @m.
+	 */
+	(function(){
+		var $my = $('.cp2set1'), // 언어 샘플 래퍼
+			$m = $('input[type="radio"]', $my), // 선택 항목
+			$textarea = $('.cp2text1input1 .textarea'); // 텍스트 입력 영역
+
+		// 항목 선택
+		$m.on('change', function(){
+			$textarea.val( $(this).data('text') );
+		});
+
+	})();
+
+
+	/** ◇◆ 폼체크. 20230103. @m.
+	 */
+	function doSubmit_myForm(my){
+		var $my = $(my),
+			$textarea = $('.textarea', $my);
+
+		var p_num = /[0-9]/; //숫자
+		var p_eng = /[a-zA-Z]/; //영어
+		var p_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/; //한글
+		var p_sch = /[~!@#\#$%<>^&*]/; //특수문자
+
+		var testStr = $textarea.val();
+		var flag = false; // 입력이 바른지
+
+		console.log( p_num.test(testStr) );
+		console.log( p_eng.test(testStr) );
+		console.log( p_kor.test(testStr) );
+		console.log( p_sch.test(testStr) );
+
+		// 입력 없으면
+		if( !$textarea.val() ){
+			alert("문장을 입력해주세요.");
+			$textarea.focus();
+			return false;
+		}
+
+		// 입력 틀리면
+		if( !flag ){
+			alert("요청한 값이 올바르지 않습니다. 다시 입력해주세요.");
+			$textarea.focus();
+			return false;
+		}
+
+		return true;
+	}
+
+
 /*]]>*/</script>
 
 
@@ -169,6 +191,10 @@ include "../../share/inc/connect.php"; // 접속경로 (( "../../share/inc/conne
 	<button type="submit" class="button submit type1"><span class="t1">결과보기</span></button>
 </div>
 <!-- /cp2fg1 -->
+
+
+</form>
+<!-- /form -->
 
 
 </div>

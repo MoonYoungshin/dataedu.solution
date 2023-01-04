@@ -16,7 +16,6 @@
  * 20221222 | @m | 
  * 20221230 | @m | 
  * 20230103 | @m | 
- * 20230104 | @m | 
  */
 
 /** Compatible! [IE11+] 20210101~ */
@@ -948,7 +947,6 @@ em,
 	opacity:0;
 }
 .cp2gallery1 .f1{
-	display:block;
 	position:absolute;left:0;right:0;top:0;bottom:0;
 }
 .cp2gallery1 .p1{
@@ -960,10 +958,10 @@ em,
 /*  */
 .cp2gallery1 .a1:hover .f1,
 .cp2gallery1 .a1 input:focus ~ .f1{
-	border:4px solid #4a0;
+	border:4px solid #eb0;
 }
 .cp2gallery1 .a1 input:checked ~ .f1{
-	border:4px solid #0065dd;
+	border:4px solid #06d;
 }
 
 
